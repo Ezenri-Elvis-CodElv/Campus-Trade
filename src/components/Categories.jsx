@@ -1,9 +1,10 @@
+import React from 'react'
+import './categories.css'
+import { MdNavigateNext } from "react-icons/md";
+import Card from "../components/Card"
 
-import React from "react";
-import Card from "../components/Card";
-import "./explore.css";
 
-const ExplorePage = () => {
+const Categories = () => {
   const myArr = [
     {
       image: "/public/download.jpg",
@@ -12,7 +13,6 @@ const ExplorePage = () => {
       description: "Offers elegant and fashionable high heels",
       university: "Lagos State University",
       time: "28 mins ago"
-
     },
     {
       image: "/public/download.jpg",
@@ -115,38 +115,38 @@ const ExplorePage = () => {
     },
   ];
   return (
-    <div className="explore-page">
-      <div className="explore-img-holder">
-        <img src="/public/Frame 563.jpg" alt="" />
-      </div>
-      <div className="explore-text">
-        <div className="explore-header">
-          <div className="explore-pop">
-          <p>Popular post</p>
-
+    <div className='category-body'>
+        <div className='category-img'>
+          
+            <img src="/public/Frame 386.jpg" />
+        </div>
+      <div className='category-text-wrappers'>
+        <div className='text-holder'>
+          <div className='top-text'>
+            <span style={{color: " #03045E"}}>Home</span>
+            <span className='icon'> <MdNavigateNext /></span>
+            <span style={{color: "#FF6D00"}}>Shirts</span>
           </div>
-          <br />
-          <div className="explore-details">
-          <p>check out our popular post  of the different categories from verified <br /> student in campustrade </p>
-
+          <div className='buttom-text'>
+            <span>Shirts</span>
+            <br />
+            <span>Checkout some other similar  upload from other sellers</span>
+          </div>
+        </div>
+        <div className='category-button-holder'>
+          <div className='category-toggle'>
+            <span className='used'>Used</span><span className='New'>New</span>
           </div>
         </div>
       </div>
-
-        <section className="card-holder">
-        {myArr.map((item, index) => (
+      <section className='category-product'>
+      {myArr.map((item, index) => (
         <Card key={index} item={item} />
       ))}
 
-        </section>
-        
-        <article className="Ads">
-          <img src="/public/Frame 659.jpg" alt="" />
+      </section>
+    </div>
+  )
+}
 
-        </article>
-      </div>
-
-  );
-};
-
-export default ExplorePage;
+export default Categories
