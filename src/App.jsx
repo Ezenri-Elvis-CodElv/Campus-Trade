@@ -7,18 +7,30 @@ import ResetPassword from "./samuel/Auth/ResetPassword";
 import PrivateRoute from "./routes/PrivateRoute";
 import ForgetPassword from "./Samuel/Auth/ForgetPassword";
 import Categories from "./components/Categories";
+import ExplorePage from "./Edith/ExplorePage";
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Categories />,
-    children: [
-      {
-        path: "/",
-        element: <Categories />,
-      },
-    ],
-  },
+  
+    {
+      path: "/",
+      element: <HomeRoutes />,
+      children: [
+        {
+          path: "/",
+          element: <LandingPage />,
+        },
+        {
+          path: "/categories",
+          element: <Categories />,
+        },
+        {
+          path: "/explorepage",
+          element: <ExplorePage />,
+        },
+      ],
+    },
+      
+    
   {
     path: "/signup",
     element: <SignUp />,
