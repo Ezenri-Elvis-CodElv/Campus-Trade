@@ -18,10 +18,10 @@ const Categories = () => {
       image: "/public/download.jpg",
       name: "Books",
       price: "20,000",
-      description: "Description",
+      description: "My description",
       university: "Uni Lag",
       time: "28 mins ago"
-
+      
     },
     {
       image: "/public/download.jpg",
@@ -118,24 +118,26 @@ const Categories = () => {
     <div className='category-body'>
         <div className='category-img'>
           
-            <img src="/public/Frame 386.jpg" />
+            <img src="/public/Frame 386.jpg" alt="" />
         </div>
       <div className='category-text-wrappers'>
         <div className='text-holder'>
           <div className='top-text'>
-            <span style={{color: " #03045E"}}>Home</span>
+            <span style={{color: " #03045E", fontWeight: "bold"}}>Home</span>
             <span className='icon'> <MdNavigateNext /></span>
             <span style={{color: "#FF6D00"}}>Shirts</span>
           </div>
           <div className='buttom-text'>
-            <span>Shirts</span>
+ 
+            <span style={{fontWeight: "bold", color: "#03045E"}}>Shirts</span>
             <br />
-            <span>Checkout some other similar  upload from other sellers</span>
+            <span className='checkout-text' style={{fontSize: "smaller"}}>Checkout some other similar  upload from other sellers</span>
           </div>
         </div>
         <div className='category-button-holder'>
           <div className='category-toggle'>
-            <span className='used'>Used</span><span className='New'>New</span>
+            <span className='used'>Used</span>
+            <span className='New'>New</span>
           </div>
         </div>
       </div>

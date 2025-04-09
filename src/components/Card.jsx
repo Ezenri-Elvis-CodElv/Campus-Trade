@@ -5,24 +5,25 @@ const Card = ({item}) => {
   return (
         <> 
     <div className="card">
-      <div className="img-holder">
+      <div className="card-img-holder">
         <img src={item.image} alt="" />
       </div>
       
-      <div className="img-name">
-        <div className="name">
+      <div className="card-img-name">
+        <div className="card-name">
           <p>{item.name}</p>
         </div>
-        <div className="price">
+        <div className="card-prices">
           <p>₦{item.price}</p>
         </div>
       </div>
-      <div className="img-description">
+      <div className="card-img-description">
         <p>{item.description}</p>
       </div>
-      <div className="uni-name">
+      <div className="card-uni-name">
         <p>{item.university}</p>
       </div>
+      <div className='card-time'><p>{item.time}</p></div>
     </div>
     </>
   

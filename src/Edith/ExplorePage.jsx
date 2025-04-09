@@ -11,8 +11,6 @@ const ExplorePage = () => {
       price: "23,000",
       description: "Offers elegant and fashionable high heels",
       university: "Lagos State University",
-      time: "28 mins ago"
-
     },
     {
       image: "/public/download.jpg",
@@ -20,8 +18,6 @@ const ExplorePage = () => {
       price: "20,000",
       description: "Description",
       university: "Uni Lag",
-      time: "28 mins ago"
-
     },
     {
       image: "/public/download.jpg",
@@ -29,8 +25,6 @@ const ExplorePage = () => {
       price: "30,000",
       description: "My description",
       university: "Yaba Tech",
-      time: "28 mins ago"
-
     },
     {
       image: "/public/download.jpg",
@@ -38,8 +32,6 @@ const ExplorePage = () => {
       price: "30,000",
       description: "My description",
       university: "Yaba Tech",
-      time: "28 mins ago"
-
     },
     {
       image: "/public/download.jpg",
@@ -47,8 +39,6 @@ const ExplorePage = () => {
       price: "30,000",
       description: "My description",
       university: "Yaba Tech",
-      time: "28 mins ago"
-
     },
     {
       image: "/public/download.jpg",
@@ -56,8 +46,6 @@ const ExplorePage = () => {
       price: "30,000",
       description: "My description",
       university: "Yaba Tech",
-      time: "28 mins ago"
-
     },
     {
       image: "/public/download.jpg",
@@ -65,8 +53,6 @@ const ExplorePage = () => {
       price: "30,000",
       description: "My description",
       university: "Yaba Tech",
-      time: "28 mins ago"
-
     },
     {
       image: "/public/download.jpg",
@@ -74,8 +60,6 @@ const ExplorePage = () => {
       price: "30,000",
       description: "My description",
       university: "Yaba Tech",
-      time: "28 mins ago"
-
     },
     {
       image: "/public/download.jpg",
@@ -83,8 +67,6 @@ const ExplorePage = () => {
       price: "30,000",
       description: "My description",
       university: "Yaba Tech",
-      time: "28 mins ago"
-
     },
     {
       image: "/public/download.jpg",
@@ -92,8 +74,6 @@ const ExplorePage = () => {
       price: "30,000",
       description: "My description",
       university: "Yaba Tech",
-      time: "28 mins ago"
-
     },
     {
       image: "/public/download.jpg",
@@ -101,8 +81,6 @@ const ExplorePage = () => {
       price: "30,000",
       description: "My description",
       university: "Yaba Tech",
-      time: "28 mins ago"
-
     },
     {
       image: "/public/download.jpg",
@@ -110,14 +88,21 @@ const ExplorePage = () => {
       price: "30,000",
       description: "My description",
       university: "Yaba Tech",
-      time: "28 mins ago"
-
     },
   ];
   return (
     <div className="explore-page">
+      
       <div className="explore-img-holder">
-        <img src="/public/Frame 563.jpg" alt="" />
+        <div className="img-text">
+          <h1>
+          Explore More, Trade Smarter
+          <br /> 
+          Find the Best Deals on 
+          <br />Campustrade
+          </h1>
+        </div>
+        {/* <img src="/public/Frame 563.jpg" alt="" /> */}
       </div>
       <div className="explore-text">
         <div className="explore-header">
