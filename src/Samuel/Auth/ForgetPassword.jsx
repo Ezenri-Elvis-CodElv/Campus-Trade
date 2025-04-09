@@ -1,10 +1,36 @@
-import React from 'react'
+import React, { useState } from 'react'
+import "./auth.css"
 
 const ForgetPassword = () => {
+   const [auth, setAuth]= useState({
+      email:"",
+    })
   return (
-    <div>
-      
+    <div className="Overall">
+  <div className="box">
+    <div className="boxWrapper">
+      <div className="logo">
+        <img src="src/assets/Public/CAMPUSTRADE-02 1.png"/>
+      </div>
+
+      <div className="inputHolder">
+        <p className="signupText">Recover your Password</p>
+        <span className="infoText">You can Request A Password Reset Below. We Will Send A <br></br>Security Code To The Email Addtress,Please Make sure it is <br></br>Correct</span>
+
+        <div className="inputBox">
+          <label>Email</label>
+          <input type="email" placeholder="Input Your Email" value={auth.email} 
+          onChange={(e)=>setAuth({...auth, email:e.target.value})} />
+
+          <button className="submitBtn">Request password reset</button>
+        
+          <p className='trademark'>@campustrade</p>
+        </div>
+      </div>
     </div>
+  </div>
+</div>
+
   )
 }
 
