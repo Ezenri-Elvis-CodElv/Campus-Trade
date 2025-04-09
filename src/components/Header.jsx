@@ -68,7 +68,7 @@ const Header = () => {
             />
           </div>
           <div className="w-[55%] h-[100%] flex flex=row justify-center items-center gap-15">
-            <h3 className="cursor-pointer text-black font-inter text-base font-[Inter]  leading-normal max-md:hidden">Home</h3>
+            <h3 className="cursor-pointer text-black font-inter text-base font-[Inter]  leading-normal max-md:hidden" onClick={() => nav("/")}>Home</h3>
             <h3
               ref={institutionButtonRef}
               className="flex flex-row justify-center items-center cursor-pointer text-black font-inter text-base font-normal leading-normal max-md:hidden"
