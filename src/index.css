@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+* {
+    outline: none;
+    user-select: none;
+  }
+
+  ::-webkit-scrollbar{
+    width: 0px;
+  }
+
+ 
