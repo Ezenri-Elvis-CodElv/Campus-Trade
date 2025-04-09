@@ -6,15 +6,16 @@ import Login from "./Samuel/Auth/Login";
 import ResetPassword from "./samuel/Auth/ResetPassword";
 import PrivateRoute from "./routes/PrivateRoute";
 import ForgetPassword from "./Samuel/Auth/ForgetPassword";
+import Categories from "./components/Categories";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomeRoutes />,
+    element: <Categories />,
     children: [
       {
         path: "/",
-        element: <LandingPage />,
+        element: <Categories />,
       },
     ],
   },
