@@ -1,0 +1,59 @@
+.sidebar {
+  width: 400px;
+  background-color: rgb(255, 255, 255);
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 2px solid grey;
+  gap: 10px;
+}
+
+.pages-sidebar {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-profileIcon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.sidebar-profileIcon hr {
+  width: 100%;
+}
+
+.myprofiletext {
+  font-size: 22px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.link {
+  color: purple;
+  padding: 10px;
+  text-decoration: none;
+  border-left: 4px solid transparent;
+  font-size: 16px;
+  font-style: normal;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.link:hover {
+  background-color: rgb(167, 158, 158);
+}
+
+.link.active {
+  background-color: orange;
+  border-left: 4px solid purple;
+}

@@ -102,7 +102,6 @@ const ExplorePage = () => {
           <br />Campustrade
           </h1>
         </div>
-        {/* <img src="/public/Frame 563.jpg" alt="" /> */}
       </div>
       <div className="explore-text">
         <div className="explore-header">
