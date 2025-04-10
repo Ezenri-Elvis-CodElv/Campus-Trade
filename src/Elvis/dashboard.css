@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+.dashboard-wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  .dashboard-body {
+    flex: 1;
+    display: flex;
+  }
+  
+  .dashboard-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #f9f9f9;
+    overflow-y: auto;
+  }
+  
