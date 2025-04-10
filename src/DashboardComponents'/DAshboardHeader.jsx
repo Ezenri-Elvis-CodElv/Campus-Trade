@@ -10,7 +10,6 @@ const DashboardHeader = () => {
       <div className="dashboard-header-content">
         <div className="dashboard-header-content-leftside">
         <img src="src/assets/Public/CAMPUSTRADE-02 1.png" alt="" onClick={() => nav("/")} className="ImageLogoDash" />
-        <h1 className="sellers-dash-text" onClick={() => nav("/")}>Sellers Dashboard</h1>
         </div>
         <div className="dashboard-header-content-rightside">
             <div className="dasboard-content-home" onClick={() => nav("/")}>

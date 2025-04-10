@@ -19,7 +19,7 @@ const Sidebar = () => {
       </div>
       
      <div className='pages-sidebar'>
-     <NavLink to="/dashboard" end className="link"> <IoCreateOutline size={25}/>Create a post</NavLink>
+     <NavLink to="/dashboard/createpost" end className="link"> <IoCreateOutline size={25}/>Create a post</NavLink>
       <NavLink to="/dashboard/accountinformation" className="link"><FaInfo size={25} />Account Information</NavLink>
       <NavLink to="/dashboard/changephonenumber" className="link"><IoCreateOutline size={25}/>Change Number</NavLink>
       <NavLink to="/dashboard/changepassword" className="link"><MdOutlineChangeCircle size={25} />Change Password</NavLink>
