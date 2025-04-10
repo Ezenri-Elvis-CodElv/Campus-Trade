@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import './Sidebar.css';
 import { CgProfile } from 'react-icons/cg';
 import { IoCreateOutline } from 'react-icons/io5';
@@ -7,8 +7,10 @@ import { MdOutlineChangeCircle, MdOutlinePendingActions, MdVerifiedUser } from '
 import { IoIosCheckmarkCircleOutline } from 'react-icons/io';
 import { SiGoogleads } from 'react-icons/si';
 import { RiLogoutCircleLine } from 'react-icons/ri';
+import { BsFillFilePostFill } from 'react-icons/bs';
 
 const Sidebar = () => {
+  const nav = useNavigate()
   return (
     <>
     <aside className="sidebar">
@@ -19,22 +21,22 @@ const Sidebar = () => {
       </div>
       
      <div className='pages-sidebar'>
-     <NavLink to="/dashboard/createpost" end className="link"> <IoCreateOutline size={25}/>Create a post</NavLink>
-      <NavLink to="/dashboard/accountinformation" className="link"><FaInfo size={25} />Account Information</NavLink>
-      <NavLink to="/dashboard/changephonenumber" className="link"><IoCreateOutline size={25}/>Change Number</NavLink>
-      <NavLink to="/dashboard/changepassword" className="link"><MdOutlineChangeCircle size={25} />Change Password</NavLink>
-      <NavLink to="/dashboard/getverified" className="link"><MdVerifiedUser size={25} />Get verified</NavLink>
+     <NavLink to="/dashboard/createpost" end className="link"> <IoCreateOutline size={14}/>Create a post</NavLink>
+      <NavLink to="/dashboard/accountinformation" className="link"><FaInfo size={14} />Account Information</NavLink>
+      <NavLink to="/dashboard/changephonenumber" className="link"><IoCreateOutline size={14}/>Change Number</NavLink>
+      <NavLink to="/dashboard/changepassword" className="link"><MdOutlineChangeCircle size={14} />Change Password</NavLink>
+      <NavLink to="/dashboard/getverified" className="link"><MdVerifiedUser size={14} />Get verified</NavLink>
      </div>
-     <hr style={{width: "100%", border: "1px solid grey"}} />
+     {/* <hr style={{width: "100%", border: "1px solid grey"}} /> */}
         <h3 className='myprofiletext'>My Post</h3>
         <div className='pages-sidebar'>
-     <NavLink to="/dashboard/recentpost"  className="link"> Recent Post</NavLink>
-      <NavLink to="/dashboard/pendingpost" className="link"><MdOutlinePendingActions size={25} /> Pending Post</NavLink>
-      <NavLink to="/dashboard/posts" className="link"><IoIosCheckmarkCircleOutline /> Posted</NavLink>
-      <NavLink to="/dashboard/ads" className="link"><SiGoogleads /> Ads</NavLink>
+     <NavLink to="/dashboard/recentpost"  className="link"> <BsFillFilePostFill size={14} />Recent Post</NavLink>
+      <NavLink to="/dashboard/pendingpost" className="link"><MdOutlinePendingActions size={14} /> Pending Post</NavLink>
+      <NavLink to="/dashboard/posts" className="link"><IoIosCheckmarkCircleOutline size={14} /> Posted</NavLink>
+      <NavLink to="/dashboard/ads" className="link"><SiGoogleads size={14} /> Ads</NavLink>
      </div>
-     <div>
-     <NavLink to="/dashboard/logout" className="link" style={{color: "red"}}><RiLogoutCircleLine /> LogOut</NavLink>
+     <div className='logout-button'>
+     <button className='dash-logout' onClick={() => nav('/')}><RiLogoutCircleLine size={18}  /> LogOut</button>
 
      </div>
     </aside>

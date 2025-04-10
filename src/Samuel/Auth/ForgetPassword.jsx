@@ -1,14 +1,18 @@
 import React, { useState } from 'react'
 import "./auth.css"
+import { FaLongArrowAltLeft } from 'react-icons/fa'
+import { useNavigate } from 'react-router'
 
 const ForgetPassword = () => {
    const [auth, setAuth]= useState({
       email:"",
     })
+    const nav = useNavigate()
   return (
     <div className="Overall">
   <div className="box">
     <div className="boxWrapper">
+    <FaLongArrowAltLeft size={15} />
       <div className="logo">
         <img src="src/assets/Public/CAMPUSTRADE-02 1.png"/>
       </div>
@@ -23,7 +27,8 @@ const ForgetPassword = () => {
           onChange={(e)=>setAuth({...auth, email:e.target.value})} />
 
           <button className="submitBtn">Request password reset</button>
-        
+          <p style={{display:"flex", justifyContent:'flex-start'}}>Already Have An Account?
+               <span style={{color:"purple"}} onClick={()=> nav("/login")}>Login</span></p>
           <p className='trademark'>@campustrade</p>
         </div>
       </div>

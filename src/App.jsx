@@ -19,6 +19,7 @@ import Posts from "./DashboardComponents'/Posts";
 import Ads from "./DashboardComponents'/Ads";
 import Logout from "./components/Logout";
 import AccountInformation from "./DashboardComponents'/AccountInformation";
+import ProductDetailPage from "./Chidera/ProductDetailPage";
 
 const router = createBrowserRouter([
   
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
         {
           path: "/explorepage",
           element: <ExplorePage />,
+        },
+        {
+          path: "/productdetailpage/:id",
+          element: <ProductDetailPage />,
         },
        
       ],
