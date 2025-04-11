@@ -1,5 +1,5 @@
 import { NavLink, useNavigate } from 'react-router-dom';
-import './Sidebar.css';
+import './sidebar.css';
 import { CgProfile } from 'react-icons/cg';
 import { IoCreateOutline } from 'react-icons/io5';
 import { FaInfo } from 'react-icons/fa';
@@ -27,7 +27,6 @@ const Sidebar = () => {
       <NavLink to="/dashboard/changepassword" className="link"><MdOutlineChangeCircle size={14} />Change Password</NavLink>
       <NavLink to="/dashboard/getverified" className="link"><MdVerifiedUser size={14} />Get verified</NavLink>
      </div>
-     {/* <hr style={{width: "100%", border: "1px solid grey"}} /> */}
         <h3 className='myprofiletext'>My Post</h3>
         <div className='pages-sidebar'>
      <NavLink to="/dashboard/recentpost"  className="link"> <BsFillFilePostFill size={14} />Recent Post</NavLink>
