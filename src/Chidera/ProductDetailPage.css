@@ -18,7 +18,7 @@ section{
     gap: 50px;
 }
 
-section > div:first-child {
+section > .body {
     display: flex;
     justify-content: space-between;
 }
@@ -58,6 +58,9 @@ section > div:first-child {
     font-size: 23px;
     font-weight: 700;
     color: #FF6D00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: "Inter", sans-serif;
 }
 
@@ -94,7 +97,7 @@ section > div:first-child {
     font-family: "Inter", sans-serif;
 }
 
-.condition > div {
+.condition .body1 {
     background-color: goldenrod;
     width: 230px;
     padding: 10px;
@@ -132,7 +135,7 @@ section > div:first-child {
     font-family: "Inter", sans-serif;
 }
 
-.description > div {
+.description .body2 {
     border: 0.47px solid gray;
     height: 120px;
     width: 90%;
@@ -179,7 +182,7 @@ section > div:first-child {
     gap: 18px;
 }
 
-.profilePicAndDetails > div {
+.profilePicAndDetails .body3 {
     display: flex;
     flex-direction: column;
     gap: 12px;

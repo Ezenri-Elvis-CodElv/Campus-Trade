@@ -8,6 +8,7 @@ import { LuBadgeCheck } from "react-icons/lu";
 import { IoCopy } from "react-icons/io5";
 import { IoMdArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
+import { FaNairaSign } from "react-icons/fa6";
 
 
 
@@ -59,26 +60,26 @@ import { IoIosArrowForward } from "react-icons/io";
   ];
   return (
     <section>
-      <div>
+      <div className='body'>
         <div className='detailPageInfo'>
           <div className='detailProductinfo'>
             <img className="detailedProductImage" src="src/assets/Public/phone.jpeg" alt="Phone" />
             <div className="detailedProductInfo">
               <h3 className='projectinfo'>Iphone 13 pro</h3>
-              <p className='projectinfo1'>$350</p>
+              <p className='projectinfo1'> <FaNairaSign/>350</p>
             </div>
           </div>
           <Location />
           <div className='condition'>
             <h3 className='projectinfo2'>Condition</h3>
-            <div>
+            <div className='body1'>
               <button>New</button>
               <button className='active'>Used</button>
             </div>
           </div>
           <div className='description'>
             <h3 className='projectinfo3'>Description</h3>
-            <div>
+            <div className='body2'>
               <h1 className='projectinfo4'>Lorem ipsum dolor, sit amet c 
                 onsectetur adipisicing elit. <br />
                 Pariatur quia quas aliquam s
@@ -94,7 +95,7 @@ import { IoIosArrowForward } from "react-icons/io";
               <div className='profile'>
                 <div className='profilePicAndDetails'>
                   <img className='profilePic' src="src/assets/Public/Ellipse 22.png" alt="Phone"  />
-                    <div>
+                    <div className='body3'>
                       <div className="profileName">
                       <h2>Joan Samuel</h2>
                       <LuBadgeCheck size={20} />

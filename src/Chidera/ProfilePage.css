@@ -47,7 +47,7 @@ img.profilePix {
 
 }
 
-.profileDetails > h3 {
+.profileDetails .fist {
     font-size: 23px;
     font-weight: 600;
     display: flex;
@@ -70,7 +70,7 @@ img.profilePix {
 
 }
 
-.profileDetail > h2 {
+.profileDetail .fist1 {
     font-size: 20px;
     font-weight: 300;
     color: #240046;
@@ -84,7 +84,7 @@ img.profilePix {
     padding: 10px;
 }
 
-.reportdetails > h2 {
+.reportdetails .fist3 {
     font-size: 25px;
     font-weight: 400;
     color: #00B4D8;

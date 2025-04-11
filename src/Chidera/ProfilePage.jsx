@@ -32,19 +32,19 @@ const ProfilePage = () => {
         <img className='profilePix' src="src/assets/Public/Ellipse 22.png" alt="Phone"  />
             <div className='details'>
               <div className='profileDetails'>
-                <h3 >
+                <h3 className='fist'>
                 1 published Ads <IoChevronForwardOutline size={20}/>
                 </h3>
                   </div>
                   <div className='profileDetail'>
                   <FaShareAlt size={17}/>
-                  <h2> 
+                  <h2 className='fist1'> 
                   share user profile
                   </h2>
                   </div>
                   </div>
                 <div className='reportdetails'>
-                <h2>
+                <h2 className='fist3'>
                 Report user
               </h2>
               <h2 className='blockUser'>

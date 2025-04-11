@@ -1,8 +1,9 @@
 import React from 'react'
+import "./GetVerified.css"
 
 const GetVerified = () => {
   return (
-    <div>
+    <div className='GetVerified'>
       GetVerified
     </div>
   )
