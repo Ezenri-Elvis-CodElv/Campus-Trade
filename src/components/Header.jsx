@@ -58,7 +58,7 @@ const Header = () => {
       <div className="w-[90%] h-[80%] flex justify-between items-center">
         <div className="flex items-center w-[45%] max-md:w-[30%] gap-10">
           <img
-            src="src/assets/Public/CAMPUSTRADE-02 1.png"
+            src="/CAMPUSTRADE-02 1.png"
             alt="CampusTrade Logo"
             onClick={() => nav("/")}
             className="cursor-pointer max-md:w-full max-md:h-[70%] object-contain"
@@ -118,7 +118,7 @@ const Header = () => {
 
           <div className="block md:hidden relative">
             <img
-              src="/src/assets/Burger.svg"
+              src="/Burger.svg"
               alt="Menu"
               onClick={() => setDropDown(!dropdown)}
               className="cursor-pointer"
