@@ -34,6 +34,7 @@ const Ads = () => {
               </div>
             </div>
         </div>
+        
         <div className="ads-payment">
           <div className="ads-payment-selection">
             <div className="ads-selection-text">Top</div>

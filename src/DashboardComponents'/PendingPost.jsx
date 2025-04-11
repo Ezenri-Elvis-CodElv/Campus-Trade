@@ -60,6 +60,13 @@ const RecentPost = () => {
       description: "My description",
       university: "Yaba Tech",
     },
+    {
+      image: "/public/download.jpg",
+      name: "Home Appliances",
+      price: "30,000",
+      description: "My description",
+      university: "Yaba Tech",
+    },
   ];
   return (
     <div className='recent-body' >

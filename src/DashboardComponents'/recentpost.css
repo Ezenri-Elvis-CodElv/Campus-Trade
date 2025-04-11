@@ -1,7 +1,5 @@
 .recent-body{
     font-family: "Montserrat", sans-serif;
-
-    /* background-color: red; */
     height: max-content;
     width: 100%;
     display: flex;
@@ -17,8 +15,9 @@
     width: 100%;
     height: max-content;
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
     flex-wrap: wrap;
+    justify-content: space-evenly;
     gap: 20px;
     row-gap: 20px;
     align-items: center;
