@@ -2,7 +2,6 @@ import React, { useEffect, useState, useRef } from "react";
 import { CiSearch } from "react-icons/ci";
 import { IoIosArrowDown } from "react-icons/io";
 import { useNavigate } from "react-router";
-import CampusTrade from "../../src/assets/CAMPUSTRADE-02 1.png"
 const Header = () => {
   const [dropdown, setDropDown] = useState(false);
   const [activeCategory, setActiveCategory] = useState(null); 
@@ -58,7 +57,7 @@ const Header = () => {
       <div className="w-[90%] h-[80%] flex justify-between items-center">
         <div className="flex items-center w-[45%] max-md:w-[30%] gap-10">
           <img
-            src={CampusTrade}
+            src="/assets/CAMPUSTRADE-02 1.png"
             alt="CampusTrade Logo"
             onClick={() => nav("/")}
             className="cursor-pointer max-md:w-full max-md:h-[70%] object-contain"
@@ -118,7 +117,7 @@ const Header = () => {
 
           <div className="block md:hidden relative">
             <img
-              src="/Burger.svg"
+              src="/assets/Burger.svg"
               alt="Menu"
               onClick={() => setDropDown(!dropdown)}
               className="cursor-pointer"

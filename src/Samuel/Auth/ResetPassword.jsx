@@ -16,7 +16,7 @@ const ResetPassword = () => {
   <div className="box">
     <div className="boxWrapper">
       <div className="logo">
-        <img src="/CAMPUSTRADE-02 1.png"/>
+        <img src="/assets/CAMPUSTRADE-02 1.png"/>
       </div>
 
       <div className="inputHolder">

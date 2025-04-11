@@ -337,7 +337,7 @@ const LandingPage = () => {
           <div className="w-full h-[40%]  flex flex-row max-md:flex-col max-md:h-[50%] justify-center items-center gap-24 max-md:gap-7">
             <div className="w-[170px] h-[80%] bg-[#f1eaf7] rounded-3xl  flex justify-center items-center">
               <div className="w-[80%] h-[80%] flex flex-col text-center justify-center items-center gap-3.5 max-md:gap-0 max-md:w-[100%] max-md:h-[100%]">
-                <img src="/mdi_account-cash.svg" alt="" />
+                <img src="/assets/mdi_account-cash.svg" alt="" />
                 <p class="text-black font-montserrat text-[14px] max-md:text-[14px] not-italic font-normal">
                   Quickly list your items from books to <br /> gadgets to
                   fashion <br />
@@ -350,7 +350,7 @@ const LandingPage = () => {
             </div>
             <div className="w-[170px] h-[80%] bg-[#f1eaf7] rounded-3xl flex justify-center items-center">
               <div className="w-[80%] h-[80%] flex flex-col text-center justify-center items-center gap-3.5">
-                <img src="/famicons_bulb-sharp.svg" alt="" />
+                <img src="/assets/famicons_bulb-sharp.svg" alt="" />
                 <p class="text-black font-montserrat text-[14px] not-italic font-normal leading-[150%]">
                   Items into cash while keeping your space clutter-free.
                 </p>
@@ -358,7 +358,7 @@ const LandingPage = () => {
             </div>
             <div className="w-[170px] h-[80%] bg-[#f1eaf7] rounded-3xl flex justify-center items-center">
               <div className="w-[80%] h-[80%] flex flex-col text-center justify-center items-center gap-3.5">
-                <img src="/Group.svg" alt="" />
+                <img src="/assets/Group.svg" alt="" />
                 <p class="text-black font-montserrat text-[14px] not-italic font-normal leading-[150%]">
                   Chat with sellers via WhatsApp, or phone without any hassle.
                 </p>
@@ -366,7 +366,7 @@ const LandingPage = () => {
             </div>
             <div className="w-[170px] h-[80%] bg-[#f1eaf7] rounded-3xl flex justify-center items-center">
               <div className="w-[80%] h-[80%] flex flex-col text-center justify-center items-center gap-3.5">
-                <img src="/mdi_deal.svg" alt="" />
+                <img src="/assets/mdi_deal.svg" alt="" />
                 <p class="text-black font-montserrat text-[14px] not-italic font-normal leading-[150%]">
                   Browse through listings to score amazing deals from fellow
                   students
@@ -439,7 +439,7 @@ const LandingPage = () => {
         <div className="w-[90%] h-[80%]  flex flex-row justify-center items-center">
           <div className="w-[40%] h-[100%]  flex justify-center items-center ">
             <img
-              src="/ourmission.jpg"
+              src="/assets/ourmission.jpg"
               alt=""
               className="w-[70%] h-[70%] rounded-2xl  border-3 border-white"
             />
@@ -479,7 +479,7 @@ const LandingPage = () => {
             <div className="flex flex-col min-w-[448px] max-w-[448px] h-[250px] bg-[#EEDCFF] rounded-2xl shadow-md p-4 hover:shadow-xl transition-shadow duration-300 ease-in-out">
               <div className="flex items-center gap-3 mb-4">
                 <img
-                  src="/Nnamdi.svg"
+                  src="/assets/Nnamdi.svg"
                   alt="user"
                   className="w-12 h-12 rounded-full object-cover"
                 />
@@ -500,7 +500,7 @@ const LandingPage = () => {
             <div className="flex flex-col min-w-[448px] max-w-[448px] h-[250px] bg-[#EEDCFF] rounded-2xl shadow-md p-4 hover:shadow-xl transition-shadow duration-300 ease-in-out">
               <div className="flex items-center gap-3 mb-4">
                 <img
-                  src="/Ellipse 25.svg"
+                  src="/assets/Ellipse 25.svg"
                   alt="user"
                   className="w-12 h-12 rounded-full object-cover"
                 />
@@ -521,7 +521,7 @@ const LandingPage = () => {
             <div className="flex flex-col p-9 min-w-[448px] max-w-[448px] h-[250px] bg-[#EEDCFF] rounded-[20px] shadow-md  hover:shadow-xl transition-shadow duration-300 ease-in-out">
               <div className="flex items-center gap-3 mb-4">
                 <img
-                  src="/Ikem.svg"
+                  src="/assets/Ikem.svg"
                   alt="user"
                   className="w-12 h-12 rounded-full object-cover"
                 />
