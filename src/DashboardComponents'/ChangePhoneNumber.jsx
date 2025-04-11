@@ -7,10 +7,10 @@ const ChangePhoneNumber = () => {
   <div className='changepasswordwrapper'>
     <div className='changepasswordinner'>
       <div className='changepasswordinnerlast'>
-        <h4>
+        <h4 className='number1'>
           Change Your Number
         </h4>
-        <h3>
+        <h3 className='number'>
           click on the book and input your new phone <br /> number
         </h3>
         <input type="number" 

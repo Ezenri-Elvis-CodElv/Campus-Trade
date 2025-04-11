@@ -37,14 +37,14 @@
     justify-content: center;
 }
 
-.changepasswordinnerlast > h4 {
-    font-size: 30px;
+.changepasswordinnerlast .number1 {
+    font-size: 28px;
     font-weight: 700;
     color: rgb(36,0,70);
 }
 
-.changepasswordinnerlast > h3 {
-    font-size: 18px;
+.changepasswordinnerlast .number {
+    font-size: 15px;
     color: rgb(36,0,70);
     padding: 3px;
     display: flex;
