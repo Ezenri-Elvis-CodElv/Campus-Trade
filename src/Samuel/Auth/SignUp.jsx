@@ -3,6 +3,7 @@ import "./auth.css"
 import { FiEye } from 'react-icons/fi'
 import { useNavigate } from 'react-router'
 import { FaRegEyeSlash } from 'react-icons/fa'
+import CAMPUSTRADE5 from "../../assets/CAMPUSTRADE-02 1.png"
 
 const SignUp = () => {
   const nav = useNavigate()
@@ -17,7 +18,7 @@ const SignUp = () => {
   <div className="box">
     <div className="boxWrapper">
       <div className="logo">
-        <img src="/assets/CAMPUSTRADE-02 1.png" onClick={()=> nav('/')}/>
+        <img src={CAMPUSTRADE5} onClick={()=> nav('/')}/>
       </div>
 
       <div className="inputHolder">

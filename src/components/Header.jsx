@@ -2,6 +2,8 @@ import React, { useEffect, useState, useRef } from "react";
 import { CiSearch } from "react-icons/ci";
 import { IoIosArrowDown } from "react-icons/io";
 import { useNavigate } from "react-router";
+import CAMPUSTRADE from "../assets/CAMPUSTRADE-02 1.png"
+import Burger from "../assets/Burger.svg"
 const Header = () => {
   const [dropdown, setDropDown] = useState(false);
   const [activeCategory, setActiveCategory] = useState(null); 
@@ -57,7 +59,7 @@ const Header = () => {
       <div className="w-[90%] h-[80%] flex justify-between items-center">
         <div className="flex items-center w-[45%] max-md:w-[30%] gap-10">
           <img
-            src="/assets/CAMPUSTRADE-02 1.png"
+            src={CAMPUSTRADE}
             alt="CampusTrade Logo"
             onClick={() => nav("/")}
             className="cursor-pointer max-md:w-full max-md:h-[70%] object-contain"
@@ -117,7 +119,7 @@ const Header = () => {
 
           <div className="block md:hidden relative">
             <img
-              src="/assets/Burger.svg"
+              src={Burger}
               alt="Menu"
               onClick={() => setDropDown(!dropdown)}
               className="cursor-pointer"
