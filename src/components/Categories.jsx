@@ -136,8 +136,8 @@ const Categories = () => {
         </div>
         <div className='category-button-holder'>
           <div className='category-toggle'>
-            <span className='used'>Used</span>
-            <span className='New'>New</span>
+            <span className='category-used'>Used</span>
+            <span className='New-toggle'>New</span>
           </div>
         </div>
       </div>
