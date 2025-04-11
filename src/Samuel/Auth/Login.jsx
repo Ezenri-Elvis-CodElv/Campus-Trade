@@ -20,7 +20,7 @@ const Login = () => {
   <div className="box">
     <div className="boxWrapper">
       <div className="logo">
-        <img src="src/assets/Public/CAMPUSTRADE-02 1.png"/>
+        <img src="/CAMPUSTRADE-02 1.png"/>
       </div>
 
       <div className="inputHolder">

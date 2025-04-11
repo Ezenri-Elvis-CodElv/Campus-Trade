@@ -17,7 +17,7 @@ const SignUp = () => {
   <div className="box">
     <div className="boxWrapper">
       <div className="logo">
-        <img src="src/assets/Public/CAMPUSTRADE-02 1.png" onClick={()=> nav('/')}/>
+        <img src="/CAMPUSTRADE-02 1.png" onClick={()=> nav('/')}/>
       </div>
 
       <div className="inputHolder">
