@@ -6,7 +6,7 @@ import Card from "../components/Card";
 const Categories = () => {
   const myArr = [
     {
-      image: "/public/download.jpg",
+      image: "/download.jpg",
       name: "Jimmy choo",
       price: "23,000",
       description: "Offers elegant and fashionable high heels",
@@ -14,7 +14,7 @@ const Categories = () => {
       time: "28 mins ago",
     },
     {
-      image: "/public/download.jpg",
+      image: "/download.jpg",
       name: "Books",
       price: "20,000",
       description: "My description",
@@ -22,7 +22,7 @@ const Categories = () => {
       time: "28 mins ago",
     },
     {
-      image: "/public/download.jpg",
+      image: "/download.jpg",
       name: "Home Appliances",
       price: "30,000",
       description: "My description",
