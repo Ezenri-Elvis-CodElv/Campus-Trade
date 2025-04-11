@@ -1,10 +1,6 @@
 @import "tailwindcss";
 
-* {
-    outline: none;
-    user-select: none;
-    font-family: Montserrat;
-  }
+
 
   ::-webkit-scrollbar{
     width: 0px;

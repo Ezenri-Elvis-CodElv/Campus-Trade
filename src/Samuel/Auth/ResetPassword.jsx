@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import "./auth.css"
 import { FiEye } from 'react-icons/fi'
 import { FaRegEyeSlash } from 'react-icons/fa'
+import CAMPUSTRADE4 from "../../assets/CAMPUSTRADE-02 1.png"
 
 
 const ResetPassword = () => {
@@ -16,7 +17,7 @@ const ResetPassword = () => {
   <div className="box">
     <div className="boxWrapper">
       <div className="logo">
-        <img src="/CAMPUSTRADE-02 1.png"/>
+        <img src={CAMPUSTRADE4}/>
       </div>
 
       <div className="inputHolder">

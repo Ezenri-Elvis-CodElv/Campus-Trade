@@ -1,6 +1,7 @@
 import React from "react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { useNavigate } from "react-router";
+import CAMPUSTRADE1 from "../assets/CAMPUSTRADE-02 1.png"
 
 const Footer = () => {
   const nav = useNavigate();
@@ -73,7 +74,7 @@ const Footer = () => {
           <div className="w-[100%] h-[50%] flex flex-row ">
             <div className="w-[50%] h-[100%] ">
               <img
-                src="src/assets/Public/CAMPUSTRADE-02 1.png"
+                src={CAMPUSTRADE1}
                 alt=""
                 onClick={() => nav("/")}
               />

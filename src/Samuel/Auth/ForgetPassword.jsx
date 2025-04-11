@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import "./auth.css"
 import { useNavigate } from 'react-router'
+import CAMPUSTRADE2 from "../../assets/CAMPUSTRADE-02 1.png"
 
 const ForgetPassword = () => {
    const [auth, setAuth]= useState({
@@ -12,7 +13,7 @@ const ForgetPassword = () => {
   <div className="box">
     <div className="boxWrapper">
       <div className="logo">
-        <img src="/CAMPUSTRADE-02 1.png"/>
+        <img src={CAMPUSTRADE2}/>
       </div>
 
       <div className="inputHolder">
