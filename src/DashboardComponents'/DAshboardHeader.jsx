@@ -9,7 +9,7 @@ const DashboardHeader = () => {
     <header className="dashboard-header">
       <div className="dashboard-header-content">
         <div className="dashboard-header-content-leftside">
-        <img src="/CAMPUSTRADE-02 1.png" alt="" onClick={() => nav("/")} className="ImageLogoDash" />
+        <img src="/images/CAMPUSTRADE-02 1.png" alt="" onClick={() => nav("/")} className="ImageLogoDash" />
         </div>
         <div className="dashboard-header-content-rightside">
             <div className="dasboard-content-home" onClick={() => nav("/")}>

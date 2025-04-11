@@ -2,7 +2,6 @@ import React, { useEffect, useState, useRef } from "react";
 import { CiSearch } from "react-icons/ci";
 import { IoIosArrowDown } from "react-icons/io";
 import { useNavigate } from "react-router";
-import CAMPUSTRADE from "../assets/CAMPUSTRADE-02 1.png"
 import Burger from "../assets/Burger.svg"
 const Header = () => {
   const [dropdown, setDropDown] = useState(false);
@@ -59,7 +58,7 @@ const Header = () => {
       <div className="w-[90%] h-[80%] flex justify-between items-center">
         <div className="flex items-center w-[45%] max-md:w-[30%] gap-10">
           <img
-            src={CAMPUSTRADE}
+            src="/images/CAMPUSTRADE-02 1.png"
             alt="CampusTrade Logo"
             onClick={() => nav("/")}
             className="cursor-pointer max-md:w-full max-md:h-[70%] object-contain"
@@ -80,11 +79,11 @@ const Header = () => {
             {isDropdownVisible && (
               <div
                 ref={dropdownRef}
-                className="absolute top-[80px] left-[20%] flex justify-center  items-center h-[130px] rounded-2xl mt-2 w-[250px] bg-[rgb(3,4,94)] text-white shadow-md z-50"
+                className="absolute top-[80px] left-[20%] flex justify-center  items-center h-[130px] rounded-2xl mt-2 w-[250px] bg-[rgb(36,0,69)] text-white shadow-md z-50"
               >
                 <ul className="rounded-2xl w-full h-full flex flex-col   items-center">
                   {["Lagos State University", "University Of Lagos State", "Yaba College Of Technology"].map((name) => (
-                    <li key={name} className="w-[95%] h-[90%] hover:bg-gray-500 cursor-pointer">
+                    <li key={name} className="w-[90%] h-[90%] hover:bg-gray-500 cursor-pointer">
                       {name}
                     </li>
                   ))}

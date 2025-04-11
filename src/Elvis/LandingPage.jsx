@@ -406,18 +406,18 @@ const LandingPage = () => {
           <div className="relative w-[40%] h-[100%]">
             <div
               className="absolute top-[5%] max-md:top-0 left-[38%] -translate-x-1/2 w-[226.59px] max-md:w-[150px] h-[151.134px] aspect-[226.59/151.13] flex-shrink-0 rounded-[14.333px] border-[5.017px] border-white bg-cover bg-center bg-no-repeat z-10"
-              style={{ backgroundImage: "url('src/assets/Public/Lp2.jpg')" }}
+              style={{ backgroundImage: "url('src/assets/Lp2.jpg')" }}
             ></div>
 
             <div
               className="absolute top-[100px] left-[68%] -translate-x-1/2 w-[180.59px] max-md:w-[130px] max-md:h-[130px] h-[180.134px] aspect-[226.59/151.13] flex-shrink-0 rounded-[14.333px]  bg-cover bg-center bg-no-repeat "
-              style={{ backgroundImage: "url('src/assets/Public/Lp1.jpg')" }}
+              style={{ backgroundImage: "url('src/assets/Lp1.jpg')" }}
             ></div>
 
             <div
               className="absolute bottom-0 left-[38%] -translate-x-1/2 w-[230.59px] max-md:w-[150px] h-[151.134px] max-md:h-[140px] aspect-[226.59/151.13] flex-shrink-0 rounded-[14.333px]  bg-cover bg-center bg-no-repeat z-10"
               style={{
-                backgroundImage: "url('src/assets/Public/AboutUs13.png')",
+                backgroundImage: "url('src/assets/AboutUs13.png')",
               }}
             ></div>
           </div>
