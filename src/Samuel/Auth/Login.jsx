@@ -4,7 +4,6 @@ import { FiEye } from 'react-icons/fi'
 import { FcGoogle } from 'react-icons/fc'
 import { useNavigate } from 'react-router'
 import { FaRegEyeSlash } from 'react-icons/fa'
-import CAMPUSTRADE3 from "../../assets/CAMPUSTRADE-02 1.png"
 
 
 
@@ -21,7 +20,7 @@ const Login = () => {
   <div className="box">
     <div className="boxWrapper">
       <div className="logo">
-        <img src={CAMPUSTRADE3}/>
+        <img src="public/images/CAMPUSTRADE-02 1.png" alt="" />
       </div>
 
       <div className="inputHolder">
