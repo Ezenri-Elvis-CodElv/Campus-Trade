@@ -1,0 +1,203 @@
+.ads-post-body {
+    font-family: "Montserrat", sans-serif;
+    width: 70%;
+    height: 100%;
+    background-color: #ffff;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .ads-user-name {
+    color: #240046;
+    font-weight: bold;
+    font-size: 15px;
+  }
+  .ads-user-message {
+    color: #24004695;
+    font-weight: small;
+    font-size: 5px;
+  }
+  .ads-post-name-holder {
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .ads-payment-holder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .ads-text {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ads-promote {
+    color: #240046;
+    font-weight: bold;
+    font-size: 15px;
+  }
+  .ads-product-selection {
+    height: 15%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+  .ads-selection-holder {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .ads-payment {
+    height: 30%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding-top: 10px;
+    gap: 10px;
+  }
+  .ads-payment-selection {
+    height: 70%;
+    width: 50%;
+    border: 1px solid #240046;
+    border-radius: 5px;
+    padding:8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .ads-selection-text {
+    height: 20%;
+    width: 100%;
+    font-size: 11px;
+    font-weight: bold;
+  }
+  .ads-price-description {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    
+  }
+  .ads-seven-days {
+    height: 80%;
+    width: 50%;
+    border-radius: 50px;
+    background-color: #240046;
+    color: #ffff;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: small;
+  }
+  .ads-thirty-days {
+    height: 80%;
+    width: 50%;
+    border-radius: 50px;
+    color: #240046;
+    background-color: #ffff;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #240046;
+  }
+  .ads-price{
+      height: 100%;
+      width: 30%;
+      font-size: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 20px;
+      font-size: 11px;
+      font-weight: bold;
+  }
+  .ads-promo-days{
+      height: 80%;
+      width: 50%;
+      border-radius: 50px;
+      background-color: #240046;
+      color: #ffff;
+      font-size: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: small;
+  }
+  .ads-promo-price{
+      height: 100%;
+      width: 40%;
+      font-size: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 20px;
+      font-size: 11px;
+      font-weight: bold;  
+  }
+  .ads-promo-thirty-days{
+      width: 50%;
+      border-radius: 50px;
+      color: #240046;
+      background-color: #ffff;
+      font-size: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  
+  .ads-img-upload {
+    height: 25%;
+    width: 100%;
+    border: 1px dashed #240046;
+  }
+  
+  .ads-payment-btn {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: bold;
+  }
+  .ads-btn{
+      width: 100%;
+      height: 50%;
+      background-color: #240046;
+      color: #ffff;
+  }
+  .ads-product-name {
+    height: 20%;
+    width: 50%;
+    & p {
+      color: #240046;
+      font-weight: bold;
+      font-size: 10px;
+    }
+  }
+  .ads-product-eg {
+    height: 80%;
+    width: 100%;
+    border: 1px solid #240046;
+    & input {
+      width: 100%;
+      height: 100%;
+      font-size: 10px;
+      padding: 10px;
+    }
+  }

@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import "./auth.css"
+import { useNavigate } from 'react-router'
 
 const ForgetPassword = () => {
    const [auth, setAuth]= useState({
       email:"",
     })
+    const nav = useNavigate()
   return (
     <div className="Overall">
   <div className="box">
@@ -23,7 +25,8 @@ const ForgetPassword = () => {
           onChange={(e)=>setAuth({...auth, email:e.target.value})} />
 
           <button className="submitBtn">Request password reset</button>
-        
+          <p style={{display:"flex", justifyContent:'flex-start'}}>Already Have An Account?
+               <span style={{color:"purple"}} onClick={()=> nav("/login")}>Login</span></p>
           <p className='trademark'>@campustrade</p>
         </div>
       </div>

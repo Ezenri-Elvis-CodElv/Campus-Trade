@@ -1,10 +1,13 @@
 import React from 'react'
 import "./card.css"
+import { useNavigate } from 'react-router'
 
-const Card = ({item}) => {
+const Card = ({item, index}) => {
+  const nav = useNavigate()
+  console.log(item)
   return (
         <> 
-    <div className="card">
+    <div className="card" onClick={() => nav(`/productdetailpage/${index}`)}>
       <div className="card-img-holder">
         <img src={item.image} alt="" />
       </div>
