@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import "./auth.css"
-import { FaLongArrowAltLeft } from 'react-icons/fa'
 import { useNavigate } from 'react-router'
 
 const ForgetPassword = () => {
@@ -12,7 +11,6 @@ const ForgetPassword = () => {
     <div className="Overall">
   <div className="box">
     <div className="boxWrapper">
-    <FaLongArrowAltLeft size={15} />
       <div className="logo">
         <img src="src/assets/Public/CAMPUSTRADE-02 1.png"/>
       </div>

@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+section{
+    margin: 50px 70px;
+    display: flex;
+    /* align-items: flex-start; */
+}
+
+.profiledetails{
+    gap: 70px;
+    width: 88%;
+    align-items: flex-start;
+}
+
+.profilePixAndDetails {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    flex-direction: column;
+}
+
+.profilePicAndDetails > div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+img.profilePix {
+    width: 426px;
+    height: 426px;
+    border-radius: 50%;
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    gap: 20px;
+}
+
+.profileDetails{
+   flex-direction: column;
+   gap: 20px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+}
+
+.profileDetails > h3 {
+    font-size: 23px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px; 
+    color: #000000;
+    text-decoration: underline;
+    font-family: "Inter", sans-serif;
+
+}
+
+.profileDetail{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 0.47px solid #240046;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+
+.profileDetail > h2 {
+    font-size: 20px;
+    font-weight: 300;
+    color: #240046;
+    text-decoration: underline;
+    font-family: "Inter", sans-serif;
+}
+
+.reportdetails{
+    display: inline-flex;
+    gap: 30px;
+    padding: 10px;
+}
+
+.reportdetails > h2 {
+    font-size: 25px;
+    font-weight: 400;
+    color: #00B4D8;
+    text-decoration: underline;
+    font-family: "Inter", sans-serif;
+}
+
+.reportdetails .blockUser{
+    color: #D80000;
+    text-decoration: underline;
+}
+
+.goBck{
+    text-decoration: underline;
+    color: #050505;
+    font-size: 20px;
+    font-family: "Inter", sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profileandAds{
+    padding: 30px;
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 10px;
+    flex-direction: column;
+}
+
+.phonedetail{
+    font-size: 23px;
+    font-family: "Inter", sans-serif;
+    color: #240046;
+    gap: 25px;
+    display: flex;
+    flex-direction: column; 
+    padding: 10px;
+}
+
+.phonedetail > h1{
+    font-size: 20px;
+    color: black;
+    font-family: "Inter", sans-serif;
+}
+
+.filterpath{
+    display: flex;
+    gap: 13px;
+    flex-direction: column;
+    width: 500px;
+    font-family: "Inter", sans-serif;
+
+
+    &  h1 {
+        color:#909090;
+        font-size: 20px;
+        border: 0.47px solid #240046;
+        font-family: "Inter", sans-serif;
+        padding: 20px;
+        border-radius: 16px 14px 16px 14px;
+        display: flex;
+        gap: 5px;
+        align-items: center;
+    }
+}
+
+.profileCard{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-direction: row;
+    width: 100%;
+
+}
+
+
+@media screen and (max-width: 768px) {
+    section{
+        margin: 20px 10px;
+    }
+    .profiledetails{
+        padding: 20px;
+    }
+    .profilePixAndDetails {
+        flex-direction: column;
+    }
+    img.profilePix {
+        width: 192px;
+        height: 178px;
+    }
+    .details{
+        width: 100%;
+    }
+    .profileDetails{
+        width: 100%;
+    }
+    .reportdetails{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .phonedetail{
+        font-size: 18px;
+        gap: 15px;
+    }
+}           
+

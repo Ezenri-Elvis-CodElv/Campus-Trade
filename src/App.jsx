@@ -14,86 +14,78 @@ import ChangePhoneNumber from "./DashboardComponents'/ChangePhoneNumber";
 import ChangePassword from "./DashboardComponents'/ChangePassword";
 import GetVerified from "./DashboardComponents'/GetVerified";
 import RecentPost from "./DashboardComponents'/RecentPost";
+// import ProductDetailPage from "./Chidera/ProductDetailPage";
 import PendingPost from "./DashboardComponents'/PendingPost";
 import Posts from "./DashboardComponents'/Posts";
 import Ads from "./DashboardComponents'/Ads";
-import Logout from "./components/Logout";
 import AccountInformation from "./DashboardComponents'/AccountInformation";
-import ProductDetailPage from "./Chidera/ProductDetailPage";
 
 const router = createBrowserRouter([
-  
-    {
-      path: "/",
-      element: <HomeRoutes />,
-      children: [
-        {
-          path: "/",
-          element: <LandingPage />,
-        },
-        {
-          path: "/categories",
-          element: <Categories />,
-        },
-        {
-          path: "/explorepage",
-          element: <ExplorePage />,
-        },
-        {
-          path: "/productdetailpage/:id",
-          element: <ProductDetailPage />,
-        },
-       
-      ],
-    },
-    {
-      path: "/dashboard",
-      element: <Dashboard />,
-      children: [
-        {
-          path: "/dashboard/accountinformation",
-          element: <AccountInformation />
-        },
-        {
-          path: "/dashboard/changephonenumber",
-          element: <ChangePhoneNumber />
-        },
-        {
-          path: "/dashboard/changepassword",
-          element: <ChangePassword />
-        },
-        {
-          path: "/dashboard/getverified",
-          element: <GetVerified />
-        },
-        {
-          path: "/dashboard/recentpost",
-          element: <RecentPost />
-        },
-        {
-          path: "/dashboard/pendingpost",
-          element: <PendingPost />
-        },
-        {
-          path: "/dashboard/createpost",
-          element: <CreatePost />
-        },
-        {
-          path: "/dashboard/posts",
-          element: <Posts />
-        },
-        {
-          path: "/dashboard/ads",
-          element: <Ads />
-        },
-        {
-          path: "/dashboard/logout",
-          element: <Logout />
-        }
-      ]
-    },
-      
-    
+  {
+    path: "/",
+    element: <HomeRoutes />,
+    children: [
+      {
+        path: "/",
+        element: <LandingPage />,
+      },
+      {
+        path: "/categories",
+        element: <Categories />,
+      },
+      {
+        path: "/explorepage",
+        element: <ExplorePage />,
+      },
+      // {
+      //   path: "/productdetailpage/:_id",
+      //   element: <ProductDetailPage />,
+      // },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: <Dashboard />,
+    children: [
+      {
+        path: "/dashboard/accountinformation",
+        element: <AccountInformation />,
+      },
+      {
+        path: "/dashboard/changephonenumber",
+        element: <ChangePhoneNumber />,
+      },
+      {
+        path: "/dashboard/changepassword",
+        element: <ChangePassword />,
+      },
+      {
+        path: "/dashboard/getverified",
+        element: <GetVerified />,
+      },
+      {
+        path: "/dashboard/recentpost",
+        element: <RecentPost />,
+      },
+      {
+        path: "/dashboard/pendingpost",
+        element: <PendingPost />,
+      },
+      {
+        path: "/dashboard/createpost",
+        element: <CreatePost />,
+      },
+      {
+        path: "/dashboard/posts",
+        element: <Posts />,
+      },
+      {
+        path: "/dashboard/ads",
+        element: <Ads />,
+      },
+    ],
+  },
+
   {
     path: "/signup",
     element: <SignUp />,
@@ -107,15 +99,13 @@ const router = createBrowserRouter([
     element: <ResetPassword />,
   },
   {
-    path: "/forgetpass",
+    path: "/forgetpassword",
     element: <ForgetPassword />,
   },
   {
     path: "/dashboard",
-    element: <PrivateRoute />, 
-    children: [
-      
-    ],
+    element: <PrivateRoute />,
+    children: [],
   },
 ]);
 

@@ -47,7 +47,7 @@ const Login = () => {
           <button className="submitBtn" onClick={()=>nav("/dashboard")}>Login</button>
           <div className="footer">
             <p>Already Have An Account? <span style={{color:"purple"}} onClick={()=> nav("/signup")}>Sign Up</span></p>
-            <p style={{color:"purple", display:"flex"}} onClick={()=>nav("/forgetpass")}>Forgot Password?</p>
+            <p style={{color:"purple", display:"flex"}} onClick={()=>nav("/forgetpassword")}>Forgot Password?</p>
            
           </div>
           <button className="googleLogin">
