@@ -3,7 +3,7 @@ import LandingPage from "./Elvis/LandingPage";
 import HomeRoutes from "./routes/HomeRoute";
 import SignUp from "./Samuel/Auth/SignUp";
 import Login from "./Samuel/Auth/Login";
-import ResetPassword from "./samuel/Auth/ResetPassword";
+import ResetPassword from "./Samuel/Auth/ResetPassword";
 import PrivateRoute from "./routes/PrivateRoute";
 import ForgetPassword from "./Samuel/Auth/ForgetPassword";
 import Categories from "./components/Categories";
