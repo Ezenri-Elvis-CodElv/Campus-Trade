@@ -21,7 +21,7 @@ const DashboardHeader = () => {
                 <p className="content-p-tag" >Notification</p>
             </div>
             <div className="dasboard-content-img">
-                <img src="/dasboadprofile.jpg" alt=""  className="dash-profile-picture"/>
+                <img src="/images/dasboadprofile.jpg" alt=""  className="dash-profile-picture"/>
             </div>
         </div>
       </div>

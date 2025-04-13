@@ -1,0 +1,115 @@
+.adminsidebar {
+    width: 250px;
+    background-color: rgb(36, 0, 69);
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border-top: 2px solid white;
+  }
+  
+  .admin-pages-sidebar {
+    width: 80%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .admin-sidebar-profileIcon{
+    width: 100%;
+    color: white;
+    height: 2px;
+    background-color: white;
+    border-bottom: 1px solid white;
+  }
+  
+  .admin-myprofiletext {
+    font-size: 24px;
+    font-family: Montserrat;
+    font-size: 16px;
+    color: white;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: left;
+    width: 100%;
+    padding: 10px;
+    padding-left: 40px;
+  }
+  .admin-link {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-left: 4px solid transparent;
+    font-size: 14px;
+    font-style: normal;
+    font-family: Montserrat;
+    font-weight: 200;
+    line-height: normal;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .admin-link:hover {
+    background-color: rgb(167, 158, 158);
+  }
+  
+  .admin-link.active {
+    background-color: orange;
+    border-left: 4px solid rgb(36,0,70);
+  }
+  
+  .logout-button-setting{
+    height: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    border-bottom: 1px solid grey;
+  }
+  .admin-logout-button{
+    height: 30%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 10px;
+  }
+  
+  .admin-dash-setting{
+    height: 40%;
+    width: 800%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    color:  white;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  
+  
+  .admin-dash-setting.active {
+  color: white;
+  background-color: orange;
+    border-left: 4px solid rgb(36,0,70)purple;
+    border-top: 4px solid rgb(36,0,70);
+    border-radius: 10px 0px 10px 0px;
+  }
+  .admin-dash-logout{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    color: red;
+    font-size: 18px;
+    font-weight: 400;
+  }

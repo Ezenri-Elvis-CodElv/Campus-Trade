@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { CiSearch } from "react-icons/ci";
 import { IoIosArrowDown } from "react-icons/io";
 import { useNavigate } from "react-router";
-import Burger from "../assets/Burger.svg"
+import Burger from "../../public/images/Burger.svg"
 const Header = () => {
   const [dropdown, setDropDown] = useState(false);
   const [activeCategory, setActiveCategory] = useState(null); 

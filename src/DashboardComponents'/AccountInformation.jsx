@@ -2,6 +2,7 @@ import React from 'react';
 import { IoKeyOutline } from 'react-icons/io5';
 import { PiNotePencilDuotone } from 'react-icons/pi';
 import "./accountinformation.css"
+import { NavLink } from 'react-router';
 
 const AccountInformation = () => {
   return (
@@ -48,14 +49,14 @@ const AccountInformation = () => {
         </div>
 
         <div className="account-buttons">
-          <button className="reset-password-button">
+          <NavLink to="/dashboard/changephonenumber"ton className="reset-password-button">
             <span className="reset-icon"><IoKeyOutline /></span>
             Reset password
-          </button>
-          <button className="change-phone-button">
+          </NavLink>
+          <NavLink to="/dashboard/changepassword" className="change-phone-button">
             <span className="change-icon"><PiNotePencilDuotone /></span>
             Change phone <br /> number
-          </button>
+          </NavLink>
         </div>
       </div>
     </div>
