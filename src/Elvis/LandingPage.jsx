@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import heroBg from "../assets/HomeHeroPageBg.jpg";
+import heroBg from "../../public/images/HomeHeroPageBg.jpg";
 import { MdKeyboardArrowRight, MdOutlineBlender } from "react-icons/md";
 import "animate.css";
 import { useNavigate } from "react-router";
@@ -8,14 +8,17 @@ import { GiClothes, GiConverseShoe } from "react-icons/gi";
 import { SiBookstack } from "react-icons/si";
 import { IoIosArrowDown } from "react-icons/io";
 import Card from "../components/Card";
-import mdiacct from "../assets/mdi_account-cash.svg"
-import famicons from "../assets/famicons_bulb-sharp.svg"
-import Groupsvg from "../assets/Group.svg"
-import mdideal from "../assets/mdi_deal.svg"
-import ourmission from "../assets/ourmission.jpg"
-import Nnamdisvg from "../assets/Nnamdi.svg"
-import Ellipse from "../assets/Ellipse 25.svg"
-import Ikem from "../assets/Ikem.svg"
+import mdiacct from "../../public/images/mdi_account-cash.svg"
+import famicons from "../../public/images/famicons_bulb-sharp.svg"
+import Groupsvg from "../../public/images/Group.svg"
+import mdideal from "../../public/images/mdi_deal.svg"
+import ourmission from "../../public/images/ourmission.jpg"
+import Nnamdisvg from "../../public/images/Nnamdi.svg"
+import Ellipse from "../../public/images/Ellipse 25.svg"
+import Lp2 from "../../public/images/Lp2.jpg"
+import Lp1 from "../../public/images/Lp1.jpg"
+import AboutUs13 from "../../public/images/AboutUs13.png"
+import Ikem from "../../public/images/ikem.svg"
 
 const LandingPage = () => {
   const nav = useNavigate();
@@ -110,7 +113,7 @@ const LandingPage = () => {
           }}
         >
           <div className="w-[60%] h-[100%] flex justify-center items-center max-md:">
-            <div className="w-[80%] h-[90%]  flex flex-col justify-center gap-4 animate__animated animate__fadeInLeft max-md:">
+            <div className="w-[80%] h-[90%]  flex flex-col justify-center gap-4 animate__animated animate__fadeInLeft  max-md:">
               <h1 className="text-[55px] font-bold font-[Inter] text-[#050505] text-left leading-tight max-md:text-[30px] ">
                 Post your items,
                 <br /> <span className="text-[#FF6D00]">connect</span> with{" "}
@@ -132,7 +135,7 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      <div className="w-full h-[10vh] bg-[rgb(255,111,0)] flex justify-center items-center">
+      <div className="w-full h-[8vh] bg-[rgb(255,111,0)] flex justify-center items-center">
         <marquee
           behavior="scroll"
           direction="left"
@@ -406,18 +409,18 @@ const LandingPage = () => {
           <div className="relative w-[40%] h-[100%]">
             <div
               className="absolute top-[5%] max-md:top-0 left-[38%] -translate-x-1/2 w-[226.59px] max-md:w-[150px] h-[151.134px] aspect-[226.59/151.13] flex-shrink-0 rounded-[14.333px] border-[5.017px] border-white bg-cover bg-center bg-no-repeat z-10"
-              style={{ backgroundImage: "url('src/assets/Lp2.jpg')" }}
+              style={{ backgroundImage: `url(${Lp2})` }}
             ></div>
 
             <div
               className="absolute top-[100px] left-[68%] -translate-x-1/2 w-[180.59px] max-md:w-[130px] max-md:h-[130px] h-[180.134px] aspect-[226.59/151.13] flex-shrink-0 rounded-[14.333px]  bg-cover bg-center bg-no-repeat "
-              style={{ backgroundImage: "url('src/assets/Lp1.jpg')" }}
+              style={{ backgroundImage: `url(${Lp1})` }}
             ></div>
 
             <div
               className="absolute bottom-0 left-[38%] -translate-x-1/2 w-[230.59px] max-md:w-[150px] h-[151.134px] max-md:h-[140px] aspect-[226.59/151.13] flex-shrink-0 rounded-[14.333px]  bg-cover bg-center bg-no-repeat z-10"
               style={{
-                backgroundImage: "url('src/assets/AboutUs13.png')",
+                backgroundImage: `url(${AboutUs13})`,
               }}
             ></div>
           </div>

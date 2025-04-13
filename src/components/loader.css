@@ -1,0 +1,42 @@
+.loaderOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .loaderContainer {
+    position: relative;
+    width: 150px;
+    height: 150px;
+  }
+  
+  .loaderLogo {
+    position: absolute;
+    width: 90px;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .spinningCircle {
+    width: 100%;
+    height: 100%;
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid rgb(255, 102, 0);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  

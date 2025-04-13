@@ -4,14 +4,12 @@
   padding-top: 10px;
   display: flex;
   flex-direction: column;
-  /* border-right: 2px solid grey; */
   align-items: center;
-  /* border-top: 2px solid grey; */
   gap: 10px;
 }
 
 .pages-sidebar {
-  width: 100%;
+  width: 80%;
   display: flex;
   flex-direction: column;
 }
@@ -20,7 +18,6 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  /* gap: 10px; */
   width: 100%;
   padding: 10px;
 }
@@ -33,14 +30,14 @@
   font-family: Montserrat;
   font-size: 16px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   line-height: normal;
   text-align: left;
   width: 100%;
   padding: 10px;
 }
 .link {
-  color: purple;
+  color: rgb(36,0,70);
   padding: 10px;
   text-decoration: none;
   border-left: 4px solid transparent;
@@ -62,17 +59,47 @@
 
 .link.active {
   background-color: orange;
-  border-left: 4px solid purple;
+  border-left: 4px solid rgb(36,0,70);
 }
 
-.logout-button{
-  height: 15%;
+.logout-button-setting{
+  height: 20%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  border-bottom: 1px solid grey;
+}
+.logout-button{
+  height: 12%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.dash-setting{
+  height: 40%;
+  width: 800%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  color:  rgb(36,0,70);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+
+
+.dash-setting.active {
+color: black;
+background-color: orange;
+  border-left: 4px solid rgb(36,0,70)purple;
+  border-top: 4px solid rgb(36,0,70);
+  border-radius: 10px 0px 10px 0px;
+}
 .dash-logout{
   display: flex;
   flex-direction: row;
@@ -81,5 +108,5 @@
   gap: 8px;
   color: red;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 400;
 }
