@@ -2,23 +2,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 
-button {
-    background-color: transparent;
-    border: none;
-}
+
 a {
     text-decoration: none;
     color: inherit;
 }
 
-section{
+.section{
     margin: 40px 70px;
     display: flex;
     flex-direction: column;
     gap: 50px;
 }
 
-section > div:first-child {
+.section > .body {
     display: flex;
     justify-content: space-between;
 }
@@ -58,6 +55,9 @@ section > div:first-child {
     font-size: 23px;
     font-weight: 700;
     color: #FF6D00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: "Inter", sans-serif;
 }
 
@@ -70,7 +70,7 @@ section > div:first-child {
     gap: 10px;
 }
 
-.detailProductLocation > h3 {
+.detailProductLocation .locate {
     font-size: 24px;
     font-family: "Inter", sans-serif;
 }
@@ -94,16 +94,16 @@ section > div:first-child {
     font-family: "Inter", sans-serif;
 }
 
-.condition > div {
+.condition .body1 {
     background-color: goldenrod;
     width: 230px;
-    padding: 10px;
+    padding: 9px;
     border-radius: 50px;
     display: flex;
     justify-content: space-between;
 }
 
-.condition button {
+.condition .btwn{
     font-size: 17px;
     padding: 10px 28px;  
     color: #240046;
@@ -117,6 +117,8 @@ section > div:first-child {
 .condition .active {
     background-color: #240046;
     color: rgb(221, 220, 220);
+    border-radius: 30px;
+    width: 90px;
 }
 
 .description {
@@ -132,15 +134,15 @@ section > div:first-child {
     font-family: "Inter", sans-serif;
 }
 
-.description > div {
+.description .projectinfo4 {
     border: 0.47px solid gray;
     height: 120px;
     width: 90%;
     padding: 16px;
     border-radius: 13px;
-    font-size: 14px;
+    font-size: 18px;
     font-family: "Inter", sans-serif;
-    font-weight: 100;
+    font-weight: 500;
 }
 
 .profileAndPreviousPageButton {
@@ -179,7 +181,7 @@ section > div:first-child {
     gap: 18px;
 }
 
-.profilePicAndDetails > div {
+.profilePicAndDetails .body3 {
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -198,7 +200,7 @@ img.profilePic {
     align-items: center;
 }
 
-.profileName > h2 {
+.profileName .joansamuelh2 {
     font-size: 30px;
     font-family: "Inter", sans-serif;
     color: #240046;
@@ -210,13 +212,13 @@ img.profilePic {
     gap: 7px;
 }
 
-.profileDateAndLink > h4 {
+.profileDateAndLink .membersincejanuary {
     color: black;
     font-size: 17px;
     font-family: "Inter", sans-serif;
 }
 
-.profileDateAndLink > button {
+.profileDateAndLink .obvlickbtn {
     width: fit-content;
     color: rgb(89,63,115);
     font-family: "Inter", sans-serif;
@@ -263,7 +265,7 @@ img.profilePic {
 }
 
 
-.ads > h4 {
+.ads .adsnumber {
     font-size: 14px;
     display: flex;
     flex-direction: flex-start;
@@ -277,10 +279,12 @@ img.profilePic {
 .previousPage {
     display: flex;
     align-items: flex-start;
+    font-family: "Inter", sans-serif;
     gap: 6px;
     color: #240046;
     font-size: 20px;
     cursor: pointer;
+    align-items: center;
 }
 
 .deviceHeader {
