@@ -20,7 +20,7 @@ const Login = () => {
   <div className="box">
     <div className="boxWrapper">
       <div className="logo">
-        <img src="src/assets/Public/CAMPUSTRADE-02 1.png"/>
+        <img src="public/images/CAMPUSTRADE-02 1.png" alt="" />
       </div>
 
       <div className="inputHolder">
@@ -44,10 +44,10 @@ const Login = () => {
                         </span>
           </div>
 
-          <button className="submitBtn">Login</button>
+          <button className="submitBtn" onClick={()=>nav("/dashboard")}>Login</button>
           <div className="footer">
             <p>Already Have An Account? <span style={{color:"purple"}} onClick={()=> nav("/signup")}>Sign Up</span></p>
-            <p style={{color:"purple", display:"flex"}} onClick={()=>nav("/forgetpass")}>Forgot Password?</p>
+            <p style={{color:"purple", display:"flex"}} onClick={()=>nav("/forgetpassword")}>Forgot Password?</p>
            
           </div>
           <button className="googleLogin">

@@ -9,7 +9,7 @@ const DashboardHeader = () => {
     <header className="dashboard-header">
       <div className="dashboard-header-content">
         <div className="dashboard-header-content-leftside">
-        <img src="src/assets/Public/CAMPUSTRADE-02 1.png" alt="" onClick={() => nav("/")} className="ImageLogoDash" />
+        <img src="/images/CAMPUSTRADE-02 1.png" alt="" onClick={() => nav("/")} className="ImageLogoDash" />
         </div>
         <div className="dashboard-header-content-rightside">
             <div className="dasboard-content-home" onClick={() => nav("/")}>
@@ -21,7 +21,7 @@ const DashboardHeader = () => {
                 <p className="content-p-tag" >Notification</p>
             </div>
             <div className="dasboard-content-img">
-                <img src="src/assets/Public/dasboadprofile.jpg" alt=""  className="dash-profile-picture"/>
+                <img src="/dasboadprofile.jpg" alt=""  className="dash-profile-picture"/>
             </div>
         </div>
       </div>

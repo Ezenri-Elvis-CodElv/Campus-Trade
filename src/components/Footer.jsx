@@ -73,7 +73,7 @@ const Footer = () => {
           <div className="w-[100%] h-[50%] flex flex-row ">
             <div className="w-[50%] h-[100%] ">
               <img
-                src="src/assets/Public/CAMPUSTRADE-02 1.png"
+                src="/images/CAMPUSTRADE-02 1.png"
                 alt=""
                 onClick={() => nav("/")}
               />

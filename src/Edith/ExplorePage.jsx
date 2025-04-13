@@ -125,7 +125,7 @@ const ExplorePage = () => {
         </section>
         
         <article className="Ads">
-          <img src="/public/Frame 659.jpg" alt="" />
+          <img src="/Frame 659.jpg" alt="" />
 
         </article>
       </div>
