@@ -5,7 +5,7 @@ import { RiCloseFill } from "react-icons/ri";
 import React, { useState } from "react";
 import { Navigate, useNavigate } from "react-router";
 
-export default ChangePhoneNumber = () => {
+const  ChangePhoneNumber = () => {
   const navigate = useNavigate();
   return (
     <div className="changepassword">
@@ -29,7 +29,7 @@ export default ChangePhoneNumber = () => {
     </div>
   );
 };
-
+export default  ChangePhoneNumber
 
 
 
