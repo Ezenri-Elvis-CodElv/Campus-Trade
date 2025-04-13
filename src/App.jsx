@@ -14,10 +14,11 @@ import ChangePhoneNumber from "./DashboardComponents'/ChangePhoneNumber";
 import ChangePassword from "./DashboardComponents'/ChangePassword";
 import GetVerified from "./DashboardComponents'/GetVerified";
 import RecentPost from "./DashboardComponents'/RecentPost";
-// import ProductDetailPage from "./Chidera/ProductDetailPage";
+import ProductDetailPage from "./Chidera/ProductDetailPage";
 import PendingPost from "./DashboardComponents'/PendingPost";
 import Posts from "./DashboardComponents'/Posts";
 import Ads from "./DashboardComponents'/Ads";
+import ProfilePage from "./Chidera/ProfilePage"
 import AccountInformation from "./DashboardComponents'/AccountInformation";
 
 const router = createBrowserRouter([
@@ -37,10 +38,14 @@ const router = createBrowserRouter([
         path: "/explorepage",
         element: <ExplorePage />,
       },
-      // {
-      //   path: "/productdetailpage/:_id",
-      //   element: <ProductDetailPage />,
-      // },
+      {
+        path: "/productdetailpage",
+        element: <ProductDetailPage />,
+      },
+      {
+        path: "/profilepage",
+        element: <ProfilePage />,
+      }
     ],
   },
   {

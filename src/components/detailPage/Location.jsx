@@ -2,10 +2,10 @@ import { BsFillGeoAltFill } from "react-icons/bs";
 const Location = () => {
   return (
     <div className='detailProductLocation'>
-      <h3>Location</h3>
+      <h3 className="locate">Location</h3>
       <div className='detailProduction'>
         <BsFillGeoAltFill/> 
-        <p>Univeristy of Lagos</p>  
+        <p className="p">Univeristy of Lagos</p>  
       </div>
     </div>
   )
