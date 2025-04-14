@@ -490,7 +490,7 @@ const LandingPage = () => {
             <div className="flex flex-col min-w-[448px] max-w-[448px] h-[250px] bg-[#EEDCFF] rounded-2xl shadow-md p-4 hover:shadow-xl transition-shadow duration-300 ease-in-out">
               <div className="flex items-center gap-3 mb-4">
                 <img
-                  src={Nnamdisvg}
+                  src="/images/Nnamdi.svg"
                   alt="user"
                   className="w-12 h-12 rounded-full object-cover"
                 />
@@ -511,7 +511,7 @@ const LandingPage = () => {
             <div className="flex flex-col min-w-[448px] max-w-[448px] h-[250px] bg-[#EEDCFF] rounded-2xl shadow-md p-4 hover:shadow-xl transition-shadow duration-300 ease-in-out">
               <div className="flex items-center gap-3 mb-4">
                 <img
-                  src={Ellipse}
+                  src="/images/Ellipse 25.svg"
                   alt="user"
                   className="w-12 h-12 rounded-full object-cover"
                 />
@@ -532,7 +532,7 @@ const LandingPage = () => {
             <div className="flex flex-col p-9 min-w-[448px] max-w-[448px] h-[250px] bg-[#EEDCFF] rounded-[20px] shadow-md  hover:shadow-xl transition-shadow duration-300 ease-in-out">
               <div className="flex items-center gap-3 mb-4">
                 <img
-                  src={Ikem}
+                  src="/images/Ikem.svg"
                   alt="user"
                   className="w-12 h-12 rounded-full object-cover"
                 />
