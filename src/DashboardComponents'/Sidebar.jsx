@@ -21,17 +21,15 @@ const Sidebar = () => {
       </div>
       
      <div className='pages-sidebar'>
+     <NavLink to="/dashboard" className="link">Profile</NavLink>
+
      <NavLink to="/dashboard/createpost" end className="link"> <IoCreateOutline size={14}/>Create a post</NavLink>
-      {/* <NavLink to="/dashboard/accountinformation" className="link"><FaInfo size={14} />Account Information</NavLink> */}
-      {/* <NavLink to="/dashboard/changephonenumber" className="link"><IoCreateOutline size={14}/>Change Number</NavLink> */}
-      {/* <NavLink to="/dashboard/changepassword" className="link"><MdOutlineChangeCircle size={14} />Change Password</NavLink> */}
       <NavLink to="/dashboard/getverified" className="link"><MdVerifiedUser size={14} />Get verified</NavLink>
      </div>
         <h3 className='myprofiletext'>My Post</h3>
         <div className='pages-sidebar'>
      <NavLink to="/dashboard/recentpost"  className="link"> <BsFillFilePostFill size={14} />Recent Post</NavLink>
       <NavLink to="/dashboard/pendingpost" className="link"><MdOutlinePendingActions size={14} /> Pending Post</NavLink>
-      {/* <NavLink to="/dashboard/posts" className="link"><IoIosCheckmarkCircleOutline size={14} /> Posted</NavLink> */}
       <NavLink to="/dashboard/ads" className="link"><SiGoogleads size={14} /> Ads</NavLink>
      </div>
      <div className='logout-button-setting'>

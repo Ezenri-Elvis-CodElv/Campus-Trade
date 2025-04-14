@@ -73,7 +73,7 @@ const Header = () => {
               className="flex items-center cursor-pointer text-black text-[20px]"
               onClick={toggleDropdown}
             >
-              Institution <IoIosArrowDown size={20} />
+              Institution <IoIosArrowDown size={15} />
             </h3>
 
             {isDropdownVisible && (
@@ -81,9 +81,9 @@ const Header = () => {
                 ref={dropdownRef}
                 className="absolute top-[80px] left-[20%] flex justify-center  items-center h-[130px] rounded-2xl mt-2 w-[250px] bg-[rgb(36,0,69)] text-white shadow-md z-50"
               >
-                <ul className="rounded-2xl w-full h-full flex flex-col   items-center">
+                <ul className="rounded-2xl w-full h-full flex flex-col p-4  items-center">
                   {["Lagos State University", "University Of Lagos State", "Yaba College Of Technology"].map((name) => (
-                    <li key={name} className="w-[90%] h-[90%] hover:bg-gray-500 cursor-pointer">
+                    <li key={name} className="w-[90%] h-[90%] flex flex-col justify-center items-center hover:bg-gray-500 hover:h-[70%] cursor-pointer">
                       {name}
                     </li>
                   ))}
