@@ -39,15 +39,15 @@ const Login = () => {
              value={auth.password} onChange={(e)=>setAuth({...auth, password:e.target.value})} />
             <span className="eyeIcon" onClick={() => setShowpassword((prev)=>!prev)}>
                            {showpassword ? (
-                         <FiEye />
-                        ) :  <FaRegEyeSlash /> }
+                        <FaRegEyeSlash />
+                        ) :  <FiEye />  }
                         </span>
           </div>
 
           <button className="submitBtn" onClick={()=>nav("/dashboard")}>Login</button>
           <div className="footer">
-            <p>Already Have An Account? <span style={{color:"purple"}} onClick={()=> nav("/signup")}>Sign Up</span></p>
-            <p style={{color:"purple", display:"flex"}} onClick={()=>nav("/forgetpassword")}>Forgot Password?</p>
+            <p  style={{display:"flex", justifyContent:'flex-start' , cursor: "default"}}>Already Have An Account? <span style={{color:"purple", cursor:"pointer"}} onClick={()=> nav("/signup")}>Sign Up</span></p>
+            <p style={{color:"purple", display:"flex",  cursor:"pointer"}} onClick={()=>nav("/forgetpassword")}>Forgot Password?</p>
            
           </div>
           <button className="googleLogin">

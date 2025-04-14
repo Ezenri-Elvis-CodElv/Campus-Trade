@@ -36,8 +36,8 @@ const SignUp = () => {
             value={auth.password} onChange={(e)=>setAuth({...auth, password:e.target.value})}/>
             <span className="eyeIcon" onClick={() => setShowpassword((prev)=>!prev)}>
                {showpassword ? (
-             <FiEye />
-            ) :  <FaRegEyeSlash /> }
+            <FaRegEyeSlash />
+            ) :  <FiEye />  }
             </span>
              
           </div>
@@ -48,15 +48,15 @@ const SignUp = () => {
              value={auth.confirmpassword} onChange={(e)=>setAuth({...auth, confirmpassword:e.target.value})} />
             <span className="eyeIcon" onClick={() => setShowpassword((prev)=>!prev)}>
                {showpassword ? (
-             <FiEye />
-            ) :  <FaRegEyeSlash /> }
+            <FaRegEyeSlash />
+            ) :  <FiEye />  }
             </span>
           </div>
 
           <button className="submitBtn">Sign Up</button>
           <div className="footer">
-            <p style={{display:"flex", justifyContent:'flex-start'}}>Already Have An Account?
-               <span style={{color:"purple"}} onClick={()=> nav("/login")}>Login</span></p>
+            <p style={{display:"flex", justifyContent:'flex-start', cursor: "default" }}>Already Have An Account?
+               <span style={{color:"purple", cursor:"pointer"}} onClick={()=> nav("/login")}>Login</span></p>
           </div>     
           <p className='trademark'>@campustrade</p>
         </div>

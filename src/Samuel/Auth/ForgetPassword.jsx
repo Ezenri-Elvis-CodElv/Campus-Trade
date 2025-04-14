@@ -12,7 +12,7 @@ const ForgetPassword = () => {
   <div className="box">
     <div className="boxWrapper">
       <div className="logo">
-       <img src="https://res.cloudinary.com/dlskde227/image/upload/v1744389538/Lp2_pqyw5f.jpg" alt="" />
+       <img src="/images/CAMPUSTRADE-02 1.png" alt="" />
       </div>
 
       <div className="inputHolder">
@@ -21,12 +21,14 @@ const ForgetPassword = () => {
 
         <div className="inputBox">
           <label>Email</label>
-          <input type="email" placeholder="Input Your Email" value={auth.email} 
+          <input  type="email" placeholder="Input Your Email" value={auth.email} 
           onChange={(e)=>setAuth({...auth, email:e.target.value})} />
 
           <button className="submitBtn">Request password reset</button>
-          <p style={{display:"flex", justifyContent:'flex-start'}}>Already Have An Account?
-               <span style={{color:"purple"}} onClick={()=> nav("/login")}>Login</span></p>
+          <div className='footer'>
+          <p style={{display:"flex", justifyContent:'flex-start' , cursor: "default"}}>Already Have An Account?
+               <span style={{color:"purple", cursor:"pointer"}} onClick={()=> nav("/login")}>Login</span></p>
+               </div>
           <p className='trademark'>@campustrade</p>
         </div>
       </div>
