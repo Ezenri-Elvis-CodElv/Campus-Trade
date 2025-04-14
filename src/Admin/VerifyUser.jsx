@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import "./verifyuser.css";
 import StudentImage from "../../public/images/Lp2.jpg";
@@ -93,3 +94,4 @@ const VerifyUser = () => {
 };
 
 export default VerifyUser;
+

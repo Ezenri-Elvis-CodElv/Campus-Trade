@@ -1,125 +1,94 @@
-import React from "react";
-// import "../DashboardComponents/changepassword.css";
+import { React, useState } from "react";
+import "./approveuserpost.css"
+
+const initialUserPostData = [
+  {
+    img: "/images/Nnamdi.svg",
+    name: "Mary-Jane ",
+    category: "Books",
+    location: "Lagos state university",
+    status: "approved",
+  },
+  {
+    img: "/images/Nnamdi.svg",
+    name: "Joshua Saleh",
+    category: "Mobile device",
+    location: "Lagos state university",
+    status: "pending",
+  },
+  {
+    img: "/images/Nnamdi.svg",
+    name: "Ezenri Elvis",
+    category: "Mobile device",
+    location: "Lagos state university",
+    status: "approved",
+  },
+  {
+    img: "/images/Nnamdi.svg",
+    name: "Edith Ogechi",
+    category: "Shoes",
+    location: "Lagos state university",
+    status: "approved",
+  },
+  {
+    img: "/images/Nnamdi.svg",
+    name: "Kalu Chidera",
+    category: "Books",
+    location: "Lagos state university",
+    status: "approved",
+  },
+];
 
 const ApproveUserPost = () => {
+  const [userData, setUserData] = useState(initialUserPostData);
+
+  const handleStatusChange = (index, status) => {
+    const updated = [...userData];
+    updated[index].status = status;
+    setUserData(updated);
+  };
+
   return (
-    <div className="Approveuserpost">
-      <div className="approvepostofusername">
-        <h2 className="namesoftheusers">NAME OF USERS</h2>
-        <h2 className="sateoftheirpost">State Of Their Post</h2>
+    <div className="status-table-container">
+      <div className="status-table-header">
+        <span className="status-table-header-left">NAMES OF USER</span>
+        <span className="status-table-header-right">STATE OF THEIR POST</span>
       </div>
-      <div className="approvebody">
-        <div className="approvefistcentereddiv">
-          <div className="approvefirstdivcenterd1">
-            <div className="approveimgdiv">
-              <img className="" src="src/assets/Ellipse 22.png" alt="" />
-            </div>
-            <div className="approveh1divs">
-              <h2 className="approvefont1">Edith Aba</h2>
-              <h2 className="approvefont2">Shoes</h2>
-              <h2 className="approvefont2">Lagos State University</h2>
-            </div>
-          </div>
-          <div className="approvefirstdivcenterd10">
-            <div className="approveimgdiv2">
-              <img src="src/assets/Frame 614.png" alt="" />
-              <h2 className="approveimgh21">Approve</h2>
-            </div>
-            <div className="approveimgdiv3">
-              <img src="src/assets/Frame 614.png" alt="" />
-              <h2 className="approveimgh22">Pending</h2>
+
+      {userData.map((user, index) => (
+        <div className="status-table-row" key={index}>
+          <div className="status-user-info">
+            <img src={user.img} alt={user.name} className="status-user-image" />
+            <div className="status-user-text">
+              <strong className="status-user-name">{user.name}</strong><br />
+              <span className="status-user-category">{user.category}</span><br />
+              <span className="status-user-school">{user.location}</span>
             </div>
           </div>
+          <div className="status-post-info" >
+  <div
+    className={`status-box approved ${user.status === "approved" ? "selected" : ""}`}
+    onClick={() => handleStatusChange(index, "approved")}
+  >
+    {user.status === "approved" && "✓"}
+  </div>
+  <span className="status-label">Approved</span>
+
+  <div
+    className={`status-box pending ${user.status === "pending" ? "selected" : ""}`}
+    onClick={() => handleStatusChange(index, "pending")}
+  >
+    {user.status === "pending" && "✓"}
+  </div>
+  <span className="status-label">Pending</span>
+
+ 
+</div>
+
         </div>
-        <div className="approvefistcentereddiv1">
-          <div className="approvefirstdivcenterd1">
-            <div className="approveimgdiv">
-              <img className="" src="src/assets/Ellipse 22.png" alt="" />
-            </div>
-            <div className="approveh1divs">
-              <h2 className="approvefont1">Adewale Samuel</h2>
-              <h2 className="approvefont2">Shoes</h2>
-              <h2 className="approvefont2">Lagos State University</h2>
-            </div>
-          </div>
-          <div className="approvefirstdivcenterd10">
-            <div className="approveimgdiv2">
-              <img src="src/assets/Frame 614.png" alt="" />
-              <h2 className="approveimgh21">Approve</h2>
-            </div>
-            <div className="approveimgdiv3">
-              <img src="src/assets/Frame 614.png" alt="" />
-              <h2 className="approveimgh22">Pending</h2>
-            </div>
-          </div>
-        </div>
-        <div className="approvefistcentereddiv2">
-          <div className="approvefirstdivcenterd1">
-            <div className="approveimgdiv">
-              <img className="" src="src/assets/Ellipse 22.png" alt="" />
-            </div>
-            <div className="approveh1divs">
-              <h2 className="approvefont1">Eze Godwin </h2>
-              <h2 className="approvefont2">Shoes</h2>
-              <h2 className="approvefont2">Lagos State University</h2>
-            </div>
-          </div>
-          <div className="approvefirstdivcenterd10">
-            <div className="approveimgdiv2">
-              <img src="src/assets/Frame 614.png" alt="" />
-              <h2 className="approveimgh21">Approve</h2>
-            </div>
-            <div className="approveimgdiv3">
-              <img src="src/assets/Frame 614.png" alt="" />
-              <h2 className="approveimgh22">Pending</h2>
-            </div>
-          </div>
-        </div>
-        <div className="approvefistcentereddiv3">
-          <div className="approvefirstdivcenterd1">
-            <div className="approveimgdiv">
-              <img className="" src="src/assets/Ellipse 22.png" alt="" />
-            </div>
-            <div className="approveh1divs">
-              <h2 className="approvefont1">Joy Favour</h2>
-              <h2 className="approvefont2">Shoes</h2>
-              <h2 className="approvefont2">Lagos State University</h2>
-            </div>
-          </div>
-          <div className="approvefirstdivcenterd10">
-            <div className="approveimgdiv2">
-              <img src="src/assets/Frame 614.png" alt="" />
-              <h2 className="approveimgh21">Approve</h2>
-            </div>
-            <div className="approveimgdiv3">
-              <img src="src/assets/Frame 614.png" alt="" />
-              <h2 className="approveimgh22">Pending</h2>
-            </div>
-          </div>
-        </div>
-        <div className="approvefistcentereddiv4">
-          <div className="approvefirstdivcenterd1">
-            <div className="approveimgdiv">
-              <img src="" />
-            </div>
-            <div className="approveh1divs">
-              <h2 className="approvefont1">Adewale Aba</h2>
-              <h2 className="approvefont2">Mobile devices</h2>
-              <h2 className="approvefont2">Lagos State University</h2>
-            </div>
-          </div>
-          <div className="approvefirstdivcenterd10">
-            <div className="approveimgdiv2">
-              <img src="src/assets/Frame 614.png" alt="" />
-              <h2 className="approveimgh21">Approve</h2>
-            </div>
-            <div className="approveimgdiv3">
-              <img src="src/assets/Frame 614.png" alt="" />
-              <h2 className="approveimgh22">Pending</h2>
-            </div>
-          </div>
-        </div>
-      </div>
+      ))}
+
+      <footer className="status-footer">@2025 campustrade</footer>
     </div>
   );
 };

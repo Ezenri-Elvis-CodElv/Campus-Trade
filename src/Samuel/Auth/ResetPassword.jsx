@@ -36,8 +36,8 @@ const ResetPassword = () => {
             onChange={(e) => setAuth({...auth, password:e.target.value})} />
            <span className="eyeIcon" onClick={() => setShowpassword((prev)=>!prev)}>
                           {showpassword ? (
-                        <FiEye />
-                       ) :  <FaRegEyeSlash /> }
+                        <FaRegEyeSlash /> 
+                       ) :  <FiEye />}
                        </span>
           </div>
 
@@ -47,8 +47,8 @@ const ResetPassword = () => {
              value={auth.confirmpassword} onChange={(e)=>setAuth({...auth, confirmpassword:e.target.value})}/>
           <span className="eyeIcon" onClick={() => setShowpassword((prev)=>!prev)}>
                          {showpassword ? (
-                       <FiEye />
-                      ) :  <FaRegEyeSlash /> }
+                    <FaRegEyeSlash /> 
+                      ) :     <FiEye />}
                       </span>
           </div>
 

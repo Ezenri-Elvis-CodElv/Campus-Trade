@@ -118,7 +118,6 @@ const CreatePost = () => {
         <div className='createpost-dragdrop'>
           <p className='create-post-p-tag'>Upload your Image</p>
 
-          {/* Hidden file input with camera access */}
           <label htmlFor="file-upload" className='draganddrop' style={{ border: '2px dashed grey', display: 'flex', justifyContent: 'center', alignItems: 'center', cursor: 'pointer' }}>
             Click to Upload / Take Photo
           </label>
@@ -132,7 +131,6 @@ const CreatePost = () => {
             style={{ display: "none" }}
           />
 
-          {/* Image previews with remove button */}
           <div className="image-preview">
             {images.map((img, index) => (
               <div key={index} style={{ position: 'relative' }}>
@@ -153,7 +151,7 @@ const CreatePost = () => {
                     cursor: 'pointer'
                   }}
                 >
-                  ×
+                  x
                 </button>
               </div>
             ))}
