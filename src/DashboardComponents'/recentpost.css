@@ -15,8 +15,9 @@
     width: 100%;
     height: max-content;
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
     flex-wrap: wrap;
+    justify-content: space-evenly;
     gap: 20px;
     row-gap: 20px;
     align-items: center;
