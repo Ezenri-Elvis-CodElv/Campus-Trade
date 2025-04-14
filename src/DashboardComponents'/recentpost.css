@@ -15,14 +15,9 @@
     width: 100%;
     height: max-content;
     display: flex;
-<<<<<<< HEAD
     /* flex-direction: row; */
     flex-wrap: wrap;
     justify-content: space-evenly;
-=======
-    flex-direction: row;
-    flex-wrap: wrap;
->>>>>>> 8c227aaa1bc0f41ac3234cab32fc1cda5f228aa9
     gap: 20px;
     row-gap: 20px;
     align-items: center;

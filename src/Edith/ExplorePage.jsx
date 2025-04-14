@@ -2,116 +2,137 @@
 import React from "react";
 import Card from "../components/Card";
 import "./explore.css";
+import HeroImage from "../assets/WhatsApp Image 2025-04-13 at 13.19.06_f73cd826.jpg"
+import AdsImg from "../assets/Frame 659.jpg"
+import shoe from "../assets/download.jpg";
+
 
 const ExplorePage = () => {
-  const myArr = [
-    {
-      image: "/public/download.jpg",
-      name: "Jimmy choo",
-      price: "23,000",
-      description: "Offers elegant and fashionable high heels",
-      university: "Lagos State University",
-    },
-    {
-      image: "/public/download.jpg",
-      name: "Books",
-      price: "20,000",
-      description: "Description",
-      university: "Uni Lag",
-    },
-    {
-      image: "/public/download.jpg",
-      name: "Home Appliances",
-      price: "30,000",
-      description: "My description",
-      university: "Yaba Tech",
-    },
-    {
-      image: "/public/download.jpg",
-      name: "Home Appliances",
-      price: "30,000",
-      description: "My description",
-      university: "Yaba Tech",
-    },
-    {
-      image: "/public/download.jpg",
-      name: "Home Appliances",
-      price: "30,000",
-      description: "My description",
-      university: "Yaba Tech",
-    },
-    {
-      image: "/public/download.jpg",
-      name: "Home Appliances",
-      price: "30,000",
-      description: "My description",
-      university: "Yaba Tech",
-    },
-    {
-      image: "/public/download.jpg",
-      name: "Home Appliances",
-      price: "30,000",
-      description: "My description",
-      university: "Yaba Tech",
-    },
-    {
-      image: "/public/download.jpg",
-      name: "Home Appliances",
-      price: "30,000",
-      description: "My description",
-      university: "Yaba Tech",
-    },
-    {
-      image: "/public/download.jpg",
-      name: "Home Appliances",
-      price: "30,000",
-      description: "My description",
-      university: "Yaba Tech",
-    },
-    {
-      image: "/public/download.jpg",
-      name: "Home Appliances",
-      price: "30,000",
-      description: "My description",
-      university: "Yaba Tech",
-    },
-    {
-      image: "/public/download.jpg",
-      name: "Home Appliances",
-      price: "30,000",
-      description: "My description",
-      university: "Yaba Tech",
-    },
-    {
-      image: "/public/download.jpg",
-      name: "Home Appliances",
-      price: "30,000",
-      description: "My description",
-      university: "Yaba Tech",
-    },
-  ];
+   const myArr = [
+     {
+       image: `${shoe}`,
+       name: "Jimmy choo",
+       price: "23,000",
+       description: "Offers elegant and fashionable high heels",
+       university: "Lagos State University",
+       time: "28 mins ago",
+     },
+     {
+       image: `${shoe}`,
+       name: "Books",
+       price: "20,000",
+       description: "My description",
+       university: "Uni Lag",
+       time: "28 mins ago",
+     },
+     {
+       image: `${shoe}`,
+ 
+       name: "Home Appliances",
+       price: "30,000",
+       description: "My description",
+       university: "Yaba Tech",
+       time: "28 mins ago",
+     },
+     {
+       image: `${shoe}`,
+ 
+       name: "Home Appliances",
+       price: "30,000",
+       description: "My description",
+       university: "Yaba Tech",
+       time: "28 mins ago",
+     },
+     {
+       image: `${shoe}`,
+ 
+       name: "Home Appliances",
+       price: "30,000",
+       description: "My description",
+       university: "Yaba Tech",
+       time: "28 mins ago",
+     },
+     {
+       image: `${shoe}`,
+ 
+       name: "Home Appliances",
+       price: "30,000",
+       description: "My description",
+       university: "Yaba Tech",
+       time: "28 mins ago",
+     },
+     {
+       image: `${shoe}`,
+ 
+       name: "Home Appliances",
+       price: "30,000",
+       description: "My description",
+       university: "Yaba Tech",
+       time: "28 mins ago",
+     },
+     {
+       image: `${shoe}`,
+ 
+       name: "Home Appliances",
+       price: "30,000",
+       description: "My description",
+       university: "Yaba Tech",
+       time: "28 mins ago",
+     },
+     {
+       image: `${shoe}`,
+ 
+       name: "Home Appliances",
+       price: "30,000",
+       description: "My description",
+       university: "Yaba Tech",
+       time: "28 mins ago",
+     },
+     {
+       image: `${shoe}`,
+ 
+       name: "Home Appliances",
+       price: "30,000",
+       description: "My description",
+       university: "Yaba Tech",
+       time: "28 mins ago",
+     },
+     {
+       image: `${shoe}`,
+ 
+       name: "Home Appliances",
+       price: "30,000",
+       description: "My description",
+       university: "Yaba Tech",
+       time: "28 mins ago",
+     },
+     {
+       image: `${shoe}`,
+ 
+       name: "Home Appliances",
+       price: "30,000",
+       description: "My description",
+       university: "Yaba Tech",
+       time: "28 mins ago",
+     },
+   ];
   return (
     <div className="explore-page">
       
       <div className="explore-img-holder">
-        <div className="img-text">
-          <h1>
-          Explore More, Trade Smarter
-          <br /> 
-          Find the Best Deals on 
-          <br />Campustrade
-          </h1>
-        </div>
+        <img src= {HeroImage} alt="" />
+
       </div>
       <div className="explore-text">
         <div className="explore-header">
           <div className="explore-pop">
-          <p>Popular post</p>
+          <p className="explore-h">Popular post</p>
 
           </div>
           <br />
           <div className="explore-details">
-          <p>check out our popular post  of the different categories from verified <br /> student in campustrade </p>
+          <p className="explore-p">check out our popular post  of the different categories from verified <br />
+           student in campustrade </p>
 
           </div>
         </div>
@@ -125,7 +146,7 @@ const ExplorePage = () => {
         </section>
         
         <article className="Ads">
-          <img src="/Frame 659.jpg" alt="" />
+          <img src={AdsImg} alt="" />
 
         </article>
       </div>

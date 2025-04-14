@@ -34,10 +34,6 @@ const Ads = () => {
               </div>
             </div>
         </div>
-<<<<<<< HEAD
-        
-=======
->>>>>>> 8c227aaa1bc0f41ac3234cab32fc1cda5f228aa9
         <div className="ads-payment">
           <div className="ads-payment-selection">
             <div className="ads-selection-text">Top</div>
@@ -69,9 +65,4 @@ const Ads = () => {
     </div>
   );
 };
-
-<<<<<<< HEAD
 export default Ads;
-=======
-export default Ads;
->>>>>>> 8c227aaa1bc0f41ac3234cab32fc1cda5f228aa9

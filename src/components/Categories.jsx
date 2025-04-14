@@ -2,11 +2,13 @@ import React from "react";
 import "./categories.css";
 import { MdNavigateNext } from "react-icons/md";
 import Card from "../components/Card";
+import Frame from "../assets/Frame 386.jpg";
+import shoe from "../assets/download.jpg";
 
 const Categories = () => {
   const myArr = [
     {
-      image: "/download.jpg",
+      image: `${shoe}`,
       name: "Jimmy choo",
       price: "23,000",
       description: "Offers elegant and fashionable high heels",
@@ -14,7 +16,7 @@ const Categories = () => {
       time: "28 mins ago",
     },
     {
-      image: "/download.jpg",
+      image: `${shoe}`,
       name: "Books",
       price: "20,000",
       description: "My description",
@@ -22,7 +24,8 @@ const Categories = () => {
       time: "28 mins ago",
     },
     {
-      image: "/download.jpg",
+      image: `${shoe}`,
+
       name: "Home Appliances",
       price: "30,000",
       description: "My description",
@@ -30,7 +33,8 @@ const Categories = () => {
       time: "28 mins ago",
     },
     {
-      image: "/public/download.jpg",
+      image: `${shoe}`,
+
       name: "Home Appliances",
       price: "30,000",
       description: "My description",
@@ -38,7 +42,8 @@ const Categories = () => {
       time: "28 mins ago",
     },
     {
-      image: "/public/download.jpg",
+      image: `${shoe}`,
+
       name: "Home Appliances",
       price: "30,000",
       description: "My description",
@@ -46,7 +51,8 @@ const Categories = () => {
       time: "28 mins ago",
     },
     {
-      image: "/public/download.jpg",
+      image: `${shoe}`,
+
       name: "Home Appliances",
       price: "30,000",
       description: "My description",
@@ -54,7 +60,8 @@ const Categories = () => {
       time: "28 mins ago",
     },
     {
-      image: "/public/download.jpg",
+      image: `${shoe}`,
+
       name: "Home Appliances",
       price: "30,000",
       description: "My description",
@@ -62,7 +69,8 @@ const Categories = () => {
       time: "28 mins ago",
     },
     {
-      image: "/public/download.jpg",
+      image: `${shoe}`,
+
       name: "Home Appliances",
       price: "30,000",
       description: "My description",
@@ -70,7 +78,8 @@ const Categories = () => {
       time: "28 mins ago",
     },
     {
-      image: "/public/download.jpg",
+      image: `${shoe}`,
+
       name: "Home Appliances",
       price: "30,000",
       description: "My description",
@@ -78,7 +87,8 @@ const Categories = () => {
       time: "28 mins ago",
     },
     {
-      image: "/public/download.jpg",
+      image: `${shoe}`,
+
       name: "Home Appliances",
       price: "30,000",
       description: "My description",
@@ -86,7 +96,8 @@ const Categories = () => {
       time: "28 mins ago",
     },
     {
-      image: "/public/download.jpg",
+      image: `${shoe}`,
+
       name: "Home Appliances",
       price: "30,000",
       description: "My description",
@@ -94,7 +105,8 @@ const Categories = () => {
       time: "28 mins ago",
     },
     {
-      image: "/public/download.jpg",
+      image: `${shoe}`,
+
       name: "Home Appliances",
       price: "30,000",
       description: "My description",
@@ -105,7 +117,7 @@ const Categories = () => {
   return (
     <div className="category-body">
       <div className="category-img">
-        <img src="/public/Frame 386.jpg" alt="" />
+        <img src={Frame} alt="" />
       </div>
       <div className="category-text-wrappers">
         <div className="text-holder">
@@ -118,13 +130,12 @@ const Categories = () => {
             <span style={{ color: "#FF6D00" }}>Shirts</span>
           </div>
 
-
-            <div className="category-button-holder">
-              <div className="category-toggle">
-                <span className="category-used">Used</span>
-                <span className="New-toggle">New</span>
-              </div>
-            </div> 
+          <div className="category-button-holder">
+            <div className="category-toggle">
+              <span className="category-used">Used</span>
+              <span className="New-toggle">New</span>
+            </div>
+          </div>
         </div>
         <div className="buttom-text">
           <span style={{ fontWeight: "bold", color: "#03045E" }}>Shirts</span>

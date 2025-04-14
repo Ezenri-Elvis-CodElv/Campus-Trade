@@ -1,5 +1,4 @@
 .ads-post-body {
-<<<<<<< HEAD
   font-family: "Montserrat", sans-serif;
   width: 70%;
   height: 100%;
@@ -127,7 +126,6 @@
     font-weight: bold;
 }
 .ads-promo-days{
-=======
     font-family: "Montserrat", sans-serif;
     width: 70%;
     height: 100%;
@@ -219,7 +217,6 @@
     
   }
   .ads-seven-days {
->>>>>>> 8c227aaa1bc0f41ac3234cab32fc1cda5f228aa9
     height: 80%;
     width: 50%;
     border-radius: 50px;
@@ -231,7 +228,6 @@
     justify-content: center;
     font-size: 10px;
     font-weight: small;
-<<<<<<< HEAD
 }
 .ads-promo-price{
     height: 100%;
@@ -244,12 +240,10 @@
     font-size: 11px;
     font-weight: bold;  
 }
-.ads-promo-thirty-days{
-=======
-  }
+/* .ads-promo-thirty-days{
+  } */
   .ads-thirty-days {
     height: 80%;
->>>>>>> 8c227aaa1bc0f41ac3234cab32fc1cda5f228aa9
     width: 50%;
     border-radius: 50px;
     color: #240046;
@@ -258,7 +252,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-<<<<<<< HEAD
 }
 
 .ads-img-upload {
@@ -302,9 +295,8 @@
     padding: 10px;
   }
 }
-=======
-    border: 1px solid #240046;
-  }
+    /* border: 1px solid #240046;
+  } */
   .ads-price{
       height: 100%;
       width: 30%;
@@ -392,4 +384,4 @@
       padding: 10px;
     }
   }
->>>>>>> 8c227aaa1bc0f41ac3234cab32fc1cda5f228aa9
+

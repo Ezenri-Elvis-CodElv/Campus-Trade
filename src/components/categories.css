@@ -25,8 +25,6 @@
     flex-direction: column;
     padding-left: 50px;
     padding-right: 50px;
-    /* gap: 200px; */
-    background-color: green;
     
 
 }
@@ -36,10 +34,8 @@ width: 100%;
 display: flex;
 flex-direction: row;
 gap: 50px;
-/* padding-left: 50px; */
 padding-top: 10px;
 padding-bottom: 60px;
-background-color: blue;
 }
 .top-text{
     width: 50%;
@@ -47,7 +43,8 @@ background-color: blue;
     display: flex;
     flex-direction: row;
     padding-top: 5px;
-    background-color: #03045E;
+    padding-left: 50px;
+
 }
 .category-button-holder{
     width: 50%;
@@ -55,12 +52,12 @@ background-color: blue;
     display: flex;
     align-items: center;
     justify-content: end;
-    background-color: #9747FF;
+    padding-right: 55px;
 
 }
 .category-toggle{
  height: 100%;
- width: 60%;
+ width: 50%;
  border-radius: 50px;
  background-color:#FFCD2978 ;
  padding: 5px;
@@ -73,7 +70,7 @@ background-color: blue;
  color: #03045E;
 }
 .New-toggle{
-    width: 40%;
+    width: 50%;
     height: 100%;
     border-radius: 50px;
     display: flex;
@@ -86,7 +83,7 @@ background-color: blue;
 .buttom-text{
     width: 100%;
     height: 50%;
-    background-color: red;
+    padding-left: 50px;
     
 }
 .icon{
@@ -122,43 +119,50 @@ background-color: blue;
     }
     .category-text-wrappers{
         width: 100%;
-        height: 30vh;
+        height: 25vh;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         padding-left: 0px;
         padding-right: 0px;
-        gap: 30px;
-        background-color: green;
         
     }
    .text-holder{
     height: 100%;
-    width: 50%;
-    background-color: #9747FF;
-    padding-left: 20px;
+    width: 100%;
+    gap: 20px;
    }
    .buttom-text{
-    height: 30%;
+    height: 100%;
     width: 100%;
-    background-color: aliceblue;
+    padding-left: 20px;
+    padding-right: 5px;
+   }
+   .top-text{
+    padding-left: 20px;
+   }
+
+   .category-button-holder{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 50px;
    }
     
-    .category-button-holder{
-        width: 50%;
-        background-color: #9747FF;
-        padding-bottom: 50px;
-    }
+    
 
     .category-toggle{
-        width: 80%;
-        height: 60%;
+        width: 100%;
+        height: 100%;
         display: flex;
         flex-direction: row;
-        padding-right: 30px;
-        padding-left: 30px;
+        gap: 0px;
+       
     }
     .New-toggle{
-        width: 40%;
+        width: 50%;
         height: 100%;
         border-radius: 50px;
         background-color: #03045E;
@@ -166,7 +170,7 @@ background-color: blue;
 
     }
     .category-used{
-        width: 80%;
+        width: 50%;
         color: #03045E;
     }
 
@@ -176,7 +180,6 @@ background-color: blue;
         padding-left: 0px;
         padding-right: 0px;
         display: flex;
-        flex-direction: row;
         flex-wrap: wrap;
     }
     
