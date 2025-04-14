@@ -1,135 +1,32 @@
 import React from 'react'
 import "./ChangePassword.css"
+import { MdOutlineBackspace } from "react-icons/md";
 const ChangePassword = () => {
   return (
-    <div className='Approveuserpost'>
-    <div className='approvepostofusername'>
-    <h2 className='namesoftheusers'>NAME OF USERS</h2>
-      <h2 className='sateoftheirpost'>State Of Their Post</h2>
+      <div className='changepassword'>
+        <div className='changepasswordwrapper'>
+         <div className='backicon'>
+         <button className='backiconbtn'> 
+         <MdOutlineBackspace size={40} style={{color:"black"}}/>
+         </button>
+         </div>
+          <div className='changepasswordinner'>
+            <div className='changepasswordinnerlast'>
+              <h4 className='nomber'>
+                Reset Password
+              </h4>
+              <h3 className='nomber1'>
+                click on the book and input your new password <br /> number
+              </h3>
+              <input className='jjjj' type="password" 
+              placeholder='@867demcf00' />  
+              <button className='saveee'>
+                Save
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-        <div className='approvebody'>
-          <div className='approvefistcentereddiv'>
-            <div className='approvefirstdivcenterd1'>
-              <div className='approveimgdiv'>
-                <img  className='' src="src/assets/Ellipse 22.png" alt="" />
-                  </div>
-                  <div className='approveh1divs'>
-                <h2 className='approvefont1'>Edith Aba</h2>
-                <h2 className='approvefont2'>Shoes</h2>
-                <h2 className='approvefont2'>Lagos State University</h2>
-              </div>
-            </div>
-            <div className='approvefirstdivcenterd10'>
-              <div className='approveimgdiv2'>
-                <img src="src/assets/Frame 614.png" alt="" />
-                <h2 className='approveimgh21'>Approve</h2>
-              </div>
-              <div className='approveimgdiv3'>
-              <img src="src/assets/Frame 614.png" alt="" />
-              <h2 className='approveimgh22'>Pending</h2>
-              </div>
-            </div>
-          </div>
-            <div className='approvefistcentereddiv1'>
-            <div className='approvefirstdivcenterd1'>
-              <div className='approveimgdiv'>
-                <img  className='' src="src/assets/Ellipse 22.png" alt="" />
-                  </div>
-                  <div className='approveh1divs'>
-                <h2 className='approvefont1'>Adewale Samuel</h2>
-                <h2 className='approvefont2'>Shoes</h2>
-                <h2 className='approvefont2'>Lagos State University</h2>
-              </div>
-            </div>
-            <div className='approvefirstdivcenterd10'>
-              <div className='approveimgdiv2'>
-                <img src="src/assets/Frame 614.png" alt="" />
-                <h2 className='approveimgh21'>Approve</h2>
-              </div>
-              <div className='approveimgdiv3'>
-              <img src="src/assets/Frame 614.png" alt="" />
-              <h2 className='approveimgh22'>Pending</h2>
-              </div>
-            </div>
-          </div>
-              <div className='approvefistcentereddiv2'>
-              <div className='approvefirstdivcenterd1'>
-              <div className='approveimgdiv'>
-                <img  className='' src="src/assets/Ellipse 22.png" alt="" />
-                  </div>
-                  <div className='approveh1divs'>
-                <h2 className='approvefont1'>Eze Godwin </h2>
-                <h2 className='approvefont2'>Shoes</h2>
-                <h2 className='approvefont2'>Lagos State University</h2>
-              </div>
-            </div>
-            <div className='approvefirstdivcenterd10'>
-              <div className='approveimgdiv2'>
-                <img src="src/assets/Frame 614.png" alt="" />
-                <h2 className='approveimgh21'>Approve</h2>
-              </div>
-              <div className='approveimgdiv3'>
-              <img src="src/assets/Frame 614.png" alt="" />
-              <h2 className='approveimgh22'>Pending</h2>
-              </div>
-            </div>
-          </div>
-                <div className='approvefistcentereddiv3'>
-                <div className='approvefirstdivcenterd1'>
-              <div className='approveimgdiv'>
-                <img  className='' src="src/assets/Ellipse 22.png" alt="" />
-                  </div>
-                  <div className='approveh1divs'>
-                <h2 className='approvefont1'>Joy Favour</h2>
-                <h2 className='approvefont2'>Shoes</h2>
-                <h2 className='approvefont2'>Lagos State University</h2>
-              </div>
-            </div>
-            <div className='approvefirstdivcenterd10'>
-              <div className='approveimgdiv2'>
-                <img src="src/assets/Frame 614.png" alt="" />
-                <h2 className='approveimgh21'>Approve</h2>
-              </div>
-              <div className='approveimgdiv3'>
-              <img src="src/assets/Frame 614.png" alt="" />
-              <h2 className='approveimgh22'>Pending</h2>
-              </div>
-            </div>
-          </div>
-                  <div className='approvefistcentereddiv4'>
-                  <div className='approvefirstdivcenterd1'>
-              <div className='approveimgdiv'>
-                <img  src=""/>
-                  </div>
-              <div className='approveh1divs'>
-                <h2 className='approvefont1'>Adewale Aba</h2>
-                <h2 className='approvefont2'>Mobile devices</h2>
-                <h2 className='approvefont2'>Lagos State University</h2>
-              </div>
-            </div>
-            <div className='approvefirstdivcenterd10'>
-              <div className='approveimgdiv2'>
-                <img src="src/assets/Frame 614.png" alt="" />
-                <h2 className='approveimgh21'>Approve</h2>
-              </div>
-              <div className='approveimgdiv3'>
-              <img src="src/assets/Frame 614.png" alt="" />
-              <h2 className='approveimgh22'>Pending</h2>
-              </div>
-            </div>
-                  </div>
-
-
-
-
-
-
-
-
-
-                  
-      </div>
-  </div>
   )
 }
 

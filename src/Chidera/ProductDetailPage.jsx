@@ -1,7 +1,7 @@
 import React from 'react'
 import './ProductDetailPage.css'
 import Card from "../components/Card"
-import { NavLink, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 import { BsFillGeoAltFill } from "react-icons/bs";
 import Location from '../components/detailPage/Location'
 import { LuBadgeCheck } from "react-icons/lu";
@@ -13,7 +13,8 @@ import { TbCurrencyNaira } from "react-icons/tb";
 
 
 const ProductDetailPage = () => {
-  
+  const nav = useNavigate()
+
     const ADS = [
       {
         imageUrl: "src/assets/Frame 230 (4).png",
@@ -127,9 +128,9 @@ const ProductDetailPage = () => {
               }
             </div>
           </div>
-          <button className='previousPage'>
-            <IoMdArrowBack />
-            <span className='goback'>Go Back To The Previous Page</span>
+          <button className='previousPage'> 
+            <IoMdArrowBack/>
+            <span className='goback' onClick={() => nav("/")}>Go Back To The Previous Page</span>
           </button>
         </div>
       </div>
