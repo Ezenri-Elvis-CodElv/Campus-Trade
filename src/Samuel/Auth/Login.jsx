@@ -20,14 +20,12 @@ const Login = () => {
   <div className="box">
     <div className="boxWrapper">
       <div className="logo">
-        <img src="public/images/CAMPUSTRADE-02 1.png" alt="" />
+        <img src="/images/CAMPUSTRADE-02 1.png" alt="" />
       </div>
 
       <div className="inputHolder">
-        <h2 className="welcome">Welcome! We Are Glad To Have You Here</h2>
+        <h2 className="welcome">Welcome! We Are Glad To Have<br></br> You Here</h2>
         <p className="signupText">Login</p>
-        <span className="infoText">Fill In Your Correct Information</span>
-
         <div className="inputBox">
           <label>Email</label>
           <input type="email" placeholder="Input Your Email" 
@@ -46,7 +44,7 @@ const Login = () => {
 
           <button className="submitBtn" onClick={()=>nav("/dashboard")}>Login</button>
           <div className="footer">
-            <p  style={{display:"flex", justifyContent:'flex-start' , cursor: "default"}}>Already Have An Account? <span style={{color:"purple", cursor:"pointer"}} onClick={()=> nav("/signup")}>Sign Up</span></p>
+            <p  style={{display:"flex", justifyContent:'flex-start' , cursor: "default"}}>Already have an account? <span style={{color:"purple", cursor:"pointer", marginLeft:"5px"}} onClick={()=> nav("/signup")}>Sign Up</span></p>
             <p style={{color:"purple", display:"flex",  cursor:"pointer"}} onClick={()=>nav("/forgetpassword")}>Forgot Password?</p>
            
           </div>

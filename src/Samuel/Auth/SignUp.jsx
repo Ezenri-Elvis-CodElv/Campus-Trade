@@ -3,6 +3,7 @@ import "./auth.css"
 import { FiEye } from 'react-icons/fi'
 import { useNavigate } from 'react-router'
 import { FaRegEyeSlash } from 'react-icons/fa'
+import { FcGoogle } from 'react-icons/fc'
 
 const SignUp = () => {
   const nav = useNavigate()
@@ -21,7 +22,7 @@ const SignUp = () => {
       </div>
 
       <div className="inputHolder">
-        <h2 className="welcome">Welcome! We Are Glad To Have You Here</h2>
+        <h2 className="welcome">Welcome! We Are Glad To Have <br></br>You Here</h2>
         <p className="signupText">Sign Up</p>
         <span className="infoText">Fill In Your Correct Information</span>
 
@@ -56,8 +57,12 @@ const SignUp = () => {
           <button className="submitBtn">Sign Up</button>
           <div className="footer">
             <p style={{display:"flex", justifyContent:'flex-start', cursor: "default" }}>Already Have An Account?
-               <span style={{color:"purple", cursor:"pointer"}} onClick={()=> nav("/login")}>Login</span></p>
-          </div>     
+               <span style={{color:"purple", cursor:"pointer", marginLeft:"5px"}} onClick={()=> nav("/login")}>Login</span></p>
+          </div>  
+           <button className="googleLogin">
+                    <FcGoogle className='icon'/>
+                    <span>Sign in with Google</span>
+                      </button>   
           <p className='trademark'>@campustrade</p>
         </div>
       </div>

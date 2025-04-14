@@ -1,22 +1,25 @@
 .Overall {
-    width: 100%;
-    height: 100vh;
-    background:  url(../../assets/bg.jpg) no-repeat center center/cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: url(../../../public/images/bg.jpg) no-repeat center center/cover transparent;
+  display: flex;
+  background-color: #888;
+  justify-content: center;
+  align-items: center;
+}
 
-    &.withBackgroundImage {
-        background:  url(../../assets/bg1.jpg) no-repeat center center/cover;
-      }
-  }
+.Overall.withBackgroundImage {
+  background: url(../../../public/images/bg1.jpg) no-repeat center center/cover ;
+
+}
+
   
   .box {
     width: 390px;
     min-height: 150px;
     background: #fff;
     border-radius: 2px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,12 +38,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 5px;
+    margin-bottom: -10px;
   }
   
   .logo img {
-    width: 130px;
-    height: 60px;
+    width: 100px;
+    height: 55px;
     object-fit: contain;
   }
   
@@ -56,11 +59,11 @@
   }
   
   .welcome {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: bold;
     color: #240046;
-    height: 30px;
-    margin-bottom: 5px;
+    height: 20px;
+    margin-bottom: 20px;
     cursor: default;
   }
   
@@ -70,7 +73,7 @@
     height: 20px;
     color: #000;
     cursor: default;
-    margin-bottom: 5px;
+    margin-top: 19px;
   }
   
   .infoText {
@@ -142,7 +145,7 @@
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
-    margin-top: 5px;
+    margin-top: 2px;
     margin-bottom: 5px;
   }
   
@@ -161,7 +164,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 8px;
+    gap: 5px;
   }
   .googleLogin:hover{
     background-color: rgba(179, 177, 177, 0.479);
@@ -169,12 +172,12 @@
   .footer {
     width: 90%;
     height: 40px;
-    font-size: 13px;
+    font-size: 10px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     flex-direction: row;
-     margin-top: -15px;
+     margin-top: -11px;
   }
 
   
@@ -183,4 +186,7 @@
     font-size: 12px;
     margin-bottom: 15px;
     cursor:default;
+  }
+  .icon {
+    font-size: 25px;
   }

@@ -1,0 +1,238 @@
+.GetVerified{
+    /* background: red; */
+    height: 100vh;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.getverifiedbody{
+    height: 110%;
+    width: 68%;
+    gap: 10px;
+    background: rgb(255,255,255);
+    flex-direction: column;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.getverifiedwrap{
+    padding: 10px;
+    height: 40%;
+    width: 90%;
+    gap: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.getverifiedwrap .getv {
+    font-size: 24px;
+    font-weight: 800;
+    color: rgb(255,109,0);
+}
+
+.getverifiedwrap .getv1 {
+    font-size: 25px;
+    font-weight: 100;
+}
+
+.getverifiedwrapper{
+    height: 55%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.getverifiedwrapperbody{
+    width: 99%;
+    height: 18%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.P1{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    color: rgb(145,127,162);
+}
+
+.P1 .veryfy{
+    font-size: 15px;
+    color: rgb(145,127,162);
+}
+
+.input{
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    font-size: 10px;
+}
+
+
+.name{
+    border: 1px solid black;
+    padding: 10px;
+    width: 50%;
+}
+.p2{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    color: rgb(145,127,162);
+}
+
+.P2 .veryfy1{
+    font-size: 15px;
+    color: rgb(145,127,162);
+}
+
+.inputz{
+    border: 1px solid black;
+    width: 100%;
+    padding: 10px;
+    font-size: 10px;
+    height: 90%;
+}
+
+
+.getverifiedwrapperbody1{
+    width: 99%;
+    height: 18%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+.P3{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    color: rgb(145,127,162);
+}
+
+.P3 .veryfy3{
+    font-size: 15px;
+    color: rgb(145,127,162);
+}
+
+.inputw{
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    font-size: 10px;
+    color: rgb(145,127,162);
+}
+
+
+.name{
+    border: 1px solid black;
+    padding: 10px;
+    width: 50%;
+}
+.p4{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    color: rgb(145,127,162);
+}
+
+.P4 .veryfy4{
+    font-size: 15px;
+    color: rgb(145,127,162);
+}
+
+.inpute{
+    border: 1px solid black;
+    width: 100%;
+    padding: 10px;
+    font-size: 10px;
+    color: rgb(145,127,162);
+    height: 90%;
+} 
+
+
+.getverifiedwrapperbody2{
+    height: 30%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.p10{
+    height: 80%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.very9{
+    color: rgb(50,16,82);
+}
+
+.last{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    gap: 5%;
+}
+
+.male{
+    width: 40%;
+    height: 90%;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.p11{
+    height: 80%;
+    width: 50%;
+    color: rgb(145,127,162);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.P11 .veryfy9{
+    font-size: 15px;
+    color: rgb(145,127,162);
+}
+
+.inpuz{
+    border: 1px solid black;
+    width: 100%;
+    padding: 10px;
+    font-size: 10px;
+    height: 90%;
+    font-size: 15px;
+}
+.btn10{
+    height: 20%;
+    width: 100%;
+    background: rgb(60,9,108);
+    color: white;
+}

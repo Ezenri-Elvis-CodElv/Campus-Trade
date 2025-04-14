@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LandingPage from "./Elvis/LandingPage";
-import HomeRoutes from "./routes/HomeRoute";
+import LayoutWithLoader from "./routes/LayoutWithLoader";
 import SignUp from "./Samuel/Auth/SignUp";
 import Login from "./Samuel/Auth/Login";
 import ResetPassword from "./Samuel/Auth/ResetPassword";
@@ -14,16 +14,27 @@ import ChangePhoneNumber from "./DashboardComponents'/ChangePhoneNumber";
 import ChangePassword from "./DashboardComponents'/ChangePassword";
 import GetVerified from "./DashboardComponents'/GetVerified";
 import RecentPost from "./DashboardComponents'/RecentPost";
-// import ProductDetailPage from "./Chidera/ProductDetailPage";
+import ProductDetailPage from "./Chidera/ProductDetailPage";
 import PendingPost from "./DashboardComponents'/PendingPost";
 import Posts from "./DashboardComponents'/Posts";
 import Ads from "./DashboardComponents'/Ads";
+import ProfilePage from "./Chidera/ProfilePage"
 import AccountInformation from "./DashboardComponents'/AccountInformation";
+import AdminDashboard from "./Admin/AdminDashboard";
+import ApproveInfo from "./Admin/ApproveInfo";
+import ApproveProfile from "./Admin/ApproveUserPost";
+import VerifyUser from "./Admin/VerifyUser";
+import DeleteUser from "./Admin/DeleteUser";
+import ApproveUserPost from "./Admin/ApproveUserPost";
+import AcceptUserPayment from "./Admin/AcceptUserPayment";
+import AdminPendingPost from "./Admin/AdminPendingPost";
+import AdminProfile from "./Admin/AdminProfile";
+// import ProfilePage from "./Chidera/ProfilePage";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomeRoutes />,
+    element:  <LayoutWithLoader />,
     children: [
       {
         path: "/",
@@ -37,10 +48,17 @@ const router = createBrowserRouter([
         path: "/explorepage",
         element: <ExplorePage />,
       },
-      // {
-      //   path: "/productdetailpage/:_id",
-      //   element: <ProductDetailPage />,
-      // },
+     
+      {
+        path: "/productdetailpage/:_id",
+        element: <ProductDetailPage />,
+      },
+
+      {
+        path: "/profilepage",
+        element: <ProfilePage />,
+      }
+
     ],
   },
   {
@@ -84,6 +102,42 @@ const router = createBrowserRouter([
         element: <Ads />,
       },
     ],
+  },
+
+  {
+    path: "/admindashboard",
+    element: <AdminDashboard />,
+    children: [
+      {
+        path: "/admindashboard",
+        element: <AdminProfile />
+      },
+      {
+        path: "/admindashboard/approveinfo",
+        element: <ApproveInfo />
+      },
+      
+      {
+        path: "/admindashboard/verifyuser",
+        element: <VerifyUser />
+      },
+      {
+        path: "/admindashboard/deleteuser",
+        element: <DeleteUser />
+      },
+      {
+        path: "/admindashboard/approveuserpost",
+        element: <ApproveUserPost />
+      },
+      {
+        path: "/admindashboard/adminpendingpost",
+        element: <AdminPendingPost />
+      },
+      {
+        path: "/admindashboard/acceptuserpayment",
+        element: <AcceptUserPayment />
+      }
+    ]
   },
 
   {
