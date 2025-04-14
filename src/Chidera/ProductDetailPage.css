@@ -24,7 +24,7 @@ a {
     width : fit-content;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 35px;
 }
 .detailProductinfo{
     display:flex;
@@ -128,6 +128,16 @@ a {
     cursor: pointer;
 }
 
+/* .condition .active {
+    background-color: #240046;
+    color: rgb(221, 220, 220);
+    border-radius: 30px;
+    width: 90px;
+    cursor: pointer;
+} */
+
+
+
 .description {
     display: flex;
     flex-direction: column;
@@ -156,14 +166,17 @@ a {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    width: 400px;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
 }
 
 .profileAndAds {
     display: flex;
     flex-direction: column;
-    align-items: end;
+    align-items: center;
     gap: 30px;
+
 }
 
 .profileAndDetails{

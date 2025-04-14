@@ -2,26 +2,49 @@ import React from 'react'
 import './ProductDetailPage.css'
 import Card from "../components/Card"
 import {  useNavigate } from 'react-router-dom';
-import { BsFillGeoAltFill } from "react-icons/bs";
+import { useState } from 'react';
 import Location from '../components/detailPage/Location'
 import { LuBadgeCheck } from "react-icons/lu";
 import { IoCopy } from "react-icons/io5";
 import { IoMdArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import { TbCurrencyNaira } from "react-icons/tb";
+import { BsWhatsapp } from "react-icons/bs";
 
 
 
 const ProductDetailPage = () => {
-  const nav = useNavigate()
+const nav = useNavigate()
+const [active, setActive] = useState("");
 
-    const ADS = [
+const phoneNumber = "09192298383";
+const [copied, setCopied] = useState(false);
+const handleCopy = () => {
+  navigator.clipboard.writeText(phoneNumber);
+  setCopied(true);
+  setTimeout(() => setCopied(false), 1500); 
+};
+const getButtonStyle = (side) => {
+  const isActive = active === side;
+
+  return {
+    padding: '12px 26px',
+    backgroundColor: isActive ? '#240046' : 'transparent',
+    color: isActive ? '#ddd' : '#240046',
+    border: 'none',
+    cursor: 'pointer',
+    transition: '0.3s ease',
+    borderRadius: '30px',
+  };
+};
+
+const ADS = [
       {
-        imageUrl: "src/assets/Frame 230 (4).png",
+        imageUrl: "/images/phone.jpeg",
         alt: "HAHA"
       },
       {
-        imageUrl: "src/assets/Webb Idea 1 1.png",
+        imageUrl: "/images/Webb Idea 1 1.png",
         alt: "HAHA"
       }
     ]
@@ -64,15 +87,15 @@ const ProductDetailPage = () => {
             <img className="detailedProductImage" src="/images/phone.jpeg" alt="Phone" />
               <div className="detailedProductInfo">
               <h3 className='projectinfo'>Iphone 13 pro</h3>
-              <p className='projectinfo1'> <TbCurrencyNaira size={30}/>350</p>
+              <p className='projectinfo1'> <TbCurrencyNaira size={30}/>350,000</p>
             </div>
           </div>
           <Location />
           <div className='condition'>
             <h3 className='projectinfo2'>Condition</h3>
             <div className='body1'>
-              <button className='btwn'>New</button>
-              <button className='active'>Used</button>
+              <button className=''btwn style={getButtonStyle('New')} onClick={() =>setActive('New')} >New</button>
+              <button className='active' style={getButtonStyle('Used')} onClick={() =>setActive('Used')}>Used</button>
             </div>
           </div>
           <div className='description'>
@@ -100,20 +123,27 @@ const ProductDetailPage = () => {
                     </div>
                     <div className='profileDateAndLink'>
                       <h4 className='membersincejanuary'>Member since January 2025</h4>
-                      <button  className='obvlickbtn' onClick={() => nav('/ProfilePage')} >
-                        <span className='spamm'>See profile </span>
-                        <IoIosArrowForward size={18} />
-                      </button>
+                      <button className='obvlickbtn' onClick={() => nav('/ProfilePage')}>
+                      <span className='spamm'>See profile</span>
+                      <IoIosArrowForward size={18}  />
+                    </button>
+
                     </div>
                   </div>
                 </div>
                 <div className='profileContact'>
                   <button className='contact phoneNumber'>
-                    <IoCopy  size={20}/>
-                    <a href="tel: 09149948399">09192298383</a>
+                    {copied ? (
+                      spans => <span style={{ marginLeft: "8px", color: "green" }}>Copied!</span>
+                    ) : (
+                    <IoCopy  size={20}
+                    onClick={handleCopy}
+                    style={{ cursor: "pointer", marginRight: "8px" }} />)}
+                    <a href={`tel:${phoneNumber}`}>{phoneNumber}</a>
+                    {copied && <span style={{ marginLeft: "8px", color: "green" }}>Copied!</span>}
                   </button>
                   <button className='contact whatsapp'>
-                    <BsFillGeoAltFill />
+                    <BsWhatsapp size={25} style={{color: "green"}}/>
                     <a href="https://web.whatsapp.com/09149948399">Chat via whatsapp</a>
                   </button>
                 </div>

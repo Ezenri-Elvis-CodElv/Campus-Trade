@@ -12,7 +12,7 @@ const ForgetPassword = () => {
   <div className="box">
     <div className="boxWrapper">
       <div className="logo">
-       <img src="https://res.cloudinary.com/dlskde227/image/upload/v1744389538/Lp2_pqyw5f.jpg" alt="" />
+       <img src="/images/CAMPUSTRADE-02 1.png" alt="" />
       </div>
 
       <div className="inputHolder">

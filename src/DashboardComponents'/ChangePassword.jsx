@@ -1,13 +1,16 @@
 import React from 'react'
-import "./ChangePassword.css"
-import { MdOutlineBackspace } from "react-icons/md";
+import { RiCloseFill } from 'react-icons/ri';
+import { useNavigate } from 'react-router';
+import "./changepassword.css"
+
 const ChangePassword = () => {
+  const navigate = useNavigate()
   return (
       <div className='changepassword'>
         <div className='changepasswordwrapper'>
          <div className='backicon'>
          <button className='backiconbtn'> 
-         <MdOutlineBackspace size={40} style={{color:"black"}}/>
+         <RiCloseFill onClick={() => navigate(-1)}/>         
          </button>
          </div>
           <div className='changepasswordinner'>
@@ -27,6 +30,7 @@ const ChangePassword = () => {
           </div>
         </div>
       </div>
+    
   )
 }
 
