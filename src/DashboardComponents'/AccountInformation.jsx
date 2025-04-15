@@ -59,7 +59,7 @@ const AccountInformation = () => {
         <button
          className="change-pic-text"
          onClick={() => document.getElementById("profilePicInput").click()}>
-            change <br /> profile <br /> pic
+            +
             </button>
            </div>
 

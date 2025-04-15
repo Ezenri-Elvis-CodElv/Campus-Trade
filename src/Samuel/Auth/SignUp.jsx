@@ -61,7 +61,7 @@ const SignUp = () => {
           </div>  
            <button className="googleLogin">
                     <FcGoogle className='icon'/>
-                    <span>Sign in with Google</span>
+                    <span>Sign up with Google</span>
                       </button>   
           <p className='trademark'>@campustrade</p>
         </div>

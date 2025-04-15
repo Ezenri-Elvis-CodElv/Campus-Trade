@@ -1,128 +1,289 @@
 .status-table-container {
-    width: 100%;
-    height: auto;
-    padding: 14px;
-    background: #ffffff;
-    font-family: 'Poppins', sans-serif;
-   
-    
-  }
-  
+  width: 100%;
+  height: auto;
+  padding: 14px;
+  background: #ffffff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.status-table-header {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: space-around;
+  margin-left: -59px;
+  font-weight: 700;
+  color: #2e0062;
+  font-size: 18px;
+  margin-bottom: 30px;
+  cursor: default;
+}
+
+.status-table-header-left {
+  display: flex;
+  gap: 70px;
+}
+
+.status-table-row {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-around;
+  margin-left: -45px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 20px;
+}
+
+.status-label {
+  width: auto;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  margin-right: 55px;
+  font-size: 14px;
+  color: #1e0e3e;
+  cursor: default;
+}
+
+.status-user-info {
+  width: auto;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  cursor: default;
+}
+
+.status-user-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.status-user-text {
+  width: auto;
+  height: auto;
+  line-height: 1.2;
+}
+
+.status-user-name {
+  width: auto;
+  height: 20px;
+  color: #2e0062;
+  font-weight: 400;
+}
+
+.status-user-category,
+.status-user-school {
+  width: auto;
+  height: 13px;
+  font-size: 11px;
+  color: #5e5e5e;
+}
+
+.status-post-info {
+  width: auto;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.status-box {
+  width: 18px;
+  height: 18px;
+  border: 2px solid;
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: middle;
+  border-radius: 3px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.approved {
+  border-color: green;
+  color: #014c20;
+}
+
+.pending {
+  border-color: #ffcc00;
+  color: #ffc108;
+}
+
+.not-approved {
+  border-color: red;
+  color: #de1d0f;
+}
+
+.status-footer {
+  width: 100%;
+  height: 30px;
+  text-align: center;
+  color: #999;
+  font-size: 13px;
+  margin-top: 40px;
+  cursor: default;
+}
+
+/* Media Query Styling for Small Desktop */
+@media only screen and (max-width: 1440px) {
   .status-table-header {
-    width: 100%;
-    height: 30px;
-    display: flex;
-    justify-content: space-around;
-    margin-left: 10px;
-    font-weight: 700;
-    color: #2e0062;
-    font-size: 18px;
-    margin-bottom: 30px;
-    cursor: default;
+    margin-left: -40px;
+    font-size: 17px;
   }
-  
+
   .status-table-row {
-    width: 100%;
-    height: 60px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-bottom: 30px;
-    border-bottom: 1px solid #f0f0f0;
-    padding-bottom: 20px;
+    margin-left: -30px;
   }
-  
-  .status-label {
-    width: auto;
-    height: 20px;
-    display: inline-flex;
-    align-items: center;
-    margin-right: 55px;
-    font-size: 14px;
-    color: #1e0e3e;
-    cursor: default;
+
+  .status-table-header-left {
+    gap: 60px;
   }
-  
-  .status-user-info {
-    width: auto;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    cursor: default;
+}
+
+/* Media Query Styling for Smaller Desktop */
+@media only screen and (max-width: 1200px) {
+  .status-table-header {
+    font-size: 16px;
+    gap: 10px;
   }
-  
+
+  .status-table-header-left {
+    gap: 50px;
+  }
+
   .status-user-image {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin-right: 15px;
+    width: 50px;
+    height: 50px;
   }
-  
-  .status-user-text {
-    width: auto;
+
+  .status-box {
+    width: 16px;
+    height: 16px;
+    font-size: 11px;
+  }
+}
+
+/* Media Query Styling for Big Tablet Device */
+@media only screen and (max-width: 900px) {
+  .status-table-header {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0;
+    font-size: 15px;
+  }
+
+  .status-table-header-left {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .status-table-row {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 5px;
     height: auto;
-    line-height: 1.2;
   }
-  
+
+  .status-label {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .status-user-info {
+    margin-bottom: 10px;
+  }
+
+  .status-post-info {
+    margin-top: 5px;
+    gap: 10px;
+  }
+
+  .status-footer {
+    font-size: 12px;
+  }
+}
+
+/* Media Query Styling for Tablet Device */
+@media only screen and (max-width: 760px) {
+  .status-user-text {
+    font-size: 12px;
+  }
+
   .status-user-name {
-    width: auto;
-    height: 20px;
-    color: #2e0062;
-    font-weight: 400;
+    font-size: 13px;
   }
-  
+
   .status-user-category,
   .status-user-school {
-    width: auto;
-    height: 13px;
-    font-size: 11px;
-    color: #5e5e5e;
+    font-size: 10px;
   }
-  
-  .status-post-info {
-    width: auto;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  
+
   .status-box {
-    width: 18px;
-    height: 18px;
-    border: 2px solid;
-    display: inline-block;
-    margin-right: 10px;
-    vertical-align: middle;
-    border-radius: 3px;
-    cursor: pointer;
-    text-align: center;
+    width: 14px;
+    height: 14px;
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  .status-table-header-left {
+    gap: 8px;
+  }
+}
+
+/* Media Query Styling for Mobile Device */
+@media only screen and (max-width: 480px) {
+  .status-table-container {
+    padding: 10px;
+  }
+
+  .status-user-image {
+    width: 40px;
+    height: 40px;
+  }
+
+  .status-label {
     font-size: 12px;
-    line-height: 18px;
   }
-  
-  .approved {
-    border-color: green;
-    color: #014c20;
+
+  .status-user-name {
+    font-size: 12px;
   }
-  
-  .pending {
-    border-color: #ffcc00;
-    color:  #ffc108 ;
-  }
-  
-  .not-approved {
-    border-color: red;
-    color: #de1d0f;
-  }
-  
+
   .status-footer {
-    width: 100%;
-    height: 30px;
-    text-align: center;
-    color: #999;
-    font-size: 13px;
-    margin-top: 40px;
-    cursor: default;
+    font-size: 11px;
+    margin-top: 20px;
   }
-  
+}
+
+/* Media Query Styling for Small Mobile Device */
+@media only screen and (max-width: 379px) {
+  .status-user-image {
+    width: 35px;
+    height: 35px;
+  }
+
+  .status-user-name {
+    font-size: 11px;
+  }
+
+  .status-label {
+    font-size: 11px;
+    margin-bottom: 6px;
+  }
+
+  .status-box {
+    width: 12px;
+    height: 12px;
+    font-size: 9px;
+    line-height: 12px;
+  }
+
+  .status-footer {
+    font-size: 10px;
+  }
+}
