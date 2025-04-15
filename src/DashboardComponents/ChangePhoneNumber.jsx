@@ -1,4 +1,4 @@
-import "./Changephonenumber.css"
+import "./changephonenumber.css"
 import { RiCloseFill } from "react-icons/ri";
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
