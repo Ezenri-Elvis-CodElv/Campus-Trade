@@ -6,7 +6,7 @@ const initialState = {
 };
 
 const features = createSlice({
-    name: "CodElv",
+    name: "CampusTrade",
     initialState,
     reducers: {
         isAuth: (state) => {

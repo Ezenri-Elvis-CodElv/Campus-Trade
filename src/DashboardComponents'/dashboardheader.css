@@ -1,91 +1,88 @@
 .dashboard-header {
-    height: 10vh;
-    width: 100%;
-    background-color: rgb(255, 255, 255);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-header-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.dashboard-header-content-leftside img {
+  cursor: pointer;
+  width: 120px;
+}
+
+.burger-menu {
+  display: none;
+  cursor: pointer;
+}
+
+.dashboard-header-content-rightside {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+  width: 20%;
+}
+
+.dashboard-content-home,
+.dashboard-content-notification,
+.dashboard-content-img {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dashboard-content-home p,
+.dashboard-content-notification p {
+  margin-left: 8px;
+}
+
+.dash-profile-picture {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  /* Hide right side content (Home, Notification, Profile) on mobile */
+  .dashboard-header-content-rightside {
+    display: none;
   }
 
-  .dashboard-header-content{
-    height: 90%;
-    width: 95%;
-    background-color: rgb(255, 255, 255);
+  /* Show burger menu on mobile */
+  .burger-menu {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
   }
 
-  .dashboard-header-content-rightside{
-    width: 50%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 8px;
+  /* Mobile dropdown menu */
+  .mobile-dropdown-menu {
+    display: block;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    z-index: 10;
   }
-  .ImageLogoDash{
-    cursor: pointer;
-  }
-  .dasboard-content-home{
-    width: 15%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .dasboard-content-notification{
-    width: 15%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-  }
-  .dasboard-content-img{
-    width: 60px;
-    height: 100%;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    cursor: pointer;
-    align-items: center;
-  }
+}
 
-  .dash-profile-picture{
-    width: 100%;
-    height: 100%;
-    border-radius: 50px;
-
-    background-color: black;
+/* Desktop view (show right-side content) */
+@media (min-width: 769px) {
+  .burger-menu {
+    display: none;
   }
   
-
-  .content-p-tag{
-    font-size: 14px;
-    font-family: Montserrat;
-    cursor: pointer;
-    font-family: "Inter";
-    color: black;
-  }
-  .dashboard-header-content-leftside{
-    width: 50%;
-    height: 100%;
+  .dashboard-header-content-rightside {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
   }
-  .sellers-dash-text{
-    font-size: 25px;
-    font-weight: 700;
-    font-family: "Inter";
-    color: purple;
-  }
-
-  
+}

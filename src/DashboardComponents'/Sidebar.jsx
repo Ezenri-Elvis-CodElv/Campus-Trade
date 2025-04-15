@@ -1,3 +1,4 @@
+// Sidebar.jsx
 import { NavLink, useNavigate } from 'react-router-dom';
 import './sidebar.css';
 import { CgProfile } from 'react-icons/cg';
@@ -10,38 +11,94 @@ import { RiLogoutCircleLine } from 'react-icons/ri';
 import { BsFillFilePostFill } from 'react-icons/bs';
 
 const Sidebar = () => {
-  const nav = useNavigate()
+  const nav = useNavigate();
+  
+  const getNavLinkClass = ({ isActive }) => 
+    isActive ? "link active" : "link";
+
   return (
-    <>
     <aside className="sidebar">
       <div className='sidebar-profileIcon'>
-      <CgProfile size={35} style={{color: "purple"}}/>
+        <CgProfile size={35} style={{ color: "purple" }} />
         <h3 className='myprofiletext'>My Profile</h3>
-       
       </div>
-      
-     <div className='pages-sidebar'>
-     <NavLink to="/dashboard" className="link">Profile</NavLink>
 
-     <NavLink to="/dashboard/createpost" end className="link"> <IoCreateOutline size={14}/>Create a post</NavLink>
-      <NavLink to="/dashboard/getverified" className="link"><MdVerifiedUser size={14} />Get verified</NavLink>
-     </div>
-        <h3 className='myprofiletext'>My Post</h3>
-        <div className='pages-sidebar'>
-     <NavLink to="/dashboard/recentpost"  className="link"> <BsFillFilePostFill size={14} />Recent Post</NavLink>
-      <NavLink to="/dashboard/pendingpost" className="link"><MdOutlinePendingActions size={14} /> Pending Post</NavLink>
-      <NavLink to="/dashboard/ads" className="link"><SiGoogleads size={14} /> Ads</NavLink>
-     </div>
-     <div className='logout-button-setting'>
-      <NavLink to="/dashboard/accountinformation" className='dash-setting'><IoSettingsOutline size={20} /> Setting</NavLink>
+      <div className='pages-sidebar'>
+        <NavLink 
+          to="/dashboard" 
+          className={getNavLinkClass}
+          end
+        >
+          Profile
+        </NavLink>
 
-     </div>
-     <div className='logout-button'>
-     <button className='dash-logout' onClick={() => nav('/')}><RiLogoutCircleLine size={18}  /> LogOut</button>
+        <NavLink 
+          to="/dashboard/createpost" 
+          className={getNavLinkClass}
+          end
+        >
+          <IoCreateOutline size={14} />
+          Create a post
+        </NavLink>
 
-     </div>
+        <NavLink 
+          to="/dashboard/getverified" 
+          className={getNavLinkClass}
+        >
+          <MdVerifiedUser size={14} />
+          Get verified
+        </NavLink>
+      </div>
+
+      <h3 className='myprofiletext'>My Post</h3>
+      <div className='pages-sidebar'>
+        <NavLink 
+          to="/dashboard/recentpost" 
+          className={getNavLinkClass}
+        >
+          <BsFillFilePostFill size={14} />
+          Recent Post
+        </NavLink>
+
+        <NavLink 
+          to="/dashboard/pendingpost" 
+          className={getNavLinkClass}
+        >
+          <MdOutlinePendingActions size={14} />
+          Pending Post
+        </NavLink>
+
+        <NavLink 
+          to="/dashboard/ads" 
+          className={getNavLinkClass}
+        >
+          <SiGoogleads size={14} />
+          Ads
+        </NavLink>
+      </div>
+
+      <div className='logout-button-setting'>
+        <NavLink 
+          to="/dashboard/accountinformation" 
+          className={({ isActive }) => 
+            isActive ? "dash-setting active" : "dash-setting"
+          }
+        >
+          <IoSettingsOutline size={20} />
+          Setting
+        </NavLink>
+      </div>
+
+      <div className='logout-button'>
+        <button 
+          className='dash-logout' 
+          onClick={() => nav('/')}
+        >
+          <RiLogoutCircleLine size={18} />
+          LogOut
+        </button>
+      </div>
     </aside>
-    </>
   );
 };
 

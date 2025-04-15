@@ -9,7 +9,6 @@ import ForgetPassword from "./Samuel/Auth/ForgetPassword";
 import Categories from "./components/Categories";
 import ExplorePage from "./Edith/ExplorePage";
 import Dashboard from "./Elvis/Dashboard";
-import CreatePost from "./DashboardComponents'/CreatePost";
 import ChangePhoneNumber from "./DashboardComponents'/ChangePhoneNumber";
 import ChangePassword from "./DashboardComponents'/ChangePassword";
 import GetVerified from "./DashboardComponents'/GetVerified";
@@ -30,7 +29,8 @@ import AcceptUserPayment from "./Admin/AcceptUserPayment";
 import AdminPendingPost from "./Admin/AdminPendingPost";
 import AdminProfile from "./Admin/AdminProfile";
 import SellerProfile from "./DashboardComponents'/SellerProfile";
-// import ProfilePage from "./Chidera/ProfilePage";
+import CreatePost from "./DashboardComponents'/CreatePost";
+
 
 const router = createBrowserRouter([
   {
@@ -161,11 +161,7 @@ const router = createBrowserRouter([
     path: "/forgetpassword",
     element: <ForgetPassword />,
   },
-  {
-    path: "/dashboard",
-    element: <PrivateRoute />,
-    children: [],
-  },
+  
 ]);
 
 const App = () => {

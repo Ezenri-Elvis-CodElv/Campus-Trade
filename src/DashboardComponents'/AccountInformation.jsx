@@ -2,7 +2,7 @@ import React from 'react';
 import { IoKeyOutline } from 'react-icons/io5';
 import { PiNotePencilDuotone } from 'react-icons/pi';
 import "./accountinformation.css"
-import { NavLink } from 'react-router';
+import { NavLink } from 'react-router-dom';
 
 const AccountInformation = () => {
   return (
@@ -19,6 +19,7 @@ const AccountInformation = () => {
           <img
             src="https://i.ibb.co/fSr5z1m/profile-pic.png" 
             className="profile-image"
+            alt="Profile"
           />
           <div className="change-pic-text">
             change <br /> profile <br /> pic
@@ -27,35 +28,35 @@ const AccountInformation = () => {
 
         <div className="input-group">
           <label className="input-label">Full name</label>
-          <input type="text" className="input-field" placeholder="input your full name" />
+          <input type="text" className="input-field" placeholder="Input your full name" />
         </div>
 
         <div className="input-group">
           <label className="input-label">Full Address</label>
-          <input type="email" className="input-field" placeholder="" />
+          <input type="text" className="input-field" placeholder="Enter your address" />
         </div>
 
         <div className="input-group">
           <label className="input-label">Phone number</label>
-          <input type="text" className="input-field" placeholder="" />
+          <input type="tel" className="input-field" placeholder="Enter phone number" />
         </div>
 
         <div className="input-group">
           <label className="input-label">Bio</label>
           <textarea
             className="bio-field"
-            placeholder=""
+            placeholder="Write your bio..."
           ></textarea>
         </div>
 
         <div className="account-buttons">
-          <NavLink to="/dashboard/changephonenumber"ton className="reset-password-button">
+          <NavLink to="/dashboard/changephonenumber" className="reset-password-button">
             <span className="reset-icon"><IoKeyOutline /></span>
             Reset password
           </NavLink>
           <NavLink to="/dashboard/changepassword" className="change-phone-button">
             <span className="change-icon"><PiNotePencilDuotone /></span>
-            Change phone <br /> number
+            Change phone number
           </NavLink>
         </div>
       </div>

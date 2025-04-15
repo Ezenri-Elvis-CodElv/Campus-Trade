@@ -21,9 +21,6 @@
   width: 100%;
   padding: 10px;
 }
-.sidebar-profileIcon hr {
-  width: 100%;
-}
 
 .myprofiletext {
   font-size: 24px;
@@ -36,6 +33,7 @@
   width: 100%;
   padding: 10px;
 }
+
 .link {
   color: rgb(36,0,70);
   padding: 10px;
@@ -54,31 +52,33 @@
 }
 
 .link:hover {
-  background-color: rgb(167, 158, 158);
+  background-color: rgba(167, 158, 158, 0.1);
 }
 
 .link.active {
   background-color: orange;
   border-left: 4px solid rgb(36,0,70);
+  font-weight: 600;
 }
 
-.logout-button-setting{
-  height: 20%;
+.logout-button-setting {
+  height: 30%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.1);
 }
-.logout-button{
-  height: 12%;
+
+.logout-button {
+  height: 40%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.dash-setting{
+.dash-setting {
   height: 40%;
   width: 800%;
   display: flex;
@@ -89,18 +89,18 @@
   color:  rgb(36,0,70);
   font-size: 18px;
   font-weight: 600;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 8px;
 }
-
-
 
 .dash-setting.active {
-color: black;
-background-color: orange;
-  border-left: 4px solid rgb(36,0,70)purple;
-  border-top: 4px solid rgb(36,0,70);
-  border-radius: 10px 0px 10px 0px;
+  background-color: orange;
+  border-left: 4px solid rgb(36,0,70);
+  border-top: 2px solid rgba(36,0,70, 0.1);
 }
-.dash-logout{
+
+.dash-logout {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -109,4 +109,12 @@ background-color: orange;
   color: red;
   font-size: 18px;
   font-weight: 400;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.dash-logout:hover {
+  background-color: rgba(255, 0, 0, 0.05);
 }

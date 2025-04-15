@@ -112,19 +112,51 @@
   
  
   @media (max-width: 768px) {
+    .aprroveinfo {
+      width: 100%;
+      padding: 1rem;
+    }
+  
     .profileinfo-approve {
       flex-direction: column;
       align-items: flex-start;
+      gap: 1rem;
+    }
+  
+    .approveinfo-left-header {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .approveinfo-left-header-img {
+      margin-right: 0;
+      margin-bottom: 0.5rem;
     }
   
     .approveinfo-right {
+      width: 100%;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+  
+    .approveinfo-right-approve {
+      justify-content: center;
+      width: 100%;
     }
   
     .approve-infor-header-text {
       flex-direction: column;
+      align-items: center;
+      text-align: center;
       gap: 0.5rem;
+    }
+  
+    .approveinfo-body {
+      border-bottom: 1px solid #eee;
+      padding-bottom: 1.5rem;
     }
   }
   
