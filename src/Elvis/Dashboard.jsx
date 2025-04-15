@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import "./dashboard.css";
-import DashboardHeader from "../DashboardComponents'/DashboardHeader";
-import Sidebar from "../DashboardComponents'/Sidebar";
+import DashboardHeader from "../DashboardComponents/DashboardHeader";
+import Sidebar from "../DashboardComponents/Sidebar";
 
 
 
