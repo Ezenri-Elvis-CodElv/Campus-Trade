@@ -2,6 +2,7 @@ import React from 'react'
 import "./card.css"
 import { useNavigate } from 'react-router'
 
+
 const Card = ({item, index}) => {
   const nav = useNavigate()
   console.log(item)

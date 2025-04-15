@@ -29,7 +29,9 @@ import ApproveUserPost from "./Admin/ApproveUserPost";
 import AcceptUserPayment from "./Admin/AcceptUserPayment";
 import AdminPendingPost from "./Admin/AdminPendingPost";
 import AdminProfile from "./Admin/AdminProfile";
-import SellerProfile from "./DashboardComponents'/SellerProfile";
+
+import VerifySuccessful from "./Admin/VerifySuccessful";
+
 // import ProfilePage from "./Chidera/ProfilePage";
 
 const router = createBrowserRouter([
@@ -125,6 +127,11 @@ const router = createBrowserRouter([
       {
         path: "/admindashboard/verifyuser",
         element: <VerifyUser />
+      },
+      {
+        path: "/admindashboard/verifysuccessful",
+        element: <VerifySuccessful/>
+
       },
       {
         path: "/admindashboard/deleteuser",
