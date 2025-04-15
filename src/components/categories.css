@@ -22,34 +22,42 @@
     width: 100%;
     height: 30vh;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding-left: 50px;
-    padding-right: 0px;
-    gap: 200px;
+    padding-right: 50px;
     
 
 }
 .text-holder{
-height: 100%;
-width: 50%;
+height: 50%;
+width: 100%;
 display: flex;
-flex-direction: column;
-gap: 100px;
-padding-left: 50px;
+flex-direction: row;
+gap: 50px;
 padding-top: 10px;
 padding-bottom: 60px;
 }
+.top-text{
+    width: 50%;
+    height: 300%;
+    display: flex;
+    flex-direction: row;
+    padding-top: 5px;
+    padding-left: 50px;
+
+}
 .category-button-holder{
-    width: 30%;
-    height: 50%;
+    width: 50%;
+    height:300%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: end;
+    padding-right: 55px;
 
 }
 .category-toggle{
- height: 60%;
- width: 60%;
+ height: 100%;
+ width: 50%;
  border-radius: 50px;
  background-color:#FFCD2978 ;
  padding: 5px;
@@ -61,8 +69,8 @@ padding-bottom: 60px;
  padding-left: 10px;
  color: #03045E;
 }
-.New{
-    width: 45%;
+.New-toggle{
+    width: 50%;
     height: 100%;
     border-radius: 50px;
     display: flex;
@@ -71,17 +79,11 @@ padding-bottom: 60px;
     background-color: #03045E;
     color: #ffff;
 }
-.top-text{
-    width: 25%;
-    height: 20%;
-    display: flex;
-    flex-direction: row;
-    padding-top: 5px;
-}
+
 .buttom-text{
-    width: 70%;
-    height: 60%;
-    /* padding-bottom: 20px; */
+    width: 100%;
+    height: 50%;
+    padding-left: 50px;
     
 }
 .icon{
@@ -113,52 +115,72 @@ padding-bottom: 60px;
     }
     .category-img{
         width: 100%;
-        height: 40vh;
+        height: 30vh;
     }
     .category-text-wrappers{
         width: 100%;
-        height: 30vh;
+        height: 25vh;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         padding-left: 0px;
         padding-right: 0px;
-        gap: 10px;
         
     }
-    .text-holder{
-        width: 50%;
-        /* background-color: blue; */
+   .text-holder{
+    height: 100%;
+    width: 100%;
+    gap: 20px;
+   }
+   .buttom-text{
+    height: 100%;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 5px;
+   }
+   .top-text{
+    padding-left: 20px;
+   }
+
+   .category-button-holder{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 50px;
+   }
+    
+    
+
+    .category-toggle{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 0px;
+       
     }
-    .top-text{
+    .New-toggle{
+        width: 50%;
+        height: 100%;
+        border-radius: 50px;
+        background-color: #03045E;
+        color: #ffff;
 
     }
-    .buttom-text{
-        text-align: center;
-    }
-    
-    .category-button-holder{
+    .category-used{
         width: 50%;
-        background-color: #9747FF;
+        color: #03045E;
     }
+
     .category-product{
         width: 100%;
         height: max-content;
         padding-left: 0px;
         padding-right: 0px;
         display: flex;
-        flex-direction: row;
         flex-wrap: wrap;
-    }
-    .category-toggle{
-        width: 80%;
-        height: 40%;
-        display: flex;
-        flex-direction: row;
-    }
-    .New{
-        width: 100%;
-        height: 100%;
-        border-radius: 50px;
     }
     
     

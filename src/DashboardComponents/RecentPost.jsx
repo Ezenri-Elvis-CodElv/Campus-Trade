@@ -1,66 +1,118 @@
 import React from 'react'
 import "./recentpost.css"
 import Card from '../components/Card';
+import shoe from "../../public/images/download.jpg";
+
 
 const RecentPost = () => {
   const myArr = [
-    {
-      image: "/public/download.jpg",
-      name: "Jimmy choo",
-      price: "23,000",
-      description: "Offers elegant and fashionable high heels",
-      university: "Lagos State University",
-    },
-    {
-      image: "/public/download.jpg",
-      name: "Books",
-      price: "20,000",
-      description: "Description",
-      university: "Uni Lag",
-    },
-    {
-      image: "/public/download.jpg",
-      name: "Home Appliances",
-      price: "30,000",
-      description: "My description",
-      university: "Yaba Tech",
-    },
-    {
-      image: "/public/download.jpg",
-      name: "Home Appliances",
-      price: "30,000",
-      description: "My description",
-      university: "Yaba Tech",
-    },
-    {
-      image: "/public/download.jpg",
-      name: "Home Appliances",
-      price: "30,000",
-      description: "My description",
-      university: "Yaba Tech",
-    },
-    {
-      image: "/public/download.jpg",
-      name: "Home Appliances",
-      price: "30,000",
-      description: "My description",
-      university: "Yaba Tech",
-    },
-    {
-      image: "/public/download.jpg",
-      name: "Home Appliances",
-      price: "30,000",
-      description: "My description",
-      university: "Yaba Tech",
-    },
-    {
-      image: "/public/download.jpg",
-      name: "Home Appliances",
-      price: "30,000",
-      description: "My description",
-      university: "Yaba Tech",
-    },
-  ];
+      {
+        image: `${shoe}`,
+        name: "Jimmy choo",
+        price: "23,000",
+        description: "Offers elegant and fashionable high heels",
+        university: "Lagos State University",
+        time: "28 mins ago",
+      },
+      {
+        image: `${shoe}`,
+        name: "Books",
+        price: "20,000",
+        description: "My description",
+        university: "Uni Lag",
+        time: "28 mins ago",
+      },
+      {
+        image: `${shoe}`,
+  
+        name: "Home Appliances",
+        price: "30,000",
+        description: "My description",
+        university: "Yaba Tech",
+        time: "28 mins ago",
+      },
+      {
+        image: `${shoe}`,
+  
+        name: "Home Appliances",
+        price: "30,000",
+        description: "My description",
+        university: "Yaba Tech",
+        time: "28 mins ago",
+      },
+      {
+        image: `${shoe}`,
+  
+        name: "Home Appliances",
+        price: "30,000",
+        description: "My description",
+        university: "Yaba Tech",
+        time: "28 mins ago",
+      },
+      {
+        image: `${shoe}`,
+  
+        name: "Home Appliances",
+        price: "30,000",
+        description: "My description",
+        university: "Yaba Tech",
+        time: "28 mins ago",
+      },
+      {
+        image: `${shoe}`,
+  
+        name: "Home Appliances",
+        price: "30,000",
+        description: "My description",
+        university: "Yaba Tech",
+        time: "28 mins ago",
+      },
+      {
+        image: `${shoe}`,
+  
+        name: "Home Appliances",
+        price: "30,000",
+        description: "My description",
+        university: "Yaba Tech",
+        time: "28 mins ago",
+      },
+      {
+        image: `${shoe}`,
+  
+        name: "Home Appliances",
+        price: "30,000",
+        description: "My description",
+        university: "Yaba Tech",
+        time: "28 mins ago",
+      },
+      {
+        image: `${shoe}`,
+  
+        name: "Home Appliances",
+        price: "30,000",
+        description: "My description",
+        university: "Yaba Tech",
+        time: "28 mins ago",
+      },
+      {
+        image: `${shoe}`,
+  
+        name: "Home Appliances",
+        price: "30,000",
+        description: "My description",
+        university: "Yaba Tech",
+        time: "28 mins ago",
+      },
+      {
+        image: `${shoe}`,
+  
+        name: "Home Appliances",
+        price: "30,000",
+        description: "My description",
+        university: "Yaba Tech",
+        time: "28 mins ago",
+      },
+    ];
   return (
     <div className='recent-body' >
       <div className='recent-text-holder'>

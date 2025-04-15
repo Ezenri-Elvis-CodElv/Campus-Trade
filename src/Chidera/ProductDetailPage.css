@@ -24,7 +24,7 @@ a {
     width : fit-content;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 35px;
 }
 .detailProductinfo{
     display:flex;
@@ -42,6 +42,7 @@ a {
     display:flex;
     justify-content:space-between;
     align-items: center;
+    cursor: pointer;
 }
 
 .detailedProductInfo .projectinfo {
@@ -68,6 +69,8 @@ a {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    cursor: pointer;
+    
 }
 
 .detailProductLocation .locate {
@@ -85,6 +88,7 @@ a {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    cursor: pointer;
 }
 
 .condition .projectinfo2 {
@@ -111,7 +115,9 @@ a {
     border: none;
     background-color: transparent;
     cursor: pointer;
-    font-family: "Inter", sans-serif;
+    font-family: "Inter", sans-serif;  
+    cursor: pointer;
+
 }
 
 .condition .active {
@@ -119,7 +125,18 @@ a {
     color: rgb(221, 220, 220);
     border-radius: 30px;
     width: 90px;
+    cursor: pointer;
 }
+
+/* .condition .active {
+    background-color: #240046;
+    color: rgb(221, 220, 220);
+    border-radius: 30px;
+    width: 90px;
+    cursor: pointer;
+} */
+
+
 
 .description {
     display: flex;
@@ -149,14 +166,17 @@ a {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    width: 400px;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
 }
 
 .profileAndAds {
     display: flex;
     flex-direction: column;
-    align-items: end;
+    align-items: center;
     gap: 30px;
+
 }
 
 .profileAndDetails{
@@ -191,6 +211,7 @@ a {
 img.profilePic {
     width: 90px;
     height: 80px;
+    cursor: pointer;
     border-radius: 50%;
 
 }
@@ -216,6 +237,7 @@ img.profilePic {
     color: black;
     font-size: 17px;
     font-family: "Inter", sans-serif;
+    cursor: pointer;
 }
 
 .profileDateAndLink .obvlickbtn {
@@ -226,12 +248,14 @@ img.profilePic {
     display: flex;
     align-items: center;
     font-weight: 400;
+    cursor: pointer;
 }
 
 .profileContact {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    cursor: pointer;
 }
 
 .contact {

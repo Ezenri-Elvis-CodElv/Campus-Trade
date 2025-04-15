@@ -5,7 +5,10 @@ import { RiShareFill } from "react-icons/ri";
 import { IoArrowBackOutline } from "react-icons/io5";
 import { IoLocationSharp } from "react-icons/io5";
 import { IoChevronForwardOutline } from "react-icons/io5";
+import { useNavigate } from 'react-router';
 const ProfilePage = () => {
+    const nav = useNavigate ()
+
   const myArr = [
     {
       image: "src/assets/download.jpg",
@@ -49,7 +52,7 @@ const ProfilePage = () => {
               </h2>
           </div>
           <div className='goBck'>
-            <IoArrowBackOutline size={20}/><h2 className='prof4'>
+            <IoArrowBackOutline size={20}/><h2 className='prof4' onClick={() => nav('/productdetailpage')}> 
            Go back
            </h2>
           </div>

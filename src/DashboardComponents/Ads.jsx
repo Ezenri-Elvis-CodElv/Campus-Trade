@@ -65,5 +65,4 @@ const Ads = () => {
     </div>
   );
 };
-
 export default Ads;

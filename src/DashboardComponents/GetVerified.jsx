@@ -41,11 +41,13 @@ const GetVerified = () => {
                       <p className='very9'>Gender</p>
                       <div className='last'>
                         <div className='male'>
-                        <input type="radio"  name='radio' />
+                        <input type="radio"   name='choice'
+                        style={{accentColor:"purple"}} />
                         <label>Male</label>
                         </div>
                         <div className='male'>
-                        <input type="radio"  name='radio' />
+                        <input type="radio"  name='choice'
+                        style={{accentColor:"purple"}} />
                         <label>Female</label>
                         </div>
                       </div>
