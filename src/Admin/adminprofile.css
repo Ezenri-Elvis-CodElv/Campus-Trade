@@ -183,3 +183,42 @@
   font-weight: 400;
   line-height: normal;
 }
+
+
+@media screen and (max-width: 600px) {
+  .stats-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .stat-card {
+    padding: 1rem;
+  }
+
+  .stat-card-h3 {
+    font-size: 24px;
+  }
+
+  .cards-p-tag {
+    font-size: 16px;
+  }
+
+  .progress-card {
+    padding: 0.8rem;
+  }
+
+  .progress-circle {
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+    margin-right: 0.8rem;
+  }
+
+  .progress-info-p {
+    font-size: 16px;
+  }
+
+  .progress-info-small {
+    font-size: 14px;
+  }
+}
