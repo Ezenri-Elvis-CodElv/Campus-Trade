@@ -30,6 +30,7 @@ import AdminPendingPost from "./Admin/AdminPendingPost";
 import AdminProfile from "./Admin/AdminProfile";
 import SellerProfile from "./DashboardComponents'/SellerProfile";
 import CreatePost from "./DashboardComponents'/CreatePost";
+import VerifySuccessful from "./Admin/VerifySuccessful";
 
 
 const router = createBrowserRouter([
@@ -125,6 +126,11 @@ const router = createBrowserRouter([
       {
         path: "/admindashboard/verifyuser",
         element: <VerifyUser />
+      },
+      {
+        path: "/admindashboard/verifysuccessful",
+        element: <VerifySuccessful/>
+
       },
       {
         path: "/admindashboard/deleteuser",

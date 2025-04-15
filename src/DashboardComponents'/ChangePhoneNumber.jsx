@@ -1,9 +1,7 @@
-
-// import React from "react";
 import "./Changephonenumber.css"
 import { RiCloseFill } from "react-icons/ri";
 import React, { useState } from "react";
-import { Navigate, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 
 const  ChangePhoneNumber = () => {
   const navigate = useNavigate();
