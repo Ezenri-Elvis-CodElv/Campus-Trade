@@ -1,5 +1,5 @@
 import React from 'react'
-import "./GetVerified.css"
+import "./getVerified.css"
 import { TbCapture } from "react-icons/tb";
 
 const GetVerified = () => {
@@ -58,6 +58,7 @@ const GetVerified = () => {
                        />
                   </div>
                 </div>
+                
                   <button className='btn10'>
                     Done
                   </button>

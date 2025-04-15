@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 .GetVerified{
     /* background: red; */
     height: 100vh;
@@ -35,11 +37,13 @@
     font-size: 24px;
     font-weight: 800;
     color: rgb(255,109,0);
+    font-family: "Inter", sans-serif;
 }
 
 .getverifiedwrap .getv1 {
     font-size: 25px;
     font-weight: 100;
+    font-family: "Inter", sans-serif;
 }
 
 .getverifiedwrapper{
@@ -72,6 +76,7 @@
 .P1 .veryfy{
     font-size: 15px;
     color: rgb(145,127,162);
+    font-family: "Inter", sans-serif;
 }
 
 .input{
@@ -80,6 +85,7 @@
     height: 100%;
     padding: 10px;
     font-size: 20px;
+    font-family: "Inter", sans-serif;
 }
 
 
@@ -99,6 +105,7 @@
 .P2 .veryfy1{
     font-size: 15px;
     color: rgb(145,127,162);
+    font-family: "Inter", sans-serif;
 }
 
 .inputz{
@@ -107,6 +114,7 @@
     padding: 10px;
     font-size: 10px;
     height: 90%;
+    font-family: "Inter", sans-serif;
 }
 
 
@@ -139,6 +147,7 @@
     padding: 10px;
     font-size: 10px;
     color: rgb(145,127,162);
+    font-family: "Inter", sans-serif;
 }
 
 
@@ -158,6 +167,7 @@
 .P4 .veryfy4{
     font-size: 15px;
     color: rgb(145,127,162);
+    font-family: "Inter", sans-serif;
 }
 
 .inpute{
@@ -220,6 +230,7 @@
 .P11 .veryfy9{
     font-size: 15px;
     color: rgb(145,127,162);
+    font-family: "Inter", sans-serif;
 }
 
 .inpuz{
@@ -229,10 +240,194 @@
     font-size: 10px;
     height: 90%;
     font-size: 15px;
+    font-family: "Inter", sans-serif;
 }
+
 .btn10{
     height: 20%;
     width: 100%;
     background: rgb(60,9,108);
     color: white;
 }
+
+.getverifiedwrabody3{
+    height: 1%;
+    width: 100%;
+    display: none;
+
+}
+
+
+
+
+/* @media only screen and (max-width: 1440px) {
+   
+    
+} */
+
+/* for tablet and mobile devices */
+@media only screen and (max-width: 900px) {
+   .GetVerified{
+    height: 110vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+
+   .getverifiedbody{
+    height: 110%;
+    width: 100%;
+    gap: 15px;
+    background: rgb(255,255,255);
+    flex-direction: column;
+    
+   }
+
+   .getverifiedwrap{
+    padding: 10px;
+    height: 25%;
+    width: 90%;
+    gap: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+   }
+
+    .getverifiedwrap .getv {
+     font-size: 24px;
+     font-weight: 900;
+     color: rgb(255,109,0);
+     font-family: "Inter", sans-serif;
+
+    }
+
+    .getverifiedwrap .getv1 {
+     font-size: 25px;
+     font-weight: 400;
+     font-family: "Inter", sans-serif;
+    }
+
+    .getverifiedwrapper{
+        height: 99%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        gap: 10px;
+        flex-direction: column;
+    }
+
+    .getverifiedwrapperbody2{
+        height: 20%;
+        font-size: 15px;
+        font-family: "Inter", sans-serif;
+
+    }
+
+    .getverifiedwrabody3{
+        height: 44%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .pink{
+        height: 65%;
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px  dashed grey;
+    }
+    
+}
+
+/* for mobile devices */
+@media only screen and (max-width: 760px) {
+    .GetVerified{
+     height: 110vh;
+     width: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background: red;
+    }
+ 
+    .getverifiedbody{
+     height: 110%;
+     width: 100%;
+     gap: 15px;
+     /* background: rgb(255,255,255); */
+     flex-direction: column;
+     background: pink;
+     
+    }
+ 
+    .getverifiedwrap{
+     padding: 10px;
+     height: 25%;
+     width: 90%;
+     gap: 10px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     padding: 10px;
+     background: yellow;
+    }
+ 
+     .getverifiedwrap .getv {
+      font-size: 29px;
+      font-weight: 1000;
+      color: rgb(255,109,0);
+      font-family: "Inter", sans-serif;
+ 
+     }
+ 
+     .getverifiedwrap .getv1 {
+      font-size: 27px;
+      font-weight: 400;
+      font-family: "Inter", sans-serif;
+     }
+ 
+     .getverifiedwrapper{
+         height: 209%;
+         width: 100%;
+         align-items: center;
+         gap: 10px;
+         flex-direction: column;
+         background: purple;
+     }
+ 
+     .getverifiedwrapperbody2{
+         height: 20%;
+         font-size: 15px;
+         font-family: "Inter", sans-serif;
+ 
+     }
+ 
+     .getverifiedwrabody3{
+         height: 44%;
+         width: 100%;
+         display: flex;
+         align-items: center;
+         flex-direction: column;
+         gap: 15px;
+         padding: 15px;
+     }
+ 
+     .pink{
+         height: 99%;
+         width: 80%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         border: 1px  dashed grey;
+     }
+     
+ }

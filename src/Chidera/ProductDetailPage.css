@@ -1,46 +1,50 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-
+body {
+    overflow-x: hidden;
+    font-family: "Inter", sans-serif;
+}
 
 a {
     text-decoration: none;
     color: inherit;
 }
 
-.section{
+.section {
     margin: 40px 70px;
     display: flex;
     flex-direction: column;
     gap: 50px;
 }
 
-.section > .body {
+.body {
     display: flex;
     justify-content: space-between;
+    gap: 40px;
 }
 
-.detailPageInfo{
-    width : fit-content;
+.detailPageInfo {
+    width: fit-content;
     display: flex;
     flex-direction: column;
     gap: 35px;
 }
-.detailProductinfo{
-    display:flex;
+
+.detailProductinfo {
+    display: flex;
     flex-direction: column;
-    gap:20px;
+    gap: 20px;
 }
 
-.detailedProductImage{
+.detailedProductImage {
     height: 668px;
-    width : 720px;
-    border-radius:30px;
+    width: 720px;
+    border-radius: 30px;
 }
 
-.detailedProductInfo{
-    display:flex;
-    justify-content:space-between;
+.detailedProductInfo {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     cursor: pointer;
 }
@@ -49,20 +53,18 @@ a {
     font-size: 33px;
     font-weight: 700;
     color: #240046;
-    font-family: "Inter", sans-serif;
 }
 
-.detailedProductInfo .projectinfo1{
+.detailedProductInfo .projectinfo1 {
     font-size: 23px;
     font-weight: 700;
     color: #FF6D00;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: "Inter", sans-serif;
 }
 
-.detailProductLocation{
+.detailProductLocation {
     border: 0.47px solid #1E1E1E;
     padding: 16px 10px;
     border-radius: 15px;
@@ -70,18 +72,16 @@ a {
     flex-direction: column;
     gap: 10px;
     cursor: pointer;
-    
 }
 
 .detailProductLocation .locate {
     font-size: 24px;
-    font-family: "Inter", sans-serif;
 }
 
-.detailProduction{
-   display: flex;
-   align-items: center;
-   gap: 3px;
+.detailProduction {
+    display: flex;
+    align-items: center;
+    gap: 3px;
 }
 
 .condition {
@@ -95,7 +95,6 @@ a {
     font-size: 24px;
     color: #240046;
     font-weight: 700;
-    font-family: "Inter", sans-serif;
 }
 
 .condition .body1 {
@@ -105,19 +104,17 @@ a {
     border-radius: 50px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
-.condition .btwn{
+.condition .btwn {
     font-size: 17px;
-    padding: 10px 28px;  
+    padding: 10px 28px;
     color: #240046;
     border-radius: 50px;
     border: none;
     background-color: transparent;
     cursor: pointer;
-    font-family: "Inter", sans-serif;  
-    cursor: pointer;
-
 }
 
 .condition .active {
@@ -125,40 +122,27 @@ a {
     color: rgb(221, 220, 220);
     border-radius: 30px;
     width: 90px;
-    cursor: pointer;
 }
-
-/* .condition .active {
-    background-color: #240046;
-    color: rgb(221, 220, 220);
-    border-radius: 30px;
-    width: 90px;
-    cursor: pointer;
-} */
-
-
 
 .description {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    width: 90%;
 }
 
-.description > .projectinfo3 {
+.description .projectinfo3 {
     font-size: 22px;
     color: #240046;
     font-weight: 600;
-    font-family: "Inter", sans-serif;
 }
 
 .description .projectinfo4 {
     border: 0.47px solid gray;
     height: 120px;
-    width: 90%;
     padding: 16px;
     border-radius: 13px;
     font-size: 18px;
-    font-family: "Inter", sans-serif;
     font-weight: 500;
 }
 
@@ -176,10 +160,9 @@ a {
     flex-direction: column;
     align-items: center;
     gap: 30px;
-
 }
 
-.profileAndDetails{
+.profileAndDetails {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -192,7 +175,6 @@ a {
     display: flex;
     flex-direction: column;
     gap: 10px;
-
 }
 
 .profilePicAndDetails {
@@ -205,7 +187,6 @@ a {
     display: flex;
     flex-direction: column;
     gap: 12px;
-
 }
 
 img.profilePic {
@@ -213,7 +194,6 @@ img.profilePic {
     height: 80px;
     cursor: pointer;
     border-radius: 50%;
-
 }
 
 .profileName {
@@ -221,9 +201,8 @@ img.profilePic {
     align-items: center;
 }
 
-.profileName .joansamuelh2 {
+.profileName h2 {
     font-size: 30px;
-    font-family: "Inter", sans-serif;
     color: #240046;
 }
 
@@ -233,17 +212,15 @@ img.profilePic {
     gap: 7px;
 }
 
-.profileDateAndLink .membersincejanuary {
-    color: black;
+.profileDateAndLink h4 {
     font-size: 17px;
-    font-family: "Inter", sans-serif;
     cursor: pointer;
+    color: black;
 }
 
 .profileDateAndLink .obvlickbtn {
     width: fit-content;
-    color: rgb(89,63,115);
-    font-family: "Inter", sans-serif;
+    color: rgb(89, 63, 115);
     font-size: 17px;
     display: flex;
     align-items: center;
@@ -263,20 +240,21 @@ img.profilePic {
     justify-content: center;
     gap: 8px;
     padding: 8px 0;
-    border-radius: 10px;    
+    border-radius: 10px;
     font-size: 18px;
     border: 0.47px solid #240046;
     width: 100%;
-    font-family: "Inter", sans-serif;
 }
 
-.phoneNumber, .whatsapp:hover {
+.phoneNumber,
+.whatsapp:hover {
     background-color: transparent;
     color: #240046;
     transition: all 0.5s ease-in-out;
 }
 
-.phoneNumber:hover, .whatsapp{
+.phoneNumber:hover,
+.whatsapp {
     background-color: #240046;
     color: white;
     transition: all 0.5s ease-in-out;
@@ -285,14 +263,13 @@ img.profilePic {
 .ads {
     display: flex;
     flex-direction: column;
-    align-items:center; 
+    align-items: center;
 }
-
 
 .ads .adsnumber {
     font-size: 14px;
     display: flex;
-    flex-direction: flex-start;
+    justify-content: flex-start;
 }
 
 .ads > img {
@@ -302,13 +279,11 @@ img.profilePic {
 
 .previousPage {
     display: flex;
-    align-items: flex-start;
-    font-family: "Inter", sans-serif;
+    align-items: center;
     gap: 6px;
     color: #240046;
     font-size: 20px;
     cursor: pointer;
-    align-items: center;
 }
 
 .deviceHeader {
@@ -316,165 +291,134 @@ img.profilePic {
     flex-direction: column;
     gap: 10px;
     font-weight: 400;
-    font-family: "Inter", sans-serif;
 }
 
-.cards{
+.cards {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    width: 100;
+    width: 100%;
 }
 
-
-
-
-
-
+/* ================== RESPONSIVE =================== */
 
 @media (max-width: 768px) {
-    section {
-      margin: 20px 30px;
-      gap: 35px;
-      padding: 10px;
+    .section {
+        margin: 20px 30px;
+        gap: 35px;
+        padding: 15px;
+        width: 100%;
     }
 
-    .detailPageInfo{
-        padding: 20px;
-        gap: 35px;
+    .body {
+        flex-direction: column-reverse;
+        gap: 10px;
     }
-    .detailProductLocation{
-        display: flex;
+
+    .detailedProductInfo {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
     }
 
     .detailedProductImage {
-      width: 100%;
-      height: auto;
-    }
-  
-    .detailedProductInfo {
-      align-items: flex-start;
-      gap: 10px;
-
-
-      & h3 {
-        font-size: 20px;
-        font-weight: 600;
-      }
-
-      & p {
-        font-size: 20px;
-      }
+        width: 100%;
+        height: auto;
     }
 
-    .condition > h3{
+    .projectinfo {
         font-size: 20px;
     }
-  
-    .condition > div {
-      width: 65%;
-      align-items: center;
-      padding: 10px;
-      height: 60px;
+
+    .projectinfo1 {
+        font-size: 16px;
     }
-    
+
+    .condition h3 {
+        font-size: 20px;
+    }
+
+    .condition .body1 {
+        width: 60%;
+        height: auto;
+    }
+
     .condition button {
-      width: 50%;
+        width: 50%;
     }
 
-    .description{
+    .description {
+        width: 100%;
+    }
 
-        & h3 {
-            font-size: 25px;
-        }
-    }
-  
-    .description > div {
-      width: 190%;
-    }
-    
     .profileAndPreviousPageButton {
         width: 100%;
-        gap: 140px;
+        gap: 60px;
         height: max-content;
-      }
-    
-      .profileAndAds {
-        align-items: flex-start;
-        height: 36%;
-        justify-content: center;  
-      }
-
-      .profileAndPreviousPageButton {
-      width: 100%;
-      gap: 140px;
-      height: max-content;
     }
-  
+
     .profileAndAds {
-      align-items: flex-start;
-      height: 36%;
-      justify-content: center;
-    }
-
-    .profileAndDetails{
-        gap: 10px;
-    }
-    .profilePicAndDetails > div{
+        align-items: flex-start;
+        padding: 15px;
         width: 100%;
-        height: 90px;
+    }
 
+    .profileName h2 {
+        font-size: 17px;
+    }
+
+    .profileDateAndLink h4 {
+        font-size: 14px;
+    }
+
+    .ads {
+        display: none;
+    }
+
+    .previousPage {
+        display: none;
+    }
+
+    .profile {
+        width: 100%;
+    }
+
+    .detailProductLocation {
+        width: 100%;
+    }
+
+    .description .projectinfo4 {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        padding: 15px;
+        width: 100%;
+    }
+
+    .description {
+        font-size: 15px;
+    }
+
+    .description .projectinfo3 {
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    .description .projectinfo4 {
+        font-size: 14px;
+    }
+
+    .profileAndPreviousPageButton {
+        width: 100%;
     }
 
     .profilePicAndDetails {
-      flex-direction: row;
-      align-items: flex-start;
-      padding: 5px;
-
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
     }
-
-    .profileName{
-        display: flex;
-        align-items: center;
-        gap: 10px;
-
-
-        & h2{
-        font-size: 17px;
-        }
-        
-    }
-
-    .profileDateAndLink{
-
-        & h4 {
-            font-size: 10px;
-        }
-    }
-
-  .previousPage{
-    display: none;
-  }
-
-
-.profileAndPreviousPageButton .detailProductLocation{
-    display: none;
 }
-
-
-  .detailProductLocation{
-    width: 190%;
-    
-  }
-   .ads{
-        display:none;
-    }
-    .ads > img {
-      width: 100%;
-    }
-  }
-
-
-  

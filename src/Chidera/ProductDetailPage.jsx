@@ -1,5 +1,5 @@
 import React from 'react'
-import './ProductDetailPage.css'
+import './productdetailpage.css'
 import Card from "../components/Card"
 import {  useNavigate } from 'react-router-dom';
 import { useState } from 'react';
@@ -22,7 +22,7 @@ const [copied, setCopied] = useState(false);
 const handleCopy = () => {
   navigator.clipboard.writeText(phoneNumber);
   setCopied(true);
-  setTimeout(() => setCopied(false), 1500); 
+  setTimeout(() => setCopied(false), 500); 
 };
 const getButtonStyle = (side) => {
   const isActive = active === side;
@@ -45,7 +45,7 @@ const ADS = [
       },
       {
         imageUrl: "/images/Webb Idea 1 1.png",
-        alt: "HAHA"
+        alt: "HAH"
       }
     ]
     const myArr = [
@@ -104,8 +104,8 @@ const ADS = [
               <h1 className='projectinfo4'>Lorem ipsum dolor, sit amet c 
                 onsectetur adipisicing elit. <br />
                 Pariatur quia quas aliquam s
-                oluta dolor  <br />libero vero face
-                 dolores.</h1>
+                oluta dolor  <br />
+                </h1>
             </div>
           </div>
         </div>

@@ -30,7 +30,6 @@ import AcceptUserPayment from "./Admin/AcceptUserPayment";
 import AdminPendingPost from "./Admin/AdminPendingPost";
 import AdminProfile from "./Admin/AdminProfile";
 import SellerProfile from "./DashboardComponents'/SellerProfile";
-// import ProfilePage from "./Chidera/ProfilePage";
 
 const router = createBrowserRouter([
   {
