@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+.dashboard-wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .dashboard-body {
+    flex: 1;
+    display: block;
+  }
+  
+  .dashboard-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    overflow-y: auto;
+
+  }
+
+  .sidebar-desktop {
+    display: block;
+  }
+  
+  @media (max-width: 768px) {
+    .sidebar-desktop {
+      display: none;
+    }
+  }
+  
+  

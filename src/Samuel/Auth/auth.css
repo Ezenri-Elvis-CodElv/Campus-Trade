@@ -1,0 +1,193 @@
+.Overall {
+  width: 100%;
+  height: 100vh;
+  background: url(../../../public/images/bg.jpg) no-repeat center center/cover transparent;
+  display: flex;
+  background-color: #888;
+  justify-content: center;
+  align-items: center;
+}
+
+.Overall.withBackgroundImage {
+  background: url(../../../public/images/bg1.jpg) no-repeat center center/cover ;
+
+}
+
+  
+  .box {
+    width: 390px;
+    min-height: 150px;
+    background: #fff;
+    border-radius: 2px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .boxWrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .logo {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -10px;
+  }
+  
+  .logo img {
+    width: 100px;
+    height: 55px;
+    object-fit: contain;
+  }
+  
+  .inputHolder {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 5px;
+    box-sizing: border-box;
+  }
+  
+  .welcome {
+    font-size: 17px;
+    font-weight: bold;
+    color: #240046;
+    height: 20px;
+    margin-bottom: 10px;
+    cursor: default;
+  }
+  
+  .signupText {
+    font-size: 14px;
+    font-weight: 600;
+    height: 20px;
+    color: #000;
+    cursor: default;
+    margin-top: 18px;
+  }
+  
+  .infoText {
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 10px;
+    cursor:default
+  }
+  
+  .inputBox {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .inputBox label {
+    width: 90%;
+    text-align: left;
+    font-size: 13px;
+    color: #333;
+  }
+  
+  .inputBox input {
+    width: 90%;
+    height: 45px;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+
+
+  
+  .passwordField {
+    width: 90%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 0 10px;
+    background-color: white;
+  }
+  
+  .passwordField input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 14px;
+  }
+  
+  .eyeIcon {
+    font-size: 18px;
+    color: #888;
+    margin-left: 10px;
+  }
+  
+  .submitBtn {
+    width: 90%;
+    height: 45px;
+    background-color: #2d004d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    /* margin-top: 2px; */
+    margin-bottom: 5px;
+  }
+  
+  .submitBtn:hover {
+    background-color: #5b0da4;
+  }
+  
+  .googleLogin {
+    width: 90%;
+    height: 43px;
+    font-size: 15px;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: -29px;
+  }
+  .googleLogin:hover{
+    background-color: rgba(179, 177, 177, 0.479);
+  }
+  .footer {
+    width: 90%;
+    height: 40px;
+    font-size: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+     margin-top: -11px;
+  }
+
+  
+  .trademark {
+    color: #555;
+    font-size: 12px;
+    margin-bottom: 15px;
+    cursor:default;
+  }
+  .icon {
+    font-size: 25px;
+  }
