@@ -209,6 +209,13 @@
 
 /* Media Query Styling for Big Tablet Device */
 @media only screen and (max-width: 900px) {
+  .change-pic-text{
+    margin-top: -65px;
+    font-size: 20px;
+    width: 20px;
+    height:20px;
+    margin-right: -85px;
+  }
   .account-container {
     width: 100%;
     padding: 20px;
