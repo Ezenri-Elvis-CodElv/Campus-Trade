@@ -23,6 +23,7 @@ const handleCopy = () => {
   navigator.clipboard.writeText(phoneNumber);
   setCopied(true);
   setTimeout(() => setCopied(false), 500); 
+  
 };
 const getButtonStyle = (side) => {
   const isActive = active === side;
@@ -134,13 +135,13 @@ const ADS = [
                 <div className='profileContact'>
                   <button className='contact phoneNumber'>
                     {copied ? (
-                      spans => <span style={{ marginLeft: "8px", color: "green" }}>Copied!</span>
+                      spans => <span style={{ marginLeft: "8px", color: "white" }}>Copied!</span>
                     ) : (
                     <IoCopy  size={20}
                     onClick={handleCopy}
                     style={{ cursor: "pointer", marginRight: "8px" }} />)}
                     <a href={`tel:${phoneNumber}`}>{phoneNumber}</a>
-                    {copied && <span style={{ marginLeft: "8px", color: "green" }}>Copied!</span>}
+                    {copied && <span style={{ marginLeft: "8px", color: "white" }}>Copied!</span>}
                   </button>
                   <button className='contact whatsapp'>
                     <BsWhatsapp size={25} style={{color: "green"}}/>

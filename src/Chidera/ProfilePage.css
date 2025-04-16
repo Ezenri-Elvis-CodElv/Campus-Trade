@@ -54,7 +54,7 @@ img.profilePix {
   color: #000;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 5px;
 }
 
 .profileDetail {
@@ -62,7 +62,7 @@ img.profilePix {
   align-items: center;
   justify-content: space-around;
   border: 0.47px solid #240046;
-  padding: 10px;
+  padding: 7px;
   border-radius: 10px;
 }
 
@@ -200,7 +200,12 @@ img.profilePix {
     align-items: center;
     padding: 10px;
   }
-
+  .goBck{
+    display: none;
+  }
+  .prof4{
+    display: none;
+  }
   .profileDetails .prof1,
   .profileDetail .prof2,
   .reportdetails .pro3,
