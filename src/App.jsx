@@ -29,7 +29,6 @@ import ApproveUserPost from "./Admin/ApproveUserPost";
 import AcceptUserPayment from "./Admin/AcceptUserPayment";
 import AdminPendingPost from "./Admin/AdminPendingPost";
 import AdminProfile from "./Admin/AdminProfile";
-
 import VerifySuccessful from "./Admin/VerifySuccessful";
 
 // import ProfilePage from "./Chidera/ProfilePage";
@@ -68,10 +67,10 @@ const router = createBrowserRouter([
     path: "/dashboard",
     element: <Dashboard />,
     children: [
-      {
-        path: "/dashboard",
-        element: <SellerProfile />,
-      },
+      // {
+      //   path: "/dashboard",
+      //   element: <SellerProfile />,
+      // },
       {
         path: "/dashboard/accountinformation",
         element: <AccountInformation />,
