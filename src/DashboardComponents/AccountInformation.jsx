@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { IoKeyOutline } from 'react-icons/io5';
 import { PiNotePencilDuotone } from 'react-icons/pi';
 import "./accountinformation.css"
-import { NavLink } from 'react-router';
+import { NavLink } from 'react-router-dom';
 
 const AccountInformation = () => {
   const [acctInfo, setAcctinfo] =useState(() => {
@@ -39,6 +39,7 @@ const AccountInformation = () => {
           <img
             src={acctInfo.profileImage}
             className="profile-image"
+            alt="Profile"
           />
           <input
           type='file'
@@ -65,6 +66,7 @@ const AccountInformation = () => {
 
         <div className="input-group">
           <label className="input-label">Full name</label>
+
           <input type="text" className="input-field" placeholder="" 
           value={acctInfo.fullname} 
           onChange={(e)=>setAcctinfo({...acctInfo, fullname:e.target.value})}/>
@@ -72,6 +74,7 @@ const AccountInformation = () => {
 
         <div className="input-group">
           <label className="input-label">Full Address</label>
+
           <input type="email" className="input-field" placeholder="" 
            value={acctInfo.fulladdress}
             onChange={(e)=>setAcctinfo({...acctInfo, fulladdress:e.target.value})}/>
@@ -79,6 +82,7 @@ const AccountInformation = () => {
 
         <div className="input-group">
           <label className="input-label">Phone number</label>
+
           <input type="text" className="input-field" placeholder="" 
            value={acctInfo.phonenumber} 
            onChange={(e)=>setAcctinfo({...acctInfo, phonenumber:e.target.value})}/>
@@ -88,6 +92,7 @@ const AccountInformation = () => {
           <label className="input-label">Bio</label>
           <textarea
             className="bio-field"
+
             placeholder=""
             value={acctInfo.bio} 
             onChange={(e)=>setAcctinfo({...acctInfo, bio:e.target.value})}
@@ -95,13 +100,13 @@ const AccountInformation = () => {
         </div>
 
         <div className="account-buttons">
-          <NavLink to="/dashboard/changephonenumber"ton className="reset-password-button">
+          <NavLink to="/dashboard/changephonenumber" className="reset-password-button">
             <span className="reset-icon"><IoKeyOutline /></span>
             Reset password
           </NavLink>
           <NavLink to="/dashboard/changepassword" className="change-phone-button">
             <span className="change-icon"><PiNotePencilDuotone /></span>
-            Change phone <br /> number
+            Change phone number
           </NavLink>
         </div>
       </div>

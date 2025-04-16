@@ -1,0 +1,88 @@
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-header-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.dashboard-header-content-leftside img {
+  cursor: pointer;
+  width: 120px;
+}
+
+.burger-menu {
+  display: none;
+  cursor: pointer;
+}
+
+.dashboard-header-content-rightside {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+  width: 20%;
+}
+
+.dashboard-content-home,
+.dashboard-content-notification,
+.dashboard-content-img {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dashboard-content-home p,
+.dashboard-content-notification p {
+  margin-left: 8px;
+}
+
+.dash-profile-picture {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  /* Hide right side content (Home, Notification, Profile) on mobile */
+  .dashboard-header-content-rightside {
+    display: none;
+  }
+
+  /* Show burger menu on mobile */
+  .burger-menu {
+    display: flex;
+  }
+
+  /* Mobile dropdown menu */
+  .mobile-dropdown-menu {
+    display: block;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    z-index: 10;
+  }
+}
+
+/* Desktop view (show right-side content) */
+@media (min-width: 769px) {
+  .burger-menu {
+    display: none;
+  }
+  
+  .dashboard-header-content-rightside {
+    display: flex;
+  }
+}

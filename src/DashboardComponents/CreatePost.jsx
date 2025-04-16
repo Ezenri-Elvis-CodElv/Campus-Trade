@@ -51,10 +51,10 @@ const CreatePost = () => {
         <div className='createpost-input-wrapper'>
           <div className='create-post-inputs-left'>
             <p className='create-post-p-tag'>Name of product</p>
-            <input type="text" placeholder='' className='input-text-create' />
+            <input type="text" className='input-text-create' />
 
             <p className='create-post-p-tag'>School</p>
-            <input type="text" placeholder='' className='input-text-create' />
+            <input type="text" className='input-text-create' />
 
             <p className='create-post-p-tag'>WhatsApp Link</p>
             <input
@@ -66,10 +66,10 @@ const CreatePost = () => {
             />
           </div>
 
-          <div className='create-post-inputs-rigt'>
+          <div className='create-post-inputs-right'>
             <p className='create-post-p-tag'>Category</p>
             <select
-              className='input-text-create'
+              className='input-text-create22'
               value={selectedCategory}
               onChange={handleCategoryChange}
             >
@@ -81,7 +81,7 @@ const CreatePost = () => {
 
             <p className='create-post-p-tag'>Subcategory</p>
             <select
-              className='input-text-create'
+              className='input-text-create22'
               value={selectedSubcategory}
               onChange={(e) => setSelectedSubcategory(e.target.value)}
               disabled={!selectedCategory}
@@ -93,32 +93,38 @@ const CreatePost = () => {
             </select>
 
             <p className='create-post-p-tag'>Phone Number</p>
-            <input type="text" placeholder='' className='input-text-create' />
+            <input type="text" className='input-text-create22' />
 
             <p className='create-post-p-tag'>Price</p>
-            <input type="text" placeholder='' className='input-text-create' />
+            <input type="text" className='input-text-create22' />
           </div>
         </div>
 
         <div className='createpost-checkbox-wrapper'>
           <div className='condition-post'>Condition</div>
           <div className='checkbox-radio'>
-            <input type="radio" name="condition" className='radio' />
-            <p className='create-post-p-tag'>New</p>
-
-            <input type="radio" name="condition" className='radio' />
-            <p className='create-post-p-tag'>Used</p>
+            <label>
+              <input type="radio" name="condition" className='radio' />
+              <span className='create-post-p-tag'>New</span>
+            </label>
+            <label>
+              <input type="radio" name="condition" className='radio' />
+              <span className='create-post-p-tag'>Used</span>
+            </label>
           </div>
         </div>
 
         <div className='createpost-description'>
-          <input type="text" placeholder='Eg iPhone XR for sale...' className='describtion' />
+          <input 
+            type="text" 
+            placeholder='Eg iPhone XR for sale...' 
+            className='describtion' 
+          />
         </div>
 
         <div className='createpost-dragdrop'>
           <p className='create-post-p-tag'>Upload your Image</p>
-
-          <label htmlFor="file-upload" className='draganddrop' style={{ border: '2px dashed grey', display: 'flex', justifyContent: 'center', alignItems: 'center', cursor: 'pointer' }}>
+          <label htmlFor="file-upload" className='draganddrop'>
             Click to Upload / Take Photo
           </label>
           <input
@@ -133,25 +139,14 @@ const CreatePost = () => {
 
           <div className="image-preview">
             {images.map((img, index) => (
-              <div key={index} style={{ position: 'relative' }}>
+              <div key={index} className="image-preview-item">
                 <img src={img} alt={`upload-${index}`} />
                 <button
                   type="button"
                   onClick={() => handleRemoveImage(index)}
-                  style={{
-                    position: 'absolute',
-                    top: '-8px',
-                    right: '-8px',
-                    background: 'red',
-                    color: 'white',
-                    border: 'none',
-                    borderRadius: '50%',
-                    width: '20px',
-                    height: '20px',
-                    cursor: 'pointer'
-                  }}
+                  className="remove-image-btn"
                 >
-                  x
+                  ×
                 </button>
               </div>
             ))}

@@ -9,17 +9,16 @@ import ForgetPassword from "./Samuel/Auth/ForgetPassword";
 import Categories from "./components/Categories";
 import ExplorePage from "./Edith/ExplorePage";
 import Dashboard from "./Elvis/Dashboard";
-import CreatePost from "./DashboardComponents'/CreatePost";
-import ChangePhoneNumber from "./DashboardComponents'/ChangePhoneNumber";
-import ChangePassword from "./DashboardComponents'/ChangePassword";
-import GetVerified from "./DashboardComponents'/GetVerified";
-import RecentPost from "./DashboardComponents'/RecentPost";
+import ChangePhoneNumber from "./DashboardComponents/ChangePhoneNumber";
+import ChangePassword from "./DashboardComponents/ChangePassword";
+import GetVerified from "./DashboardComponents/GetVerified";
+import RecentPost from "./DashboardComponents/RecentPost";
 import ProductDetailPage from "./Chidera/ProductDetailPage";
-import PendingPost from "./DashboardComponents'/PendingPost";
-import Posts from "./DashboardComponents'/Posts";
-import Ads from "./DashboardComponents'/Ads";
+import PendingPost from "./DashboardComponents/PendingPost";
+import Posts from "./DashboardComponents/Posts";
+import Ads from "./DashboardComponents/Ads";
 import ProfilePage from "./Chidera/ProfilePage"
-import AccountInformation from "./DashboardComponents'/AccountInformation";
+import AccountInformation from "./DashboardComponents/AccountInformation";
 import AdminDashboard from "./Admin/AdminDashboard";
 import ApproveInfo from "./Admin/ApproveInfo";
 import ApproveProfile from "./Admin/ApproveUserPost";
@@ -29,9 +28,10 @@ import ApproveUserPost from "./Admin/ApproveUserPost";
 import AcceptUserPayment from "./Admin/AcceptUserPayment";
 import AdminPendingPost from "./Admin/AdminPendingPost";
 import AdminProfile from "./Admin/AdminProfile";
+import SellerProfile from "./DashboardComponents/SellerProfile";
+import CreatePost from "./DashboardComponents/CreatePost";
 import VerifySuccessful from "./Admin/VerifySuccessful";
 
-// import ProfilePage from "./Chidera/ProfilePage";
 
 const router = createBrowserRouter([
   {
@@ -167,11 +167,7 @@ const router = createBrowserRouter([
     path: "/forgetpassword",
     element: <ForgetPassword />,
   },
-  {
-    path: "/dashboard",
-    element: <PrivateRoute />,
-    children: [],
-  },
+  
 ]);
 
 const App = () => {
