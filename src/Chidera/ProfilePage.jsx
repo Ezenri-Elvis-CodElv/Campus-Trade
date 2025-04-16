@@ -16,13 +16,6 @@ const ProfilePage = () => {
       price: "23,000",
       description: "Offers elegant and fashionable high heels",
       university: "Lagos State University",
-    },
-    {
-      image: "src/assets/download.jpg",
-      name: "Books",
-      price: "20,000",
-      description: "Description",
-      university: "Uni Lag",
     }
   ]
   return (

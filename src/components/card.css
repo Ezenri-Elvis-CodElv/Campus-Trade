@@ -74,7 +74,8 @@
 }
 @media (max-width: 480px) {
     .card{
-        width: 40%;
-        height: 10%;
+        width: 70%;
+        height: 90%;
+        gap: 10px;
     }
 }

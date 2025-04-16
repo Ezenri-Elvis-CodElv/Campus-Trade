@@ -164,7 +164,6 @@ img.profilePix {
 
 .profileCard {
   width: 100%;
-  background: yellow;
   display: flex;
   gap: 20px;
 }
