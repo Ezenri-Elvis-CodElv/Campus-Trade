@@ -3,10 +3,11 @@
   height: 100vh;
   background: url(../../../public/images/bg.jpg) no-repeat center center/cover transparent;
   display: flex;
-  background-color: #888;
+  background-color: #aa1515;
   justify-content: center;
   align-items: center;
 }
+
 
 .Overall.withBackgroundImage {
   background: url(../../../public/images/bg1.jpg) no-repeat center center/cover;
@@ -188,7 +189,16 @@
 .icon {
   font-size: 25px;
 }
+.inputError {
+  border: 2px solid red;
+}
 
+.errorText {
+  color: red;
+  font-size: 12px;
+  margin-top: 2px;
+  display: block;
+}
 /* Media Query Styling for Small Desktop  */
 @media only screen and (max-width: 1440px) {
   .box {
@@ -233,6 +243,7 @@
   .logo img {
     width: 90px;
     height: 50px;
+    margin-top: 19px;
   }
 
   .inputBox input {
