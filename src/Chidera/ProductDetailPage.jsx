@@ -95,7 +95,7 @@ const ADS = [
           <div className='condition'>
             <h3 className='projectinfo2'>Condition</h3>
             <div className='body1'>
-              <button className=''btwn style={getButtonStyle('New')} onClick={() =>setActive('New')} >New</button>
+              <button className='btwn' style={getButtonStyle('New')} onClick={() =>setActive('New')} >New</button>
               <button className='active' style={getButtonStyle('Used')} onClick={() =>setActive('Used')}>Used</button>
             </div>
           </div>
@@ -140,7 +140,7 @@ const ADS = [
                     <IoCopy  size={20}
                     onClick={handleCopy}
                     style={{ cursor: "pointer", marginRight: "8px" }} />)}
-                 <a href={`tel:${phoneNumber}`}>{phoneNumber}</a>
+                    <a href={`tel:${phoneNumber}`}>{phoneNumber}</a>
                     {copied && <span style={{ marginLeft: "8px", color: "white" }}>Copied!</span>}
                   </button>
                   <button className='contact whatsapp'>
@@ -164,24 +164,23 @@ const ADS = [
             <span className='goback' onClick={() => nav("/")}>Go Back To The Previous Page</span>
           </button>
         </div>
-
       </div>
-{/* 
+
       <div className='devices'>
         <div className='deviceHeader'>
           <h2 className='mobiledevicesh2'>Mobile device</h2>
           <p className='mobiledevicesp'>Checkout Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum!</p>
         </div>
-        <div className="cards">
+
+      </div>
+
+      <div className="cards">
       {myArr.map((item, index) => (
         <Card key={index} item={item} />
       ))}
 
        
       </div>
-      </div> */}
-
-      
     </section>
   )
 }

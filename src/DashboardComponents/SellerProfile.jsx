@@ -1,9 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaRegUser } from "react-icons/fa";
 import { IoCreateOutline } from "react-icons/io5";
 import { useNavigate } from "react-router";
+import axios from "axios";
+
 const SellerProfile = () => {
-    const nav = useNavigate()
+const nav = useNavigate()
+
+const baseUrl ="http://campustrade-kku.onrender.com"
+
+const [dashboard, setDashboard] = useState({
+  totalproducts:0,
+  totalorders:0,
+  totalrevenue:0 
+})
+
+useEffect(() =>{
+  const fetchDashboard = async () =>{
+    try {
+      const res = await axios.get(`${baseUrl}/api/v1/getSellerDashboard`)
+      setDashboard(res.data);
+      //   {totalProducts:dashboard.totalproducts,
+      //   totalOrders:dashboard.totalorders,
+      //    totalRevenue:dashboard.totalrevenue 
+      // });console.log(res)
+    }
+    catch (error){
+      console.log(error)
+      }
+    }
+    fetchDashboard()
+},[])
+    
+
   return (
      <div className="admin-dashboard">
           <h2 className="admin-dashboard-h2">Welcome! victoria</h2>
@@ -12,7 +41,7 @@ const SellerProfile = () => {
           <div className="stats-container">
             <div className="stat-card blue"  onClick={()=> nav('/dashboard/recentpost')}>
               <h3  className="stat-card-h3">
-                {" "}
+                {dashboard.totalproducts}
                 <IoCreateOutline style={{color:"rgb(171, 107, 255)"}} />
                 8
               </h3>
@@ -20,7 +49,9 @@ const SellerProfile = () => {
             </div>
             <div className="stat-card red">
               <h3  className="stat-card-h3">
-                {" "}
+                {
+                  dashboard.totalorders
+                }
                 <FaRegUser style={{color: "orange"}} />
                 5
               </h3>
@@ -28,7 +59,7 @@ const SellerProfile = () => {
             </div>
             <div className="stat-card blue">
               <h3  className="stat-card-h3">
-                {" "}
+                { dashboard.totalrevenue}
                 <IoCreateOutline  style={{color:"rgb(171, 107, 255)"}} />
                 10
               </h3>
