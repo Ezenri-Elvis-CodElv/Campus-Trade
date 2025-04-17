@@ -1,12 +1,28 @@
 import React, { useState } from 'react'
 import "./auth.css"
-import { useNavigate } from 'react-router'
+import { useNavigate, useParams } from 'react-router'
+import axios from 'axios'
+import { toast } from 'react-toastify'
 
 const ForgetPassword = () => {
    const [auth, setAuth]= useState({
       email:"",
     })
     const nav = useNavigate()
+    const {token} = useParams()
+
+    const url = "https://campustrade-kku1.onrender.com/api/v1/seller/forget"
+    const handlesubmit= async() =>{
+      try{
+        const res = await axios.post (url, {email:auth.email},
+          { headers:{
+          Authorization: `Bearer${token}`,
+        },})
+        console.log(res)
+        toast.success(res.data.message)
+    }catch(err){
+      console.log(err)
+    }}
   return (
     <div className="Overall">
   <div className="box">
@@ -24,7 +40,7 @@ const ForgetPassword = () => {
           <input  type="email" placeholder="Input Your Email" value={auth.email} 
           onChange={(e)=>setAuth({...auth, email:e.target.value})} />
 
-          <button className="submitBtn">Request password reset</button>
+          <button className="submitBtn" onClick={handlesubmit}>Request password reset</button>
           <div className='footer'>
           <p style={{display:"flex", justifyContent:'flex-start' , cursor: "default"}}>Already Have An Account?
                <span style={{color:"purple", cursor:"pointer"}} onClick={()=> nav("/login")}>Login</span></p>
@@ -39,4 +55,4 @@ const ForgetPassword = () => {
   )
 }
 
-export default ForgetPassword
+export default ForgetPassword;
