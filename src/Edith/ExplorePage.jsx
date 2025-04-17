@@ -139,14 +139,14 @@ const ExplorePage = () => {
         </div>
       </div>
 
-        <section className="card-holder">
+        <section className="explore-card-holder">
         {myArr.map((item, index) => (
         <Card key={index} item={item} />
       ))}
 
         </section>
         
-        <article className="Ads">
+        <article className="explore-Ads">
           <img src={AdsImg} alt="" />
 
         </article>

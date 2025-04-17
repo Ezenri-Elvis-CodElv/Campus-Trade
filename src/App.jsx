@@ -17,11 +17,10 @@ import ProductDetailPage from "./Chidera/ProductDetailPage";
 import PendingPost from "./DashboardComponents/PendingPost";
 import Posts from "./DashboardComponents/Posts";
 import Ads from "./DashboardComponents/Ads";
-import ProfilePage from "./Chidera/ProfilePage"
+import ProfilePage from "./Chidera/ProfilePage";
 import AccountInformation from "./DashboardComponents/AccountInformation";
 import AdminDashboard from "./Admin/AdminDashboard";
 import ApproveInfo from "./Admin/ApproveInfo";
-import ApproveProfile from "./Admin/ApproveUserPost";
 import VerifyUser from "./Admin/VerifyUser";
 import DeleteUser from "./Admin/DeleteUser";
 import ApproveUserPost from "./Admin/ApproveUserPost";
@@ -31,143 +30,71 @@ import AdminProfile from "./Admin/AdminProfile";
 import SellerProfile from "./DashboardComponents/SellerProfile";
 import CreatePost from "./DashboardComponents/CreatePost";
 import VerifySuccessful from "./Admin/VerifySuccessful";
-
+import Verification from "./Samuel/Auth/Verification";
+import NotFoundPage from "./components/NotFoundPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element:  <LayoutWithLoader />,
     children: [
+      // Public routes with header/footer
       {
-        path: "/",
-        element: <LandingPage />,
-      },
-      {
-        path: "/categories",
-        element: <Categories />,
-      },
-      {
-        path: "/explorepage",
-        element: <ExplorePage />,
-      },
-     
-      {
-        path: "/productdetailpage/:_id",
-        element: <ProductDetailPage />,
-      },
-
-      {
-        path: "/profilepage",
-        element: <ProfilePage />,
-      }
-
-    ],
-  },
-  {
-    path: "/dashboard",
-    element: <Dashboard />,
-    children: [
-      {
-        path: "/dashboard",
-        element: <SellerProfile />,
-      },
-      {
-        path: "/dashboard/accountinformation",
-        element: <AccountInformation />,
-      },
-      {
-        path: "/dashboard/changephonenumber",
-        element: <ChangePhoneNumber />,
-      },
-      {
-        path: "/dashboard/changepassword",
-        element: <ChangePassword />,
-      },
-      {
-        path: "/dashboard/getverified",
-        element: <GetVerified />,
-      },
-      {
-        path: "/dashboard/recentpost",
-        element: <RecentPost />,
-      },
-      {
-        path: "/dashboard/pendingpost",
-        element: <PendingPost />,
-      },
-      {
-        path: "/dashboard/createpost",
-        element: <CreatePost />,
-      },
-      {
-        path: "/dashboard/posts",
-        element: <Posts />,
-      },
-      {
-        path: "/dashboard/ads",
-        element: <Ads />,
-      },
-    ],
-  },
-
-  {
-    path: "/admindashboard",
-    element: <AdminDashboard />,
-    children: [
-      {
-        path: "/admindashboard",
-        element: <AdminProfile />
-      },
-      {
-        path: "/admindashboard/approveinfo",
-        element: <ApproveInfo />
+        element: <LayoutWithLoader />,
+        children: [
+          { index: true, element: <LandingPage /> },
+          { path: "categories", element: <Categories /> },
+          { path: "explorepage", element: <ExplorePage /> },
+          { path: "productdetailpage/:_id", element: <ProductDetailPage /> },
+          { path: "profilepage", element: <ProfilePage /> },
+        
+        ],
+      
       },
       
-      {
-        path: "/admindashboard/verifyuser",
-        element: <VerifyUser />
-      },
-      {
-        path: "/admindashboard/verifysuccessful",
-        element: <VerifySuccessful/>
+      // Authentication routes without header/footer
+      { path: "signup", element: <SignUp /> },
+      { path: "login", element: <Login /> },
+      { path: "resetpassword", element: <ResetPassword /> },
+      { path: "forgetpassword", element: <ForgetPassword /> },
+      { path: "verification", element: <Verification /> },
 
-      },
+      // Protected User Dashboard
       {
-        path: "/admindashboard/deleteuser",
-        element: <DeleteUser />
+        path: "dashboard",
+        element: <PrivateRoute> <Dashboard /></PrivateRoute> ,
+        children: [
+          { index: true, element: <SellerProfile /> },
+          { path: "accountinformation", element: <AccountInformation /> },
+          { path: "changephonenumber", element: <ChangePhoneNumber /> },
+          { path: "changepassword", element: <ChangePassword /> },
+          { path: "getverified", element: <GetVerified /> },
+          { path: "recentpost", element: <RecentPost /> },
+          { path: "pendingpost", element: <PendingPost /> },
+          { path: "createpost", element: <CreatePost /> },
+          { path: "posts", element: <Posts /> },
+          { path: "ads", element: <Ads /> },
+        ],
       },
-      {
-        path: "/admindashboard/approveuserpost",
-        element: <ApproveUserPost />
-      },
-      {
-        path: "/admindashboard/adminpendingpost",
-        element: <AdminPendingPost />
-      },
-      {
-        path: "/admindashboard/acceptuserpayment",
-        element: <AcceptUserPayment />
-      }
-    ]
-  },
 
-  {
-    path: "/signup",
-    element: <SignUp />,
+      {
+        path: "admindashboard",
+        element: <AdminDashboard />,
+        children: [
+          { index: true, element: <AdminProfile /> },
+          { path: "approveinfo", element: <ApproveInfo /> },
+          { path: "verifyuser", element: <VerifyUser /> },
+          { path: "verifysuccessful", element: <VerifySuccessful /> },
+          { path: "deleteuser", element: <DeleteUser /> },
+          { path: "approveuserpost", element: <ApproveUserPost /> },
+          { path: "adminpendingpost", element: <AdminPendingPost /> },
+          { path: "acceptuserpayment", element: <AcceptUserPayment /> },
+        ],
+      },
+
+      // 404 Catch-all
+      { path: "*", element: <NotFoundPage /> }
+    ],
   },
-  {
-    path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "/resetpassword",
-    element: <ResetPassword />,
-  },
-  {
-    path: "/forgetpassword",
-    element: <ForgetPassword />,
-  },
-  
 ]);
 
 const App = () => {

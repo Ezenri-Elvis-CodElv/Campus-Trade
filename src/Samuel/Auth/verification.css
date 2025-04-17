@@ -1,0 +1,206 @@
+.verification-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .verification-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .verification-logo-container {
+    margin-bottom: 2rem;
+  }
+  
+  .verification-logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 1.5rem;
+  }
+  
+  .verification-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #ff6b35;
+    border-radius: 50%;
+    animation: verification-spin 1s linear infinite;
+  }
+  
+  .verification-loading-text {
+    color: #3c0570;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 1rem;
+  }
+  
+  .verification-success-circle, 
+  .verification-error-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+  }
+  
+  .verification-success-circle {
+    background-color: #e8f5e9;
+    border: 3px solid #4caf50;
+  }
+  
+  .verification-error-circle {
+    background-color: #ffebee;
+    border: 3px solid #ff4444;
+  }
+  
+  .verification-success-icon {
+    color: #4caf50;
+    font-size: 3.5rem;
+  }
+  
+  .verification-error-icon {
+    color: #ff4444;
+    font-size: 3.5rem;
+  }
+  
+  .verification-success-title,
+  .verification-error-title {
+    color: #3c0570;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .verification-success-message,
+  .verification-error-message {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+  }
+  
+  .verification-success-button,
+  .verification-retry-button {
+    background: #3c0570;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .verification-success-button:hover,
+  .verification-retry-button:hover {
+    background: #5a189a;
+    transform: translateY(-2px);
+  }
+  
+  .verification-success-button:active,
+  .verification-retry-button:active {
+    transform: translateY(0);
+  }
+  .verification-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .verification-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .verification-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .verification-logo {
+    width: 120px;
+    height: auto;
+  }
+  
+  .verification-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #ff6b35;
+    border-radius: 50%;
+    animation: verification-spin 1s linear infinite;
+  }
+  
+  .verification-loading-text {
+    color: #3c0570;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  
+  @keyframes verification-spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+  
+  @media (max-width: 480px) {
+    .verification-container {
+      padding: 1rem;
+    }
+  
+    .verification-logo {
+      width: 90px;
+    }
+  
+    .verification-success-title,
+    .verification-error-title {
+      font-size: 1.5rem;
+    }
+  
+    .verification-success-message,
+    .verification-error-message {
+      font-size: 1rem;
+    }
+  
+    .verification-success-button,
+    .verification-retry-button {
+      width: 100%;
+      justify-content: center;
+      padding: 15px 24px;
+    }
+  }
