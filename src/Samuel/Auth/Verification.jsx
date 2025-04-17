@@ -10,7 +10,7 @@ const Verification = () => {
   useEffect(() => {
     const verifyAccount = async () => {
       try {
-        const isSuccessful = true; // Change this to test different states
+        const isSuccessful = true; // Change this to false to test "failed" state
         setTimeout(() => {
           setVerificationStatus(isSuccessful ? 'success' : 'failed');
         }, 3000);
@@ -18,7 +18,7 @@ const Verification = () => {
         setVerificationStatus('failed');
       }
     };
-    
+
     verifyAccount();
   }, []);
 
@@ -27,15 +27,14 @@ const Verification = () => {
       <div className="verification-container">
         {verificationStatus === 'verifying' ? (
           <div className="verification-loading">
-            <div className="verification-spinner"></div>
-            <div className="verification-content">
+            <div className="verification-spinner">
               <img 
                 src="/images/CAMPUSTRADE-02 1.png" 
                 alt="CampusTrade Logo" 
-                className="verification-logo" 
+                className="verification-logo-inside" 
               />
-              <p className="verification-loading-text">Verifying...</p>
             </div>
+            <p className="verification-loading-text">Verifying...</p>
           </div>
         ) : verificationStatus === 'success' ? (
           <div className="verification-success">
@@ -54,9 +53,9 @@ const Verification = () => {
               </p>
               <button 
                 className="verification-success-button" 
-                onClick={() => navigate('/dashboard')}
+                onClick={() => navigate('/login')}
               >
-                Continue to Dashboard
+                Continue to Login
               </button>
             </div>
           </div>
