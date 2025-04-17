@@ -2,35 +2,35 @@ import { React, useState } from "react";
 import "./adminpendingpost.css"
 const initialUserPostData = [
   {
-    img: "/MJ.png",
+    img: "/images/dasboadprofile.jpg",
     name: "Mary-Jane ",
     category: "Books",
     location: "Lagos state university",
     status: "approved",
   },
   {
-    img: "/MJ.png",
+    img: "/images/dasboadprofile.jpg",
     name: "Joshua Saleh",
     category: "Mobile device",
     location: "Lagos state university",
     status: "pending",
   },
   {
-    img: "/MJ.png",
+    img: "/images/dasboadprofile.jpg",
     name: "Ezenri Elvis",
     category: "Mobile device",
     location: "Lagos state university",
     status: "approved",
   },
   {
-    img: "/MJ.png",
+    img: "/images/dasboadprofile.jpg",
     name: "Edith Ogechi",
     category: "Shoes",
     location: "Lagos state university",
     status: "approved",
   },
   {
-    img: "/MJ.png",
+    img: "/images/dasboadprofile.jpg",
     name: "Kalu Chidera",
     category: "Books",
     location: "Lagos state university",

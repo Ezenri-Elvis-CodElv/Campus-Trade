@@ -47,8 +47,9 @@ const router = createBrowserRouter([
           { path: "productdetailpage/:_id", element: <ProductDetailPage /> },
           { path: "profilepage", element: <ProfilePage /> },
         ],
-      },
       
+
+ 
       // Authentication routes without header/footer
       { path: "signup", element: <SignUp /> },
       { path: "login", element: <Login /> },
