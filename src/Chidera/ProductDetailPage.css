@@ -13,14 +13,18 @@ a {
 .section {
     margin: 40px 70px;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     gap: 50px;
+    height: 250vh;
+    background: red;
 }
 
 .body {
     display: flex;
     justify-content: space-between;
     gap: 40px;
+    height: 100px;
+    background: pink;
 }
 
 .detailPageInfo {
@@ -28,6 +32,8 @@ a {
     display: flex;
     flex-direction: column;
     gap: 35px;
+    height: 100vh;
+    background: yellow;
 }
 
 .detailProductinfo {
@@ -152,7 +158,8 @@ a {
     gap: 40px;
     align-items: center;
     justify-content: center;
-    width: 500px;
+    /* width: 500px; */
+    height: max-content;
 }
 
 .profileAndAds {
@@ -286,6 +293,13 @@ img.profilePic {
     cursor: pointer;
 }
 
+.devices{
+    /* background: gold; */
+    height: 400px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
 .deviceHeader {
     display: flex;
     flex-direction: column;
@@ -301,7 +315,7 @@ img.profilePic {
     width: 100%;
 }
 
-
+/* 
 @media (max-width: 768px) {
     .section {
         margin: 20px 30px;
@@ -400,8 +414,8 @@ img.profilePic {
         height: 100vh;
         gap: 10px;
     }
-}
-
+} */
+/* 
 @media (max-width: 480px) {
     .section {
         padding: 15px;
@@ -430,4 +444,4 @@ img.profilePic {
         align-items: flex-start;
         justify-content: center;
     }
-}
+} */

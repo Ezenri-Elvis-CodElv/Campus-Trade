@@ -140,7 +140,7 @@ const ADS = [
                     <IoCopy  size={20}
                     onClick={handleCopy}
                     style={{ cursor: "pointer", marginRight: "8px" }} />)}
-                    <a href={`tel:${phoneNumber}`}>{phoneNumber}</a>
+                 <a href={`tel:${phoneNumber}`}>{phoneNumber}</a>
                     {copied && <span style={{ marginLeft: "8px", color: "white" }}>Copied!</span>}
                   </button>
                   <button className='contact whatsapp'>

@@ -2,6 +2,7 @@ import "./CreatePost"
 import { RiCloseFill } from "react-icons/ri";
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
+import "./changephonenumber.css"
 
 const  ChangePhoneNumber = () => {
   const navigate = useNavigate();
