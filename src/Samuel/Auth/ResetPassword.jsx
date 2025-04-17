@@ -16,16 +16,17 @@ const ResetPassword = () => {
       confirmpassword:""
     })
       const [loading, setLoading] = useState(false);
+
     
-    const url = "https://campustrade-kku1.onrender.com/api/v1/seller/reset/:token";
+    const url = `https://campustrade-kku1.onrender.com/api/v1/seller/reset/:${token}`;
   const handlesubmit = async () => {
     setLoading(true);
     try {
       const res = await axios.post(url, {
         password: auth.password,
-        confirmPassword: auth.confirmpassword,
+        confirmPassword: auth.confirmpassword
       },{ headers:{
-        Authorization: `Bearer${token}`,
+        Authorization: `Bearer ${token}`,
       },});console.log(res)
       if (res.status === 201) {
         nav("/login");
