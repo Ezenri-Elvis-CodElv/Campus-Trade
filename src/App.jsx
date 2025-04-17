@@ -59,7 +59,7 @@ const router = createBrowserRouter([
       // Protected User Dashboard
       {
         path: "dashboard",
-        element: <Dashboard />,
+        element: <PrivateRoute> <Dashboard /></PrivateRoute> ,
         children: [
           { index: true, element: <SellerProfile /> },
           { path: "accountinformation", element: <AccountInformation /> },
