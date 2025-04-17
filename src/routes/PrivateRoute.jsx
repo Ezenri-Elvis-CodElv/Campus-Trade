@@ -4,7 +4,7 @@ import { Navigate, Outlet } from "react-router-dom";
 export const AuthContext = createContext();
 
 const PrivateRoute = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
 
   const login = () => {
     setIsAuthenticated(true);

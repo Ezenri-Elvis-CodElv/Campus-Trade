@@ -46,11 +46,9 @@ const router = createBrowserRouter([
           { path: "explorepage", element: <ExplorePage /> },
           { path: "productdetailpage/:_id", element: <ProductDetailPage /> },
           { path: "profilepage", element: <ProfilePage /> },
-        
         ],
-      
       },
-      
+
       // Authentication routes without header/footer
       { path: "signup", element: <SignUp /> },
       { path: "login", element: <Login /> },
@@ -61,7 +59,7 @@ const router = createBrowserRouter([
       // Protected User Dashboard
       {
         path: "dashboard",
-        element: <PrivateRoute> <Dashboard /></PrivateRoute> ,
+        element: <Dashboard />,
         children: [
           { index: true, element: <SellerProfile /> },
           { path: "accountinformation", element: <AccountInformation /> },
@@ -92,7 +90,7 @@ const router = createBrowserRouter([
       },
 
       // 404 Catch-all
-      { path: "*", element: <NotFoundPage /> }
+      { path: "*", element: <NotFoundPage /> },
     ],
   },
 ]);
