@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import "./getVerified.css";
-import { TbCapture } from "react-icons/tb";
+import { PiCameraBold } from "react-icons/pi";
+import { toast, ToastContainer } from 'react-toastify';
 
 const GetVerified = () => {
   const [form, setForm] = useState({
@@ -15,6 +16,7 @@ const GetVerified = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
+    console.log(form); 
     if (value.trim() !== '') {
       setErrors((prev) => ({ ...prev, [name]: false }));
     }
@@ -37,6 +39,7 @@ const GetVerified = () => {
     }
 
     console.log("Form submitted:", form);
+    toast.success("Verification submitted successfully!");
   };
   const errorStyle = {
     border: "1px solid red",
@@ -50,9 +53,10 @@ const GetVerified = () => {
 
   return (
     <div className='GetVerified'>
+        <ToastContainer/>
       <div className='getverifiedbody'>
         <div className='getverifiedwrap'>
-          <TbCapture size={85} />
+          <div className='upload'><PiCameraBold size={30} className='PiCameraBold'/></div>
           <h2 className='getv'>User Verification</h2>
           <h1 className='gev1'>Fill in the necessary information below</h1>
         </div>

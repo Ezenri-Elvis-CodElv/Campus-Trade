@@ -1,10 +1,36 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./recentpost.css"
 import Card from '../components/Card';
 import shoe from "../../public/images/download.jpg";
+import axios from 'axios';
 
 
 const RecentPost = () => {
+const [pendingproducts, setPendingProducts] = useState([]);
+const [loading, setLoading] = useState(false);
+const [error, setError] = useState(null);
+
+const baseUrl = "http://campustrade-kku.onrender.com"
+
+useEffect(() => {
+  const PendingProduct = async () => {
+  setLoading(true);
+  try{
+    const res = await axios.get(`${baseUrl}/product/all-pending-product`);
+    console.log(res)
+    // const data = await res.json();
+    // console.log(data);
+    setPendingProducts(res.data);
+  }catch(error){
+    setError(error.data);
+    console.log(error);
+  }
+  finally{
+    setLoading(false);
+  }
+  }
+  PendingProduct();
+},[])
   
  const myArr = [
      {
@@ -118,14 +144,30 @@ const RecentPost = () => {
     <div className='recent-body' >
       <div className='recent-text-holder'>
         <h1 className='recent-post'>Pending Posts</h1>
+        {loading && <p>Loading...</p>}
+      {error && <p style={{ color: 'red' }}>{error}</p>}
         <br />
         {/* <p className='recent-list'>List of post that's not sold</p> */}
       </div>
       <section className='recent-product-holder'>
        
-              {myArr.map((item, index) => (
-                <Card key={index} item={item}/>
-              ))}
+      {pendingproducts.length > 0 ? (
+          pendingproducts.myArr.map((item, index) => (
+            <Card
+              key={index}
+              item={{
+                image: item.image || shoe,
+                name: item.name,
+                price: item.price,
+                description: item.description,
+                university: item.university || 'Unknown School',
+                time: item.createdAt || 'Just now',
+              }}
+            />
+          ))
+        ) : (
+          !loading && <p>No pending posts found.</p>
+        )}
       </section>
 
     </div>

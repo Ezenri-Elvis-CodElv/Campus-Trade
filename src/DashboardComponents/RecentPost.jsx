@@ -1,10 +1,33 @@
-import React from 'react'
+import React, {  useEffect, useState } from 'react'
 import "./recentpost.css"
 import Card from '../components/Card';
 import shoe from "../../public/images/download.jpg";
+import  axios from 'axios';
 
 
 const RecentPost = () => {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const RecentProduct = async () => {
+      try{
+        const res = await axios.get(`${baseUrl}/api/v1/products`);
+        console.log(res)
+        const data = await res.json();
+        console.log(data);
+        setProducts(res.data);
+      
+      }catch(error){
+        setError(error.data);
+      }
+      finally{
+        setLoading(false);
+      }
+    }
+    RecentProduct();
+  },[])
   const myArr = [
       {
         image: `${shoe}`,
@@ -120,11 +143,19 @@ const RecentPost = () => {
         <br />
         <p className='recent-list'>List of post that's not sold</p>
       </div>
+      {loading && <p>Loading products...</p>}
+      {error && <p className="error-message">{error}</p>}
       <section className='recent-product-holder'>
        
-              {myArr.map((item, index) => (
-                <Card key={index} item={item}/>
-              ))}
+      {products.map((item, index) => (
+          <Card
+            key={index}
+            item={{
+              ...item,
+              image: item.image || shoe, // fallback image
+            }}
+          />
+        ))}
       </section>
 
     </div>
