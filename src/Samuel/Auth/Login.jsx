@@ -18,6 +18,7 @@ const Login = () => {
   });
   const [errors, setErrors] = useState({});
   const url = "https://campustrade-kku1.onrender.com/api/v1/seller/login";
+  
   const handlesubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
