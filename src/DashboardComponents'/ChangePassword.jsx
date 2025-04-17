@@ -10,7 +10,7 @@ const  ChangePassword = () => {
       <div className="changepasswordwrapper">
         <div className="backicon">
           <button className="backiconbtn" onClick={() => navigate(-1)}>
-            <RiCloseFill />
+            <RiCloseFill size={40}/>
           </button>
         </div>
         <div className="changepasswordinner">

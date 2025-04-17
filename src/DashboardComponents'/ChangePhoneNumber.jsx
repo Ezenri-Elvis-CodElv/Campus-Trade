@@ -1,4 +1,4 @@
-import "./Changephonenumber.css"
+import "./CreatePost"
 import { RiCloseFill } from "react-icons/ri";
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
@@ -10,7 +10,7 @@ const  ChangePhoneNumber = () => {
       <div className="changephonenumberwrapper">
         <div className="backicon">
           <button className="backiconbtn" onClick={() => navigate(-1)}>
-            <RiCloseFill />
+            <RiCloseFill size={40}/>
           </button>
         </div>
         <div className="changephonenumberinner">

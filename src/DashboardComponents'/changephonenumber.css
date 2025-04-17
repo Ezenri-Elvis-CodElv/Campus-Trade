@@ -1,23 +1,21 @@
-
 .changephonenumber{
-    background: rgb(255,255,255);
-    height: 80vh;
-    width: 80%;
+    height: 100vh;
+    width: 100%;
+    padding-top: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
 
 .changephonenumberwrapper{
     background: rgb(255,255,255);
-    height: 100%;
-    width: 80%;
+    height: 90%;
+    width: 57%;
+    flex-direction: column;
+    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-
 }
 
 .backicon{
@@ -28,20 +26,22 @@
 }
 
 .backiconbtn{
-    color: rgb(36,0,70);
+    height: 70%;
+    width: 28%;
+    color: white;
     display: flex;
     align-items: center;
-    justify-content: center;
-    border-radius: 6px;
-    font-size: 50px;
-    cursor: pointer;
+    justify-content: space-around;
+    background: rgb(36,0,70);
+    border-radius: 30px;
+    font-size: 20px;
 }
 .changephonenumberinner{
     height: 70%;
     width: 80%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center;  
 }
 
 .changephonenumberlast{
@@ -60,7 +60,7 @@
     color: rgb(36,0,70);
 }
 
-.changepasswordonnerlast .number {
+.changephonenumberlast .number {
     font-size: 15px;
     color: rgb(36,0,70);
     padding: 3px;
@@ -84,41 +84,3 @@
     width: 90px;
     color: white;
 }
-
-@media only screen and (max-width: 900px) {
-    .changephonenumber{
-        width: 100%;
-    }
-    .changephonenumberwrapper{
-        width: 100%;
-    }
-    .backicon{
-        width: 100%;
-    }
-    .changephonenumberinner{
-        width: 100%;
-    }
-    
-    
-}
-@media only screen and (max-width: 760px) {
-    .changephonenumber{
-        width: 100%;
-        height: 90vh;
-        display: flex;
-        padding: 10px;
-        justify-content: center;
-    }
-    .changephonenumberwrapper{
-        width: 90%;
-    }
-    .backicon{
-        width: 100%;
-    }
-    .changephonenumberinner{
-        width: 90%;
-    }
-    
-    
-}
-
