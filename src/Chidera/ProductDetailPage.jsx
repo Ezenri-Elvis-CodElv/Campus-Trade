@@ -164,23 +164,24 @@ const ADS = [
             <span className='goback' onClick={() => nav("/")}>Go Back To The Previous Page</span>
           </button>
         </div>
-      </div>
 
+      </div>
+{/* 
       <div className='devices'>
         <div className='deviceHeader'>
           <h2 className='mobiledevicesh2'>Mobile device</h2>
           <p className='mobiledevicesp'>Checkout Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum!</p>
         </div>
-
-      </div>
-
-      <div className="cards">
+        <div className="cards">
       {myArr.map((item, index) => (
         <Card key={index} item={item} />
       ))}
 
        
       </div>
+      </div> */}
+
+      
     </section>
   )
 }

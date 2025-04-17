@@ -13,10 +13,9 @@ a {
 .section {
     margin: 40px 70px;
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
     gap: 50px;
     height: 250vh;
-    background: red;
 }
 
 .body {
@@ -24,7 +23,6 @@ a {
     justify-content: space-between;
     gap: 40px;
     height: 100px;
-    background: pink;
 }
 
 .detailPageInfo {
@@ -33,7 +31,6 @@ a {
     flex-direction: column;
     gap: 35px;
     height: 100vh;
-    background: yellow;
 }
 
 .detailProductinfo {
@@ -299,6 +296,7 @@ img.profilePic {
     width: 100%;
     display: flex;
     align-items: center;
+    flex-direction: column;
 }
 .deviceHeader {
     display: flex;
