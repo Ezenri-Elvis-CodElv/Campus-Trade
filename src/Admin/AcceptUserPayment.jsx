@@ -3,35 +3,35 @@ import "./adminpendingpost.css"
 
 const initialUserPostData = [
   {
-    img: "/MJ.png",
+    img: "/images/dasboadprofile.jpg",
     name: "Joshua Saleh",
     category: "Books",
     location: "Lagos state university",
     status: "approved",
   },
   {
-    img: "/MJ.png",
+    img: "/images/dasboadprofile.jpg",
     name: "Victoria-Okon",
     category: "Mobile device",
     location: "Lagos state university",
     status: "pending",
   },
   {
-    img: "/MJ.png",
+    img: "/images/dasboadprofile.jpg",
     name: "Chidera Obi",
     category: "Mobile device",
     location: "Lagos state university",
     status: "approved",
   },
   {
-    img: "/MJ.png",
+    img: "/images/dasboadprofile.jpg",
     name: "Abu Mercy",
     category: "Shoes",
     location: "Lagos state university",
     status: "approved",
   },
   {
-    img: "/MJ.png",
+    img: "/images/dasboadprofile.jpg",
     name: "Kalu Chidera",
     category: "Books",
     location: "Lagos state university",
@@ -62,7 +62,7 @@ const AcceptUserPayment = () => {
             <div className="status-user-text">
               <strong className="status-user-name">{user.name}</strong><br />
               <span className="status-user-category">{user.category}</span><br />
-              <span className="status-user-school">{user.location}</span>
+              <sp className="status-user-school">{user.location}</sp>
             </div>
           </div>
           <div className="status-post-info">
