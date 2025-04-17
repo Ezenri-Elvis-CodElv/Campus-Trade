@@ -1,5 +1,5 @@
 import React from 'react'
-import "./ProfilePage.css"
+import "./profilepage.css"
 import Card from "../components/Card"
 import { RiShareFill } from "react-icons/ri";
 import { IoArrowBackOutline } from "react-icons/io5";
@@ -16,13 +16,6 @@ const ProfilePage = () => {
       price: "23,000",
       description: "Offers elegant and fashionable high heels",
       university: "Lagos State University",
-    },
-    {
-      image: "src/assets/download.jpg",
-      name: "Books",
-      price: "20,000",
-      description: "Description",
-      university: "Uni Lag",
     }
   ]
   return (

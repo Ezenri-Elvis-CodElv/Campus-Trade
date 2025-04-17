@@ -16,6 +16,7 @@
     font-weight: 700;
     color: #2e0062;
     font-size: 18px;
+    background: #000;
     margin-bottom: 30px;
     cursor: default;
   }
@@ -123,4 +124,21 @@
     font-size: 13px;
     margin-top: 40px;
     cursor: default;
+  }
+
+
+  @media only screen and (max-width:900px) {
+    .status-table-container {
+      background: pink;
+      width: 50%;
+      height: 100vh;
+    }
+    .status-table-header{
+      background: red;
+    }
+    .status-table-row{
+      background: pink;
+      width: 20%;
+      padding: 10px;
+    }
   }

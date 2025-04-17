@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 .DeleteProfile{
     height: 100vh;
@@ -168,4 +168,95 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+} */
+
+
+
+
+
+.changephonenumber{
+    height: 100vh;
+    width: 100%;
+    padding-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.changephonenumberwrapper{
+    background: rgb(255,255,255);
+    height: 90%;
+    width: 57%;
+    flex-direction: column;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.backicon{
+    display: flex;
+    align-items: flex-start;
+    width: 90%;
+    height: 14%;
+}
+
+.backiconbtn{
+    height: 70%;
+    width: 28%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: rgb(36,0,70);
+    border-radius: 30px;
+    font-size: 20px;
+}
+.changephonenumberinner{
+    height: 70%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+.changephonenumberlast{
+    height: 300px;
+    gap: 7px;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.changephonenumberlast .number1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: rgb(36,0,70);
+}
+
+.changephonenumberlast .number {
+    font-size: 15px;
+    color: rgb(36,0,70);
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.changephonenumberlast > input  {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid rgb(36,0,70);
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.changephonenumberlast .saveee {
+    background: rgb(36,0,70);
+    height: 50px;
+    width: 90px;
+    color: white;
 }

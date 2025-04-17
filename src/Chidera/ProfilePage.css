@@ -1,220 +1,246 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap');
 
-.section{
-    display: flex;
-    flex-direction: column;
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-.profiledetails{
-    gap: 60px;
-    padding: 50px;
-    display: flex;
+.section {
+  display: flex;
+  flex-direction: column;
+}
+
+.profiledetails {
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+  padding: 50px;
 }
 
 .profilePixAndDetails {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    flex-direction: column;
-}
-
-.profilePixAndDetails  {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 img.profilePix {
-    width: 426px;
-    height: 426px;
-    border-radius: 50%;
+  width: 426px;
+  height: 426px;
+  border-radius: 50%;
 }
 
-.details{
-    display: flex;
-    flex-direction: column;
-    width: 200px;
-    gap: 15px;
+.details {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  gap: 15px;
 }
 
-.profileDetails{
-   flex-direction: column;
-   gap: 20px;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-
+.profileDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
 }
 
 .profileDetails .prof1 {
-    font-size: 23px;
-    font-weight: 600;
-    display: flex;
-    cursor: pointer;
-    justify-content: center;
-    align-items: center;
-    gap:8px; 
-    color: #000000;
-    text-decoration: underline;
-    font-family: "Inter", sans-serif;
-
+  font-size: 23px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  color: #000;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
-.profileDetail{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    border: 0.47px solid #240046;
-    padding: 10px;
-    border-radius: 10px;
-
+.profileDetail {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 0.47px solid #240046;
+  padding: 7px;
+  border-radius: 10px;
 }
 
 .profileDetail .prof2 {
-    font-size: 20px;
-    font-weight: 300;
-    color: #240046;
-    text-decoration: underline;
-    font-family: "Inter", sans-serif;
-    gap: 10px;
-    cursor: pointer;
+  font-size: 20px;
+  font-weight: 300;
+  color: #240046;
+  text-decoration: underline;
+  cursor: pointer;
+  gap: 10px;
 }
 
-.reportdetails{
-    display: inline-flex;
-    gap: 30px;
-    padding: 10px;
-    align-items: center;
+.reportdetails {
+  display: inline-flex;
+  gap: 30px;
+  padding: 10px;
+  align-items: center;
 }
 
 .reportdetails .pro3 {
-    font-size: 25px;
-    font-weight: 400;
-    color: #00B4D8;
-    text-decoration: underline;
-    font-family: "Inter", sans-serif;
-    cursor: pointer;
+  font-size: 25px;
+  font-weight: 400;
+  color: #00B4D8;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
-.reportdetails .blockUser{
-    color: #D80000;
-    text-decoration: underline;
-    font-size: 25px;
-    font-family: "Inter", sans-serif;
-    font-weight: 400;
-    cursor: pointer;
-
+.reportdetails .blockUser {
+  color: #D80000;
+  text-decoration: underline;
+  font-size: 25px;
+  font-weight: 400;
+  cursor: pointer;
 }
 
-.goBck{
-    text-decoration: underline;
-    color: #050505;
-    font-size: 25px;
-    font-family: "Inter", sans-serif;
-    display: flex;
-    font-weight: 500;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
+.goBck {
+  text-decoration: underline;
+  color: #050505;
+  font-size: 25px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
 }
 
-.andAds{
-    padding: 30px;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 25px;
+.andAds {
+  padding: 30px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 25px;
 }
 
-.phonedetail{
-    font-size: 23px;
-    font-family: "Inter", sans-serif;
-    color: #240046;
-    display: flex;
-    flex-direction: column; 
-    padding: 10px;
+.phonedetail {
+  font-size: 23px;
+  color: #240046;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 8px;
 }
 
-.phonedetail .pro20{
-    font-size: 30px;
-    font-weight: 700;
+.phonedetail .pro20 {
+  font-size: 30px;
+  font-weight: 700;
 }
 
-.phonedetail .pro6{
-    font-size: 20px;
-    color: black;
-    font-family: "Inter", sans-serif;
+.phonedetail .pro6 {
+  font-size: 20px;
+  color: black;
 }
 
-.filterpath{
-    display: flex;
-    gap: 13px;
-    flex-direction: column;
-    width: 500px;
-    font-family: "Inter", sans-serif;
-    font-size: 17px;
+.filterpath {
+  display: flex;
+  gap: 13px;
+  flex-direction: column;
+  width: 500px;
+  font-size: 17px;
 }
-
 
 .pro30 {
-    color:#909090;
-    font-size: 20px;
-    font-family: "Inter", sans-serif;
-    flex-direction: column;
-    display: flex;
-    gap: 10px;
+  color: #909090;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.pro60{
-    display: flex;
-    align-items: center;
-    border: 0.47px solid #240046;
-    border-radius: 10px;
-    padding: 23px;
-    gap: 4px;
-    color: black;
-
-    /* justify-content: center; */
-
+.pro60 {
+  display: flex;
+  align-items: center;
+  border: 0.47px solid #240046;
+  border-radius: 10px;
+  padding: 23px;
+  gap: 4px;
+  color: black;
 }
 
-
-.profileCard{
-    width: 100%;
-    background: yellow;
-    display: flex;
-    gap: 20px;
-
+.profileCard {
+  width: 100%;
+  display: flex;
+  gap: 20px;
 }
-
 
 @media screen and (max-width: 768px) {
-    section{
-        margin: 20px 10px;
-    }
-    .profiledetails{
-        padding: 20px;
-    }
-    .profilePixAndDetails {
-        flex-direction: column;
-    }
-    img.profilePix {
-        width: 192px;
-        height: 178px;
-    }
-    .details{
-        width: 100%;
-    }
-    .profileDetails{
-        width: 100%;
-    }
-    .reportdetails{
-        flex-direction: column;
-        gap: 10px;
-    }
-    .phonedetail{
-        font-size: 18px;
-        gap: 15px;
-    }
-}           
+  .section {
+    margin: 20px 10px;
+  }
 
+  .profiledetails {
+    padding: 20px;
+    flex-direction: column;
+  }
+
+  .profilePixAndDetails {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  img.profilePix {
+    width: 145px;
+    height: 140px;
+  }
+
+  .details,
+  .profileDetail,
+  .filterpath {
+    width: 100%;
+  }
+
+  .details,
+  .profileDetails{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+  .goBck{
+    display: none;
+  }
+  .prof4{
+    display: none;
+  }
+  .profileDetails .prof1,
+  .profileDetail .prof2,
+  .reportdetails .pro3,
+  .reportdetails .blockUser,
+  .goBck,
+  .phonedetail,
+  .phonedetail .pro20,
+  .phonedetail .pro6,
+  .pro30,
+  .filterpath {
+    font-size: 14px;
+  }
+
+  .phonedetail .pro20 {
+    font-size: 20px;
+  }
+
+  .profileDetail,
+  .pro60 {
+    padding: 15px;
+  }
+
+  .reportdetails {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .reportdetails{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    flex-direction: row;
+  }
+  .andAds{
+    padding: 10px;
+    gap: 20px;
+  }
+}
