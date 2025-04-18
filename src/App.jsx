@@ -61,11 +61,11 @@ const router = createBrowserRouter([
         path: "dashboard",
         element: <Dashboard />,
         children: [
-          { index: true, element: <SellerProfile /> },
+          { index: true, element: <GetVerified /> },
           { path: "accountinformation", element: <AccountInformation /> },
           { path: "changephonenumber", element: <ChangePhoneNumber /> },
           { path: "changepassword", element: <ChangePassword /> },
-          { path: "getverified", element: <GetVerified /> },
+          { path: "sellerprofile", element: <SellerProfile /> },
           { path: "recentpost", element: <RecentPost /> },
           { path: "pendingpost", element: <PendingPost /> },
           { path: "createpost", element: <CreatePost /> },

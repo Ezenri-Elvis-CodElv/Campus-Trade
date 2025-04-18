@@ -82,7 +82,7 @@ const SignUp = () => {
                   className="eyeIcon"
                   onClick={() => setShowpassword((prev) => !prev)}
                 >
-                  {showpassword ? <FaRegEyeSlash /> : <FiEye />}
+                  {showpassword ? <FiEye /> : <FaRegEyeSlash />}
                 </span>
               </div>
               {errors.password && (
@@ -104,8 +104,8 @@ const SignUp = () => {
                   className="eyeIcon"
                   onClick={() => setShowpassword((prev) => !prev)}
                 >
-                  {showpassword ? <FaRegEyeSlash /> : <FiEye />}
-                </span>
+                  {showpassword ? <FiEye /> : <FaRegEyeSlash />}
+                  </span>
               </div>
               {errors.confirmpassword && (
                 <span className="errorText">{errors.confirmpassword}</span>

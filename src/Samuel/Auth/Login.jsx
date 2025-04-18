@@ -31,6 +31,7 @@ const Login = () => {
       if (res.status === 200) {
         nav("/dashboard");
         toast.success(res.data.message);
+        localStorage.setItem("userData",JSON.stringify(res.data))
       }
     } catch (err) {
       toast.error(err?.response?.data?.message || "Login failed.");
@@ -81,8 +82,8 @@ const Login = () => {
                   className="eyeIcon"
                   onClick={() => setShowpassword((prev) => !prev)}
                 >
-                  {showpassword ? <FaRegEyeSlash /> : <FiEye />}
-                </span>
+                  {showpassword ? <FiEye /> : <FaRegEyeSlash />}
+                  </span>
               </div>
               {errors.password && (
                 <span className="errorText">{errors.password}</span>

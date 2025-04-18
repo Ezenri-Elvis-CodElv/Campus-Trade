@@ -42,7 +42,7 @@ const Sidebar = () => {
         </NavLink>
 
         <NavLink 
-          to="/dashboard/getverified" 
+          to="/dashboard/sellerprofile" 
           className={getNavLinkClass}
         >
           <MdVerifiedUser size={14} />

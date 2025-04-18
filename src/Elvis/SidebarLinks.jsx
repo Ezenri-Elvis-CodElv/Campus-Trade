@@ -22,7 +22,7 @@ const SidebarLinks = ({ closeMenu }) => {
         {" "}
         <IoCreateOutline size={16} /> Create a post
       </NavLink>
-      <NavLink to="/dashboard/getverified" onClick={closeMenu} className="link">
+      <NavLink to="/dashboard/sellerprofile" onClick={closeMenu} className="link">
         {" "}
         <MdVerifiedUser size={16} /> Get Verified
       </NavLink>
