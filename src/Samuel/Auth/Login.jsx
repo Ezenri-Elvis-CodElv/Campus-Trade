@@ -18,6 +18,7 @@ const Login = () => {
   });
   const [errors, setErrors] = useState({});
   const url = "https://campustrade-kku1.onrender.com/api/v1/seller/login";
+  
   const handlesubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -30,6 +31,7 @@ const Login = () => {
       if (res.status === 200) {
         nav("/dashboard");
         toast.success(res.data.message);
+        localStorage.setItem("userData",JSON.stringify(res.data))
       }
     } catch (err) {
       toast.error(err?.response?.data?.message || "Login failed.");

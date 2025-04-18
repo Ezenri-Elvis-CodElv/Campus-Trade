@@ -3,9 +3,10 @@ import { CiSearch } from "react-icons/ci";
 import { IoIosArrowDown } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import Burger from "../../public/images/Burger.svg";
+import { Drawer } from "antd";
 
 const Header = () => {
-  const [dropdown, setDropdown] = useState(false);
+  const [drawerVisible, setDrawerVisible] = useState(false);
   const [activeCategory, setActiveCategory] = useState(null);
   const [isSticky, setIsSticky] = useState(false);
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
@@ -14,9 +15,7 @@ const Header = () => {
   const nav = useNavigate();
 
   const toggleCategoryDropdown = (category) => {
-    setActiveCategory((prevCategory) =>
-      prevCategory === category ? null : category
-    );
+    setActiveCategory((prev) => (prev === category ? null : category));
   };
 
   const toggleDropdown = () => {
@@ -57,6 +56,7 @@ const Header = () => {
       }`}
     >
       <div className="w-[90%] h-[80%] flex justify-between items-center">
+        {/* Left Section */}
         <div className="flex items-center w-[45%] max-md:w-[30%] gap-10">
           <img
             src="/images/CAMPUSTRADE-02 1.png"
@@ -65,11 +65,9 @@ const Header = () => {
             className="cursor-pointer max-md:w-full max-md:h-[70%] object-contain"
           />
 
+          {/* Desktop Nav */}
           <nav className="flex gap-6 items-center max-md:hidden">
-            <h3
-              className="cursor-pointer text-black text-[20px]"
-              onClick={() => nav("/")}
-            >
+            <h3 className="cursor-pointer text-black text-[20px]" onClick={() => nav("/")}>
               Home
             </h3>
             <h3
@@ -86,13 +84,9 @@ const Header = () => {
                 className="absolute top-[80px] left-[20%] flex justify-center items-center h-[130px] rounded-2xl mt-2 w-[250px] bg-[rgb(36,0,69)] text-white shadow-md z-50"
               >
                 <ul className="rounded-2xl w-full h-full flex flex-col p-4 items-center">
-                  {[
-                    "Lagos State University",
-                    "University Of Lagos",
-                    "Yaba College Of Technology",
-                  ].map((name) => (
-                    <li
-                      key={name}
+                  {["Lagos State University", "University Of Lagos", "Yaba College Of Technology"].map((name) => (
+                    <li 
+                      key={name} 
                       className="w-[90%] h-[90%] flex flex-col justify-center items-center hover:bg-gray-500 hover:h-[70%] cursor-pointer"
                     >
                       {name}
@@ -104,15 +98,17 @@ const Header = () => {
           </nav>
         </div>
 
-        <div className="w-[30%] h-[85%]  border border-gray-300 rounded-[25px]  flex justify-around items-center relative max-md:w-[50%] max-md:h-[50%]">
+        {/* Search Bar */}
+        <div className="w-[30%] h-[85%] border border-gray-300 rounded-[25px] flex justify-around items-center relative max-md:w-[50%] max-md:h-[50%]">
           <CiSearch size={25} className="text-gray-500 max-md:hidden" />
           <input
             type="text"
             placeholder="Search"
-            className="w-[90%] pl-[10px] max-md:pl-[10px]  font-medium focus:outline-none text-gray-500"
+            className="w-[90%] pl-[10px] font-medium focus:outline-none text-gray-500"
           />
         </div>
 
+        {/* Right Side */}
         <div className="flex items-center justify-end w-[30%] max-md:w-[20%] gap-4">
           <button
             onClick={() => nav("/login")}
@@ -127,99 +123,103 @@ const Header = () => {
             Sign up
           </button>
 
+          {/* Burger icon for mobile */}
           <div className="block md:hidden relative">
             <img
               src={Burger}
               alt="Menu"
-              onClick={() => setDropdown(!dropdown)}
+              onClick={() => setDrawerVisible(true)}
               className="cursor-pointer"
             />
-
-            {dropdown && (
-              <div className="fixed top-[100px] left-0 w-full h-full z-50 bg-[rgb(36,0,69)] text-white px-6 py-8 flex flex-col gap-6 overflow-y-auto transition duration-100">
-                <ul className="flex flex-col gap-4 text-lg">
-                  <li
-                    className="font-bold bg-[rgb(36,0,69)] text-orange-500 cursor-pointer"
-                    onClick={() => {
-                      nav("/");
-                      setDropdown(false);
-                    }}
-                  >
-                    Home
-                  </li>
-
-                  <li className="font-bold text-orange-500 bg-[rgb(36,0,69)]">Location</li>
-                  {[
-                    "Lagos State University",
-                    "University of Lagos",
-                    "Yaba College Of Technology",
-                  ].map((name) => (
-                    <li className="pl-4 cursor-pointer" key={name}>
-                      {name}
-                    </li>
-                  ))}
-
-                  <li className="font-bold text-orange-500 bg-[rgb(36,0,69)] mt-2">Categories</li>
-
-                  {[
-                    { name: "Gadget", sub: ["Mobile Phone", "Tablets", "Laptops"] },
-                    { name: "Books", sub: ["Fictional", "Non-Fictional", "Educational"] },
-                    { name: "Clothes", sub: ["Jeans", "Shirt", "Blouse"] },
-                    { name: "Shoes", sub: ["Casual", "Heels", "Sneakers"] },
-                    { name: "Home Appliances", sub: ["Beds", "Kitchen Utensils"] },
-                  ].map((cat) => (
-                    <React.Fragment key={cat.name}>
-                      <li
-                        onClick={() => toggleCategoryDropdown(cat.name)}
-                        className="pl-4 cursor-pointer bg-[rgb(36,0,69)] flex justify-between items-center"
-                      >
-                        {cat.name} <IoIosArrowDown />
-                      </li>
-                      {activeCategory === cat.name && (
-                        <ul className="pl-8">
-                          {cat.sub.map((item) => (
-                            <li key={item} className="cursor-pointer">
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </React.Fragment>
-                  ))}
-
-                  <li
-                    className="font-bold text-orange-500 mt-2 bg-[rgb(36,0,69)] cursor-pointer"
-                    onClick={() => {
-                      nav("/explorepage");
-                      setDropdown(false);
-                    }}
-                  >
-                    Explore more
-                  </li>
-                  <li
-                    className="font-bold text-white mt-2 bg-[rgb(36,0,69)] cursor-pointer"
-                    onClick={() => {
-                      nav("/signup");
-                      setDropdown(false);
-                    }}
-                  >
-                    Sign Up
-                  </li>
-                  <li
-                    className="font-bold text-white mt-2 bg-[rgb(36,0,69)] cursor-pointer"
-                    onClick={() => {
-                      nav("/login");
-                      setDropdown(false);
-                    }}
-                  >
-                    Login
-                  </li>
-                </ul>
-              </div>
-            )}
           </div>
         </div>
       </div>
+
+      {/* Drawer for mobile menu with isolated styling */}
+      <Drawer
+        title="CampusTrade Menu"
+        placement="right"
+        onClose={() => setDrawerVisible(false)}
+        open={drawerVisible}
+        width={300}
+        className="[&_.ant-drawer-content]:bg-[#240045] [&_.ant-drawer-title]:text-white [&_.ant-drawer-header]:border-b-[rgba(255,255,255,0.3)]"
+        headerStyle={{
+          borderBottom: "1px solid rgba(255, 255, 255, 0.3)",
+          padding: "16px 20px"
+        }}
+        bodyStyle={{ backgroundColor: "#240045", color: "white", padding: 20 }}
+        // bodyStyle={{ padding: "20px" }}
+      >
+        <ul className="flex flex-col gap-4 text-lg text-white bg-[#240045]">
+          <li 
+            className="font-bold text-orange-500 cursor-pointer " 
+            onClick={() => { nav("/"); setDrawerVisible(false); }}
+          >
+            Home
+          </li>
+
+          <li className="font-bold text-orange-500">Location</li>
+          {["Lagos State University", "University of Lagos", "Yaba College Of Technology"].map((name) => (
+            <li 
+              className="pl-4 cursor-pointer hover:text-orange-300" 
+              key={name}
+              onClick={() => setDrawerVisible(false)}
+            >
+              {name}
+            </li>
+          ))}
+
+          <li className="font-bold text-orange-500 mt-2">Categories</li>
+          {[
+            { name: "Gadget", sub: ["Mobile Phone", "Tablets", "Laptops"] },
+            { name: "Books", sub: ["Fictional", "Non-Fictional", "Educational"] },
+            { name: "Clothes", sub: ["Jeans", "Shirt", "Blouse"] },
+            { name: "Shoes", sub: ["Casual", "Heels", "Sneakers"] },
+            { name: "Home Appliances", sub: ["Beds", "Kitchen Utensils"] },
+          ].map((cat) => (
+            <React.Fragment key={cat.name}>
+              <li 
+                onClick={() => toggleCategoryDropdown(cat.name)} 
+                className="pl-4 cursor-pointer flex justify-between items-center hover:text-orange-300"
+              >
+                {cat.name} <IoIosArrowDown />
+              </li>
+              {activeCategory === cat.name && (
+                <ul className="pl-8">
+                  {cat.sub.map((item) => (
+                    <li 
+                      key={item} 
+                      className="cursor-pointer hover:text-orange-300"
+                      onClick={() => setDrawerVisible(false)}
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </React.Fragment>
+          ))}
+
+          <li 
+            className="font-bold text-orange-500 mt-2 cursor-pointer" 
+            onClick={() => { nav("/explorepage"); setDrawerVisible(false); }}
+          >
+            Explore more
+          </li>
+          <li 
+            className="font-bold mt-2 cursor-pointer hover:text-orange-300" 
+            onClick={() => { nav("/signup"); setDrawerVisible(false); }}
+          >
+            Sign Up
+          </li>
+          <li 
+            className="font-bold mt-2 cursor-pointer hover:text-orange-300" 
+            onClick={() => { nav("/login"); setDrawerVisible(false); }}
+          >
+            Login
+          </li>
+        </ul>
+      </Drawer>
     </header>
   );
 };

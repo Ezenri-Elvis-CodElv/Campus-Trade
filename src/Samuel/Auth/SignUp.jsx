@@ -28,14 +28,14 @@ const SignUp = () => {
         confirmPassword: auth.confirmpassword,
       });
       if (res.status === 201) {
-        console.log(res)
+        console.log(res);
         nav("/login");
-        toast.success(res.data.message);
+        toast.success("Welcome,Please check your email for verification");
       }
     } catch (err) {
       setErrors(err.data.data.message);
       toast.error("signup Failed");
-      setLoading(false)
+      setLoading(false);
     }
   };
   const isDisabled = !auth.email || !auth.password || !auth.confirmpassword;
