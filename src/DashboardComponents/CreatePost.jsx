@@ -26,6 +26,7 @@ const CreatePost = () => {
   const [mediaFiles, setMediaFiles] = useState([]);
   const [isFormValid, setIsFormValid] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
+  const [allCategories, setAllCategories] = useState([]);
 
   // Get user data with safety checks
   const userData = JSON.parse(localStorage.getItem("userData")) || {};
@@ -75,8 +76,8 @@ const CreatePost = () => {
   };
 
   useEffect(() => {
-    const isValid = Object.values(formData).every(
-      (value) => (typeof value === "string" ? value.trim() : value.length > 0)
+    const isValid = Object.values(formData).every((value) =>
+      typeof value === "string" ? value.trim() : value.length > 0
     );
     setIsFormValid(isValid);
   }, [formData]);
@@ -147,6 +148,22 @@ const CreatePost = () => {
     }
   };
 
+  const getAllCategories = async () => {
+    try {
+      const response = await axios.get(
+        "https://campustrade-kku1.onrender.com/api/v1/all-categories"
+      );
+      setAllCategories(response.data.data);
+    } catch (error) {
+      console.error("Error fetching categories:", error);
+    }
+  };
+
+  useEffect(() => {
+    getAllCategories();
+  }, []);
+
+  console.log(allCategories);
   return (
     <div className="createpost-wrapper">
       <div className="createpost">
@@ -179,11 +196,9 @@ const CreatePost = () => {
                 handleInputChange("subcategory", "");
               }}
             >
-              <option value="">Select category</option>
-              {Object.keys(categories).map((cat) => (
-                <option key={cat} value={cat}>
-                  {cat}
-                </option>
+              <option>Select category</option>
+              {allCategories?.map((cat) => (
+                <option key={cat.id}>{cat.name}</option>
               ))}
             </select>
 
