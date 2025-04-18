@@ -54,7 +54,7 @@ const router = createBrowserRouter([
       { path: "login", element: <Login /> },
       { path: "resetpassword", element: <ResetPassword /> },
       { path: "forgetpassword", element: <ForgetPassword /> },
-      { path: "verification", element: <Verification /> },
+      { path: "verification/:token", element: <Verification /> },
 
       // Protected User Dashboard
       {
