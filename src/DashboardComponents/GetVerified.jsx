@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "./GetVerified.css";
 import { TbCapture } from "react-icons/tb";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
+import { FaCamera } from "react-icons/fa";
 
 const GetVerified = () => {
   const BASE_URL = "https://campustrade-kku1.onrender.com";
+  const token = JSON.parse(localStorage.getItem("userData"))?.token;
+  const userId = JSON.parse(localStorage.getItem("userData"))?.data?.id;
 
   const [errors, setErrors] = useState({});
   const [fullName, setFullName] = useState("");
@@ -15,8 +18,11 @@ const GetVerified = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [whatsappLink, setWhatsAppLink] = useState("");
   const [loading, setLoading] = useState(false);
+  const [profilePic, setProfilePicture] = useState(null);
+  const [imagePreview, setImagePreview] = useState(null);
+  const [resetInput, setResetInput] = useState(false);
+  const fileInputRef = useRef(null);
 
-  const token = JSON.parse(localStorage.getItem("userData"))?.token;
 
   const errorStyle = {
     border: "1px solid red",
@@ -27,6 +33,21 @@ const GetVerified = () => {
     fontSize: "0.8rem",
     marginTop: "4px",
   };
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+
+    if (file) {
+      // Set profile picture file
+      setProfilePicture(file);
+      setImagePreview(URL.createObjectURL(file)); // Display image preview
+    } else {
+      setProfilePicture(null);
+      setImagePreview(null);
+    }
+  };
+
+  console.log("Profile Picture:", profilePic);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -48,19 +69,20 @@ const GetVerified = () => {
     }
 
     try {
-      setLoading(true);
-      const payload = {
-        fullName,
-        school,
-        gender,
-        phoneNumber,
-        jambRegNo,
-        whatsappLink,
-      };
+      const formData = new FormData();
 
-      await axios.post(`${BASE_URL}/api/v1/kyc/profile`, payload, {
+      formData.append("fullName", fullName);
+      formData.append("school", school);
+      formData.append("gender", gender);
+      formData.append("phoneNumber", phoneNumber);
+      formData.append("jambRegNo", jambRegNo);
+      formData.append("whatsappLink", whatsappLink);
+
+      formData.append("profilePic", profilePic); // Append the image file
+
+      await axios.patch(`${BASE_URL}/api/v1/kyc/profile/${userId}`, formData, {
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${token}`,
         },
       });
@@ -72,6 +94,7 @@ const GetVerified = () => {
       setJambRegNo("");
       setPhoneNumber("");
       setWhatsAppLink("");
+      setProfilePicture(null);
       setErrors({});
     } catch (err) {
       toast.error(
@@ -88,7 +111,25 @@ const GetVerified = () => {
       <ToastContainer />
       <div className="getverifiedbody">
         <div className="getverifiedwrap">
-          <TbCapture size={85} />
+          {/* <TbCapture size={85} /> */}
+          <div className="downer">
+            <label htmlFor="imageUpload">
+              {/* <p> Add Photo</p> */}
+              <div className="circle">
+                {!imagePreview && <FaCamera className="cam" />}
+                {imagePreview && <img src={imagePreview} alt="Preview" />}
+                <input
+                  key={resetInput ? "reset" : "normal"}
+                  ref={fileInputRef}
+                  type="file"
+                  id="imageUpload"
+                  accept="image/*"
+                  name="profilePic"
+                  onChange={handleImageChange}
+                />
+              </div>
+            </label>
+          </div>
           <h2 className="getv">User Verification</h2>
           <h1 className="gev1">Fill in the necessary information below</h1>
         </div>
@@ -109,7 +150,7 @@ const GetVerified = () => {
               <p className="veryfy1">Phone number</p>
               <input
                 className="inputz"
-                type="number"
+                type="text"
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
                 style={errors.phone ? errorStyle : {}}
