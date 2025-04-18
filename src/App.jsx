@@ -52,7 +52,7 @@ const router = createBrowserRouter([
       // Authentication routes without header/footer
       { path: "signup", element: <SignUp /> },
       { path: "login", element: <Login /> },
-      { path: "resetpassword", element: <ResetPassword /> },
+      { path: "resetpassword/:token", element: <ResetPassword /> },
       { path: "forgetpassword", element: <ForgetPassword /> },
       { path: "verification/:token", element: <Verification /> },
 
