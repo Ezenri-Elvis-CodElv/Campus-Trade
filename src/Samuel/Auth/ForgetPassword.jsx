@@ -27,7 +27,7 @@ const ForgetPassword = () => {
     <div className="Overall">
   <div className="box">
     <div className="boxWrapper">
-      <div className="logo">
+      <div className="authlogo">
        <img src="/images/CAMPUSTRADE-02 1.png" alt="" />
       </div>
 
@@ -41,7 +41,7 @@ const ForgetPassword = () => {
           onChange={(e)=>setAuth({...auth, email:e.target.value})} />
 
           <button className="submitBtn" onClick={handlesubmit}>Request password reset</button>
-          <div className='footer'>
+          <div className='footer' style={{marginTop:"10px"}}>
           <p style={{display:"flex", justifyContent:'flex-start' , cursor: "default"}}>Already Have An Account?
                <span style={{color:"purple", cursor:"pointer"}} onClick={()=> nav("/login")}>Login</span></p>
                </div>
