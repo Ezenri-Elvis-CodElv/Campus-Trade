@@ -10,9 +10,9 @@ const nav = useNavigate()
 const baseUrl ="http://campustrade-kku.onrender.com"
 
 const [dashboard, setDashboard] = useState({
-  totalproducts:0,
-  totalorders:0,
-  totalrevenue:0 
+  totalproducts:"",
+  totalorders:"",
+  totalrevenue:"" 
 })
 
 useEffect(() =>{

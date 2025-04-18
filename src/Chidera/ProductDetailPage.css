@@ -15,7 +15,7 @@ a {
     display: flex;
     flex-direction: column;
     gap: 50px;
-    height: 250vh;
+    height: 230vh;
 }
 
 .body {
