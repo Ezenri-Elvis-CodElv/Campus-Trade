@@ -1,0 +1,68 @@
+.logout-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logout-modal .ant-modal-content {
+    width: 400px;
+    height: 230px;
+    border-radius: 20px;
+    padding: 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logout-title {
+    font-size: 23px;
+    font-weight: bold;
+    color: #2e004f;
+    margin-bottom: 5px;
+    cursor: default;
+  }
+  
+  .logout-desc {
+    font-size: 16px;
+    color: #7c7c7c;
+    margin-bottom: 20px;
+    cursor: default;
+  }
+  
+  .logout-actions {
+    display: flex;
+    justify-content: space-around;
+    gap: 25px;
+  } 
+  
+  .cancel-button,
+  .logout-button {
+    width: 130px;
+    height: 48px;
+    font-size: 16px;
+    border-radius: 12px;
+    border: 1px solid #d9d9d9;
+    cursor: pointer;
+  }
+  
+  .cancel-button {
+    background:#ffffff;
+  }
+  .cancel-button:hover {
+    background: #dbdbdba0;
+  }
+  
+  .logout-button {
+    background: #fff;
+    font-weight: 600;
+  }
+  .logout-button:hover {
+    background:rgba(255, 0, 0, 0.662);
+    color: #fdfdfd;
+  }
+  

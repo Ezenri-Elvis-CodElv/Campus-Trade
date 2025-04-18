@@ -18,11 +18,12 @@ const SignUp = () => {
     confirmpassword: "",
   });
   const [errors, setErrors] = useState({});
-  const url = "https://campustrade-kku1.onrender.com/api/v1/seller/register";
+  const url1 = "https://campustrade-kku1.onrender.com/api/v1/seller/register";
+  const url = 'https://campustrade-kku1.onrender.com/api/v1/seller/google-authenticate'
   const handlesubmit = async () => {
     setLoading(true);
     try {
-      const res = await axios.post(url, {
+      const res = await axios.post(url1, {
         email: auth.email,
         password: auth.password,
         confirmPassword: auth.confirmpassword,
@@ -39,6 +40,9 @@ const SignUp = () => {
     }
   };
   const isDisabled = !auth.email || !auth.password || !auth.confirmpassword;
+  const handleGoogleLogin = async () => {
+    window.location.href = `${url}`
+  }
   return (
     <div className="Overall withBackgroundImage">
       <div className="box">
@@ -143,9 +147,11 @@ const SignUp = () => {
                   </span>
                 </p>
               </div>
-              <button className="googleLogin">
+              <button className="googleLogin" 
+              onClick={handleGoogleLogin}>
                 <FcGoogle className="icon" />
                 <span>Sign up with Google</span>
+                
               </button>
               <p className="trademark">@campustrade</p>
             </div>

@@ -1,13 +1,43 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./GetVerified.css"
-import { TbCapture } from "react-icons/tb";
+import { TbCameraUp} from 'react-icons/tb';
 
 const GetVerified = () => {
+  const [preview, setPreview] = useState(null);
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setPreview(URL.createObjectURL(file));
+    }
+  };
+
   return (
     <div className='GetVerified'>
       <div className='getverifiedbody'>
           <div className='getverifiedwrap'>
-              <TbCapture size={85}/>
+
+<div className="profile-image-upload">
+  <label htmlFor="profilePic" className="profile-label">
+    {preview ? (
+      <img src={preview} alt="Profile Preview" className="profile-preview" />
+    ) : (
+      <div className="upload-placeholder" />
+    )}
+    <div className="capture-icon-wrapper">
+      <TbCameraUp  className="capture-icon" />
+    </div>
+  </label>
+  <input
+    id="profilePic"
+    type="file"
+    accept="image/*"
+    className="hidden-file-input"
+    onChange={handleImageChange}
+  />
+</div>
+
+
               <h2 className='getv'>User Verification</h2>
               <h1 className='gev1'>fill in the neccessary information below</h1>
           </div>

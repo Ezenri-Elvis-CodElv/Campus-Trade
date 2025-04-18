@@ -1,5 +1,5 @@
 import React from 'react'
-import './ProductDetailPage.css'
+import './productdetailpage.css'
 import Card from "../components/Card"
 import {  useNavigate } from 'react-router-dom';
 import { useState } from 'react';
@@ -22,7 +22,8 @@ const [copied, setCopied] = useState(false);
 const handleCopy = () => {
   navigator.clipboard.writeText(phoneNumber);
   setCopied(true);
-  setTimeout(() => setCopied(false), 1500); 
+  setTimeout(() => setCopied(false), 500); 
+  
 };
 const getButtonStyle = (side) => {
   const isActive = active === side;
@@ -45,7 +46,7 @@ const ADS = [
       },
       {
         imageUrl: "/images/Webb Idea 1 1.png",
-        alt: "HAHA"
+        alt: "HAH"
       }
     ]
     const myArr = [
@@ -94,8 +95,8 @@ const ADS = [
           <div className='condition'>
             <h3 className='projectinfo2'>Condition</h3>
             <div className='body1'>
-              <button className=''btwn style={getButtonStyle('New')} onClick={() =>setActive('New')} >New</button>
-              <button className='active' style={getButtonStyle('Used')} onClick={() =>setActive('Used')}>Used</button>
+              <button  style={getButtonStyle('New')} onClick={() =>setActive('New')} >New</button>
+              <button style={getButtonStyle('Used')} onClick={() =>setActive('Used')}>Used</button>
             </div>
           </div>
           <div className='description'>
@@ -104,8 +105,8 @@ const ADS = [
               <h1 className='projectinfo4'>Lorem ipsum dolor, sit amet c 
                 onsectetur adipisicing elit. <br />
                 Pariatur quia quas aliquam s
-                oluta dolor  <br />libero vero face
-                 dolores.</h1>
+                oluta dolor  <br />
+                </h1>
             </div>
           </div>
         </div>
@@ -134,13 +135,13 @@ const ADS = [
                 <div className='profileContact'>
                   <button className='contact phoneNumber'>
                     {copied ? (
-                      spans => <span style={{ marginLeft: "8px", color: "green" }}>Copied!</span>
+                      <span style={{ marginLeft: "8px", color: "white" }}>Copied!</span>
                     ) : (
                     <IoCopy  size={20}
                     onClick={handleCopy}
                     style={{ cursor: "pointer", marginRight: "8px" }} />)}
                     <a href={`tel:${phoneNumber}`}>{phoneNumber}</a>
-                    {copied && <span style={{ marginLeft: "8px", color: "green" }}>Copied!</span>}
+                    {copied && <span style={{ marginLeft: "8px", color: "white" }}>Copied!</span>}
                   </button>
                   <button className='contact whatsapp'>
                     <BsWhatsapp size={25} style={{color: "green"}}/>
@@ -165,13 +166,7 @@ const ADS = [
         </div>
       </div>
 
-      <div className='devices'>
-        <div className='deviceHeader'>
-          <h2 className='mobiledevicesh2'>Mobile device</h2>
-          <p className='mobiledevicesp'>Checkout Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum!</p>
-        </div>
-
-      </div>
+     
 
       <div className="cards">
       {myArr.map((item, index) => (

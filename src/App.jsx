@@ -31,6 +31,8 @@ import AdminProfile from "./Admin/AdminProfile";
 import SellerProfile from "./DashboardComponents/SellerProfile";
 import CreatePost from "./DashboardComponents/CreatePost";
 import VerifySuccessful from "./Admin/VerifySuccessful";
+import LogoutSeller from "./DashboardComponents/LogoutSeller";
+
 
 
 const router = createBrowserRouter([
@@ -106,6 +108,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/ads",
         element: <Ads />,
+      },
+      {
+        path: "/dashboard/logout",
+        element: <LogoutSeller />,
       },
     ],
   },

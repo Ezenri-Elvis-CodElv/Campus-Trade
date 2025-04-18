@@ -1,5 +1,5 @@
 // Sidebar.jsx
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './sidebar.css';
 import { CgProfile } from 'react-icons/cg';
 import { IoCreateOutline, IoSettingsOutline } from 'react-icons/io5';
@@ -11,7 +11,6 @@ import { RiLogoutCircleLine } from 'react-icons/ri';
 import { BsFillFilePostFill } from 'react-icons/bs';
 
 const Sidebar = () => {
-  const nav = useNavigate();
   
   const getNavLinkClass = ({ isActive }) => 
     isActive ? "link active" : "link";
@@ -90,13 +89,13 @@ const Sidebar = () => {
       </div>
 
       <div className='logout-button'>
-        <button 
-          className='dash-logout' 
-          onClick={() => nav('/')}
-        >
+        <NavLink to="/dasboard/logout" className='dash-logout' >
+      
           <RiLogoutCircleLine size={18} />
           LogOut
-        </button>
+        
+        </NavLink>
+       
       </div>
     </aside>
   );

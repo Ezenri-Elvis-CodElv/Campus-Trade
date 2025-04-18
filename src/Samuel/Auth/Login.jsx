@@ -18,6 +18,7 @@ const Login = () => {
   });
   const [errors, setErrors] = useState({});
   const url = "https://campustrade-kku1.onrender.com/api/v1/seller/login";
+  const url1 = "https://campustrade-kku1.onrender.com/api/v1/seller/auth/google/login"
   const handlesubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -39,6 +40,9 @@ const Login = () => {
     }
   };
   const isDisabled = !auth.email || !auth.password;
+  const handleGoogleLogin = async () => {
+    window.location.href = `${url1}`
+  }
   return (
     <div className="Overall">
       <div className="box">
@@ -129,7 +133,8 @@ const Login = () => {
                   Forgot Password?
                 </p>
               </div>
-              <button className="googleLogin">
+              <button className="googleLogin"
+              onClick={handleGoogleLogin}>
                 <FcGoogle className="icon" />
                 <span>Sign in with Google</span>
               </button>
