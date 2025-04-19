@@ -32,7 +32,6 @@ import CreatePost from "./DashboardComponents/CreatePost";
 import VerifySuccessful from "./Admin/VerifySuccessful";
 import Verification from "./Samuel/Auth/Verification";
 import NotFoundPage from "./components/NotFoundPage";
-import LogoutSeller from "./DashboardComponents/LogoutSeller";
 
 const router = createBrowserRouter([
   {
@@ -47,8 +46,6 @@ const router = createBrowserRouter([
           { path: "explorepage", element: <ExplorePage /> },
           { path: "productdetailpage/:_id", element: <ProductDetailPage /> },
           { path: "profilepage", element: <ProfilePage /> },
-          { path: "logout", element: <LogoutSeller /> },
-
         ],
       },
 
