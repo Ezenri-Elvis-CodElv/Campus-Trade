@@ -8,6 +8,7 @@ import { SiBookstack } from "react-icons/si";
 import { IoIosArrowDown } from "react-icons/io";
 import Card from "../components/Card";
 
+
 const LandingPage = () => {
   const nav = useNavigate();
 
@@ -92,7 +93,7 @@ const LandingPage = () => {
     <div className="w-full h-max flex flex-col justify-center items-center">
       <div className="w-full h-[85vh]  flex justify-center items-center">
         <div
-          className="w-[100%] h-[100%] bg-contain bg-center px-[20px] flex flex-row max-md:flex-col-reverse max-md: justify-center items-end"
+          className="w-[100%] h-[100%] max-md:bg-none  bg-contain bg-center px-[20px] flex flex-row max-md:flex-col-reverse max-md: justify-center items-end"
           style={{
             backgroundImage: "url(/images/HomeHeroPageBg.jpg)",
             backgroundSize: "cover",
@@ -101,7 +102,7 @@ const LandingPage = () => {
           }}
         >
           <div className="w-[60%] h-[100%] max-md:w-[100%] max-md:h-[50%] flex justify-center items-center ">
-            <div className="w-[80%] h-[90%] flex flex-col justify-center gap-4 animate__animated animate__fadeInLeft max-md:">
+            <div className="w-[80%] h-[90%] max-md:w-full max-md:items-center flex flex-col justify-center gap-4 animate__animated animate__fadeInLeft max-md:bg-white">
               <h1 className="text-[55px] font-bold font-[Inter] text-[#050505] text-left leading-tight max-md:text-[30px]">
                 Post your items,
                 <br /> <span className="text-[#FF6D00]">connect</span> with{" "}
@@ -111,7 +112,7 @@ const LandingPage = () => {
               <p className="text-[24px] font-xl font-[Inter] text-black text-left leading-normal max-md:text-[18px]">
                 A community-driven marketplace made just for <br /> students
               </p>
-              <div className="w-full h-[20%] flex items-start justify-start">
+              <div className="w-full h-[20%] flex items-start max-md:justify-center justify-start">
                 <button
                   className="w-[180px] h-[60px] max-md:w-[140px] max-md:h-[50px] flex flex-row justify-center items-center gap-3 rounded-[10px] text-[18px] shadow-2xl cursor-pointer bg-[rgb(74,24,117)] text-white"
                   onClick={() => nav("/explorepage")}
@@ -483,7 +484,7 @@ const LandingPage = () => {
               helping you make smart trades on campus. Ready to hustle <br />
               smarter? Join the CampusTrade community today
             </p>
-            <div className="w-full h-[30%] flex justify-start items-center">
+            <div className="w-full h-[30%] flex justify-start items-center max-md:justify-center">
               <button
                 className="w-[180px] h-[60px] max-md:w-[140px] max-md:h-[50px] flex flex-row justify-center items-center gap-3 rounded-[15px] text-[18px] font-medium shadow-2xl cursor-pointer bg-white text-[rgb(74,24,117)]"
                 onClick={() => nav("/signup")}
@@ -506,7 +507,7 @@ const LandingPage = () => {
             </p>
           </div>
           <div className="w-[80%] max-md:w-full h-[70%]  flex overflow-x-auto items-center scroll-smooth gap-x-4 px-4 py-6 flex-nowrap">
-            <div className="flex flex-col min-w-[448px] max-w-[448px] h-[250px] bg-[#EEDCFF] rounded-2xl shadow-md p-4 hover:shadow-xl transition-shadow duration-300 ease-in-out">
+            <div className="flex flex-col min-w-[448px] max-w-[448px] h-[250px] max-md:min-w-[300px] max-md:h-[180px]  bg-[#EEDCFF] rounded-2xl shadow-md p-4 hover:shadow-xl transition-shadow duration-300 ease-in-out">
               <div className="flex items-center gap-3 mb-4">
                 <img
                   src="/images/Nnamdi.svg"
@@ -520,13 +521,13 @@ const LandingPage = () => {
                   <p className="text-black text-sm font-normal">Student</p>
                 </div>
               </div>
-              <p className="text-[#1E1E1E] text-[20px] font-normal font-[inter] leading-snug">
+              <p className="text-[#1E1E1E] text-[20px] max-md:text-[16px] font-normal font-[inter] leading-snug">
                 "I needed a laptop for my coursework but couldn’t afford a
                 brand-new one. I found a great deal on CampusTrade and connected
                 with the seller instantly. Best decision ever!"
               </p>
             </div>
-            <div className="flex flex-col min-w-[448px] max-w-[448px] h-[250px] bg-[#EEDCFF] rounded-2xl shadow-md p-4 hover:shadow-xl transition-shadow duration-300 ease-in-out">
+            <div className="flex flex-col min-w-[448px] max-w-[448px] h-[250px] max-md:min-w-[300px] max-md:h-[180px] bg-[#EEDCFF] rounded-2xl shadow-md p-4 hover:shadow-xl transition-shadow duration-300 ease-in-out">
               <div className="flex items-center gap-3 mb-4">
                 <img
                   src="/images/Nnamdi.svg"
@@ -540,7 +541,7 @@ const LandingPage = () => {
                   <p className="text-black text-sm font-normal">Student</p>
                 </div>
               </div>
-              <p className="text-[#1E1E1E] text-[20px] font-normal font-[inter] leading-snug">
+              <p className="text-[#1E1E1E] text-[20px] max-md:text-[16px] font-normal font-[inter] leading-snug">
                 "My worn-out shoes were killing my campus walks 🚶♂️… until I
                 snagged barely-used sneakers on CampusTrade! Seller was super
                 chill—now I’m striding in comfort and style. 👟✨ #ThriftySteps
@@ -548,7 +549,7 @@ const LandingPage = () => {
               </p>
             </div>
 
-            <div className="flex flex-col min-w-[448px] max-w-[448px] h-[250px] bg-[#EEDCFF] rounded-2xl shadow-md p-4 hover:shadow-xl transition-shadow duration-300 ease-in-out">
+            <div className="flex flex-col min-w-[448px] max-w-[448px] h-[250px] max-md:min-w-[300px] max-md:h-[180px]  bg-[#EEDCFF] rounded-2xl shadow-md p-4 hover:shadow-xl transition-shadow duration-300 ease-in-out">
               <div className="flex items-center gap-3 mb-4">
                 <img
                   src="/images/Ellipse 25.svg"
@@ -562,14 +563,14 @@ const LandingPage = () => {
                   <p className="text-black text-sm font-normal">Student</p>
                 </div>
               </div>
-              <p className="text-[#1E1E1E] text-[20px] font-normal font-[inter] leading-snug">
+              <p className="text-[#1E1E1E] text-[20px] max-md:text-[16px] font-normal font-[inter] leading-snug">
                 "Dorm bed shopping had me stressed—new ones cost a fortune!
                 Found a cozy, like-new mattress on CampusTrade. Fast pickup,
                 saved $$$, and now I sleep like a (broke) queen. 🛏️💤
                 #DormRoomUpgrade #CampusTradeMagic"
               </p>
             </div>
-            <div className="flex flex-col min-w-[448px] max-w-[448px] h-[250px] bg-[#EEDCFF] rounded-2xl shadow-md p-4 hover:shadow-xl transition-shadow duration-300 ease-in-out">
+            <div className="flex flex-col min-w-[448px] max-w-[448px] h-[250px] max-md:min-w-[300px] max-md:h-[180px]  bg-[#EEDCFF] rounded-2xl shadow-md p-4 hover:shadow-xl transition-shadow duration-300 ease-in-out">
               <div className="flex items-center gap-3 mb-4">
                 <img
                   src="/images/Ellipse 25.svg"
@@ -583,14 +584,14 @@ const LandingPage = () => {
                   <p className="text-black text-sm font-normal">Student</p>
                 </div>
               </div>
-              <p className="text-[#1E1E1E] text-[20px] font-normal font-[inter] leading-snug">
+              <p className="text-[#1E1E1E] text-[20px] max-md:text-[16px] font-normal font-[inter] leading-snug">
                 "CampusTrade helped me kickstart my small business! I sell
                 fashion accessories, and with just a 5% listing fee, I’ve made
                 so many sales. Love it!"
               </p>
             </div>
 
-            <div className="flex flex-col p-9 min-w-[448px] max-w-[448px] h-[250px] bg-[#EEDCFF] rounded-[20px] shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out">
+            <div className="flex flex-col p-9 min-w-[448px] max-w-[448px] h-[250px] max-md:min-w-[300px] max-md:h-[180px]  bg-[#EEDCFF] rounded-[20px] shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out">
               <div className="flex items-center gap-3 mb-4">
                 <img
                   src="/images/Ikem.svg"
@@ -602,7 +603,7 @@ const LandingPage = () => {
                   <p className="text-black text-sm font-normal">Student</p>
                 </div>
               </div>
-              <p className="text-[#1E1E1E] text-[20px] font-normal font-[inter] leading-snug">
+              <p className="text-[#1E1E1E] text-[20px] max-md:text-[16px] font-normal font-[inter] leading-snug">
                 "I was skeptical at first, but CampusTrade is actually so
                 smooth. I listed my old phone, and within hours, I had multiple
                 buyers reaching out!"

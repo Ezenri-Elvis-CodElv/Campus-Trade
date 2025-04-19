@@ -67,6 +67,7 @@
     display: flex;
     flex-direction: column;
     color: rgb(145,127,162);
+    /* padding: 2px; */
 }
 
 .P1 .veryfy{
@@ -78,7 +79,7 @@
     border: 1px solid black;
     width: 100%;
     height: 100%;
-    padding: 10px;
+    padding: 5.9px;
     font-size: 20px;
 }
 
@@ -116,6 +117,7 @@
     display: flex;
     align-items: center;
     gap: 20px;
+    /* background: #000; */
     justify-content: space-around;
 }
 
@@ -197,14 +199,16 @@
     align-items: center;
     padding: 2px;
     gap: 5%;
+    
 }
 
 .male{
     width: 40%;
     height: 90%;
-    gap: 10px;
+    gap: 60px;
     display: flex;
     align-items: center;
+    
 }
 
 .p11{
@@ -237,50 +241,52 @@
     color: white;
 }
 
-.profile-image-upload {
-    position: relative;
-    width: 85px;
-    height: 85px;
-  }
-  
-  .profile-label {
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-  }
-  
-  .profile-preview,
-  .upload-placeholder {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    background-color: #e0e0e0;
-  }
-  
-  .upload-placeholder {
+
+.downer {
+    width: 20%;
+    height: 40%;
+    margin-top: 4%;
+    padding-left: 5px;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    position: relative;
   }
   
-  .capture-icon-wrapper {
+  .cam {
     position: absolute;
-    bottom: 0;
-    right: 0;
-    background-color: white;
-    border-radius: 50%;
+    left: 85px;
+    bottom: 8px;
+    font-size: 20px;
+  }
+  
+  .downer p {
+    margin-bottom: 7%;
+    display: flex;
+    padding-left: 25px;
+    font-size: 15px;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+  }
+  
+  .circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+    background: gray;
+    position: relative;
+  }
+  
+  
+  .circle img {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+
+  }
+  .profilePic {
+    font-size: 8px;
+    margin-top: 70px;
     padding: 4px;
   }
-  
-  .capture-icon {
-    font-size: 20px;
-    color: #555;
-  }
-  
-  .hidden-file-input {
-    display: none;
-  }
-  

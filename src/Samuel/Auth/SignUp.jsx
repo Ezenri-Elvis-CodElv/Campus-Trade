@@ -29,14 +29,14 @@ const SignUp = () => {
         confirmPassword: auth.confirmpassword,
       });
       if (res.status === 201) {
-        console.log(res)
+        console.log(res);
         nav("/login");
-        toast.success(res.data.message);
+        toast.success("Welcome,Please check your email for verification");
       }
     } catch (err) {
       setErrors(err.data.data.message);
       toast.error("signup Failed");
-      setLoading(false)
+      setLoading(false);
     }
   };
   const isDisabled = !auth.email || !auth.password || !auth.confirmpassword;
@@ -86,7 +86,7 @@ const SignUp = () => {
                   className="eyeIcon"
                   onClick={() => setShowpassword((prev) => !prev)}
                 >
-                  {showpassword ? <FaRegEyeSlash /> : <FiEye />}
+                  {showpassword ? <FiEye /> : <FaRegEyeSlash />}
                 </span>
               </div>
               {errors.password && (
@@ -108,8 +108,8 @@ const SignUp = () => {
                   className="eyeIcon"
                   onClick={() => setShowpassword((prev) => !prev)}
                 >
-                  {showpassword ? <FaRegEyeSlash /> : <FiEye />}
-                </span>
+                  {showpassword ? <FiEye /> : <FaRegEyeSlash />}
+                  </span>
               </div>
               {errors.confirmpassword && (
                 <span className="errorText">{errors.confirmpassword}</span>

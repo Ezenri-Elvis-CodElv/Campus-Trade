@@ -1,5 +1,5 @@
 import React from "react";
-import "./Loader.css";
+import "./loader.css";
 import logo from "../../public/images/CAMPUSTRADE-02 1.png"; 
 
 const Loader = () => {

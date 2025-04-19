@@ -5,3 +5,16 @@
   ::-webkit-scrollbar{
     width: 0px;
   }
+
+.slide-in-left .ant-modal {
+  animation: slideLeft 0.4s ease-in-out;
+}
+
+/* @keyframes slideLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+} */

@@ -166,7 +166,13 @@ const ADS = [
         </div>
       </div>
 
-     
+      <div className='devices'>
+        <div className='device-Header'>
+          <h2 className='mobiledevicesh2'>Mobile device</h2>
+          <p className='mobiledevicesp'>Checkout Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum!</p>
+        </div>
+
+      </div>
 
       <div className="cards">
       {myArr.map((item, index) => (
