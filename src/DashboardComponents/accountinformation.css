@@ -1,307 +1,376 @@
-/* accountinformation.css */
 .account-container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 1.5rem;
+  width: 80%;
+  height: 80vh;
+  padding: 40px;
   font-family: 'Arial', sans-serif;
-  overflow: hidden;
 }
 
 .account-header {
-  margin-bottom: 2rem;
+  margin-bottom: 30px;
 }
 
-.account-breadcrumb {
-  color: #666;
-  font-size: 0.875rem;
-  margin-bottom: 0.5rem;
+.account-dash {
+  color: #000;
+  font-size: 14px;
+  margin-bottom: 5px;
+  cursor: default;
 }
 
 .account-title {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: #333;
+  font-size: 28px;
+  font-weight: bold;
+  color: #000;
+  cursor: default;
 }
 
 .personal-info-section {
-  background-color: rgba(245, 245, 245, 0.9);
-  padding: 2rem;
-  border-radius: 8px;
-  backdrop-filter: blur(4px);
+  background-color: rgba(216, 208, 208, 0.308);
+  padding: 40px;
+  border-radius: 6px;
 }
 
 .personal-info-title {
-  font-size: 1.25rem;
+  font-size: 18px;
   font-weight: 600;
-  margin-bottom: 1.5rem;
-  color: #333;
+  margin-bottom: 25px;
+  cursor: default;
 }
 
 .profile-pic-section {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
+  gap: 20px;
+  margin-bottom: 30px;
 }
 
 .profile-image {
-  width: 6rem;
-  height: 6rem;
-  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
   object-fit: cover;
-  flex-shrink: 0;
 }
 
 .change-pic-text {
-  font-size: 0.875rem;
-  color: #666;
-  font-weight: 500;
-  line-height: 1.4;
+  width: 28px;
+  height: 28px;
+  font-size: 20px;
+  cursor: pointer;
+  color: black;
+  border-radius: 50px;
+  border: 2px solid #ff770f;
+  display: flex;
+  margin-left: -40px;
+  margin-bottom: 40px;
+  background-color: #ff770f;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.9;
+}
+
+.change-pic-text:hover {
+  background-color: white;
+  color: #ff770f;
 }
 
 .input-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 20px;
 }
 
 .input-label {
   font-weight: 600;
-  font-size: 0.875rem;
-  margin-bottom: 0.5rem;
-  color: #444;
+  font-size: 13px;
   display: block;
+  margin-bottom: 5px;
+  color: #000;
 }
 
 .input-field {
   width: 100%;
-  padding: 0.75rem;
-  font-size: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  background: white;
-  box-sizing: border-box;
-  transition: border-color 0.3s;
-}
-
-.input-field:focus {
-  border-color: #a854f5;
+  height: 35px;
+  padding: 10px;
+  font-size: 14px;
+  background-color: #ffffff9a;
+  border: none;
   outline: none;
 }
 
 .bio-field {
   width: 100%;
-  min-height: 6rem;
-  padding: 0.75rem;
-  font-size: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  resize: vertical;
+  height: 100px;
+  padding: 10px;
+  font-size: 14px;
+  background-color: white;
+  border: none;
+  outline: none;
+  resize: none;
 }
 
 .account-buttons {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
+  display: flex;
+  gap: 30px;
+  margin-top: 40px;
 }
 
 .reset-password-button,
 .change-phone-button {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-  border-radius: 8px;
-  background: white;
+  width: 180px;
+  height: 100px;
+  border-radius: 5px;
+  background-color: #fff;
   border: 2px solid transparent;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s, box-shadow 0.2s;
-  text-decoration: none;
-  min-height: 120px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.5;
+  cursor: pointer;
 }
 
 .reset-password-button {
-  border-top: 3px solid #a854f5;
+  border-top: 2px solid #a854f5;
+  color: #000;
 }
 
 .change-phone-button {
-  border-top: 3px solid #f6921e;
-}
-
-.reset-password-button:hover,
-.change-phone-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.reset-icon,
-.change-icon {
-  font-size: 1.75rem;
-  margin-bottom: 0.75rem;
+  border-top: 2px solid #f6921e;
+  color: #000;
 }
 
 .reset-icon {
+  display: block;
+  font-size: 24px;
   color: #a854f5;
+  display: flex;
+  justify-content: center;
+  margin-top: 17px;
 }
 
 .change-icon {
+  display: block;
+  font-size: 24px;
   color: #f6921e;
+  display: flex;
+  justify-content: center;
+  margin-top: 17px;
 }
 
-@media (max-width: 768px) {
+/* Media Query Styling for Small Desktop */
+@media only screen and (max-width: 1440px) {
   .account-container {
-    width: 100%;
-    padding: 1rem;
-    margin: 0;
-    width: 80%;
-    height: 80vh;
-    padding: 40px;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  .account-header {
-    margin-bottom: 30px;
-  }
-  
-  .account-dash{
-    color: #000;
-    font-size: 14px;
-    margin-bottom: 5px;
-    cursor: default;
-  }
-  
-  .account-title {
-    font-size: 28px;
-    font-weight: bold;
-    color: #000;
-    cursor: default;
+    width: 85%;
+    padding: 30px;
   }
 
-  .personal-info-section {
-    padding: 1.5rem;
-    background-color: rgba(216, 208, 208, 0.308);
-    padding: 40px;
-    border-radius: 6px;
+  .account-title {
+    font-size: 24px;
   }
-  
+
   .personal-info-title {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 25px;
-    cursor: default;
+    font-size: 16px;
+  }
+
+  .profile-image {
+    width: 70px;
+    height: 70px;
+  }
+
+  .account-buttons {
+    gap: 20px;
+  }
+}
+
+/* Media Query Styling for Smaller Desktop */
+@media only screen and (max-width: 1200px) {
+  .account-container {
+    width: 90%;
+    padding: 25px;
+  }
+
+  .account-title {
+    font-size: 22px;
   }
 
   .profile-pic-section {
     flex-direction: column;
-    display: flex;
     align-items: center;
-    gap: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
-  
+
   .profile-image {
-    width: 80px;
-    height: 80px;
-    border-radius: 100%;
-    object-fit: cover;
-  }
-  
-  .change-pic-text {
-    width: 37px;               
-    height: 28px;               
-    font-size: 8px;            
-    text-align: center;
-    cursor: pointer;
-    border-radius: 8px;         
-    border: 1px solid #5309ae;  
-    background-color: #c293fb53 ; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1.2;          
-  }
-  .change-pic-text:hover{
-    background-color: #b67bff91;
+    width: 60px;
+    height: 60px;
   }
 
   .account-buttons {
-    grid-template-columns: 1fr;
-  
-  
-  .input-group {
-    margin-bottom: 20px;
+    flex-direction: column;
+    gap: 15px;
   }
-  
-  .input-label {
-    font-weight: 600;
-    font-size: 13px;
-    display: block;
-    margin-bottom: 5px;
-    color: #000;
+}
+
+/* Media Query Styling for Big Tablet Device */
+@media only screen and (max-width: 900px) {
+  .change-pic-text{
+    margin-top: -65px;
+    font-size: 20px;
+    width: 20px;
+    height:20px;
+    margin-right: -85px;
   }
-  
-  .input-field {
+  .account-container {
     width: 100%;
-    height: 35px;
-    padding: 10px;
-    font-size: 14px;
-    background-color: #ffffff9a;
-    border: none;
-    outline: none;
+    padding: 20px;
   }
 
-  .input-field,
-  .bio-field {
-    font-size: 0.875rem;
+  .account-title {
+    font-size: 20px;
+  }
+
+  .profile-pic-section {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .profile-image {
+    width: 50px;
+    height: 50px;
+  }
+
+  .input-group {
+    margin-bottom: 15px;
   }
 
   .reset-password-button,
   .change-phone-button {
-    min-height: 100px;
-    padding: 1rem;
+    width: 100%;
+    height: 80px;
   }
 
-  .create-post-p-tag{
-    font-size: 14px;
-    color: #f6921e;
+  .account-buttons {
+    flex-direction: column;
+    gap: 20px;
   }
 }
 
-@media (max-width: 480px) {
-  .account-title {
-    font-size: 1.5rem;
+/* Media Query Styling for Tablet Device */
+@media only screen and (max-width: 760px) {
+  .account-container {
+    width: 95%;
+    padding: 15px;
   }
 
-  .personal-info-title {
-    font-size: 1.1rem;
+  .account-title {
+    font-size: 18px;
+  }
+
+  .profile-pic-section {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
   }
 
   .profile-image {
-    width: 4.5rem;
-    height: 4.5rem;
+    width: 40px;
+    height: 40px;
   }
 
-  .change-pic-text {
-    font-size: 0.75rem;
+  .input-field {
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .bio-field {
+    height: 80px;
+    font-size: 12px;
+  }
+
+  .reset-password-button,
+  .change-phone-button {
+    width: 100%;
+    height: 70px;
   }
 }
-  
-  .reset-icon {
-    display: block;
-    font-size: 24px;
-    color: #a854f5;
-    display: flex;
-    justify-content: center;
+
+/* Media Query Styling for Mobile Device */
+@media only screen and (max-width: 480px) {
+  .account-container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .account-title {
+    font-size: 16px;
+  }
+
+  .profile-image {
+    width: 35px;
+    height: 35px;
+  }
+
+  .profile-pic-section {
+    margin-bottom: 10px;
+  }
+
+  .input-field {
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .bio-field {
+    height: 60px;
+    font-size: 12px;
+  }
+
+  .account-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .reset-password-button,
+  .change-phone-button {
+    width: 100%;
+    height: 60px;
+  }
+}
+
+/* Media Query Styling for Small Mobile Device */
+@media only screen and (max-width: 379px) {
+  .account-container {
+    width: 100%;
+    padding: 5px;
+  }
+
+  .account-title {
+    font-size: 14px;
+  }
+
+  .profile-image {
+    width: 30px;
+    height: 30px;
+  }
+
+  .profile-pic-section {
     margin-bottom: 5px;
   }
-  
-  .change-icon {
-    display: block;
-    font-size: 24px;
-    color: #f6921e;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 5px;
+
+  .input-field {
+    height: 25px;
+    font-size: 10px;
+  }
+
+  .bio-field {
+    height: 50px;
+    font-size: 10px;
+  }
+
+  .account-buttons {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .reset-password-button,
+  .change-phone-button {
+    width: 100%;
+    height: 50px;
   }
 }
