@@ -48,13 +48,13 @@ const Login = () => {
     <div className="Overall">
       <div className="box">
         <div className="boxWrapper">
-          <div className="logo">
+          <div className="authlogo">
             <img src="/images/CAMPUSTRADE-02 1.png" alt="" />
           </div>
 
           <div className="inputHolder">
             <h2 className="welcome">
-              Welcome! We Are Glad To Have<br></br> You Here
+              Welcome! We Are Glad To Have You Here
             </h2>
             <p className="signupText">Login</p>
             <div className="inputBox">
@@ -109,6 +109,7 @@ const Login = () => {
                     display: "flex",
                     justifyContent: "flex-start",
                     cursor: "default",
+                    marginTop: "10px"
                   }}
                 >
                   Already have an account?{" "}
@@ -128,6 +129,7 @@ const Login = () => {
                     color: "purple",
                     display: "flex",
                     cursor: "pointer",
+                    marginTop: "10px"
                   }}
                   onClick={() => nav("/forgetpassword")}
                 >
@@ -136,9 +138,10 @@ const Login = () => {
               </div>
               <button className="googleLogin"
               onClick={handleGoogleLogin}>
+              {/* <button className="googleLogin">
                 <FcGoogle className="icon" />
                 <span>Sign in with Google</span>
-              </button>
+              </button> */}
 
               <p className="trademark">@campustrade</p>
             </div>

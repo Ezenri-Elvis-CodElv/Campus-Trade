@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { cache, useState } from "react";
 import "./auth.css";
 import axios from "axios";
 import { FiEye } from "react-icons/fi";
@@ -10,6 +10,7 @@ import { toast } from "react-toastify";
 const SignUp = () => {
   const nav = useNavigate();
   const [showpassword, setShowpassword] = useState(false);
+  const [showpassword2, setShowpassword2] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const [auth, setAuth] = useState({
@@ -18,8 +19,20 @@ const SignUp = () => {
     confirmpassword: "",
   });
   const [errors, setErrors] = useState({});
-  const url1 = "https://campustrade-kku1.onrender.com/api/v1/seller/register";
-  const url = 'https://campustrade-kku1.onrender.com/api/v1/seller/google-authenticate'
+
+  const url = "https://campustrade-kku1.onrender.com/api/v1/seller/register";
+  const googleAuthUrl = "https://campustrade-kku1.onrender.com/api/v1/seller/google-authenticate";
+
+ const handlesGoogleAuth = async () => {
+    try {
+        const res = await axios.get(googleAuthUrl)
+        console.log(res)
+    }catch (err){
+      console.log(err)
+    }
+  } 
+
+
   const handlesubmit = async () => {
     setLoading(true);
     try {
@@ -34,9 +47,10 @@ const SignUp = () => {
         toast.success("Welcome,Please check your email for verification");
       }
     } catch (err) {
-      setErrors(err.data.data.message);
+      setErrors(err.message);
       toast.error("signup Failed");
       setLoading(false);
+      console.log(err)
     }
   };
   const isDisabled = !auth.email || !auth.password || !auth.confirmpassword;
@@ -47,13 +61,13 @@ const SignUp = () => {
     <div className="Overall withBackgroundImage">
       <div className="box">
         <div className="boxWrapper">
-          <div className="logo">
+          <div className="authlogo">
             <img src="/images/CAMPUSTRADE-02 1.png" onClick={() => nav("/")} />
           </div>
 
           <div className="inputHolder">
             <h2 className="welcome">
-              Welcome! We Are Glad To Have <br></br>You Here
+              Welcome! We Are Glad To Have You Here
             </h2>
             <p className="signupText">Sign Up</p>
             <span className="infoText">Fill In Your Correct Information</span>
@@ -62,6 +76,7 @@ const SignUp = () => {
               <label>Email</label>
               <input
                 type="email"
+                name="Email"
                 placeholder="Input Your Email"
                 value={auth.email}
                 onChange={(e) => setAuth({ ...auth, email: e.target.value })}
@@ -75,6 +90,7 @@ const SignUp = () => {
               <div className="passwordField">
                 <input
                   type={showpassword ? "text" : "password"}
+                  name="Password"
                   placeholder="Enter Your Password"
                   value={auth.password}
                   onChange={(e) =>
@@ -96,7 +112,8 @@ const SignUp = () => {
               <label>Confirm Password</label>
               <div className="passwordField">
                 <input
-                  type={showpassword ? "text" : "password"}
+                  type={showpassword2 ? "text" : "password"}
+                  name="Confirm Password"
                   placeholder="Enter Your Password"
                   value={auth.confirmpassword}
                   onChange={(e) =>
@@ -106,9 +123,9 @@ const SignUp = () => {
                 />
                 <span
                   className="eyeIcon"
-                  onClick={() => setShowpassword((prev) => !prev)}
+                  onClick={() => setShowpassword2((prev) => !prev)}
                 >
-                  {showpassword ? <FiEye /> : <FaRegEyeSlash />}
+                  {showpassword2 ? <FiEye /> : <FaRegEyeSlash />}
                   </span>
               </div>
               {errors.confirmpassword && (
@@ -132,6 +149,7 @@ const SignUp = () => {
                     display: "flex",
                     justifyContent: "flex-start",
                     cursor: "default",
+                    marginTop: "10px"
                   }}
                 >
                   Already Have An Account?
@@ -147,12 +165,13 @@ const SignUp = () => {
                   </span>
                 </p>
               </div>
-              <button className="googleLogin" 
-              onClick={handleGoogleLogin}>
+
+
+              {/* <button className="googleLogin" onClick={handlesGoogleAuth}>
                 <FcGoogle className="icon" />
                 <span>Sign up with Google</span>
-                
-              </button>
+              </button> */}
+
               <p className="trademark">@campustrade</p>
             </div>
           </div>
