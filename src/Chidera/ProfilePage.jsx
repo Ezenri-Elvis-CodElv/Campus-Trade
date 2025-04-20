@@ -1,4 +1,5 @@
-import "./profilepage.css"
+
+import "./profilepagesecond.css"
 import Card from "../components/Card"
 import { RiShareFill } from "react-icons/ri";
 import { IoArrowBackOutline } from "react-icons/io5";

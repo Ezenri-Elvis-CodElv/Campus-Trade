@@ -1,5 +1,7 @@
-import "./productdetailpage.css";
-import Card from "../components/Card";
+
+import "./productdetailpagesecond.css"
+import Card from "../components/Card"
+
 import {  useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import Location from '../components/detailPage/Location'
