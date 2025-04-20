@@ -3,20 +3,10 @@ import { Modal, message } from "antd";
 import axios from "axios";
 import "./createpost.css";
 
-const categories = {
-  gadget: ["mobile phone", "tablets", "laptops"],
-  books: ["fictional", "non-fiction", "educational books"],
-  cloths: ["jeans", "shirt", "blouse"],
-  shoe: ["casual", "heels", "sneakers"],
-  homeappliances: ["beds", "kitchen utensil"],
-};
-
 const CreatePost = () => {
   const [formData, setFormData] = useState({
     productName: "",
     school: "",
-    category: "",
-    subcategory: "",
     price: "",
     condition: "",
     description: "",
@@ -27,11 +17,10 @@ const CreatePost = () => {
   const [isFormValid, setIsFormValid] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
   const [allCategories, setAllCategories] = useState([]);
-
-  // Get user data with safety checks
-  const userData = JSON.parse(localStorage.getItem("userData")) || {};
-  const token = userData?.token || "";
-  const sellerId = userData?._id || userData?.sellerId || "";
+  const [categoryId, setCategoryId] = useState("");
+  const [subCategory, setSubCategory] = useState("");
+  const [subCategories, setSubCategories] = useState([]);
+  const token = JSON.parse(localStorage.getItem("userData"))?.token;
 
   const handleInputChange = (field, value) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
@@ -83,37 +72,21 @@ const CreatePost = () => {
   }, [formData]);
 
   const handleSubmit = async () => {
-    if (!isFormValid) {
-      message.warning("Please fill out all fields before submitting.");
-      return;
-    }
-
-    if (!sellerId || !token) {
-      message.error("Authentication error. Please log in again.");
-      return;
-    }
-
-    const categoryId = formData.category;
-    if (!categoryId) {
-      message.error("Please select a valid category");
-      return;
-    }
-
     try {
       const form = new FormData();
+
       form.append("productName", formData.productName);
       form.append("school", formData.school);
       form.append("price", formData.price);
       form.append("condition", formData.condition);
       form.append("description", formData.description);
-      form.append("subcategory", formData.subcategory);
 
       mediaFiles.forEach((file) => {
         form.append("media", file);
       });
 
       await axios.post(
-        `https://campustrade-kku1.onrender.com/api/v1/products/${categoryId}/${sellerId}`,
+        `https://campustrade-kku1.onrender.com/api/v1/products/${categoryId}/${subCategory}`,
         form,
         {
           headers: {
@@ -126,12 +99,9 @@ const CreatePost = () => {
       message.success("Post created successfully!");
       setModalVisible(true);
 
-      // Reset form
       setFormData({
         productName: "",
         school: "",
-        category: "",
-        subcategory: "",
         price: "",
         condition: "",
         description: "",
@@ -153,7 +123,8 @@ const CreatePost = () => {
       const response = await axios.get(
         "https://campustrade-kku1.onrender.com/api/v1/all-categories"
       );
-      setAllCategories(response.data.data);
+      setAllCategories(response?.data?.data);
+      setCategoryId(response?.data?.data[0]?.id);
     } catch (error) {
       console.error("Error fetching categories:", error);
     }
@@ -163,7 +134,10 @@ const CreatePost = () => {
     getAllCategories();
   }, []);
 
-  console.log(allCategories);
+  const getSubCategoryId = (id) => {
+    setSubCategory(id);
+  };
+
   return (
     <div className="createpost-wrapper">
       <div className="createpost">
@@ -192,37 +166,44 @@ const CreatePost = () => {
               className="input-text-create22"
               value={formData.category}
               onChange={(e) => {
+                const selectedCategory = allCategories?.find(
+                  (cat) => cat?.name === e.target.value
+                );
+
                 handleInputChange("category", e.target.value);
-                handleInputChange("subcategory", "");
+                setSubCategories(selectedCategory?.subCategories || []);
               }}
             >
               <option>Select category</option>
               {allCategories?.map((cat) => (
-                <option key={cat.id}>{cat.name}</option>
+                <option key={cat?.id}>{cat?.name}</option>
               ))}
             </select>
 
             <p className="create-post-p-tag">Subcategory</p>
+
             <select
               className="input-text-create22"
-              value={formData.subcategory}
-              onChange={(e) => handleInputChange("subcategory", e.target.value)}
-              disabled={!formData.category}
+              value={formData?.subcategory}
+              onChange={(e) => {
+                const selectedId = e.target.value;
+                handleInputChange("subcategory", selectedId);
+                getSubCategoryId(selectedId);
+              }}
+              disabled={!formData?.category}
             >
               <option value="">Select subcategory</option>
-              {formData.category &&
-                categories[formData.category].map((sub) => (
-                  <option key={sub} value={sub}>
-                    {sub}
-                  </option>
-                ))}
+              {subCategories?.map((sub) => (
+                <option key={sub?.id} value={sub?.categoryId}>
+                  {sub?.name}
+                </option>
+              ))}
             </select>
-
             <p className="create-post-p-tag">Price</p>
             <input
-              type="number"
+              type="tex"
               className="input-text-create22"
-              value={formData.price}
+              value={formData?.price}
               onChange={(e) => handleInputChange("price", e.target.value)}
             />
           </div>
@@ -300,7 +281,6 @@ const CreatePost = () => {
         <div className="createpost-button">
           <button
             className="PostBtn"
-            disabled={!isFormValid}
             onClick={handleSubmit}
             style={{
               backgroundColor: isFormValid ? "#0f0c29" : "#ccc",

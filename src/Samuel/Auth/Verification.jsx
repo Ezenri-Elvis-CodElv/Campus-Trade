@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { FaCheckCircle, FaTimesCircle, FaArrowLeft } from "react-icons/fa";
+import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
 import axios from "axios";
 import "./verification.css";
 
@@ -21,17 +21,19 @@ const Verification = () => {
           },
         });
         console.log("Token:", token);
-        setTimeout(() => setVerificationStatus("success"), 3000);
+        setTimeout(() => {
+          setVerificationStatus("success");
+          setTimeout(() => navigate("/login"), 2000);
+        }, 3000);
       } catch (error) {
         setTimeout(() => setVerificationStatus("failed"), 3000);
       }
     };
 
-    if (token) {
-      verifyAccount();
-    }
+    verifyAccount();
+
     document.title = "CampusTrade | Verifying";
-  }, [url]);
+  }, [url, token]);
 
   return (
     <div className="verification-overlay">
@@ -62,14 +64,9 @@ const Verification = () => {
                 Verification Successful!
               </h1>
               <p className="verification-success-message">
-                Your account has been successfully verified
+                Your account has been successfully verified. Redirecting to
+                login...
               </p>
-              <button
-                className="verification-success-button"
-                onClick={() => navigate("/login")}
-              >
-                Continue to Login
-              </button>
             </div>
           </div>
         ) : (
@@ -85,15 +82,8 @@ const Verification = () => {
               />
               <h1 className="verification-error-title">Verification Failed</h1>
               <p className="verification-error-message">
-                We couldn't verify your account. Please try again.
+                We couldn't verify your account. Please try again later.
               </p>
-              <button
-                className="verification-retry-button"
-                onClick={() => navigate(-1)}
-              >
-                <FaArrowLeft />
-                Try Again
-              </button>
             </div>
           </div>
         )}
