@@ -1,5 +1,5 @@
 import React from 'react'
-import "./ProfilePage.css"
+import "./profilepage.css"
 import Card from "../components/Card"
 import { RiShareFill } from "react-icons/ri";
 import { IoArrowBackOutline } from "react-icons/io5";
