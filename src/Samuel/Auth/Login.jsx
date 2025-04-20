@@ -136,12 +136,12 @@ const Login = () => {
                   Forgot Password?
                 </p>
               </div>
-              <button className="googleLogin"
+              {/* <button className="googleLogin"
               onClick={handleGoogleLogin}>
               {/* <button className="googleLogin">
                 <FcGoogle className="icon" />
                 <span>Sign in with Google</span>
-              </button> */}
+              </button> */} 
 
               <p className="trademark">@campustrade</p>
             </div>

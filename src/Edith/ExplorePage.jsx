@@ -11,7 +11,7 @@ import shoe from "../../public/images/download.jpg";
 const ExplorePage = () => {
    const myArr = [
      {
-       image: `${shoe}`,
+       media: `${shoe}`,
        name: "Jimmy choo",
        price: "23,000",
        description: "Offers elegant and fashionable high heels",
@@ -19,7 +19,7 @@ const ExplorePage = () => {
        time: "28 mins ago",
      },
      {
-       image: `${shoe}`,
+       media: `${shoe}`,
        name: "Books",
        price: "20,000",
        description: "My description",
@@ -27,7 +27,7 @@ const ExplorePage = () => {
        time: "28 mins ago",
      },
      {
-       image: `${shoe}`,
+       media: `${shoe}`,
  
        name: "Home Appliances",
        price: "30,000",
@@ -36,7 +36,7 @@ const ExplorePage = () => {
        time: "28 mins ago",
      },
      {
-       image: `${shoe}`,
+       media: `${shoe}`,
  
        name: "Home Appliances",
        price: "30,000",
@@ -45,7 +45,16 @@ const ExplorePage = () => {
        time: "28 mins ago",
      },
      {
-       image: `${shoe}`,
+      media: `${shoe}`,
+  
+       name: "Home Appliances",
+       price: "30,000",
+       description: "My description",
+       university: "Yaba Tech",
+       time: "28 mins ago",
+     },
+     {
+      media: `${shoe}`,
  
        name: "Home Appliances",
        price: "30,000",
@@ -54,7 +63,7 @@ const ExplorePage = () => {
        time: "28 mins ago",
      },
      {
-       image: `${shoe}`,
+      media: `${shoe}`,
  
        name: "Home Appliances",
        price: "30,000",
@@ -63,7 +72,7 @@ const ExplorePage = () => {
        time: "28 mins ago",
      },
      {
-       image: `${shoe}`,
+      media: `${shoe}`,
  
        name: "Home Appliances",
        price: "30,000",
@@ -72,7 +81,7 @@ const ExplorePage = () => {
        time: "28 mins ago",
      },
      {
-       image: `${shoe}`,
+      media: `${shoe}`,
  
        name: "Home Appliances",
        price: "30,000",
@@ -81,7 +90,7 @@ const ExplorePage = () => {
        time: "28 mins ago",
      },
      {
-       image: `${shoe}`,
+      media: `${shoe}`,
  
        name: "Home Appliances",
        price: "30,000",
@@ -90,7 +99,7 @@ const ExplorePage = () => {
        time: "28 mins ago",
      },
      {
-       image: `${shoe}`,
+      media: `${shoe}`,
  
        name: "Home Appliances",
        price: "30,000",
@@ -99,16 +108,7 @@ const ExplorePage = () => {
        time: "28 mins ago",
      },
      {
-       image: `${shoe}`,
- 
-       name: "Home Appliances",
-       price: "30,000",
-       description: "My description",
-       university: "Yaba Tech",
-       time: "28 mins ago",
-     },
-     {
-       image: `${shoe}`,
+      media: `${shoe}`,
  
        name: "Home Appliances",
        price: "30,000",
