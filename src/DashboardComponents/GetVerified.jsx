@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./GetVerified.css";
 import { TbCapture } from "react-icons/tb";
 import axios from "axios";
@@ -21,8 +21,8 @@ const GetVerified = () => {
   const [profilePic, setProfilePicture] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
   const [resetInput, setResetInput] = useState(false);
+  const [profile, setProfile] = useState({});
   const fileInputRef = useRef(null);
-
 
   const errorStyle = {
     border: "1px solid red",
@@ -46,8 +46,6 @@ const GetVerified = () => {
       setImagePreview(null);
     }
   };
-
-  console.log("Profile Picture:", profilePic);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -105,6 +103,35 @@ const GetVerified = () => {
       setLoading(false);
     }
   };
+
+  const UserProfile = async () => {
+    try {
+      const response = await axios.get(
+        `https://campustrade-kku1.onrender.com/api/v1/kyc/get-kyc-details/${userId}`
+      );
+      const data = response?.data?.data?.SellerKYCs;
+      localStorage.setItem("user", JSON.stringify(response?.data?.data?.SellerKYCs));
+
+      if (data) {
+        setProfile(data);
+        if (data?.fullName) setFullName(data.fullName);
+        if (data?.phoneNumber) setPhoneNumber(data.phoneNumber);
+        if (data?.whatsappLink) setWhatsAppLink(data.whatsappLink);
+        if (data?.school) setSchool(data.school);
+        if (data?.gender) setGender(data.gender);
+        if (data?.jambRegNo) setJambRegNo(data.jambRegNo);
+        if (data.profilePic) {
+          setImagePreview(data.profilePic);
+        }
+      }
+    } catch (error) {
+      console.error("Error fetching categories:", error);
+    }
+  };
+
+  useEffect(() => {
+    UserProfile();
+  }, []);
 
   return (
     <div className="GetVerified">

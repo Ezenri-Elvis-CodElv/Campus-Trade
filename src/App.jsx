@@ -52,7 +52,7 @@ const router = createBrowserRouter([
       // Authentication routes without header/footer
       { path: "signup", element: <SignUp /> },
       { path: "login", element: <Login /> },
-      { path: "resetpassword", element: <ResetPassword /> },
+      { path: "resetpassword/:token", element: <ResetPassword /> },
       { path: "forgetpassword", element: <ForgetPassword /> },
       { path: "verification/:token", element: <Verification /> },
 
@@ -61,11 +61,11 @@ const router = createBrowserRouter([
         path: "dashboard",
         element: <Dashboard />,
         children: [
-          { index: true, element: <GetVerified /> },
+          { index: true, element: < SellerProfile /> },
           { path: "accountinformation", element: <AccountInformation /> },
           { path: "changephonenumber", element: <ChangePhoneNumber /> },
           { path: "changepassword", element: <ChangePassword /> },
-          { path: "sellerprofile", element: <SellerProfile /> },
+          { path: "sellerprofile", element: <GetVerified /> },
           { path: "recentpost", element: <RecentPost /> },
           { path: "pendingpost", element: <PendingPost /> },
           { path: "createpost", element: <CreatePost /> },
