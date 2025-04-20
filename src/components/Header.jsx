@@ -134,9 +134,9 @@ const Header = () => {
         </div>
 
         {/* Right Side */}
-        {user.fullName 
+        {/* {user.fullName 
         
-        }
+        } */}
         <div className="flex items-center justify-end w-[30%] max-md:w-[20%] gap-4">
           <button
             onClick={() => nav("/login")}
