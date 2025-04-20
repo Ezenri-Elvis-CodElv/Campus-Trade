@@ -4,8 +4,10 @@ import { IoIosArrowDown } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import Burger from "../../public/images/Burger.svg";
 import { Drawer } from "antd";
+import axios from "axios";
 
 const Header = () => {
+  const [user, setUser] = useState({});
   const [drawerVisible, setDrawerVisible] = useState(false);
   const [activeCategory, setActiveCategory] = useState(null);
   const [isSticky, setIsSticky] = useState(false);
@@ -13,6 +15,22 @@ const Header = () => {
   const dropdownRef = useRef(null);
   const institutionButtonRef = useRef(null);
   const nav = useNavigate();
+  const userId = JSON.parse(localStorage.getItem("userData"))?.data?.id;
+
+  const UserProfile = async () => {
+    try {
+      const response = await axios.get(
+        `https://campustrade-kku1.onrender.com/api/v1/kyc/get-kyc-details/${userId}`
+      );
+      setUser(response?.data?.data?.SellerKYCs);
+    } catch (error) {
+      console.error("Error fetching categories:", error);
+    }
+  };
+
+  useEffect(() => {
+    UserProfile();
+  }, []);
 
   const toggleCategoryDropdown = (category) => {
     setActiveCategory((prev) => (prev === category ? null : category));
@@ -67,7 +85,10 @@ const Header = () => {
 
           {/* Desktop Nav */}
           <nav className="flex gap-6 items-center max-md:hidden">
-            <h3 className="cursor-pointer text-black text-[20px]" onClick={() => nav("/")}>
+            <h3
+              className="cursor-pointer text-black text-[20px]"
+              onClick={() => nav("/")}
+            >
               Home
             </h3>
             <h3
@@ -84,9 +105,13 @@ const Header = () => {
                 className="absolute top-[80px] left-[20%] flex justify-center items-center h-[130px] rounded-2xl mt-2 w-[250px] bg-[rgb(36,0,69)] text-white shadow-md z-50"
               >
                 <ul className="rounded-2xl w-full h-full flex flex-col p-4 items-center">
-                  {["Lagos State University", "University Of Lagos", "Yaba College Of Technology"].map((name) => (
-                    <li 
-                      key={name} 
+                  {[
+                    "Lagos State University",
+                    "University Of Lagos",
+                    "Yaba College Of Technology",
+                  ].map((name) => (
+                    <li
+                      key={name}
                       className="w-[90%] h-[90%] flex flex-col justify-center items-center hover:bg-gray-500 hover:h-[70%] cursor-pointer"
                     >
                       {name}
@@ -109,6 +134,9 @@ const Header = () => {
         </div>
 
         {/* Right Side */}
+        {user.fullName 
+        
+        }
         <div className="flex items-center justify-end w-[30%] max-md:w-[20%] gap-4">
           <button
             onClick={() => nav("/login")}
@@ -145,23 +173,30 @@ const Header = () => {
         className="[&_.ant-drawer-content]:bg-[#240045] [&_.ant-drawer-title]:text-white [&_.ant-drawer-header]:border-b-[rgba(255,255,255,0.3)]"
         headerStyle={{
           borderBottom: "1px solid rgba(255, 255, 255, 0.3)",
-          padding: "16px 20px"
+          padding: "16px 20px",
         }}
         bodyStyle={{ backgroundColor: "#240045", color: "white", padding: 20 }}
         // bodyStyle={{ padding: "20px" }}
       >
         <ul className="flex flex-col gap-4 text-lg text-white bg-[#240045]">
-          <li 
-            className="font-bold text-orange-500 cursor-pointer " 
-            onClick={() => { nav("/"); setDrawerVisible(false); }}
+          <li
+            className="font-bold text-orange-500 cursor-pointer "
+            onClick={() => {
+              nav("/");
+              setDrawerVisible(false);
+            }}
           >
             Home
           </li>
 
           <li className="font-bold text-orange-500">Location</li>
-          {["Lagos State University", "University of Lagos", "Yaba College Of Technology"].map((name) => (
-            <li 
-              className="pl-4 cursor-pointer hover:text-orange-300" 
+          {[
+            "Lagos State University",
+            "University of Lagos",
+            "Yaba College Of Technology",
+          ].map((name) => (
+            <li
+              className="pl-4 cursor-pointer hover:text-orange-300"
               key={name}
               onClick={() => setDrawerVisible(false)}
             >
@@ -172,14 +207,17 @@ const Header = () => {
           <li className="font-bold text-orange-500 mt-2">Categories</li>
           {[
             { name: "Gadget", sub: ["Mobile Phone", "Tablets", "Laptops"] },
-            { name: "Books", sub: ["Fictional", "Non-Fictional", "Educational"] },
+            {
+              name: "Books",
+              sub: ["Fictional", "Non-Fictional", "Educational"],
+            },
             { name: "Clothes", sub: ["Jeans", "Shirt", "Blouse"] },
             { name: "Shoes", sub: ["Casual", "Heels", "Sneakers"] },
             { name: "Home Appliances", sub: ["Beds", "Kitchen Utensils"] },
           ].map((cat) => (
             <React.Fragment key={cat.name}>
-              <li 
-                onClick={() => toggleCategoryDropdown(cat.name)} 
+              <li
+                onClick={() => toggleCategoryDropdown(cat.name)}
                 className="pl-4 cursor-pointer flex justify-between items-center hover:text-orange-300"
               >
                 {cat.name} <IoIosArrowDown />
@@ -187,8 +225,8 @@ const Header = () => {
               {activeCategory === cat.name && (
                 <ul className="pl-8">
                   {cat.sub.map((item) => (
-                    <li 
-                      key={item} 
+                    <li
+                      key={item}
                       className="cursor-pointer hover:text-orange-300"
                       onClick={() => setDrawerVisible(false)}
                     >
@@ -200,21 +238,30 @@ const Header = () => {
             </React.Fragment>
           ))}
 
-          <li 
-            className="font-bold text-orange-500 mt-2 cursor-pointer" 
-            onClick={() => { nav("/explorepage"); setDrawerVisible(false); }}
+          <li
+            className="font-bold text-orange-500 mt-2 cursor-pointer"
+            onClick={() => {
+              nav("/explorepage");
+              setDrawerVisible(false);
+            }}
           >
             Explore more
           </li>
-          <li 
-            className="font-bold mt-2 cursor-pointer hover:text-orange-300" 
-            onClick={() => { nav("/signup"); setDrawerVisible(false); }}
+          <li
+            className="font-bold mt-2 cursor-pointer hover:text-orange-300"
+            onClick={() => {
+              nav("/signup");
+              setDrawerVisible(false);
+            }}
           >
             Sign Up
           </li>
-          <li 
-            className="font-bold mt-2 cursor-pointer hover:text-orange-300" 
-            onClick={() => { nav("/login"); setDrawerVisible(false); }}
+          <li
+            className="font-bold mt-2 cursor-pointer hover:text-orange-300"
+            onClick={() => {
+              nav("/login");
+              setDrawerVisible(false);
+            }}
           >
             Login
           </li>

@@ -36,6 +36,7 @@
 .dashboard-content-home,
 .dashboard-content-img {
   display: flex;
+  flex-direction: column;
   align-items: center;
   cursor: pointer;
 }

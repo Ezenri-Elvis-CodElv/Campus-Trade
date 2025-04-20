@@ -60,28 +60,28 @@ const LandingPage = () => {
 
   const myArr = [
     {
-      image: "/images/download.jpg",
+    media: "/images/download.jpg",
       name: "Jimmy choo",
       price: "23,000",
       description: "Offers elegant and fashionable high heels",
       university: "Lagos State University",
     },
     {
-      image: "/images/download.jpg",
+      media: "/images/download.jpg",
       name: "Books",
       price: "20,000",
       description: "Description",
       university: "Uni Lag",
     },
     {
-      image: "/images/download.jpg",
+      media: "/images/download.jpg",
       name: "Home Appliances",
       price: "30,000",
       description: "My description",
       university: "Yaba Tech",
     },
     {
-      image: "/images/download.jpg",
+      media: "/images/download.jpg",
       name: "Home Appliances",
       price: "30,000",
       description: "My description",
