@@ -1,5 +1,4 @@
-import React from 'react'
-import './productdetailpage.css'
+import "./productdetailpagesecond.css"
 import Card from "../components/Card"
 import {  useNavigate } from 'react-router-dom';
 import { useState } from 'react';
