@@ -2,25 +2,37 @@ import React, { useState, useEffect } from "react";
 import { Modal, message } from "antd";
 import axios from "axios";
 import "./createpost.css";
+import { toast } from "react-toastify";
 
 const CreatePost = () => {
-  const [formData, setFormData] = useState({
-    productName: "",
-    school: "",
-    price: "",
-    condition: "",
-    description: "",
-    media: [],
-  });
+  const schoolOptions = [
+    { name: "Lagos State University" },
+
+    {
+      name: "University of Lagos",
+    },
+    { name: "Yaba College of Technology" },
+  ];
 
   const [mediaFiles, setMediaFiles] = useState([]);
-  const [isFormValid, setIsFormValid] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
   const [allCategories, setAllCategories] = useState([]);
   const [categoryId, setCategoryId] = useState("");
   const [subCategory, setSubCategory] = useState("");
   const [subCategories, setSubCategories] = useState([]);
   const token = JSON.parse(localStorage.getItem("userData"))?.token;
+  const school = JSON.parse(localStorage.getItem("user"))?.school;
+
+  const [formData, setFormData] = useState({
+    productName: "",
+    school: school,
+    price: "",
+    condition: "",
+    description: "",
+    media: [],
+  });
+
+  console.log(school);
 
   const handleInputChange = (field, value) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
@@ -64,15 +76,23 @@ const CreatePost = () => {
     setMediaFiles(updatedFiles);
   };
 
-  useEffect(() => {
-    const isValid = Object.values(formData).every((value) =>
-      typeof value === "string" ? value.trim() : value.length > 0
-    );
-    setIsFormValid(isValid);
-  }, [formData]);
+  const isFormValid = Boolean(
+    formData.productName &&
+      formData.condition &&
+      formData.description &&
+      formData.price &&
+      formData.media
+  );
+
+  console.log(isFormValid);
 
   const handleSubmit = async () => {
     try {
+      if (!isFormValid) {
+        toast.error("Please fill in all fields and upload images.");
+        return;
+      }
+
       const form = new FormData();
 
       form.append("productName", formData.productName);
@@ -96,7 +116,7 @@ const CreatePost = () => {
         }
       );
 
-      message.success("Post created successfully!");
+      toast.success("Product created successfully!");
       setModalVisible(true);
 
       setFormData({
@@ -109,12 +129,7 @@ const CreatePost = () => {
       });
       setMediaFiles([]);
     } catch (error) {
-      console.error("Error creating post:", error);
-      const errorMessage =
-        error.response?.data?.message ||
-        error.message ||
-        "Failed to create post. Please try again.";
-      message.error(errorMessage);
+      toast.error(error.response?.data.message);
     }
   };
 
@@ -154,9 +169,9 @@ const CreatePost = () => {
             <p className="create-post-p-tag">School</p>
             <input
               type="text"
-              className="input-text-create"
-              value={formData.school}
-              onChange={(e) => handleInputChange("school", e.target.value)}
+              className="input-text-create22"
+              readOnly
+              value={school}
             />
           </div>
 
@@ -194,7 +209,7 @@ const CreatePost = () => {
             >
               <option value="">Select subcategory</option>
               {subCategories?.map((sub) => (
-                <option key={sub?.id} value={sub?.categoryId}>
+                <option key={sub?.id} value={sub?.id}>
                   {sub?.name}
                 </option>
               ))}
@@ -283,7 +298,7 @@ const CreatePost = () => {
             className="PostBtn"
             onClick={handleSubmit}
             style={{
-              backgroundColor: isFormValid ? "#0f0c29" : "#ccc",
+              backgroundColor: isFormValid ? "rgb(60,9,108)" : "grey",
               color: isFormValid ? "white" : "#666",
               cursor: isFormValid ? "pointer" : "not-allowed",
             }}

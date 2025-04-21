@@ -6,7 +6,7 @@ import { MdDeleteForever } from "react-icons/md";
 import axios from "axios";
 import { Modal, Popconfirm, message } from "antd";
 
-const Card = ({ item, index }) => {
+const Card = ({ item }) => {
   const nav = useNavigate();
   const BASE_URL = "https://campustrade-kku1.onrender.com";
   const [modalVisible, setModalVisible] = useState(false);

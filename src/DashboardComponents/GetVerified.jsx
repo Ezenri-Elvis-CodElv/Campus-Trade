@@ -10,6 +10,15 @@ const GetVerified = () => {
   const token = JSON.parse(localStorage.getItem("userData"))?.token;
   const userId = JSON.parse(localStorage.getItem("userData"))?.data?.id;
 
+  const schoolOptions = [
+    { name: "Lagos State University" },
+
+    {
+      name: "University of Lagos",
+    },
+    { name: "Yaba College of Technology" },
+  ];
+
   const [errors, setErrors] = useState({});
   const [fullName, setFullName] = useState("");
   const [school, setSchool] = useState("");
@@ -20,7 +29,6 @@ const GetVerified = () => {
   const [loading, setLoading] = useState(false);
   const [profilePic, setProfilePicture] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
-  const [resetInput, setResetInput] = useState(false);
   const [profile, setProfile] = useState({});
   const fileInputRef = useRef(null);
 
@@ -33,6 +41,16 @@ const GetVerified = () => {
     fontSize: "0.8rem",
     marginTop: "4px",
   };
+
+  const isFormValid = Boolean(
+    fullName &&
+      school &&
+      gender &&
+      jambRegNo &&
+      phoneNumber &&
+      profilePic &&
+      whatsappLink
+  );
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -110,8 +128,7 @@ const GetVerified = () => {
         `https://campustrade-kku1.onrender.com/api/v1/kyc/get-kyc-details/${userId}`
       );
       const data = response?.data?.data?.SellerKYCs;
-      localStorage.setItem("user", JSON.stringify(response?.data?.data?.SellerKYCs));
-
+     
       if (data) {
         setProfile(data);
         if (data?.fullName) setFullName(data.fullName);
@@ -146,7 +163,6 @@ const GetVerified = () => {
                 {!imagePreview && <FaCamera className="cam" />}
                 {imagePreview && <img src={imagePreview} alt="Preview" />}
                 <input
-                  key={resetInput ? "reset" : "normal"}
                   ref={fileInputRef}
                   type="file"
                   id="imageUpload"
@@ -189,7 +205,7 @@ const GetVerified = () => {
             <div className="P3">
               <p className="veryfy3">Whatsapp Link</p>
               <input
-                className="inputw"
+                className="inputz"
                 type="text"
                 value={whatsappLink}
                 onChange={(e) => setWhatsAppLink(e.target.value)}
@@ -198,13 +214,21 @@ const GetVerified = () => {
             </div>
             <div className="p4">
               <p className="veryfy4">School/Location</p>
-              <input
-                className="inpute"
-                type="text"
-                value={school}
-                onChange={(e) => setSchool(e.target.value)}
-                style={errors.location ? errorStyle : {}}
-              />
+              {profile.school ? (
+                <input type="text" className="inputz" value={school} />
+              ) : (
+                <select
+                  className="input-text-create22"
+                  value={school}
+                  onChange={(e) => setSchool(e.target.value)}
+                >
+                  {schoolOptions?.map((cat) => (
+                    <option value={cat.name} key={cat?.id}>
+                      {cat?.name}
+                    </option>
+                  ))}
+                </select>
+              )}
             </div>
           </div>
 
@@ -243,7 +267,16 @@ const GetVerified = () => {
             </div>
           </div>
 
-          <button className="btn10" onClick={handleSubmit} disabled={loading}>
+          <button
+            className="btn10"
+            style={{
+              // opacity: isFormValid ? "1" : "0.6",
+              cursor: isFormValid ? "pointer" : "not-allowed",
+              backgroundColor: isFormValid ? "rgb(60,9,108)" : "grey",
+            }}
+            onClick={handleSubmit}
+            disabled={!isFormValid}
+          >
             {loading ? "Submitting..." : "Done"}
           </button>
         </div>

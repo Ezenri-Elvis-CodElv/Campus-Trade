@@ -42,9 +42,9 @@ const router = createBrowserRouter([
         element: <LayoutWithLoader />,
         children: [
           { index: true, element: <LandingPage /> },
-          { path: "categories", element: <Categories /> },
+          { path: "categories/:id", element: <Categories /> },
           { path: "explorepage", element: <ExplorePage /> },
-          { path: "productdetailpage/:_id", element: <ProductDetailPage /> },
+          { path: "productdetailpage/:id", element: <ProductDetailPage /> },
           { path: "profilepage", element: <ProfilePage /> },
         ],
       },

@@ -21,9 +21,8 @@ const RecentPost = () => {
 
   useEffect(() => {
     getRecentProduct();
-  }, [products]);
+  }, []);
 
-  console.log(products)
 
   return (
     <div className="recent-body">

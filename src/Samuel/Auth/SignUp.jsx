@@ -20,17 +20,17 @@ const SignUp = () => {
   });
   const [errors, setErrors] = useState({});
   const url = "https://campustrade-kku1.onrender.com/api/v1/seller/register";
-  const googleAuthUrl = "https://campustrade-kku1.onrender.com/api/v1/seller/google-authenticate";
+  const googleAuthUrl =
+    "https://campustrade-kku1.onrender.com/api/v1/seller/google-authenticate";
 
- const handlesGoogleAuth = async () => {
+  const handlesGoogleAuth = async () => {
     try {
-        const res = await axios.get(googleAuthUrl)
-        console.log(res)
-    }catch (err){
-      console.log(err)
+      const res = await axios.get(googleAuthUrl);
+      console.log(res);
+    } catch (err) {
+      console.log(err);
     }
-  } 
-
+  };
 
   const handlesubmit = async () => {
     setLoading(true);
@@ -46,10 +46,8 @@ const SignUp = () => {
         toast.success("Welcome,Please check your email for verification");
       }
     } catch (err) {
-      setErrors(err.message);
-      toast.error("signup Failed");
+      toast.error(err?.response?.data?.message);
       setLoading(false);
-      console.log(err)
     }
   };
   const isDisabled = !auth.email || !auth.password || !auth.confirmpassword;
@@ -62,9 +60,7 @@ const SignUp = () => {
           </div>
 
           <div className="inputHolder">
-            <h2 className="welcome">
-              Welcome! We Are Glad To Have You Here
-            </h2>
+            <h2 className="welcome">Welcome! We Are Glad To Have You Here</h2>
             <p className="signupText">Sign Up</p>
             <span className="infoText">Fill In Your Correct Information</span>
 
@@ -122,7 +118,7 @@ const SignUp = () => {
                   onClick={() => setShowpassword2((prev) => !prev)}
                 >
                   {showpassword2 ? <FiEye /> : <FaRegEyeSlash />}
-                  </span>
+                </span>
               </div>
               {errors.confirmpassword && (
                 <span className="errorText">{errors.confirmpassword}</span>
@@ -145,7 +141,7 @@ const SignUp = () => {
                     display: "flex",
                     justifyContent: "flex-start",
                     cursor: "default",
-                    marginTop: "10px"
+                    marginTop: "10px",
                   }}
                 >
                   Already Have An Account?

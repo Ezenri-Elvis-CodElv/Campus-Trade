@@ -34,9 +34,9 @@ const Login = () => {
         localStorage.setItem("userData",JSON.stringify(res.data))
       }
     } catch (err) {
+      console.log(err);
       toast.error(err?.response?.data?.message || "Login failed.");
       setErrors({ message: err?.response?.data?.message });
-
       setLoading(false);
     }
   };

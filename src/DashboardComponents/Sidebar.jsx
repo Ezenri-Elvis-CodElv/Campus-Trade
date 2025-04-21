@@ -1,86 +1,71 @@
 // Sidebar.jsx
-import { NavLink, useNavigate } from 'react-router-dom';
-import './sidebar.css';
-import { CgProfile } from 'react-icons/cg';
-import { IoCreateOutline, IoSettingsOutline } from 'react-icons/io5';
-import { FaInfo } from 'react-icons/fa';
-import { MdOutlineChangeCircle, MdOutlinePendingActions, MdVerifiedUser } from 'react-icons/md';
-import { IoIosCheckmarkCircleOutline } from 'react-icons/io';
-import { SiGoogleads } from 'react-icons/si';
-import { RiLogoutCircleLine } from 'react-icons/ri';
-import { BsFillFilePostFill } from 'react-icons/bs';
+import { NavLink, useNavigate } from "react-router-dom";
+import "./sidebar.css";
+import { CgProfile } from "react-icons/cg";
+import { IoCreateOutline, IoSettingsOutline } from "react-icons/io5";
+import {
+  MdOutlinePendingActions,
+  MdVerifiedUser,
+} from "react-icons/md";
+import { SiGoogleads } from "react-icons/si";
+import { RiLogoutCircleLine } from "react-icons/ri";
+import { BsFillFilePostFill } from "react-icons/bs";
 
 const Sidebar = () => {
   const nav = useNavigate();
-  
-  const getNavLinkClass = ({ isActive }) => 
-    isActive ? "link active" : "link";
+
+  const getNavLinkClass = ({ isActive }) => (isActive ? "link active" : "link");
+
+  const logout = () => {
+    localStorage.clear();
+    nav("/");
+  };
 
   return (
     <aside className="sidebar">
-      <div className='sidebar-profileIcon'>
+      <div className="sidebar-profileIcon">
         <CgProfile size={35} style={{ color: "purple" }} />
-        <h3 className='myprofiletext'>My Profile</h3>
+        <h3 className="myprofiletext">My Profile</h3>
       </div>
 
-      <div className='pages-sidebar'>
-        <NavLink 
-          to="/dashboard" 
-          className={getNavLinkClass}
-          end
-        >
+      <div className="pages-sidebar">
+        <NavLink to="/dashboard" className={getNavLinkClass} end>
           Profile
         </NavLink>
 
-        <NavLink 
-          to="/dashboard/createpost" 
-          className={getNavLinkClass}
-          end
-        >
+        <NavLink to="/dashboard/createpost" className={getNavLinkClass} end>
           <IoCreateOutline size={14} />
           Create a post
         </NavLink>
 
-        <NavLink 
-          to="/dashboard/sellerprofile" 
-          className={getNavLinkClass}
-        >
+        <NavLink to="/dashboard/sellerprofile" className={getNavLinkClass}>
           <MdVerifiedUser size={14} />
           Get verified
         </NavLink>
       </div>
 
-      <h3 className='myprofiletext'>My Post</h3>
-      <div className='pages-sidebar'>
-        <NavLink 
-          to="/dashboard/recentpost" 
-          className={getNavLinkClass}
-        >
+      <h3 className="myprofiletext">My Post</h3>
+      <div className="pages-sidebar">
+        <NavLink to="/dashboard/recentpost" className={getNavLinkClass}>
           <BsFillFilePostFill size={14} />
           Recent Post
         </NavLink>
 
-        <NavLink 
-          to="/dashboard/pendingpost" 
-          className={getNavLinkClass}
-        >
+        <NavLink to="/dashboard/pendingpost" className={getNavLinkClass}>
           <MdOutlinePendingActions size={14} />
           Pending Post
         </NavLink>
 
-        <NavLink 
-          to="/dashboard/ads" 
-          className={getNavLinkClass}
-        >
+        <NavLink to="/dashboard/ads" className={getNavLinkClass}>
           <SiGoogleads size={14} />
           Ads
         </NavLink>
       </div>
 
-      <div className='logout-button-setting'>
-        <NavLink 
-          to="/dashboard/accountinformation" 
-          className={({ isActive }) => 
+      <div className="logout-button-setting">
+        <NavLink
+          to="/dashboard/accountinformation"
+          className={({ isActive }) =>
             isActive ? "dash-setting active" : "dash-setting"
           }
         >
@@ -89,11 +74,8 @@ const Sidebar = () => {
         </NavLink>
       </div>
 
-      <div className='logout-button'>
-        <button 
-          className='dash-logout' 
-          onClick={() => nav('/')}
-        >
+      <div className="logout-button">
+        <button className="dash-logout" onClick={logout}>
           <RiLogoutCircleLine size={18} />
           LogOut
         </button>
