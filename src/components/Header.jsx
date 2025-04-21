@@ -7,7 +7,7 @@ import { Drawer } from "antd";
 import axios from "axios";
 
 const Header = () => {
-  const [user, setUser] = useState({});
+  // const [user, setUser] = useState({});
   const [drawerVisible, setDrawerVisible] = useState(false);
   const [activeCategory, setActiveCategory] = useState(null);
   const [isSticky, setIsSticky] = useState(false);
@@ -15,22 +15,22 @@ const Header = () => {
   const dropdownRef = useRef(null);
   const institutionButtonRef = useRef(null);
   const nav = useNavigate();
-  const userId = JSON.parse(localStorage.getItem("userData"))?.data?.id;
+  // const userId = JSON.parse(localStorage.getItem("userData"))?.data?.id;
 
-  const UserProfile = async () => {
-    try {
-      const response = await axios.get(
-        `https://campustrade-kku1.onrender.com/api/v1/kyc/get-kyc-details/${userId}`
-      );
-      setUser(response?.data?.data?.SellerKYCs);
-    } catch (error) {
-      console.error("Error fetching categories:", error);
-    }
-  };
+  // const UserProfile = async () => {
+  //   try {
+  //     const response = await axios.get(
+  //       `https://campustrade-kku1.onrender.com/api/v1/kyc/get-kyc-details/${userId}`
+  //     );
+  //     setUser(response?.data?.data?.SellerKYCs);
+  //   } catch (error) {
+  //     console.error("Error fetching categories:", error);
+  //   }
+  // };
 
-  useEffect(() => {
-    UserProfile();
-  }, []);
+  // useEffect(() => {
+  //   UserProfile();
+  // }, []);
 
   const toggleCategoryDropdown = (category) => {
     setActiveCategory((prev) => (prev === category ? null : category));
@@ -96,7 +96,7 @@ const Header = () => {
               className="flex items-center cursor-pointer text-black text-[20px]"
               onClick={toggleDropdown}
             >
-              Institution <IoIosArrowDown size={15} />
+              Schools <IoIosArrowDown size={15} />
             </h3>
 
             {isDropdownVisible && (
@@ -189,7 +189,7 @@ const Header = () => {
             Home
           </li>
 
-          <li className="font-bold text-orange-500">Location</li>
+          <li className="font-bold text-orange-500">Schools</li>
           {[
             "Lagos State University",
             "University of Lagos",
