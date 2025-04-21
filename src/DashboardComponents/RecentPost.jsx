@@ -23,7 +23,6 @@ const RecentPost = () => {
     getRecentProduct();
   }, []);
 
-
   return (
     <div className="recent-body">
       <div className="recent-text-holder">
