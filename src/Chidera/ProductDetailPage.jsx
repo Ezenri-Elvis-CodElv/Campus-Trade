@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import "./ProductDetailPage.css";
 import Card from "../components/Card";
 import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
@@ -12,6 +11,7 @@ import { TbCurrencyNaira } from "react-icons/tb";
 import { BsWhatsapp } from "react-icons/bs";
 import axios from "axios";
 import { BsFillGeoAltFill } from "react-icons/bs";
+import './productdetailpagesecond.css';
 
 const BASE_URL = "https://campustrade-kku1.onrender.com";
 

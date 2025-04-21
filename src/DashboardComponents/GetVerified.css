@@ -67,6 +67,7 @@
     display: flex;
     flex-direction: column;
     color: rgb(145,127,162);
+    /* padding: 2px; */
 }
 
 .P1 .veryfy{
@@ -78,7 +79,7 @@
     border: 1px solid black;
     width: 100%;
     height: 100%;
-    padding: 10px;
+    padding: 5.9px;
     font-size: 20px;
 }
 
@@ -116,6 +117,7 @@
     display: flex;
     align-items: center;
     gap: 20px;
+    /* background: #000; */
     justify-content: space-around;
 }
 
@@ -197,14 +199,16 @@
     align-items: center;
     padding: 2px;
     gap: 5%;
+    
 }
 
 .male{
     width: 40%;
     height: 90%;
-    gap: 10px;
+    gap: 60px;
     display: flex;
     align-items: center;
+    
 }
 
 .p11{
@@ -248,14 +252,13 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    /* background-color: green; */
   }
   
   .cam {
     position: absolute;
-    left: 43px;
-    bottom: 38px;
-    font-size: 50px;
+    left: 85px;
+    bottom: 8px;
+    font-size: 20px;
   }
   
   .downer p {
@@ -272,11 +275,18 @@
     height: 120px;
     border-radius: 100%;
     background: gray;
-    /* background-color: red; */
+    position: relative;
   }
   
   
   .circle img {
-    width: 40px;
-    height: 40px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+
+  }
+  .profilePic {
+    font-size: 8px;
+    margin-top: 70px;
+    padding: 4px;
   }

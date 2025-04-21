@@ -7,7 +7,7 @@ import { Drawer } from "antd";
 import axios from "axios";
 
 const Header = () => {
-  const [user, setUser] = useState({});
+  // const [user, setUser] = useState({});
   const [drawerVisible, setDrawerVisible] = useState(false);
   const [activeCategory, setActiveCategory] = useState(null);
   const [isSticky, setIsSticky] = useState(false);
@@ -82,7 +82,7 @@ const Header = () => {
               className="flex items-center cursor-pointer text-black text-[20px]"
               onClick={toggleDropdown}
             >
-              Institution <IoIosArrowDown size={15} />
+              Schools <IoIosArrowDown size={15} />
             </h3>
 
             {isDropdownVisible && (
@@ -120,7 +120,6 @@ const Header = () => {
         </div>
 
         {/* Right Side */}
-        {user.fullName}
         <div className="flex items-center justify-end w-[30%] max-md:w-[20%] gap-4">
           <button
             onClick={() => nav("/login")}
@@ -173,7 +172,7 @@ const Header = () => {
             Home
           </li>
 
-          <li className="font-bold text-orange-500">Location</li>
+          <li className="font-bold text-orange-500">Schools</li>
           {[
             "Lagos State University",
             "University of Lagos",

@@ -58,7 +58,7 @@ const GetVerified = () => {
     if (file) {
       // Set profile picture file
       setProfilePicture(file);
-      setImagePreview(URL.createObjectURL(file)); // Display image preview
+      setImagePreview(URL.createObjectURL(file)); 
     } else {
       setProfilePicture(null);
       setImagePreview(null);
@@ -161,13 +161,13 @@ const GetVerified = () => {
               {/* <p> Add Photo</p> */}
               <div className="circle">
                 {!imagePreview && <FaCamera className="cam" />}
-                {imagePreview && <img src={imagePreview} alt="Preview" />}
+                {imagePreview && <img src={imagePreview} alt="" />}
                 <input
                   ref={fileInputRef}
                   type="file"
                   id="imageUpload"
                   accept="image/*"
-                  name="profilePic"
+                  className="profilePic"
                   onChange={handleImageChange}
                 />
               </div>

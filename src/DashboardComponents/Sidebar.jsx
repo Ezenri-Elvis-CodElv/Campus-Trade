@@ -3,10 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import "./sidebar.css";
 import { CgProfile } from "react-icons/cg";
 import { IoCreateOutline, IoSettingsOutline } from "react-icons/io5";
-import {
-  MdOutlinePendingActions,
-  MdVerifiedUser,
-} from "react-icons/md";
+import { MdOutlinePendingActions, MdVerifiedUser } from "react-icons/md";
 import { SiGoogleads } from "react-icons/si";
 import { RiLogoutCircleLine } from "react-icons/ri";
 import { BsFillFilePostFill } from "react-icons/bs";
@@ -27,7 +24,6 @@ const Sidebar = () => {
         <CgProfile size={35} style={{ color: "purple" }} />
         <h3 className="myprofiletext">My Profile</h3>
       </div>
-
       <div className="pages-sidebar">
         <NavLink to="/dashboard" className={getNavLinkClass} end>
           Profile
@@ -43,17 +39,16 @@ const Sidebar = () => {
           Get verified
         </NavLink>
       </div>
-
       <h3 className="myprofiletext">My Post</h3>
       <div className="pages-sidebar">
         <NavLink to="/dashboard/recentpost" className={getNavLinkClass}>
           <BsFillFilePostFill size={14} />
-          Recent Post
+          Recent Posts
         </NavLink>
 
         <NavLink to="/dashboard/pendingpost" className={getNavLinkClass}>
           <MdOutlinePendingActions size={14} />
-          Pending Post
+          Pending Posts
         </NavLink>
 
         <NavLink to="/dashboard/ads" className={getNavLinkClass}>
@@ -61,7 +56,6 @@ const Sidebar = () => {
           Ads
         </NavLink>
       </div>
-
       <div className="logout-button-setting">
         <NavLink
           to="/dashboard/accountinformation"
@@ -70,15 +64,19 @@ const Sidebar = () => {
           }
         >
           <IoSettingsOutline size={20} />
-          Setting
+          Settings
         </NavLink>
       </div>
 
       <div className="logout-button">
-        <button className="dash-logout" onClick={logout}>
+        <NavLink
+          to="/"
+          className="dash-logout"
+          onClick={logout}
+        >
           <RiLogoutCircleLine size={18} />
-          LogOut
-        </button>
+          Log Out
+        </NavLink>
       </div>
     </aside>
   );
