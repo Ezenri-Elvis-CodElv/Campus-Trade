@@ -1,24 +1,29 @@
 // Sidebar.jsx
-import { NavLink } from 'react-router-dom';
-import './sidebar.css';
-import { CgProfile } from 'react-icons/cg';
-import { IoCreateOutline, IoSettingsOutline } from 'react-icons/io5';
-import { FaInfo } from 'react-icons/fa';
-import { MdVerifiedUser, MdOutlinePendingActions } from 'react-icons/md';
-import { BsFillFilePostFill } from 'react-icons/bs';
-import { SiGoogleads } from 'react-icons/si';
-import { RiLogoutCircleLine } from 'react-icons/ri';
+import { NavLink, useNavigate } from "react-router-dom";
+import "./sidebar.css";
+import { CgProfile } from "react-icons/cg";
+import { IoCreateOutline, IoSettingsOutline } from "react-icons/io5";
+import { MdOutlinePendingActions, MdVerifiedUser } from "react-icons/md";
+import { SiGoogleads } from "react-icons/si";
+import { RiLogoutCircleLine } from "react-icons/ri";
+import { BsFillFilePostFill } from "react-icons/bs";
 
 const Sidebar = () => {
-  const getNavLinkClass = ({ isActive }) => (isActive ? 'link active' : 'link');
+  const nav = useNavigate();
+
+  const getNavLinkClass = ({ isActive }) => (isActive ? "link active" : "link");
+
+  const logout = () => {
+    localStorage.clear();
+    nav("/");
+  };
 
   return (
     <aside className="sidebar">
       <div className="sidebar-profileIcon">
-        <CgProfile size={35} style={{ color: 'purple' }} />
+        <CgProfile size={35} style={{ color: "purple" }} />
         <h3 className="myprofiletext">My Profile</h3>
       </div>
-
       <div className="pages-sidebar">
         <NavLink to="/dashboard" className={getNavLinkClass} end>
           Profile
@@ -34,8 +39,7 @@ const Sidebar = () => {
           Get verified
         </NavLink>
       </div>
-
-      <h3 className="myprofiletext">My Posts</h3>
+      <h3 className="myprofiletext">My Post</h3>
       <div className="pages-sidebar">
         <NavLink to="/dashboard/recentpost" className={getNavLinkClass}>
           <BsFillFilePostFill size={14} />
@@ -52,12 +56,11 @@ const Sidebar = () => {
           Ads
         </NavLink>
       </div>
-
       <div className="logout-button-setting">
         <NavLink
           to="/dashboard/accountinformation"
           className={({ isActive }) =>
-            isActive ? 'dash-setting active' : 'dash-setting'
+            isActive ? "dash-setting active" : "dash-setting"
           }
         >
           <IoSettingsOutline size={20} />
@@ -66,7 +69,11 @@ const Sidebar = () => {
       </div>
 
       <div className="logout-button">
-        <NavLink to="/dashboard/logout" className="dash-logout">
+        <NavLink
+          to="/"
+          className="dash-logout"
+          onClick={logout}
+        >
           <RiLogoutCircleLine size={18} />
           Log Out
         </NavLink>

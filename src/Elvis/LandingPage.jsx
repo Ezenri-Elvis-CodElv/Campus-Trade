@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { MdKeyboardArrowRight, MdOutlineBlender } from "react-icons/md";
 import "animate.css";
 import { useNavigate } from "react-router";
@@ -6,61 +6,25 @@ import { FcSmartphoneTablet } from "react-icons/fc";
 import { GiClothes, GiConverseShoe } from "react-icons/gi";
 import { SiBookstack } from "react-icons/si";
 import { IoIosArrowDown } from "react-icons/io";
+import { FaApple } from "react-icons/fa";
 import Card from "../components/Card";
-
+import axios from "axios";
 
 const LandingPage = () => {
   const nav = useNavigate();
 
-  const [dropDown1, setDropDown1] = useState(false);
-  const [dropDown2, setDropDown2] = useState(false);
-  const [dropDown3, setDropDown3] = useState(false);
-  const [dropDown4, setDropDown4] = useState(false);
-  const [dropDown5, setDropDown5] = useState(false);
-
-  const toggleDrop1 = () => {
-    setDropDown1(!dropDown1);
-    setDropDown2(false);
-    setDropDown3(false);
-    setDropDown4(false);
-    setDropDown5(false);
-  };
-
-  const toggleDrop2 = () => {
-    setDropDown1(false);
-    setDropDown2(!dropDown2);
-    setDropDown3(false);
-    setDropDown4(false);
-    setDropDown5(false);
-  };
-
-  const toggleDrop3 = () => {
-    setDropDown1(false);
-    setDropDown2(false);
-    setDropDown3(!dropDown3);
-    setDropDown4(false);
-    setDropDown5(false);
-  };
-
-  const toggleDrop4 = () => {
-    setDropDown1(false);
-    setDropDown2(false);
-    setDropDown3(false);
-    setDropDown4(!dropDown4);
-    setDropDown5(false);
-  };
-
-  const toggleDrop5 = () => {
-    setDropDown1(false);
-    setDropDown2(false);
-    setDropDown3(false);
-    setDropDown4(false);
-    setDropDown5(!dropDown5);
+  const categoryIcons = {
+    Gadgets: <FcSmartphoneTablet className="mr-2" size={20} />,
+    Shoes: <GiConverseShoe className="mr-2" size={20} />,
+    Clothes: <GiClothes className="mr-2" size={20} />,
+    Appliance: <SiBookstack className="mr-2" size={20} />,
+    Electronics: <FaApple className="mr-2" size={20} />,
+    // Add more categories with their respective icons
   };
 
   const myArr = [
     {
-    media: "/images/download.jpg",
+      media: "/images/download.jpg",
       name: "Jimmy choo",
       price: "23,000",
       description: "Offers elegant and fashionable high heels",
@@ -88,6 +52,28 @@ const LandingPage = () => {
       university: "Yaba Tech",
     },
   ];
+
+  const [allCategories, setAllCategories] = useState([]);
+  const [subCategories, setSubCategories] = useState([]);
+
+  const getAllCategories = async () => {
+    try {
+      const response = await axios.get(
+        "https://campustrade-kku1.onrender.com/api/v1/all-categories"
+      );
+      setAllCategories(response?.data?.data);
+      // setCategoryId(response?.data?.data[0]?.id);
+    } catch (error) {
+      console.error("Error fetching categories:", error);
+    }
+  };
+
+  useEffect(() => {
+    getAllCategories();
+  }, []);
+
+  console.log(allCategories);
+  console.log(subCategories);
 
   return (
     <div className="w-full h-max flex flex-col justify-center items-center">
@@ -159,172 +145,32 @@ const LandingPage = () => {
           >
             Categories
           </h2>
-          <ul className="w-full h-[50%] flex flex-row gap-5 max-md:gap-[2px] space-x-9 max-md:space-x-0">
-            <li className="relative group cursor-pointer">
-              <div
-                className="flex items-center text-shadow-gray-700 text-[16px] max-md:text-[10px] gap-2"
-                onClick={toggleDrop1}
+          <ul className="w-full h-[50%] flex  gap-5 max-md:gap-[2px] space-x-9 max-md:space-x-0">
+            {allCategories.map((category) => (
+              <li
+                className="relative group cursor-pointer flex"
+                key={category?.id}
+                onClick={(e) => {
+                  setSubCategories(category?.subCategories || []);
+                }}
               >
-                <FcSmartphoneTablet size={24} /> Gadget <IoIosArrowDown />
-              </div>
-              {dropDown1 && (
-                <div className="absolute left-0 mt-2 w-48 bg-white border border-gray-200 shadow-lg rounded-md">
-                  <ul>
-                    <li
-                      className="px-4 py-2 text-gray-700 hover:bg-gray-100"
-                      onClick={() => nav("/productdetailpage")}
-                    >
-                      Laptop
-                    </li>
-                    <li
-                      className="px-4 py-2 text-gray-700 hover:bg-gray-100"
-                      onClick={() => nav("/productdetailpage")}
-                    >
-                      Mobile Phones
-                    </li>
-                    <li
-                      className="px-4 py-2 text-gray-700 hover:bg-gray-100"
-                      onClick={() => nav("/productdetailpage")}
-                    >
-                      iPads
-                    </li>
-                  </ul>
-                </div>
-              )}
-            </li>
-
-            <li className="relative group cursor-pointer">
-              <div
-                className="flex items-center text-shadow-gray-700 text-[16px] gap-2"
-                onClick={toggleDrop2}
-              >
-                <GiConverseShoe size={24} /> Gift <IoIosArrowDown />
-              </div>
-              {dropDown2 && (
-                <div className="absolute left-0 mt-2 w-48 bg-white border border-gray-200 shadow-lg rounded-md">
-                  <ul>
-                    <li
-                      className="px-4 py-2 text-gray-700 hover:bg-gray-100"
-                      onClick={() => nav("/productdetailpage")}
-                    >
-                      Casual
-                    </li>
-                    <li
-                      className="px-4 py-2 text-gray-700 hover:bg-gray-100"
-                      onClick={() => nav("/productdetailpage")}
-                    >
-                      Heels
-                    </li>
-                    <li
-                      className="px-4 py-2 text-gray-700 hover:bg-gray-100"
-                      onClick={() => nav("/productdetailpage")}
-                    >
-                      Sneakers
-                    </li>
-                  </ul>
-                </div>
-              )}
-            </li>
-
-            <li className="relative group cursor-pointer">
-              <div
-                className="flex items-center text-shadow-gray-700 text-[16px] gap-2"
-                onClick={toggleDrop3}
-              >
-                <GiClothes size={24} /> Clothes <IoIosArrowDown />
-              </div>
-              {dropDown3 && (
-                <div className="absolute left-0 mt-2 w-48 bg-white border border-gray-200 shadow-lg rounded-md">
-                  <ul>
-                    <li
-                      className="px-4 py-2 text-gray-700 hover:bg-gray-100"
-                      onClick={() => nav("/productdetailpage")}
-                    >
-                      Shirt
-                    </li>
-                    <li
-                      className="px-4 py-2 text-gray-700 hover:bg-gray-100"
-                      onClick={() => nav("/productdetailpage")}
-                    >
-                      Jeans
-                    </li>
-                    <li
-                      className="px-4 py-2 text-gray-700 hover:bg-gray-100"
-                      onClick={() => nav("/productdetailpage")}
-                    >
-                      Blouse
-                    </li>
-                  </ul>
-                </div>
-              )}
-            </li>
-
-            <li className="relative group cursor-pointer">
-              <div
-                className="flex items-center text-shadow-gray-700 text-[16px] gap-2"
-                onClick={toggleDrop4}
-              >
-                <SiBookstack size={24} /> Books <IoIosArrowDown />
-              </div>
-              {dropDown4 && (
-                <div className="absolute left-0 mt-2 w-48 bg-white border border-gray-200 shadow-lg rounded-md">
-                  <ul>
-                    <li
-                      className="px-4 py-2 text-gray-700 hover:bg-gray-100"
-                      onClick={() => nav("/productdetailpage")}
-                    >
-                      Fiction
-                    </li>
-                    <li
-                      className="px-4 py-2 text-gray-700 hover:bg-gray-100"
-                      onClick={() => nav("/productdetailpage")}
-                    >
-                      Non-Fiction
-                    </li>
-                    <li
-                      className="px-4 py-2 text-gray-700 hover:bg-gray-100"
-                      onClick={() => nav("/productdetailpage")}
-                    >
-                      Educational
-                    </li>
-                  </ul>
-                </div>
-              )}
-            </li>
-
-            <li className="relative group cursor-pointer">
-              <div
-                className="flex items-center text-shadow-gray-700 text-[16px] gap-2"
-                onClick={toggleDrop5}
-              >
-                <MdOutlineBlender size={24} /> Appliances <IoIosArrowDown />
-              </div>
-              {dropDown5 && (
-                <div className="absolute left-0 mt-2 w-48 bg-white border border-gray-200 shadow-lg rounded-md">
-                  <ul>
-                    <li
-                      className="px-4 py-2 text-gray-700 hover:bg-gray-100"
-                      onClick={() => nav("/productdetailpage")}
-                    >
-                      Beds
-                    </li>
-                    <li
-                      className="px-4 py-2 text-gray-700 hover:bg-gray-100"
-                      onClick={() => nav("/productdetailpage")}
-                    >
-                      Electric Kettle
-                    </li>
-                    <li
-                      className="px-4 py-2 text-gray-700 hover:bg-gray-100"
-                      onClick={() => nav("/productdetailpage")}
-                    >
-                      Pressing Iron
-                    </li>
-                  </ul>
-                </div>
-              )}
-            </li>
+                {categoryIcons[category?.name] || (
+                  <FcSmartphoneTablet className="mr-2" size={20} />
+                )}
+                {category.name}
+              </li>
+            ))}
           </ul>
+          {subCategories.map((subCategory) => (
+            <li
+              className="text-red-500 text-3xl cursor-pointer"
+              key={subCategory?.id}
+              // onClick={() => nav(`/categories/${subCategory?.name}`)}
+              onClick={() => nav(`/categories/${subCategory?.id}?name=${subCategory?.name}`)}
+            >
+              {subCategory?.name}
+            </li>
+          ))}
         </div>
       </div>
 

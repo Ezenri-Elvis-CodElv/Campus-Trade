@@ -5,7 +5,7 @@ const Location = () => {
       <h3 className="locate">Location</h3>
       <div className='detailProduction'>
         <BsFillGeoAltFill/> 
-        <p className="p">Univeristy of Lagos</p>  
+        <p className="p"></p>  
       </div>
     </div>
   )

@@ -15,22 +15,8 @@ const Header = () => {
   const dropdownRef = useRef(null);
   const institutionButtonRef = useRef(null);
   const nav = useNavigate();
-  // const userId = JSON.parse(localStorage.getItem("userData"))?.data?.id;
 
-  // const UserProfile = async () => {
-  //   try {
-  //     const response = await axios.get(
-  //       `https://campustrade-kku1.onrender.com/api/v1/kyc/get-kyc-details/${userId}`
-  //     );
-  //     setUser(response?.data?.data?.SellerKYCs);
-  //   } catch (error) {
-  //     console.error("Error fetching categories:", error);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   UserProfile();
-  // }, []);
+ 
 
   const toggleCategoryDropdown = (category) => {
     setActiveCategory((prev) => (prev === category ? null : category));
@@ -134,9 +120,6 @@ const Header = () => {
         </div>
 
         {/* Right Side */}
-        {/* {user.fullName 
-        
-        } */}
         <div className="flex items-center justify-end w-[30%] max-md:w-[20%] gap-4">
           <button
             onClick={() => nav("/login")}
