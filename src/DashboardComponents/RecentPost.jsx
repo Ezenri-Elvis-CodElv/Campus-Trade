@@ -27,12 +27,17 @@ const RecentPost = () => {
       <div className="recent-text-holder">
         <h1 className="recent-post">Your recent posts</h1>
         <br />
-        <p className="recent-list">List of post that's not sold</p>
+        {/* <p className="recent-list">List of post that's not sold</p> */}
       </div>
       <section className="recent-product-holder">
-        {products.map((item, index) => (
-          <Card key={index} item={item} />
-        ))}
+      {
+          products.length <= 0 ? "No Recent post" : 
+        <>
+            {products.map((item, index) => (
+            <Card key={index} item={item} />
+          ))}
+        </>
+        }
       </section>
     </div>
   );

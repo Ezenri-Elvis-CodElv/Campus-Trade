@@ -5,11 +5,14 @@ import { RiEdit2Line } from "react-icons/ri";
 import { MdDeleteForever } from "react-icons/md";
 import axios from "axios";
 import { Modal, Popconfirm, message } from "antd";
+import { TbCreditCardPay } from "react-icons/tb";
 
 const Card = ({ item }) => {
   const nav = useNavigate();
   const BASE_URL = "https://campustrade-kku1.onrender.com";
   const [modalVisible, setModalVisible] = useState(false);
+  const userData = JSON.parse(localStorage.getItem("userData"));
+  const user = JSON.parse(localStorage.getItem("user"));
 
   const handleDelete = async (id) => {
     console.log(id);
@@ -22,6 +25,19 @@ const Card = ({ item }) => {
     } catch (error) {
       console.error("Delete error:", error);
       message.error("Failed to delete product.");
+    }
+  };
+
+  const PayOut = async (id) => {
+    const data = { name: user.fullName, email: userData.data.email };
+    console.log(id, data);
+    try {
+      const res = await axios.post(`${BASE_URL}/api/v1/initialize/${id}`, data);
+      console.log(res);
+        window.location.href = res?.data?.data?.checkout_url;
+    
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -54,31 +70,39 @@ const Card = ({ item }) => {
           <p>{item.time}</p>
         </div>
 
-        <div className="editanddelete">
-          <Popconfirm
-            title="Are you sure to delete this product?"
-            onConfirm={() => {
-              handleDelete(item.id);
-            }}
-            okText="Yes"
-            cancelText="No"
-          >
-            <div className="cardedit">
-              <MdDeleteForever title="Delete" />
-            </div>
-          </Popconfirm>
-          <Modal
-            open={modalVisible}
-            onCancel={() => setModalVisible(false)}
-            footer={null}
-            centered
-          >
-            <h2 style={{ textAlign: "center" }}>✅Item successfully Deleted!</h2>
-            <p style={{ textAlign: "center", marginTop: "10px" }}>
-            Item has been deleted successfully!
-            </p>
-          </Modal>
-        </div>
+        {userData ? (
+          <div className="editanddelete">
+            <button className="paymenticon" onClick={() => PayOut(item.id)}>
+              <TbCreditCardPay size={18} /> Pay
+            </button>
+
+            <Popconfirm
+              title="Are you sure to delete this product?"
+              onConfirm={() => {
+                handleDelete(item.id);
+              }}
+              okText="Yes"
+              cancelText="No"
+            >
+              <div className="cardedit">
+                <MdDeleteForever title="Delete" />
+              </div>
+            </Popconfirm>
+            <Modal
+              open={modalVisible}
+              onCancel={() => setModalVisible(false)}
+              footer={null}
+              centered
+            >
+              <h2 style={{ textAlign: "center" }}>
+                ✅Item successfully Deleted!
+              </h2>
+              <p style={{ textAlign: "center", marginTop: "10px" }}>
+                Item has been deleted successfully!
+              </p>
+            </Modal>
+          </div>
+        ) : null}
       </div>
     </div>
   );
