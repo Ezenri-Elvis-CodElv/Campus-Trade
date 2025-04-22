@@ -260,11 +260,20 @@
   }
   
   .cam {
-    /* position: absolute; */
+    position: absolute;
     left: 85px;
     bottom: 8px;
     font-size: 20px;
-  }
+    background: white;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 20px; */
+    border-radius: 50%;
+}
+
   
   .downer p {
     margin-bottom: 7%;
@@ -280,13 +289,14 @@
     height: 120px;
     border-radius: 100%;
     background: gray;
-    /* position: relative; */
+    position: relative;
   }
   
   
   .circle img {
-    width: 20px;
-    height: 20px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
     /* position: absolute; */
     background-color: green;
 

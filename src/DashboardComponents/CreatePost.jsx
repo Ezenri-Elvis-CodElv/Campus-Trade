@@ -90,7 +90,10 @@ const CreatePost = () => {
 
   console.log(token)
 
+const [postButton, setPostButton] = useState(false)
+
   const handleSubmit = async () => {
+    setPostButton(true)
     try {
       if (!isFormValid) {
         toast.error("Please fill in all fields and upload images.");
@@ -122,7 +125,7 @@ const CreatePost = () => {
 
       toast.success("Product created successfully!");
       setModalVisible(true);
-
+      setPostButton(false)
       setFormData({
         productName: "",
         school: "",
@@ -133,6 +136,7 @@ const CreatePost = () => {
       });
       setMediaFiles([]);
     } catch (error) {
+      setPostButton(false)
       toast.error(error.response?.data.message);
     }
   };
@@ -311,7 +315,7 @@ const CreatePost = () => {
               cursor: isFormValid ? "pointer" : "not-allowed",
             }}
           >
-            Post
+            {postButton ? "Posting..." : "Post"}
           </button>
         </div>
 

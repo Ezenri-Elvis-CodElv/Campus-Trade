@@ -161,7 +161,7 @@ const GetVerified = () => {
               {/* <p> Add Photo</p> */}
               <div className="circle">
                 {!imagePreview && <FaCamera className="cam" />}
-                {imagePreview && <img src={imagePreview} alt="" />}
+                {imagePreview ? <img src={imagePreview} alt="" /> : <img src={imagePreview} alt="" />}
                 <input
                   ref={fileInputRef}
                   type="file"

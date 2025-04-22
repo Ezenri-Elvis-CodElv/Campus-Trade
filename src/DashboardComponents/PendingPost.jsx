@@ -11,7 +11,7 @@ const RecentPost = () => {
   const getRecentProduct = async () => {
     try {
       const response = await axios.get(
-        `https://campustrade-kku1.onrender.com/api/v1/all-pending-product${userId}`
+        `https://campustrade-kku1.onrender.com/api/v1/all-pending-product/${userId}`
       );
       setProducts(response?.data?.data);
     } catch (error) {
@@ -30,9 +30,14 @@ const RecentPost = () => {
         <br />
       </div>
       <section className="recent-product-holder">
-        {products.map((item, index) => (
-          <Card key={index} item={item} />
-        ))}
+        {
+          products.length <= 0 ? "No Pending post" : 
+        <>
+            {products.map((item, index) => (
+            <Card key={index} item={item} />
+          ))}
+        </>
+        }
       </section>
     </div>
   );
