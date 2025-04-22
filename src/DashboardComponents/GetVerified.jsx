@@ -165,7 +165,7 @@ const GetVerified = () => {
                 <input
                   ref={fileInputRef}
                   type="file"
-                  id="imageUpload"
+                  // id="imageUpload"
                   accept="image/*"
                   className="profilePic"
                   onChange={handleImageChange}
