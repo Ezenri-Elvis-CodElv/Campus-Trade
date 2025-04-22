@@ -173,8 +173,8 @@ const ProductDetailPage = () => {
                         className="obvlickbtn"
                         onClick={() => nav("/ProfilePage")}
                       >
-                        <span className="spamm">See profile</span>
-                        <IoIosArrowForward size={18} />
+                        {/* <span className="spamm">See profile</span> */}
+                        {/* <IoIosArrowForward size={18} /> */}
                       </button>
                     </div>
                   </div>
