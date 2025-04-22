@@ -132,7 +132,7 @@ const LandingPage = () => {
       </div>
 
       <div
-        className="w-full h-[20vh] flex justify-center items-center max-md:hidden"
+        className="w-full h-[20vh] flex justify-center items-center"
         style={{
           background:
             "linear-gradient(334deg, rgba(202, 88, 218, 0.18) 14.66%, rgba(195, 131, 203, 0.18) 63.37%)",
@@ -163,7 +163,7 @@ const LandingPage = () => {
           </ul>
           {subCategories.map((subCategory) => (
             <li
-              className="text-red-500 text-3xl cursor-pointer"
+              className="text-bklack  text-[18px]  cursor-pointer"
               key={subCategory?.id}
               // onClick={() => nav(`/categories/${subCategory?.name}`)}
               onClick={() => nav(`/categories/${subCategory?.id}?name=${subCategory?.name}`)}
