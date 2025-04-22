@@ -32,6 +32,7 @@ import CreatePost from "./DashboardComponents/CreatePost";
 import VerifySuccessful from "./Admin/VerifySuccessful";
 import Verification from "./Samuel/Auth/Verification";
 import NotFoundPage from "./components/NotFoundPage";
+import PaymentStatus from "./DashboardComponents/PaymentStatus";
 
 const router = createBrowserRouter([
   {
@@ -71,6 +72,7 @@ const router = createBrowserRouter([
           { path: "createpost", element: <CreatePost /> },
           { path: "posts", element: <Posts /> },
           { path: "ads", element: <Ads /> },
+          { path: "paymentstatus", element: <PaymentStatus /> },
         ],
       },
 

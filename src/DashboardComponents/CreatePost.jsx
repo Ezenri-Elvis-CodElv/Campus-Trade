@@ -5,6 +5,7 @@ import "./createpost.css";
 import { toast } from "react-toastify";
 
 const CreatePost = () => {
+  const [loading, setLoading] = useState()
   const schoolOptions = [
     { name: "Lagos State University" },
 
@@ -104,6 +105,9 @@ const CreatePost = () => {
       mediaFiles.forEach((file) => {
         form.append("media", file);
       });
+
+      // modal that informs user about payment 
+      // koralogic
 
       await axios.post(
         `https://campustrade-kku1.onrender.com/api/v1/products/${categoryId}/${subCategory}`,
