@@ -151,7 +151,7 @@ const LandingPage = () => {
                 className="relative group cursor-pointer flex"
                 key={category?.id}
                 onClick={(e) => {
-                  setSubCategories(category?.subCategories || []);
+                  setSubCategories(category?.Subcategories || []);
                 }}
               >
                 {categoryIcons[category?.name] || (
