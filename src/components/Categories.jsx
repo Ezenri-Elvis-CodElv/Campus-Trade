@@ -1,27 +1,46 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./categories.css";
 import { MdNavigateNext } from "react-icons/md";
 import Card from "../components/Card";
 import shoe from "../../public/images/download.jpg";
 import { Carousel } from "antd";
 import axios from "axios";
+import { Link, useParams } from "react-router-dom";
 
-
-const BASE_URL = "https://campustrade-kku1.onrender.com"
+const BASE_URL = "https://campustrade-kku1.onrender.com";
 const Categories = () => {
-  const getProductCategory =  async () => {
-    try{
-      const res = await axios.get(`${BASE_URL}/api/v1/all-categories`) 
-      console.log(res)
-}
-    catch(error)
-    {
-console.log(error)
+  const { id } = useParams();
+  const [data, setData] = useState([]);
+
+  const [selectedOption, setSelectedOption] = useState("New");
+
+  const getProductCategory = async (selected) => {
+    try {
+      const res = await axios.get(
+        `${BASE_URL}/api/v1/all-products-by-subcategory/${id}`
+      );
+
+      const fetchedData = res.data.data;
+      console.log(fetchedData);
+
+      const filteredData = fetchedData.filter(
+        (product) => product.condition === selected
+      );
+      console.log(filteredData);
+      setData(filteredData);
+      // setData(res.data.data);
+    } catch (error) {
+      console.log(error);
     }
-  }
-  useEffect (()=>{
-getProductCategory()
-  }, [])
+  };
+  useEffect(() => {
+    getProductCategory(selectedOption);
+  }, [selectedOption]);
+
+  const handleSelection = (option) => {
+    setSelectedOption(option);
+  };
+
   const contentStyle = {
     height: "400px",
     width: "1400px",
@@ -42,105 +61,6 @@ getProductCategory()
     carouselRef.current.next();
   };
 
-  const myArr = [
-    {
-      image: `${shoe}`,
-      name: "Jimmy choo",
-      price: "23,000",
-      description: "Offers elegant and fashionable high heels",
-      university: "Lagos State University",
-      time: "28 mins ago",
-    },
-    {
-      image: `${shoe}`,
-      name: "Books",
-      price: "20,000",
-      description: "My description",
-      university: "Uni Lag",
-      time: "28 mins ago",
-    },
-    {
-      image: `${shoe}`,
-      name: "Home Appliances",
-      price: "30,000",
-      description: "My description",
-      university: "Yaba Tech",
-      time: "28 mins ago",
-    },
-    {
-      image: `${shoe}`,
-      name: "Home Appliances",
-      price: "30,000",
-      description: "My description",
-      university: "Yaba Tech",
-      time: "28 mins ago",
-    },
-    {
-      image: `${shoe}`,
-      name: "Home Appliances",
-      price: "30,000",
-      description: "My description",
-      university: "Yaba Tech",
-      time: "28 mins ago",
-    },
-    {
-      image: `${shoe}`,
-      name: "Home Appliances",
-      price: "30,000",
-      description: "My description",
-      university: "Yaba Tech",
-      time: "28 mins ago",
-    },
-    {
-      image: `${shoe}`,
-      name: "Home Appliances",
-      price: "30,000",
-      description: "My description",
-      university: "Yaba Tech",
-      time: "28 mins ago",
-    },
-    {
-      image: `${shoe}`,
-      name: "Home Appliances",
-      price: "30,000",
-      description: "My description",
-      university: "Yaba Tech",
-      time: "28 mins ago",
-    },
-    {
-      image: `${shoe}`,
-      name: "Home Appliances",
-      price: "30,000",
-      description: "My description",
-      university: "Yaba Tech",
-      time: "28 mins ago",
-    },
-    {
-      image: `${shoe}`,
-      name: "Home Appliances",
-      price: "30,000",
-      description: "My description",
-      university: "Yaba Tech",
-      time: "28 mins ago",
-    },
-    {
-      image: `${shoe}`,
-      name: "Home Appliances",
-      price: "30,000",
-      description: "My description",
-      university: "Yaba Tech",
-      time: "28 mins ago",
-    },
-    {
-      image: `${shoe}`,
-      name: "Home Appliances",
-      price: "30,000",
-      description: "My description",
-      university: "Yaba Tech",
-      time: "28 mins ago",
-    },
-  ];
-
   return (
     <div className="category-body">
       <div className="category-img">
@@ -153,22 +73,34 @@ getProductCategory()
               </h3>
             </div>
             <div>
-              <h3 style={contentStyle}><img src="/images/Shoe.jpg" alt="" /></h3>
+              <h3 style={contentStyle}>
+                <img src="/images/Shoe.jpg" alt="" />
+              </h3>
             </div>
             <div>
-              <h3 style={contentStyle}><img src="/images/Jeans.jpg" alt="" /></h3>
+              <h3 style={contentStyle}>
+                <img src="/images/Jeans.jpg" alt="" />
+              </h3>
             </div>
             <div>
-              <h3 style={contentStyle}><img src="/images/Heels.jpg" alt="" /></h3>
+              <h3 style={contentStyle}>
+                <img src="/images/Heels.jpg" alt="" />
+              </h3>
             </div>
             <div>
-              <h3 style={contentStyle}><img src="/images/matrass.jpg" alt="" /></h3>
+              <h3 style={contentStyle}>
+                <img src="/images/matrass.jpg" alt="" />
+              </h3>
             </div>
             <div>
-              <h3 style={contentStyle}><img src="/images/Shoe.jpg" alt="" /></h3>
+              <h3 style={contentStyle}>
+                <img src="/images/Shoe.jpg" alt="" />
+              </h3>
             </div>
             <div>
-              <h3 style={contentStyle}><img src="/images/Heels.jpg" alt="" /></h3>
+              <h3 style={contentStyle}>
+                <img src="/images/Heels.jpg" alt="" />
+              </h3>
             </div>
           </Carousel>
         </div>
@@ -184,12 +116,30 @@ getProductCategory()
             <span style={{ color: "#FF6D00" }}>Shirts</span>
           </div>
 
-          <div className="category-button-holder">
-            <div className="category-toggle">
-              <span className="category-used">Used</span>
-              <span className="New-toggle">New</span>
+          <>
+            <div className="w-32 p-2 h-14 items-center bg-gray-200 flex rounded-xl justify-between  cursor-pointer mt-3 ">
+              <p
+                onClick={() => handleSelection("New")}
+                className={`p-3 px-4 rounded-xl cursor-pointer ${
+                  selectedOption === "New"
+                    ? "bg-[#03045E] text-white"
+                    : "bg-gray-200 text-primary-dark"
+                }`}
+              >
+                New
+              </p>
+              <p
+                onClick={() => handleSelection("Used")}
+                className={`p-3 px-4 rounded-xl cursor-pointer ${
+                  selectedOption === "Used"
+                    ? "bg-[#03045E] text-white"
+                    : "bg-gray-200 text-black"
+                }`}
+              >
+                Used
+              </p>
             </div>
-          </div>
+          </>
         </div>
 
         <div className="buttom-text">
@@ -202,8 +152,10 @@ getProductCategory()
       </div>
 
       <section className="category-product">
-        {myArr.map((item, index) => (
-          <Card key={index} item={item} />
+        {data?.map((item) => (
+          <Link to={`/productdetailpage/${item?.id}`}>
+            <Card key={item.id} item={item} />
+          </Link>
         ))}
       </section>
     </div>

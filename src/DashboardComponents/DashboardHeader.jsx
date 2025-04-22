@@ -9,7 +9,9 @@ import "./dashboardheader.css";
 const DashboardHeader = () => {
   const nav = useNavigate();
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const profile = JSON.parse(localStorage.getItem("user"))?.profilePic;
 
+  console.log(profile)
   const toggleMenu = () => setShowMobileMenu(!showMobileMenu);
 
   return (
@@ -37,11 +39,7 @@ const DashboardHeader = () => {
           </div>
 
           <div className="dashboard-content-img">
-            <img
-              src="/images/dasboadprofile.jpg"
-              alt="Profile"
-              className="dash-profile-picture"
-            />
+            <img src={profile} alt="Profile" className="dash-profile-picture" />
           </div>
         </div>
       </div>
