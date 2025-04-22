@@ -21,7 +21,7 @@
 }
 
 .getverifiedwrap{
-    padding: 10px;
+    /* padding: 10px; */
     height: 40%;
     width: 90%;
     gap: 15px;
@@ -30,6 +30,11 @@
     justify-content: center;
     flex-direction: column;
 }
+.downer{
+
+}
+
+
 
 .getverifiedwrap .getv {
     font-size: 24px;
@@ -255,7 +260,7 @@
   }
   
   .cam {
-    position: absolute;
+    /* position: absolute; */
     left: 85px;
     bottom: 8px;
     font-size: 20px;
@@ -275,14 +280,15 @@
     height: 120px;
     border-radius: 100%;
     background: gray;
-    position: relative;
+    /* position: relative; */
   }
   
   
   .circle img {
     width: 20px;
     height: 20px;
-    position: absolute;
+    /* position: absolute; */
+    background-color: green;
 
   }
   .profilePic {

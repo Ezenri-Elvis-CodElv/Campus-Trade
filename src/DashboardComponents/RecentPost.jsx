@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./recentpost.css";
 import Card from "../components/Card";
-import shoe from "../../public/images/download.jpg";
 import axios from "axios";
 
 const RecentPost = () => {
