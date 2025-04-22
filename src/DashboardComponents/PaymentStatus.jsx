@@ -30,7 +30,7 @@ const PaymentStatus = () => {
 
   const handleRedirect = () => {
     if (status === 'success') {
-      navigate('createpost');
+      navigate('/dashboard/pendingpost');
     } else {
       navigate('pendingposts');
     }
