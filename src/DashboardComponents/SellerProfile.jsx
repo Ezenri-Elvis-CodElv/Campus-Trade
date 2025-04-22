@@ -31,7 +31,8 @@ const SellerProfile = () => {
       const response = await axios.get(
         `https://campustrade-kku1.onrender.com/api/v1/recent-products/${userId}`
       );
-      setRecentPost("This is the data",response?.data?.data);
+      setRecentPost(response?.data?.data);
+      console.log("This is the data", response?.data?.data)
     } catch (error) {
       // console.error("Error fetching categories:", error);
       // console.error("Error fetching categories:", error.response.data.message === "No recent posts" ? "0": error);
