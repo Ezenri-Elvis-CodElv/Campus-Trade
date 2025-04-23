@@ -22,37 +22,22 @@ const LandingPage = () => {
     Electronics: <FaApple className="mr-2" size={20} />,
     // Add more categories with their respective icons
   };
+  const [products, setProducts] = useState([]);
 
-  // const myArr = [
-  //   {
-  //     media: "/images/download.jpg",
-  //     name: "Jimmy choo",
-  //     price: "23,000",
-  //     description: "Offers elegant and fashionable high heels",
-  //     university: "Lagos State University",
-  //   },
-  //   {
-  //     media: "/images/download.jpg",
-  //     name: "Books",
-  //     price: "20,000",
-  //     description: "Description",
-  //     university: "Uni Lag",
-  //   },
-  //   {
-  //     media: "/images/download.jpg",
-  //     name: "Home Appliances",
-  //     price: "30,000",
-  //     description: "My description",
-  //     university: "Yaba Tech",
-  //   },
-  //   {
-  //     media: "/images/download.jpg",
-  //     name: "Home Appliances",
-  //     price: "30,000",
-  //     description: "My description",
-  //     university: "Yaba Tech",
-  //   },
-  // ];
+  const getRecentProduct = async () => {
+    try {
+      const response = await axios.get(
+        `https://campustrade-kku1.onrender.com/api/v1/products`
+      );
+      setProducts(response?.data?.data);
+    } catch (error) {
+      console.error("Error fetching categories:", error);
+    }
+  };
+
+  useEffect(() => {
+    getRecentProduct();
+  }, []);
 
   const [allCategories, setAllCategories] = useState([]);
   const [subCategories, setSubCategories] = useState([]);
@@ -167,7 +152,9 @@ const LandingPage = () => {
               className="text-bklack  text-[18px]  cursor-pointer"
               key={subCategory?.id}
               // onClick={() => nav(`/categories/${subCategory?.name}`)}
-              onClick={() => nav(`/categories/${subCategory?.id}?name=${subCategory?.name}`)}
+              onClick={() =>
+                nav(`/categories/${subCategory?.id}?name=${subCategory?.name}`)
+              }
             >
               {subCategory?.name}
             </li>
@@ -244,10 +231,9 @@ const LandingPage = () => {
 
       <div className="w-full min-h-[60vh] max-md:h[80vh] max-md:p-6 bg-white flex justify-center items-center">
         <div className="w-[90%] h-full flex flex-wrap justify-center items-center gap-6">
-          
-           {/* {products.map((item, index) => (
+          {products.slice(2,6).map((item, index) => (
             <RecentCard key={index} item={item} />
-          ))} */}
+          ))}
         </div>
       </div>
 
@@ -461,21 +447,22 @@ const LandingPage = () => {
         </div>
       </div>
       <div className="bg-gray-300 h-[20vh] w-full flex flex-col justify-center items-center px-4">
-  <h2 className="text-lg font-semibold mb-1">Newsletter</h2>
-  <p className="text-sm text-gray-600 text-center mb-3 max-w-md">
-    Be the first to know about discounts, offers, and events weekly in your mailbox. Unsubscribe anytime with one click.
-  </p>
-  <div className="flex flex-col  w-[50%] h-[30%] sm:flex-row items-center gap-2">
-    <input
-      type="email"
-      placeholder="Enter your email"
-      className="border border-black w-[70%] px-4 py-2 rounded h-[100%] focus:outline-none focus:ring-2 focus:ring-red-400"
-    />
-    <button className="bg-[rgb(122,48,186)] text-white w-[30%] h-[100%] px-6 py-2 max-md:h-[100%] max-md:w-[100%]  rounded hover:bg-purple-500 transition">
-      Subscribe
-    </button>
-  </div>
-</div>
+        <h2 className="text-lg font-semibold mb-1">Newsletter</h2>
+        <p className="text-sm text-gray-600 text-center mb-3 max-w-md">
+          Be the first to know about discounts, offers, and events weekly in
+          your mailbox. Unsubscribe anytime with one click.
+        </p>
+        <div className="flex flex-col  w-[50%] h-[30%] sm:flex-row items-center gap-2">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            className="border border-black w-[70%] px-4 py-2 rounded h-[100%] focus:outline-none focus:ring-2 focus:ring-red-400"
+          />
+          <button className="bg-[rgb(122,48,186)] text-white w-[30%] h-[100%] px-6 py-2 max-md:h-[100%] max-md:w-[100%]  rounded hover:bg-purple-500 transition">
+            Subscribe
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
