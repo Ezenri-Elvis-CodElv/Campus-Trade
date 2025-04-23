@@ -1,10 +1,9 @@
 
 import React, { useEffect, useState } from "react";
-import Card from "../components/Card";
+import RecentCard from "../components/RecentCard";
 import "./explore.css";
 import HeroImage from "../assets/WhatsApp Image 2025-04-13 at 13.19.06_f73cd826.jpg"
 import AdsImg from "../../public/images/Frame 659.jpg"
-import shoe from "../../public/images/download.jpg";
 import axios from "axios";
 
 
@@ -50,7 +49,7 @@ const ExplorePage = () => {
 
         <section className="explore-card-holder">
         {products.map((item, index) => (
-        <Card key={index} item={item} />
+        <RecentCard key={index} item={item} />
       ))}
 
         </section>

@@ -9,6 +9,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { FaApple } from "react-icons/fa";
 import Card from "../components/Card";
 import axios from "axios";
+import RecentCard from "../components/RecentCard";
 
 const LandingPage = () => {
   const nav = useNavigate();
@@ -22,36 +23,36 @@ const LandingPage = () => {
     // Add more categories with their respective icons
   };
 
-  const myArr = [
-    {
-      media: "/images/download.jpg",
-      name: "Jimmy choo",
-      price: "23,000",
-      description: "Offers elegant and fashionable high heels",
-      university: "Lagos State University",
-    },
-    {
-      media: "/images/download.jpg",
-      name: "Books",
-      price: "20,000",
-      description: "Description",
-      university: "Uni Lag",
-    },
-    {
-      media: "/images/download.jpg",
-      name: "Home Appliances",
-      price: "30,000",
-      description: "My description",
-      university: "Yaba Tech",
-    },
-    {
-      media: "/images/download.jpg",
-      name: "Home Appliances",
-      price: "30,000",
-      description: "My description",
-      university: "Yaba Tech",
-    },
-  ];
+  // const myArr = [
+  //   {
+  //     media: "/images/download.jpg",
+  //     name: "Jimmy choo",
+  //     price: "23,000",
+  //     description: "Offers elegant and fashionable high heels",
+  //     university: "Lagos State University",
+  //   },
+  //   {
+  //     media: "/images/download.jpg",
+  //     name: "Books",
+  //     price: "20,000",
+  //     description: "Description",
+  //     university: "Uni Lag",
+  //   },
+  //   {
+  //     media: "/images/download.jpg",
+  //     name: "Home Appliances",
+  //     price: "30,000",
+  //     description: "My description",
+  //     university: "Yaba Tech",
+  //   },
+  //   {
+  //     media: "/images/download.jpg",
+  //     name: "Home Appliances",
+  //     price: "30,000",
+  //     description: "My description",
+  //     university: "Yaba Tech",
+  //   },
+  // ];
 
   const [allCategories, setAllCategories] = useState([]);
   const [subCategories, setSubCategories] = useState([]);
@@ -243,9 +244,10 @@ const LandingPage = () => {
 
       <div className="w-full min-h-[60vh] max-md:h[80vh] max-md:p-6 bg-white flex justify-center items-center">
         <div className="w-[90%] h-full flex flex-wrap justify-center items-center gap-6">
-          {myArr.map((item, index) => (
-            <Card key={index} item={item} index={index} />
-          ))}
+          
+           {/* {products.map((item, index) => (
+            <RecentCard key={index} item={item} />
+          ))} */}
         </div>
       </div>
 

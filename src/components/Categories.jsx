@@ -1,8 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./categories.css";
 import { MdNavigateNext } from "react-icons/md";
-import Card from "../components/Card";
-import shoe from "../../public/images/download.jpg";
+import RecentCard from "../components/RecentCard";
 import { Carousel } from "antd";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
@@ -28,7 +27,6 @@ const Categories = () => {
       );
       console.log(filteredData);
       setData(filteredData);
-      // setData(res.data.data);
     } catch (error) {
       console.log(error);
     }
@@ -154,7 +152,7 @@ const Categories = () => {
       <section className="category-product">
         {data?.map((item) => (
           <Link to={`/productdetailpage/${item?.id}`}>
-            <Card key={item.id} item={item} />
+            <RecentCard key={item.id} item={item} />
           </Link>
         ))}
       </section>

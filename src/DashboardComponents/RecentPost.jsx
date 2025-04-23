@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./recentpost.css";
-import Card from "../components/Card";
 import axios from "axios";
+import RecentCard from "../components/RecentCard";
 
 const RecentPost = () => {
   const [products, setProducts] = useState([]);
@@ -27,14 +27,13 @@ const RecentPost = () => {
       <div className="recent-text-holder">
         <h1 className="recent-post">Your recent posts</h1>
         <br />
-        {/* <p className="recent-list">List of post that's not sold</p> */}
       </div>
       <section className="recent-product-holder">
       {
           products.length <= 0 ? "No Recent post" : 
         <>
             {products.map((item, index) => (
-            <Card key={index} item={item} />
+            <RecentCard key={index} item={item} />
           ))}
         </>
         }
