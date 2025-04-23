@@ -322,43 +322,6 @@ img.profilePic {
     width: 100%;
 }
 
-
-@media (max-width: 480px) {
-    .section {
-        /* padding: 15px; */
-        width: 100%;
-        background: red;
-        flex-direction: column;
-    }
-
-    .body{
-        background: pink;
-    }
-
-    .detailPageInfo
-    .description {
-        font-size: 15px;
-    }
-
-    .description .projectinfo3 {
-        font-size: 18px;
-        padding: 10px;
-    }
-
-    .description .projectinfo4 {
-        font-size: 14px;
-    }
-
-    .profileAndPreviousPageButton {
-        width: 100%;
-    }
-
-    .profilePicAndDetails {
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: center;
-    }
-}
 @media (max-width: 768px) {
     .section {
         padding: 15px;
@@ -488,5 +451,42 @@ img.profilePic {
     }
     .devices{
         display: none;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .section {
+        width: 100%;
+        background: red;
+        flex-direction: column;
+    }
+
+    .body{
+        background: pink;
+    }
+
+    .detailPageInfo
+    .description {
+        font-size: 15px;
+    }
+
+    .description .projectinfo3 {
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    .description .projectinfo4 {
+        font-size: 14px;
+    }
+
+    .profileAndPreviousPageButton {
+        width: 100%;
+    }
+
+    .profilePicAndDetails {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
     }
 }

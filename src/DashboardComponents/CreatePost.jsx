@@ -5,7 +5,7 @@ import "./createpost.css";
 import { toast } from "react-toastify";
 
 const CreatePost = () => {
-  const [loading, setLoading] = useState()
+
   const schoolOptions = [
     { name: "Lagos State University" },
 
@@ -23,7 +23,6 @@ const CreatePost = () => {
   const [subCategories, setSubCategories] = useState([]);
   const token = JSON.parse(localStorage.getItem("userData"))?.token;
   const school = JSON.parse(localStorage.getItem("user"))?.school;
-
   const [formData, setFormData] = useState({
     productName: "",
     school: school,
@@ -38,6 +37,8 @@ const CreatePost = () => {
   const handleInputChange = (field, value) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
+
+  console.log(formData)
 
   const handleImageUpload = (e) => {
     const files = Array.from(e.target.files);
@@ -86,6 +87,8 @@ const CreatePost = () => {
   );
 
   console.log(isFormValid);
+
+  console.log(token)
 
   const handleSubmit = async () => {
     try {
@@ -144,6 +147,7 @@ const CreatePost = () => {
       );
       setAllCategories(response?.data?.data);
       setCategoryId(response?.data?.data[0]?.id);
+      console.log(response.data.data)
     } catch (error) {
       console.error("Error fetching categories:", error);
     }
@@ -156,6 +160,7 @@ const CreatePost = () => {
   const getSubCategoryId = (id) => {
     setSubCategory(id);
   };
+  console.log(subCategories)
 
   return (
     <div className="createpost-wrapper">
@@ -188,9 +193,9 @@ const CreatePost = () => {
                 const selectedCategory = allCategories?.find(
                   (cat) => cat?.name === e.target.value
                 );
-
-                handleInputChange("category", e.target.value);
-                setSubCategories(selectedCategory?.subCategories || []);
+                console.log(selectedCategory)
+                handleInputChange('category', e.target.value);
+                setSubCategories(selectedCategory?.Subcategories );
               }}
             >
               <option>Select category</option>
@@ -298,6 +303,8 @@ const CreatePost = () => {
         </div>
 
         <div className="createpost-button">
+        <button>Pay 5% fee  </button>
+
           <button
             className="PostBtn"
             onClick={handleSubmit}

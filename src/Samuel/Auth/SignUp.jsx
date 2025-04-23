@@ -36,7 +36,7 @@ const SignUp = () => {
   const handlesubmit = async () => {
     setLoading(true);
     try {
-      const res = await axios.post(url1, {
+      const res = await axios.post(url, {
         email: auth.email,
         password: auth.password,
         confirmPassword: auth.confirmpassword,

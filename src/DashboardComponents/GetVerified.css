@@ -1,5 +1,4 @@
-.GetVerified{
-    /* background: red; */
+/* .GetVerified{
     height: 100vh;
     width: 100%;
     padding: 20px;
@@ -18,10 +17,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-}
+} */
 
 .getverifiedwrap{
-    padding: 10px;
+    /* padding: 10px; */
     height: 40%;
     width: 90%;
     gap: 15px;
@@ -30,6 +29,8 @@
     justify-content: center;
     flex-direction: column;
 }
+
+
 
 .getverifiedwrap .getv {
     font-size: 24px;
@@ -255,7 +256,7 @@
   }
   
   .cam {
-    position: absolute;
+    /* position: absolute; */
     left: 85px;
     bottom: 8px;
     font-size: 20px;
@@ -275,14 +276,15 @@
     height: 120px;
     border-radius: 100%;
     background: gray;
-    position: relative;
+    /* position: relative; */
   }
   
   
   .circle img {
     width: 20px;
     height: 20px;
-    position: absolute;
+    /* position: absolute; */
+    background-color: green;
 
   }
   .profilePic {
@@ -290,3 +292,154 @@
     margin-top: 70px;
     padding: 4px;
   }
+
+  .GetVerified {
+    height: 100vh;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.getverifiedbody {
+    height: 110%;
+    width: 68%;
+    gap: 10px;
+    background: rgb(255,255,255);
+    flex-direction: column;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Mobile Styles */
+@media (max-width: 900px) {
+    .GetVerified {
+        height: auto;
+        padding: 10px;
+    }
+
+    .getverifiedbody {
+        width: 100%;
+        height: auto;
+        padding: 20px 10px;
+    }
+
+    .getverifiedwrap {
+        height: auto;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .getverifiedwrapper {
+        width: 100%;
+        height: auto;
+        gap: 20px;
+    }
+
+    .getverifiedwrapperbody,
+    .getverifiedwrapperbody1,
+    .getverifiedwrapperbody2 {
+        flex-direction: column;
+        height: auto;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .P1, .p2, .P3, .p4, .p10, .p11 {
+        width: 100% !important;
+    }
+
+    .input, .inputz, .inpuz {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .male {
+        gap: 20px;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .btn10 {
+        height: 50px;
+        font-size: 16px;
+    }
+
+    .downer {
+        width: 40%;
+        margin-top: 0;
+    }
+
+    .circle {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 769px) {
+    .getverifiedbody {
+        padding: 15px 5px;
+    }
+
+    .getverifiedwrap h2 {
+        font-size: 20px;
+    }
+
+    .getverifiedwrap h1 {
+        font-size: 16px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .getverifiedbody {
+        padding: 10px 0;
+    }
+
+    .input, .inputz, .inpuz {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .circle {
+        width: 80px;
+        height: 80px;
+    }
+
+    .cam {
+        font-size: 16px;
+    }
+
+    .btn10 {
+        height: 45px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 379px) {
+    .getverifiedwrap h2 {
+        font-size: 18px;
+    }
+
+    .getverifiedwrap h1 {
+        font-size: 14px;
+    }
+
+    .input, .inputz, .inpuz {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .male label {
+        font-size: 14px;
+    }
+
+    .circle {
+        width: 70px;
+        height: 70px;
+    }
+}
