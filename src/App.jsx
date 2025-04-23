@@ -72,11 +72,7 @@ const router = createBrowserRouter([
           { path: "createpost", element: <CreatePost /> },
           { path: "posts", element: <Posts /> },
           { path: "ads", element: <Ads /> },
-<<<<<<< HEAD
-          { path: "paymentstatus", element: <PaymentStatus /> },
-=======
           { path: "paymentstatus/:ref", element: <PaymentStatus /> },
->>>>>>> c87ead091e33e2848e3c7aa98de0635bcf5808c4
         ],
       },
 

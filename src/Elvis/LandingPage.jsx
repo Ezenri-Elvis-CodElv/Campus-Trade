@@ -469,7 +469,7 @@ const LandingPage = () => {
       placeholder="Enter your email"
       className="border border-black w-[70%] px-4 py-2 rounded h-[100%] focus:outline-none focus:ring-2 focus:ring-red-400"
     />
-    <button className="bg-amber-600 text-white w-[30%] h-[100%] px-6 py-2 rounded hover:bg-amber-500 transition">
+    <button className="bg-[rgb(122,48,186)] text-white w-[30%] h-[100%] px-6 py-2 max-md:h-[100%] max-md:w-[100%]  rounded hover:bg-purple-500 transition">
       Subscribe
     </button>
   </div>
