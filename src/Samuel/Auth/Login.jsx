@@ -50,7 +50,7 @@ const Login = () => {
       <div className="box">
         <div className="boxWrapper">
           <div className="authlogo">
-            <img src="/images/CAMPUSTRADE-02 1.png" alt="" />
+            <img src="/images/CAMPUSTRADE-02 1.png" alt="" onClick={()=> nav("/")} />
           </div>
 
           <div className="inputHolder">
@@ -125,13 +125,8 @@ const Login = () => {
                     Sign Up
                   </span>
                 </p>
-                <p
-                  style={{
-                    color: "purple",
-                    display: "flex",
-                    cursor: "pointer",
-                    marginTop: "10px"
-                  }}
+                <p className="forgot-password"
+
                   onClick={() => nav("/forgetpassword")}
                 >
                   Forgot Password?

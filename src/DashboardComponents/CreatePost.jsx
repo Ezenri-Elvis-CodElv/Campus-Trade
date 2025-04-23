@@ -303,7 +303,6 @@ const CreatePost = () => {
         </div>
 
         <div className="createpost-button">
-        <button>Pay 5% fee  </button>
 
           <button
             className="PostBtn"

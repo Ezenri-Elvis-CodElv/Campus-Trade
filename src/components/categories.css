@@ -65,7 +65,7 @@ padding-bottom: 60px;
 }
 .category-toggle{
  height: 100%;
- width: 50%;
+ width: 40%;
  border-radius: 50px;
  background-color:#FFCD2978 ;
  padding: 5px;
@@ -109,6 +109,13 @@ padding-bottom: 60px;
     size: 20px;
     color: #9747FF;
     font-weight: bolder;
+    padding-bottom: 70px;
+}
+.c-home{
+    padding-top: 5px;
+}
+.c-name{
+    padding-top: 5px;
 }
 .category-product{
     width : 100%;
