@@ -30,8 +30,6 @@
     flex-direction: column;
 }
 
-
-
 .getverifiedwrap .getv {
     font-size: 24px;
     font-weight: 800;
@@ -260,7 +258,16 @@
     left: 85px;
     bottom: 8px;
     font-size: 20px;
-  }
+    background: white;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 20px; */
+    border-radius: 50%;
+}
+
   
   .downer p {
     margin-bottom: 7%;
@@ -283,8 +290,7 @@
   .circle img {
     width: 20px;
     height: 20px;
-    /* position: absolute; */
-    background-color: green;
+    position: absolute;
 
   }
   .profilePic {
