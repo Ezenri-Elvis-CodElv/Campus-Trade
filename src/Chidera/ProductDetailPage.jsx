@@ -40,49 +40,12 @@ const ProductDetailPage = () => {
     };
   };
 
-  const ADS = [
-    {
-      imageUrl: "/images/phone.jpeg",
-      alt: "HAHA",
-    },
-    {
-      imageUrl: "/images/Webb Idea 1 1.png",
-      alt: "HAHA",
-    },
-  ];
-  const myArr = [
-    {
-      media: "src/assets/download.jpg",
-      name: "Jimmy choo",
-      price: "23,000",
-      description: "Offers elegant and fashionable high heels",
-      university: "Lagos State University",
-    },
-    {
-      media: "src/assets/download.jpg",
-      name: "Books",
-      price: "20,000",
-      description: "Description",
-      university: "Uni Lag",
-    },
-    {
-      media: "src/assets/download.jpg",
-      name: "Home Appliances",
-      price: "30,000",
-      description: "My description",
-      university: "Yaba Tech",
-    },
-    {
-      media: "src/assets/download.jpg",
-      name: "Home Appliances",
-      price: "30,000",
-      description: "My description",
-      university: "Yaba Tech",
-    },
-  ];
+
+ 
 
   const { id } = useParams();
   const [data, setData] = useState({});
+  console.log("this is data", data)
 
   const getProductCategory = async (selected) => {
     try {
@@ -90,14 +53,13 @@ const ProductDetailPage = () => {
 
       setData(res?.data?.data);
     } catch (error) {
-      console.log(error);
+      console.log("this error",error);
     }
   };
   useEffect(() => {
     getProductCategory();
   }, []);
 
-  console.log(data);
 
   return (
     <section className="section ">
@@ -118,10 +80,10 @@ const ProductDetailPage = () => {
             </div>
           </div>
           <div className="detailProductLocation">
-            <h3 className="locate">Location</h3>
+            <h3 className="locate">School</h3>
             <div className="detailProduction">
               <BsFillGeoAltFill />
-              <p className="p">{data.school}</p>
+              <p className="p">{data?.school}</p>
             </div>
           </div>
           <div className="condition">
@@ -141,10 +103,7 @@ const ProductDetailPage = () => {
             <h3 className="projectinfo3">Description</h3>
             <div className="info4">
               <h1 className="projectinfo4">
-                Lorem ipsum dolor, sit amet c onsectetur adipisicing elit.{" "}
-                <br />
-                Pariatur quia quas aliquam s oluta dolor <br />
-                libero vero face dolores.
+              {data?.description}
               </h1>
             </div>
           </div>
@@ -171,10 +130,10 @@ const ProductDetailPage = () => {
                       </h4>
                       <button
                         className="obvlickbtn"
-                        onClick={() => nav("/ProfilePage")}
+                        onClick={() => nav(`/ProfilePage/${data.id}`)}
                       >
-                        {/* <span className="spamm">See profile</span> */}
-                        {/* <IoIosArrowForward size={18} /> */}
+                        <span className="spamm">See profile</span>
+                        <IoIosArrowForward size={18} />
                       </button>
                     </div>
                   </div>
@@ -227,13 +186,7 @@ const ProductDetailPage = () => {
       </div>
 
       <div className="devices">
-        <div className="deviceHeader">
-          <h2 className="mobiledevicesh2">Mobile device</h2>
-          <p className="mobiledevicesp">
-            Checkout Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Earum!
-          </p>
-        </div>
+        
       </div>
     </section>
   );

@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import "./card.css";
 import { useNavigate } from "react-router";
 import { RiEdit2Line } from "react-icons/ri";
-import { MdDeleteForever } from "react-icons/md";
+import { MdDeleteForever, MdOutlinePayments } from "react-icons/md";
 import axios from "axios";
 import { Modal, Popconfirm, message } from "antd";
 import { TbCreditCardPay } from "react-icons/tb";
 
 const Card = ({ item }) => {
   const nav = useNavigate();
+  const [pay, setPay] = useState(false)
   const BASE_URL = "https://campustrade-kku1.onrender.com";
   const [modalVisible, setModalVisible] = useState(false);
   const userData = JSON.parse(localStorage.getItem("userData"));
@@ -29,6 +30,7 @@ const Card = ({ item }) => {
   };
 
   const PayOut = async (id) => {
+    setPay(true)
     const data = { name: user.fullName, email: userData.data.email };
     console.log(id, data);
     try {
@@ -73,7 +75,7 @@ const Card = ({ item }) => {
         {userData ? (
           <div className="editanddelete">
             <button className="paymenticon" onClick={() => PayOut(item.id)}>
-              <TbCreditCardPay size={18} /> Pay
+               <MdOutlinePayments size={20} /> {pay ? " wait..." : " Pay"}
             </button>
 
             <Popconfirm
@@ -85,7 +87,7 @@ const Card = ({ item }) => {
               cancelText="No"
             >
               <div className="cardedit">
-                <MdDeleteForever title="Delete" />
+                <MdDeleteForever size={20} title="Delete" /> 
               </div>
             </Popconfirm>
             <Modal

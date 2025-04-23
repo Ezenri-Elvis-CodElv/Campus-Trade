@@ -112,16 +112,16 @@ const Footer = () => {
             </p>
           </div>
         </div>
-        <div className="w-[70%] h-[35%] ">
+        <div className="w-[100%] h-[35%] ">
           <div className="w-[100%] h-[50%] flex flex-row ">
-            <div className="w-[50%] h-[100%] ">
+            <div className="w-[40%] h-[100%] ">
               <img
                 src="/images/CAMPUSTRADE-02 1.png"
                 alt=""
                 onClick={() => nav("/")}
               />
             </div>
-            <div className="w-[50%] h-full text-white flex flex-row justify-center items-center gap-7">
+            <div className="w-[60%] h-full text-white flex flex-row justify-center items-center gap-7">
               <a href="" target="_blank" rel="noopener noreferrer">
                 <FaFacebook size={30} />
               </a>

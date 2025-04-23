@@ -1,83 +1,114 @@
+import React, { useEffect, useState } from 'react';
+import './profilepagesecond.css';
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
+import { BsWhatsapp, BsFillGeoAltFill } from 'react-icons/bs';
+import { IoCopy } from 'react-icons/io5';
 
-import "./profilepagesecond.css"
-import Card from "../components/Card"
-import { RiShareFill } from "react-icons/ri";
-import { IoArrowBackOutline } from "react-icons/io5";
-import { IoLocationSharp } from "react-icons/io5";
-import { IoChevronForwardOutline } from "react-icons/io5";
-import { useNavigate } from 'react-router';
 const ProfilePage = () => {
-    const nav = useNavigate ()
+  const { id } = useParams();
+  const [user, setUser] = useState(null);
+  const [copied, setCopied] = useState(false);
+  const BASE_URL = "https://campustrade-kku1.onrender.com";
 
-  const myArr = [
-    {
-      image: "src/assets/download.jpg",
-      name: "Jimmy choo",
-      price: "23,000",
-      description: "Offers elegant and fashionable high heels",
-      university: "Lagos State University",
-    },
-    {
-      image: "src/assets/download.jpg",
-      name: "Books",
-      price: "20,000",
-      description: "Description",
-      university: "Uni Lag",
+  const getUserProfile = async () => {
+    try {
+      const res = await axios.get(`${BASE_URL}/api/v1/kyc/get-kyc-details/${id}`);
+      setUser(res?.data?.data?.SellerKYCs);
+      console.log("this is res",res)
+    } catch (error) {
+      console.error("Error fetching user data:", error);
     }
-  ]
+  };
+
+  useEffect(() => {
+    getUserProfile();
+  }, [id]);
+
+  const handleCopy = (text) => {
+    navigator.clipboard.writeText(text);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+
   return (
-    <section className='section'> 
-      <div className='profiledetails'>
-        <div className='profilePixAndDetails'>
-        <img className='profilePix' src="/images/Ellipse 22.png" alt="Phone"  />
-            <div className='details'>
-              <div className='profileDetails'>
-                <h3 className='prof1' >
-                1 published Ads <IoChevronForwardOutline size={20}/>
-                </h3>
-                  </div>
-                  <div className='profileDetail'>
-                  <RiShareFill size={21}/>
-                  <h2 className='prof2'> 
-                  share user profile
-                  </h2>
-                  </div>
-                  </div>
-                <div className='reportdetails'>
-                <h2 className='pro3'>
-                Report user
-              </h2>
-              <h2 className='blockUser'>
-              Block user
-              </h2>
-          </div>
-          <div className='goBck'>
-            <IoArrowBackOutline size={20}/><h2 className='prof4' onClick={() => nav('/productdetailpage')}> 
-           Go back
-           </h2>
-          </div>
-        </div>
-        <div className='andAds'>
-          <div className='phonedetail'>
-            <h2 className='pro20'>Mobile Phones </h2>
-            <h1 className='pro6'>we deal with all kinds with best prices guaranted</h1>
-          </div>
-          <div className='filterpath'>
-            <p className='pro7'>Filter by;</p>
-            <div className='pro30'>
-            <h3 className='oooo' >Location</h3>
-           <h1 className='pro60'> <IoLocationSharp/>  University of Lagos.</h1>
-            </div>
-          </div>
-          <div className='profileCard'>
-        {myArr.map((item, index) => (
-        <Card key={index} item={item} />
-      ))}
-        </div>
+    <div className="profile-container">
+      {/* Cover Photo Section */}
+      <div className="profile-cover">
+        <div className="profile-image-container">
+          <img
+            src={user?.profilePic}
+            alt="Profile"
+            className="profile-image"
+          />
         </div>
       </div>
-    </section>
-  )
-}
 
-export default ProfilePage
+      {/* Profile Info Section */}
+      <div className="profile-info">
+        <h2 className="profile-fullname">{user?.fullName}</h2>
+        
+        {/* Stats Row */}
+        <div className="profile-stats">
+          <div className="stat-item">
+            <div className="stat-number">1.2K</div>
+            <div className="stat-label">Friends</div>
+          </div>
+          <div className="stat-item">
+            <div className="stat-number">456</div>
+            <div className="stat-label">Posts</div>
+          </div>
+          <div className="stat-item">
+            <div className="stat-number">2.5K</div>
+            <div className="stat-label">Followers</div>
+          </div>
+        </div>
+
+        {/* Action Buttons */}
+        <div className="profile-actions">
+          <button 
+            className="profile-copy-phone"
+            onClick={() => handleCopy(user?.phoneNumber)}
+          >
+            <IoCopy /> {copied ? 'Copied!' : 'Copy Number'}
+          </button>
+          <a
+            className="profile-whatsapp-link"
+            href={`https://wa.me/${user?.phoneNumber}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <BsWhatsapp /> Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      {/* Details Sections */}
+      <div className="profile-details">
+        {/* About Section */}
+        <div className="profile-section">
+          <h3 className="section-title">About</h3>
+          <p className="profile-bio">
+            {user?.bio || 'No bio available'}
+          </p>
+        </div>
+
+        {/* Contact Section */}
+        <div className="profile-section">
+          <h3 className="section-title">Contact Information</h3>
+          <div className="detail-item">
+            <BsFillGeoAltFill className="detail-icon" />
+            <span>{user?.school}</span>
+          </div>
+          <div className="detail-item">
+            <BsWhatsapp className="detail-icon" />
+            <span>{user?.phoneNumber}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ProfilePage;

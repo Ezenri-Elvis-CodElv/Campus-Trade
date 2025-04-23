@@ -26,12 +26,10 @@ const DashboardHeader = () => {
           />
         </div>
 
-        {/* Burger menu only on mobile */}
         <div className="burger-menu" onClick={toggleMenu}>
           <GiHamburgerMenu size={28} />
         </div>
 
-        {/* Desktop only right side */}
         <div className="dashboard-header-content-rightside">
           <div className="dashboard-content-home" onClick={() => nav("/")}>
             <GoHome size={20} style={{ color: "orange" }} />
@@ -44,13 +42,12 @@ const DashboardHeader = () => {
         </div>
       </div>
 
-      {/* Mobile drawer */}
       <Drawer
         title="Menu"
         placement="right"
         onClose={() => setShowMobileMenu(false)}
         open={showMobileMenu}
-        width="100vw"
+        width="70vw"
         className="mobile-drawer"
       >
         <SidebarLinks closeMenu={() => setShowMobileMenu(false)} />

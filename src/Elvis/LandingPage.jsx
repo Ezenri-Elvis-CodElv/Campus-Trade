@@ -176,8 +176,8 @@ const LandingPage = () => {
       </div>
 
       <div className="w-full h-[100vh] max-md:h-[120vh] max-md: bg-[rgb(255,255,255)]  flex justify-center items-center">
-        <div className="w-[90%] h-[80%] max-md:h-full bg-[rgb(255,255,255)]max-md:gap-2.5  flex flex-col justify-center items-center">
-          <div className="w-full h-[30%] bg-white  flex justify-center items-center">
+        <div className="w-[90%] h-[80%] max-md:h-full bg-[rgb(255,255,255)] max-md:gap-2.5  flex flex-col justify-center items-center">
+          <div className="w-full h-[30%] bg-white max-md:h-[20%]  flex justify-center items-center">
             <div className="w-[50%] h-[90%] max-md:w-full max-md:justify-start flex flex-col justify-center items-center gap-6 max-md:gap-4">
               <h2 className="text-[rgb(255,111,0)] text-2xl font-bold font-[Inter] max-md:text-[18px]">
                 Things you can do with CampusTrade:
@@ -190,8 +190,8 @@ const LandingPage = () => {
               </p>
             </div>
           </div>
-          <div className="w-full h-[40%]  flex flex-row max-md:flex-col max-md:h-[80%] justify-around items-center  max-md:gap-4">
-            <div className="w-[200px] h-[100%] bg-[#f1eaf7] max-md:w-[200px] max-md:h-[100%] rounded-3xl flex justify-center items-center">
+          <div className="w-full h-[40%]  flex flex-row max-md:flex-col max-md:h-[90%] justify-around items-center  max-md:gap-2 ">
+            <div className="w-[200px] h-[100%] max-md:translate-x-1/2 bg-[#f1eaf7] max-md:w-[200px] max-md:h-[100%] rounded-3xl flex justify-center items-center">
               <div className="w-[80%] h-[80%] flex flex-col text-center justify-center items-center gap-3.5  max-md:gap-0 max-md:w-[100%] max-md:h-[100%]">
                 <img src="/images/mdi_account-cash.svg" alt="" />
                 <p className="text-black font-montserrat text-[14px] max-md:text-[14px] not-italic font-normal">
@@ -204,7 +204,7 @@ const LandingPage = () => {
                 </p>
               </div>
             </div>
-            <div className="w-[200px] h-[100%] max-md:w-[200px] max-md:h-[100%] bg-[#f1eaf7] rounded-3xl flex justify-center items-center">
+            <div className="w-[200px] h-[100%] max-md:-translate-x-1/2 max-md:w-[200px] max-md:h-[100%] bg-[#f1eaf7] rounded-3xl flex justify-center items-center">
               <div className="w-[80%] h-[80%] flex flex-col text-center justify-center items-center gap-3.5">
                 <img src="/images/famicons_bulb-sharp.svg" alt="" />
                 <p className="text-black font-montserrat text-[14px] not-italic font-normal leading-[150%]">
@@ -212,7 +212,7 @@ const LandingPage = () => {
                 </p>
               </div>
             </div>
-            <div className="w-[200px] h-[100%] max-md:w-[200px] max-md:h-[100%] bg-[#f1eaf7] rounded-3xl flex justify-center items-center">
+            <div className="w-[200px] h-[100%] max-md:translate-x-1/2 max-md:w-[200px] max-md:h-[100%] bg-[#f1eaf7] rounded-3xl flex justify-center items-center">
               <div className="w-[80%] h-[80%] flex flex-col text-center justify-center items-center gap-3.5">
                 <img src="/images/Group.svg" alt="" />
                 <p className="text-black font-montserrat text-[14px] not-italic font-normal leading-[150%]">
@@ -220,7 +220,7 @@ const LandingPage = () => {
                 </p>
               </div>
             </div>
-            <div className="w-[200px] h-[100%] max-md:w-[200px] max-md:h-[100%] bg-[#f1eaf7] rounded-3xl flex justify-center items-center">
+            <div className="w-[200px] h-[100%]  max-md:-translate-x-1/2 max-md:w-[200px] max-md:h-[100%] bg-[#f1eaf7] rounded-3xl flex justify-center items-center">
               <div className="w-[80%] h-[80%] flex flex-col text-center justify-center items-center gap-3.5">
                 <img src="/images/mdi_deal.svg" alt="" />
                 <p className="text-black font-montserrat text-[14px] not-italic font-normal leading-[150%]">
@@ -230,7 +230,7 @@ const LandingPage = () => {
               </div>
             </div>
           </div>
-          <div className="w-full h-[30%] flex flex-col justify-center items-center gap-6">
+          <div className="w-full h-[30%]  max-md:h-[20%]  flex flex-col justify-center items-center gap-6">
             <h2 className="text-[rgb(255,111,0)] text-2xl font-bold font-[Inter]">
               Popular post:
             </h2>
@@ -355,7 +355,7 @@ const LandingPage = () => {
             </p>
           </div>
           <div className="w-[80%] max-md:w-full h-[70%]  flex overflow-x-auto items-center scroll-smooth gap-x-4 px-4 py-6 flex-nowrap">
-            <div className="flex flex-col min-w-[448px] max-w-[448px] h-[250px] max-md:min-w-[300px] max-md:h-[180px]  bg-[#EEDCFF] rounded-2xl shadow-md p-4 hover:shadow-xl transition-shadow duration-300 ease-in-out">
+            <div className="flex flex-col min-w-[448px] max-w-[448px] h-[250px] max-md:min-w-[320px] max-md:h-[230px]  bg-[#EEDCFF] rounded-2xl shadow-md p-4 hover:shadow-xl transition-shadow duration-300 ease-in-out">
               <div className="flex items-center gap-3 mb-4">
                 <img
                   src="/images/Nnamdi.svg"
@@ -375,7 +375,7 @@ const LandingPage = () => {
                 with the seller instantly. Best decision ever!"
               </p>
             </div>
-            <div className="flex flex-col min-w-[448px] max-w-[448px] h-[250px] max-md:min-w-[300px] max-md:h-[180px] bg-[#EEDCFF] rounded-2xl shadow-md p-4 hover:shadow-xl transition-shadow duration-300 ease-in-out">
+            <div className="flex flex-col min-w-[448px] max-w-[448px] h-[250px]  max-md:min-w-[320px] max-md:h-[230px]  bg-[#EEDCFF] rounded-2xl shadow-md p-4 hover:shadow-xl transition-shadow duration-300 ease-in-out">
               <div className="flex items-center gap-3 mb-4">
                 <img
                   src="/images/Nnamdi.svg"
@@ -397,7 +397,7 @@ const LandingPage = () => {
               </p>
             </div>
 
-            <div className="flex flex-col min-w-[448px] max-w-[448px] h-[250px] max-md:min-w-[300px] max-md:h-[180px]  bg-[#EEDCFF] rounded-2xl shadow-md p-4 hover:shadow-xl transition-shadow duration-300 ease-in-out">
+            <div className="flex flex-col min-w-[448px] max-w-[448px] h-[250px]  max-md:min-w-[320px] max-md:h-[230px]   bg-[#EEDCFF] rounded-2xl shadow-md p-4 hover:shadow-xl transition-shadow duration-300 ease-in-out">
               <div className="flex items-center gap-3 mb-4">
                 <img
                   src="/images/Ellipse 25.svg"
@@ -418,7 +418,7 @@ const LandingPage = () => {
                 #DormRoomUpgrade #CampusTradeMagic"
               </p>
             </div>
-            <div className="flex flex-col min-w-[448px] max-w-[448px] h-[250px] max-md:min-w-[300px] max-md:h-[180px]  bg-[#EEDCFF] rounded-2xl shadow-md p-4 hover:shadow-xl transition-shadow duration-300 ease-in-out">
+            <div className="flex flex-col min-w-[448px] max-w-[448px] h-[250px]  max-md:min-w-[320px] max-md:h-[230px]  bg-[#EEDCFF] rounded-2xl shadow-md p-4 hover:shadow-xl transition-shadow duration-300 ease-in-out">
               <div className="flex items-center gap-3 mb-4">
                 <img
                   src="/images/Ellipse 25.svg"
@@ -439,7 +439,7 @@ const LandingPage = () => {
               </p>
             </div>
 
-            <div className="flex flex-col p-9 min-w-[448px] max-w-[448px] h-[250px] max-md:min-w-[300px] max-md:h-[180px]  bg-[#EEDCFF] rounded-[20px] shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out">
+            <div className="flex flex-col p-9 min-w-[448px] max-w-[448px] h-[250px] max-md:min-w-[320px] max-md:h-[230px]  bg-[#EEDCFF] rounded-[20px] shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out">
               <div className="flex items-center gap-3 mb-4">
                 <img
                   src="/images/Ikem.svg"
@@ -460,6 +460,22 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
+      <div className="bg-gray-300 h-[20vh] w-full flex flex-col justify-center items-center px-4">
+  <h2 className="text-lg font-semibold mb-1">Newsletter</h2>
+  <p className="text-sm text-gray-600 text-center mb-3 max-w-md">
+    Be the first to know about discounts, offers, and events weekly in your mailbox. Unsubscribe anytime with one click.
+  </p>
+  <div className="flex flex-col  w-[50%] h-[30%] sm:flex-row items-center gap-2">
+    <input
+      type="email"
+      placeholder="Enter your email"
+      className="border border-black w-[70%] px-4 py-2 rounded h-[100%] focus:outline-none focus:ring-2 focus:ring-red-400"
+    />
+    <button className="bg-[rgb(122,48,186)] text-white w-[30%] h-[100%] px-6 py-2 max-md:h-[100%] max-md:w-[100%]  rounded hover:bg-purple-500 transition">
+      Subscribe
+    </button>
+  </div>
+</div>
     </div>
   );
 };
