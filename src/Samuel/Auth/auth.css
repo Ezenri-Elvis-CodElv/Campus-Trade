@@ -38,6 +38,9 @@
   justify-content: center;
   align-items: center;
   margin-bottom: -10px;
+  & img{
+    cursor: pointer;
+  }
   /* background-color: #5b0da4; */
 }
 
@@ -200,6 +203,9 @@
   margin-top: 2px;
   display: block;
 }
+.forgot-password{
+  cursor: pointer;
+}
 /* Media Query Styling for Small Desktop  */
 @media only screen and (max-width: 1440px) {
   .box {
@@ -261,6 +267,7 @@
 @media only screen and (max-width: 480px) {
   .box {
     width: 92%;
+    height: 70%;
   }
 
   .logo img {
@@ -285,6 +292,15 @@
     flex-direction: column;
     align-items: center;
     gap: 5px;
+  }
+  .trademark{
+    margin-top: 50px;
+  }
+  .forgot-password{
+    color: "purple";
+    display: "flex";
+    cursor: "pointer";
+    margin-top: 10px;
   }
 }
 

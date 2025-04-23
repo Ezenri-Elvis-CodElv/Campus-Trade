@@ -4,10 +4,14 @@ import { MdNavigateNext } from "react-icons/md";
 import RecentCard from "../components/RecentCard";
 import { Carousel } from "antd";
 import axios from "axios";
+import { useNavigate } from "react-router";
+
 import { Link, useParams } from "react-router-dom";
 
 const BASE_URL = "https://campustrade-kku1.onrender.com";
 const Categories = () => {
+  const nav = useNavigate();
+
   const { id } = useParams();
   const [data, setData] = useState([]);
 
@@ -107,35 +111,47 @@ const Categories = () => {
       <div className="category-text-wrappers">
         <div className="text-holder">
           <div className="top-text">
-            <span style={{ color: " #03045E", fontWeight: "bold" }}>Home</span>
+            <span
+              style={{
+                color: " #03045E",
+                fontWeight: "bold",
+                cursor: "pointer",
+              }}
+              onClick={() => nav("/")}
+              className="c-home"
+            >
+              Home
+            </span>
             <span className="icon">
               <MdNavigateNext />
             </span>
-            <span style={{ color: "#FF6D00" }}>Shirts</span>
+            <span style={{ color: "#FF6D00" }} className="c-name">Shirts</span>
           </div>
 
           <>
-            <div className="w-32 p-2 h-14 items-center bg-gray-200 flex rounded-xl justify-between  cursor-pointer mt-3 ">
-              <p
-                onClick={() => handleSelection("New")}
-                className={`p-3 px-4 rounded-xl cursor-pointer ${
-                  selectedOption === "New"
-                    ? "bg-[#03045E] text-white"
-                    : "bg-gray-200 text-primary-dark"
-                }`}
-              >
-                New
-              </p>
-              <p
-                onClick={() => handleSelection("Used")}
-                className={`p-3 px-4 rounded-xl cursor-pointer ${
-                  selectedOption === "Used"
-                    ? "bg-[#03045E] text-white"
-                    : "bg-gray-200 text-black"
-                }`}
-              >
-                Used
-              </p>
+            <div className="category-button-holder">
+              <div className="category-toggle">
+                <button
+                  onClick={() => handleSelection("New")}
+                  className={`p-3 px-4 rounded-[20px] w-[90px] h-[35px] cursor-pointer ${
+                    selectedOption === "New"
+                      ? "bg-[#03045E] text-white"
+                      : "text-primary-dark"
+                  }`}
+                >
+                  New
+                </button>
+                <button
+                  onClick={() => handleSelection("Used")}
+                  className={`p-3 px-10 rounded-[20px] w-[90px] h-[35px] cursor-pointer ${
+                    selectedOption === "Used"
+                      ? "bg-[#03045E] text-white"
+                      : " text-black"
+                  }`}
+                >
+                  Used
+                </button>
+              </div>
             </div>
           </>
         </div>

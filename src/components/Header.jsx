@@ -7,7 +7,7 @@ import { Drawer } from "antd";
 import axios from "axios";
 
 const Header = () => {
-  // const [user, setUser] = useState({});
+  const [search, setSearch] = useState("")
   const [drawerVisible, setDrawerVisible] = useState(false);
   const [activeCategory, setActiveCategory] = useState(null);
   const [isSticky, setIsSticky] = useState(false);
@@ -15,8 +15,8 @@ const Header = () => {
   const dropdownRef = useRef(null);
   const institutionButtonRef = useRef(null);
   const nav = useNavigate();
+  console.log(search)
 
- 
 
   const toggleCategoryDropdown = (category) => {
     setActiveCategory((prev) => (prev === category ? null : category));
@@ -116,6 +116,9 @@ const Header = () => {
             type="text"
             placeholder="Search"
             className="w-[90%] pl-[10px] font-medium focus:outline-none text-gray-500"
+            value={search}
+            onChange={(e)=>{setSearch(e.target.value)}} 
+
           />
         </div>
 

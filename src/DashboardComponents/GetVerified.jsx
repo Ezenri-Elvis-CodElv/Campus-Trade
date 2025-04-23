@@ -31,6 +31,7 @@ const GetVerified = () => {
   const [imagePreview, setImagePreview] = useState(null);
   const [profile, setProfile] = useState({});
   const fileInputRef = useRef(null);
+  
 
   const errorStyle = {
     border: "1px solid red",
@@ -67,7 +68,7 @@ const GetVerified = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+setLoading(true)
     // Validate required fields
     const newErrors = {};
     if (!fullName) newErrors.name = true;
@@ -123,6 +124,7 @@ const GetVerified = () => {
   };
 
   const UserProfile = async () => {
+  
     try {
       const response = await axios.get(
         `https://campustrade-kku1.onrender.com/api/v1/kyc/get-kyc-details/${userId}`

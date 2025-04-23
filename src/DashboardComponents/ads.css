@@ -384,4 +384,33 @@
       padding: 10px;
     }
   }
+  @media (max-width: 480px) {
+    .ads-post-body{
+      width: 100%;
+    }
+    .ads-payment-holder{
+      width: 100%;
+      padding-left:0px;
+    padding-right: 0px;
+    }
+    .ads-seven-days{
+      
+      height: 80%;
+    width: 90%;
+    border-radius: 50px;
+    }
+    .ads-thirty-days{
+      height: 80%;
+    width: 90%;
+    border-radius: 50px;
+    }
+    .ads-promo-days{
+      height: 80%;
+    width: 70%;
+    border-radius: 50px;
+    }
+    .ads-promo-thirty-days{
+      display: none;
+    }
+  }
 
