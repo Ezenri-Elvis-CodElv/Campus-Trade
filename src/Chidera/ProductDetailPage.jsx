@@ -80,10 +80,10 @@ const ProductDetailPage = () => {
             </div>
           </div>
           <div className="detailProductLocation">
-            <h3 className="locate">Location</h3>
+            <h3 className="locate">School</h3>
             <div className="detailProduction">
               <BsFillGeoAltFill />
-              <p className="p">{data.school}</p>
+              <p className="p">{data?.school}</p>
             </div>
           </div>
           <div className="condition">
@@ -103,7 +103,7 @@ const ProductDetailPage = () => {
             <h3 className="projectinfo3">Description</h3>
             <div className="info4">
               <h1 className="projectinfo4">
-              {data.description}
+              {data?.description}
               </h1>
             </div>
           </div>
