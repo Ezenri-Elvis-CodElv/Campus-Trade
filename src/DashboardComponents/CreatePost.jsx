@@ -304,7 +304,6 @@ const [postButton, setPostButton] = useState(false)
         </div>
 
         <div className="createpost-button">
-        <button>Pay 5% fee  </button>
 
           <button
             className="PostBtn"
