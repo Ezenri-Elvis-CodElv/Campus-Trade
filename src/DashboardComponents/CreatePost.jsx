@@ -14,7 +14,7 @@ const CreatePost = () => {
     },
     { name: "Yaba College of Technology" },
   ];
-
+  const [postButton,setPostButton] = useState(false)
   const [mediaFiles, setMediaFiles] = useState([]);
   const [modalVisible, setModalVisible] = useState(false);
   const [allCategories, setAllCategories] = useState([]);
@@ -326,7 +326,7 @@ const CreatePost = () => {
         >
           <h2 style={{ textAlign: "center" }}>✅ Post Created!</h2>
           <p style={{ textAlign: "center", marginTop: "10px" }}>
-            Your item has been posted successfully.
+            Please Complete Payment in Pending post.
           </p>
         </Modal>
       </div>

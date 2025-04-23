@@ -2,14 +2,17 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import "./sidebar.css";
 import { CgProfile } from "react-icons/cg";
-import { IoCreateOutline, IoSettingsOutline } from "react-icons/io5";
+import { IoCreateOutline, IoSettingsOutline, IoWarningOutline } from "react-icons/io5";
 import { MdOutlinePendingActions, MdVerifiedUser } from "react-icons/md";
 import { SiGoogleads } from "react-icons/si";
 import { RiLogoutCircleLine } from "react-icons/ri";
 import { BsFillFilePostFill } from "react-icons/bs";
+import { useState } from "react";
+import { Modal } from "antd";
 
 const Sidebar = () => {
   const nav = useNavigate();
+  const [modalVisible, setModalVisible] = useState(false);
 
   const getNavLinkClass = ({ isActive }) => (isActive ? "link active" : "link");
 
@@ -69,14 +72,33 @@ const Sidebar = () => {
       </div>
 
       <div className="logout-button">
-        <NavLink
-          to="/"
-          className="dash-logout"
-          onClick={logout}
-        >
+        <button onClick={() => setModalVisible(true)} className="dash-logout">
           <RiLogoutCircleLine size={18} />
           Log Out
-        </NavLink>
+        </button>
+        <Modal
+  open={modalVisible}
+  onCancel={() => setModalVisible(false)}
+  footer={null}
+  centered
+>
+  <div className="logout-container">
+    <h2 className="logout-title">
+      <IoWarningOutline className="logout-icon" />
+      Are you sure you want to Logout!
+    </h2>
+
+    <div className="logout-buttons">
+      <button className="cancel-btn" onClick={() => setModalVisible(false)}>
+        Cancel
+      </button>
+      <button className="dash-logout" onClick={logout}>
+        Logout
+      </button>
+    </div>
+  </div>
+</Modal>
+
       </div>
     </aside>
   );

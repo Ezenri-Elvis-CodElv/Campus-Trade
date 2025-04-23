@@ -46,7 +46,7 @@ const router = createBrowserRouter([
           { path: "categories/:id", element: <Categories /> },
           { path: "explorepage", element: <ExplorePage /> },
           { path: "productdetailpage/:id", element: <ProductDetailPage /> },
-          { path: "profilepage", element: <ProfilePage /> },
+          { path: "profilepage/:id", element: <ProfilePage /> },
         ],
       },
 

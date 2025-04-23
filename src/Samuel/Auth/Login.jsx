@@ -32,6 +32,7 @@ const Login = () => {
         nav("/dashboard");
         toast.success(res.data.message);
         localStorage.setItem("userData",JSON.stringify(res.data))
+        localStorage.setItem("token",JSON.stringify(res?.data?.token))
       }
     } catch (err) {
       console.log(err);
