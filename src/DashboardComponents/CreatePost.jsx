@@ -14,7 +14,7 @@ const CreatePost = () => {
     },
     { name: "Yaba College of Technology" },
   ];
-
+  const [postButton,setPostButton] = useState(false)
   const [mediaFiles, setMediaFiles] = useState([]);
   const [modalVisible, setModalVisible] = useState(false);
   const [allCategories, setAllCategories] = useState([]);
@@ -88,10 +88,6 @@ const CreatePost = () => {
 
   console.log(isFormValid);
 
-  console.log(token)
-
-const [postButton, setPostButton] = useState(false)
-
   const handleSubmit = async () => {
     setPostButton(true)
     try {
@@ -111,6 +107,9 @@ const [postButton, setPostButton] = useState(false)
       mediaFiles.forEach((file) => {
         form.append("media", file);
       });
+
+      // modal that informs user about payment 
+      // koralogic
 
       await axios.post(
         `https://campustrade-kku1.onrender.com/api/v1/products/${categoryId}/${subCategory}`,
@@ -326,7 +325,7 @@ const [postButton, setPostButton] = useState(false)
         >
           <h2 style={{ textAlign: "center" }}>✅ Post Created!</h2>
           <p style={{ textAlign: "center", marginTop: "10px" }}>
-            Your item has been posted successfully.
+            Please Complete Payment in Pending post.
           </p>
         </Modal>
       </div>

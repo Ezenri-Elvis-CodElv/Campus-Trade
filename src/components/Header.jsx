@@ -5,8 +5,11 @@ import { useNavigate } from "react-router-dom";
 import Burger from "../../public/images/Burger.svg";
 import { Drawer } from "antd";
 import axios from "axios";
+
 import { SearchContext } from "../context/SearchProducts";
 import { useContext } from "react";
+
+import { FaUserCircle } from "react-icons/fa";
 
 const Header = () => {
   const [search, setSearch] = useState("")
@@ -53,6 +56,10 @@ const {searchQuery, setSearchQuery} = context
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+  const token = localStorage.getItem("token");
+  const isLoggedIn = token ? JSON.parse(token) : null;
+
 
   return (
     <header
@@ -126,19 +133,22 @@ const {searchQuery, setSearchQuery} = context
         </div>
 
         {/* Right Side */}
+
         <div className="flex items-center justify-end w-[30%] max-md:w-[20%] gap-4">
-          <button
-            onClick={() => nav("/login")}
-            className="w-[100px] h-[40px] hidden md:block text-black hover:text-white hover:bg-[rgb(122,48,187)] hover:rounded-[10px] transition duration-300 ease-in-out transform hover:scale-105"
-          >
-            Login
-          </button>
-          <button
-            onClick={() => nav("/signup")}
-            className="w-[100px] h-[40px] hidden md:block text-white bg-[rgb(122,48,187)] rounded-lg hover:bg-[rgb(91,55,117)] transition duration-300 ease-in-out transform hover:scale-105"
-          >
-            Sign up
-          </button>
+        {
+          !isLoggedIn ? <>  <button
+          onClick={() => nav("/login")}
+          className="w-[100px] h-[40px] hidden md:block text-black hover:text-white hover:bg-[rgb(122,48,187)] hover:rounded-[10px] transition duration-300 ease-in-out transform hover:scale-105"
+        >
+          Login
+        </button>
+        <button
+          onClick={() => nav("/signup")}
+          className="w-[100px] h-[40px] hidden md:block text-white bg-[rgb(122,48,187)] rounded-lg hover:bg-[rgb(91,55,117)] transition duration-300 ease-in-out transform hover:scale-105"
+        >
+          Sign up
+        </button></> : <div className=""> <FaUserCircle size={50} /> </div> 
+        }
 
           {/* Burger icon for mobile */}
           <div className="block md:hidden relative">

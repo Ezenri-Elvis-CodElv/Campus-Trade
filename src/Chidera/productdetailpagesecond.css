@@ -322,171 +322,132 @@ img.profilePic {
     width: 100%;
 }
 
-@media (max-width: 768px) {
+/* Mobile-First Adjustments */
+@media (max-width: 900px) {
     .section {
-        padding: 15px;
-        width: 100%;
-        height: 150vh;
-
+      margin: 20px;
+      gap: 30px;
     }
-
+  
     .body {
-        flex-direction: column-reverse;
-        gap: 10px;
-        display: flex;
-        position: relative;
-        align-items: center;
-        justify-content: center;
-        right: 20px;
-        width: 130%;
+      flex-direction: column;
+      gap: 30px;
+      width: 100%;
     }
-
-    
-    .detailedProductInfo {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-        right: 20px;
-        position: relative;
-    }
-
+  
     .detailedProductImage {
-        width: 190%;
-        height: auto;
-        right: 20px;
-        position: relative;
-
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 15px;
     }
-
-    .projectinfo {
-        font-size: 20px;
+  
+    .detailPageInfo {
+      width: 100%;
+      gap: 25px;
     }
-
-    .projectinfo1 {
-        font-size: 16px;
+  
+    .detailedProductInfo .projectinfo {
+      font-size: 24px;
     }
-
-    .condition {
-        font-size: 20px;
-        width: 120%;
-        padding: 10px;
-        right: 20px;
-        position: relative;
-    }
-
+  
     .condition .body1 {
-        width: 80%;
-        height: auto;
-        right: 20px;
-        position: relative;
+      width: 100%;
+      padding: 8px;
     }
-
-    .condition button {
-        width: 50%;
+  
+    .profile {
+      padding: 15px;
+      border-radius: 10px;
     }
-
-    .description {
-        width: 113%;
-        right: 30px;
-        position: relative;
+  
+    .profilePic {
+      width: 60px !important;
+      height: 60px !important;
     }
-
-    .info4{
-        width: 100%;
-    }
-
-    .detailProductLocation{
-        right: 20px;
-        position: relative;
-        display: none;
-    }
-
-    .profileAndPreviousPageButton {
-        width: 120%;
-        gap: 60px;
-        height: 100px;
-        height: max-content;
-    }
-
-    .profileAndAds {
-        align-items: flex-start;
-        padding: 15px;
-        width: 100%;
-        position: relative;
-    }
-
+  
     .profileName h2 {
-        font-size: 17px;
+      font-size: 20px;
     }
-
-    .profileDateAndLink h4 {
-        font-size: 14px;
+  
+    .profileContact .contact {
+      font-size: 14px;
+      padding: 10px;
     }
-
-    .ads {
-        display: none;
-    }
-
+  
     .previousPage {
-        display: none;
+      display: none !important;
     }
-
-    .profileName {
-        gap: 10px;
+  
+    /* Specific Breakpoint Adjustments */
+    @media (max-width: 768px) {
+      .detailedProductImage {
+        height: 250px;
+      }
+      
+      .detailedProductInfo .projectinfo {
+        font-size: 22px;
+      }
     }
-
-    .detailProductLocation {
-        width: 100%;
-    }
-
-    .description .projectinfo4 {
-        width: 100%;
-    }
-    .cards{
-        flex-direction: column;
-        width: 100%;
-        height: 100vh;
-        gap: 10px;
-        display: none;
-    }
-    .devices{
-        display: none;
-    }
-}
-
-
-@media (max-width: 480px) {
-    .section {
-        width: 100%;
-        background: red;
-        flex-direction: column;
-    }
-
-    .body{
-        background: pink;
-    }
-
-    .detailPageInfo
-    .description {
-        font-size: 15px;
-    }
-
-    .description .projectinfo3 {
-        font-size: 18px;
-        padding: 10px;
-    }
-
-    .description .projectinfo4 {
+  
+    @media (max-width: 480px) {
+      .detailedProductImage {
+        height: 200px;
+        border-radius: 10px;
+      }
+  
+      .projectinfo {
+        font-size: 20px;
+      }
+  
+      .condition button {
+        padding: 8px 20px;
         font-size: 14px;
+      }
+  
+      .profileContact .contact {
+        font-size: 12px;
+      }
     }
-
+  
+    @media (max-width: 379px) {
+      .detailedProductImage {
+        height: 180px;
+      }
+  
+      .projectinfo {
+        font-size: 18px;
+      }
+  
+      .profileName h2 {
+        font-size: 18px;
+      }
+    }
+  }
+  
+  /* Hide desktop-specific elements on mobile */
+  @media (max-width: 900px) {
+    .ads > img,
+    .deviceHeader,
+    .cards {
+      display: none;
+    }
+  }
+  
+  /* Keep original desktop styles */
+  @media (min-width: 901px) {
+    /* Your existing desktop styles remain untouched */
+    .body {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+    }
+  
+    .detailPageInfo {
+      width: 60%;
+    }
+  
     .profileAndPreviousPageButton {
-        width: 100%;
+      width: 35%;
     }
-
-    .profilePicAndDetails {
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: center;
-    }
-}
+  }

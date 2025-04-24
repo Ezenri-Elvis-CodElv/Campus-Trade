@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { use, useEffect } from "react";
 import Card from "../components/Card";
 import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
@@ -11,13 +11,17 @@ import { TbCurrencyNaira } from "react-icons/tb";
 import { BsWhatsapp } from "react-icons/bs";
 import axios from "axios";
 import { BsFillGeoAltFill } from "react-icons/bs";
-import './productdetailpagesecond.css';
+import "./productdetailpagesecond.css";
 
 const BASE_URL = "https://campustrade-kku1.onrender.com";
 
 const ProductDetailPage = () => {
   const nav = useNavigate();
   const [active, setActive] = useState("");
+  const [userId, setUserId] = useState("");
+  const [UserProfile, setUserProfile] = useState({});
+  const { id } = useParams();
+  const [data, setData] = useState({});
 
   const phoneNumber = "09192298383";
   const [copied, setCopied] = useState(false);
@@ -40,64 +44,31 @@ const ProductDetailPage = () => {
     };
   };
 
-  const ADS = [
-    {
-      imageUrl: "/images/phone.jpeg",
-      alt: "HAHA",
-    },
-    {
-      imageUrl: "/images/Webb Idea 1 1.png",
-      alt: "HAHA",
-    },
-  ];
-  const myArr = [
-    {
-      media: "src/assets/download.jpg",
-      name: "Jimmy choo",
-      price: "23,000",
-      description: "Offers elegant and fashionable high heels",
-      university: "Lagos State University",
-    },
-    {
-      media: "src/assets/download.jpg",
-      name: "Books",
-      price: "20,000",
-      description: "Description",
-      university: "Uni Lag",
-    },
-    {
-      media: "src/assets/download.jpg",
-      name: "Home Appliances",
-      price: "30,000",
-      description: "My description",
-      university: "Yaba Tech",
-    },
-    {
-      media: "src/assets/download.jpg",
-      name: "Home Appliances",
-      price: "30,000",
-      description: "My description",
-      university: "Yaba Tech",
-    },
-  ];
-
-  const { id } = useParams();
-  const [data, setData] = useState({});
-
-  const getProductCategory = async (selected) => {
+  const getProductCategory = async () => {
     try {
       const res = await axios.get(`${BASE_URL}/api/v1/oneproduct/${id}`);
+      const productData = res?.data?.data;
 
-      setData(res?.data?.data);
+      setData(productData);
+      setUserId(productData?.seller?.id);
+      console.log(userId);
+      const sellerId = productData?.seller?.id;
+      console.log("Seller ID:", sellerId);
+
+      const sellerInfo = await axios.get(
+        `https://campustrade-kku1.onrender.com/api/v1/kyc/get-kyc-details/${sellerId}`
+      );
+      setUserProfile(sellerInfo?.data?.data?.SellerKYCs);
+
     } catch (error) {
-      console.log(error);
+      console.log("this error", error);
     }
   };
   useEffect(() => {
     getProductCategory();
   }, []);
 
-  console.log(data);
+  console.log("User Profile:", UserProfile);
 
   return (
     <section className="section ">
@@ -114,14 +85,15 @@ const ProductDetailPage = () => {
               <p className="projectinfo1">
                 {" "}
                 <TbCurrencyNaira size={30} />
+                {data.price}
               </p>
             </div>
           </div>
           <div className="detailProductLocation">
-            <h3 className="locate">Location</h3>
+            <h3 className="locate">School</h3>
             <div className="detailProduction">
               <BsFillGeoAltFill />
-              <p className="p">{data.school}</p>
+              <p className="p">{data?.school}</p>
             </div>
           </div>
           <div className="condition">
@@ -140,12 +112,7 @@ const ProductDetailPage = () => {
           <div className="description">
             <h3 className="projectinfo3">Description</h3>
             <div className="info4">
-              <h1 className="projectinfo4">
-                Lorem ipsum dolor, sit amet c onsectetur adipisicing elit.{" "}
-                <br />
-                Pariatur quia quas aliquam s oluta dolor <br />
-                libero vero face dolores.
-              </h1>
+              <h1 className="projectinfo4">{data?.description}</h1>
             </div>
           </div>
         </div>
@@ -157,12 +124,12 @@ const ProductDetailPage = () => {
                 <div className="profilePicAndDetails">
                   <img
                     className="profilePic"
-                    src={data?.media?.[0]}
+                    src={UserProfile?.profilePic}
                     alt="Phone"
                   />
                   <div className="opendiv">
                     <div className="profileName">
-                      <h2 className="joansamuelh2">Joan Samuel</h2>
+                      <h2 className="joansamuelh2">{UserProfile?.fullName}</h2>
                       <LuBadgeCheck size={20} />
                     </div>
                     <div className="profileDateAndLink">
@@ -171,10 +138,10 @@ const ProductDetailPage = () => {
                       </h4>
                       <button
                         className="obvlickbtn"
-                        onClick={() => nav("/ProfilePage")}
+                        onClick={() => nav(`/ProfilePage/${UserProfile?.id}`)}
                       >
-                        {/* <span className="spamm">See profile</span> */}
-                        {/* <IoIosArrowForward size={18} /> */}
+                        <span className="spamm">See profile</span>
+                        <IoIosArrowForward size={18} />
                       </button>
                     </div>
                   </div>
@@ -194,7 +161,7 @@ const ProductDetailPage = () => {
                         style={{ cursor: "pointer", marginRight: "8px" }}
                       />
                     )}
-                    <a href={`tel:${phoneNumber}`}>{phoneNumber}</a>
+                    <a href={`tel:${phoneNumber}`}>{UserProfile?.phoneNumber}</a>
                     {copied && (
                       <span style={{ marginLeft: "8px", color: "green" }}>
                         Copied!
@@ -203,7 +170,7 @@ const ProductDetailPage = () => {
                   </button>
                   <button className="contact whatsapp">
                     <BsWhatsapp size={25} style={{ color: "green" }} />
-                    <a href="https://web.whatsapp.com/09149948399">
+                    <a href={UserProfile?.whatsappLink}>
                       Chat via whatsapp
                     </a>
                   </button>
@@ -214,7 +181,7 @@ const ProductDetailPage = () => {
             <div className="ads">
               <h4 className="adsnumber">AD number: 08970u</h4>
 
-              <img src={data?.media?.[0]}  />
+              <img src={data?.media?.[0]} />
             </div>
           </div>
           <button className="previousPage">
@@ -226,15 +193,7 @@ const ProductDetailPage = () => {
         </div>
       </div>
 
-      <div className="devices">
-        <div className="deviceHeader">
-          <h2 className="mobiledevicesh2">Mobile device</h2>
-          <p className="mobiledevicesp">
-            Checkout Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Earum!
-          </p>
-        </div>
-      </div>
+      <div className="devices"></div>
     </section>
   );
 };

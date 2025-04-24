@@ -3,7 +3,6 @@
   height: 100vh;
   background: url(../../../public/images/bg.jpg) no-repeat center center/cover transparent;
   display: flex;
-  background-color: #aa1515;
   justify-content: center;
   align-items: center;
 }
