@@ -14,7 +14,7 @@ const PaymentStatus = () => {
   useEffect(() => {
     const verifyPayment = async () => {
       try {
-        const res = await axios.post(`https://campustrade-kku1.onrender.com/api/v1//api/v1/payment/verify?reference=${reference}`);
+        const res = await axios.post(`https://campustrade-kku1.onrender.com/api/v1/verify?reference=${reference}`);
         setStatus(res.data.status);
       } catch (error) {
         console.error('Verification error:', error); 
