@@ -1,11 +1,11 @@
 .account-container {
-  width: 80%;
+  width: 100%;
   max-width: 800px;
   margin: 2rem auto;
   padding: 2rem;
   border-radius: 12px;
   height: max-content;
-  padding-top: 650px;
+  /* padding-top: 650px; */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -22,14 +22,15 @@
 
 .profile-pic-section {
   display: flex;
-  justify-content: center;
-  margin-bottom: 2rem;
+  align-items: center;
+  height: max-content;
 }
 
 .profile-image-container {
   position: relative;
-  width: 150px;
-  height: 150px;
+  width: 140px;
+  height: 140px;
+  top: 0;
 }
 
 .profile-image, .profile-image-placeholder {
@@ -107,6 +108,22 @@
   border-radius: 6px;
   cursor: pointer;
   transition: background 0.3s ease;
+}
+
+.settingsSubmitBtnWrapper{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.settingsSubmitBtn{
+  width: 25%;
+  padding: 10px 0px;
+  color: white;
+  border-radius: 6px;
+  background: purple;
+  cursor: pointer;
 }
 
 /* Mobile Responsive Styles */
