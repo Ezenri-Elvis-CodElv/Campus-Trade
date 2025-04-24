@@ -75,7 +75,7 @@ const router = createBrowserRouter([
             { path: "createpost", element: <CreatePost /> },
             { path: "posts", element: <Posts /> },
             { path: "ads", element: <Ads /> },
-            { path: "paymentstatus/:ref", element: <PaymentStatus /> },
+            { path: "paymentstatus/:ref?", element: <PaymentStatus /> },
           ],
       }]
       },
