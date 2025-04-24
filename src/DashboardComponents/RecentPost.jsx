@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./recentpost.css";
 import axios from "axios";
-import RecentCard from "../components/RecentCard";
+import RecentCard from "../../src/DashboardComponents/RecentComponentCard.jsx";
+import RecentComponentCard from "../../src/DashboardComponents/RecentComponentCard.jsx";
 
 const RecentPost = () => {
   const [products, setProducts] = useState([]);
@@ -24,7 +25,7 @@ const RecentPost = () => {
     setTimeout(() => {
       setLoading(false)
     }, 3000);
-  }, []);
+  }, [products]);
 
   if (loading) {
     return (
@@ -46,7 +47,7 @@ const RecentPost = () => {
           products.length <= 0 ? "No Recent post" : 
         <>
             {products.map((item, index) => (
-            <RecentCard key={index} item={item} />
+            <RecentComponentCard key={index} item={item} />
           ))}
         </>
         }

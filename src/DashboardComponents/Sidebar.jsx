@@ -2,7 +2,11 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import "./sidebar.css";
 import { CgProfile } from "react-icons/cg";
-import { IoCreateOutline, IoSettingsOutline, IoWarningOutline } from "react-icons/io5";
+import {
+  IoCreateOutline,
+  IoSettingsOutline,
+  IoWarningOutline,
+} from "react-icons/io5";
 import { MdOutlinePendingActions, MdVerifiedUser } from "react-icons/md";
 import { SiGoogleads } from "react-icons/si";
 import { RiLogoutCircleLine } from "react-icons/ri";
@@ -31,15 +35,14 @@ const Sidebar = () => {
         <NavLink to="/dashboard" className={getNavLinkClass} end>
           Profile
         </NavLink>
+        <NavLink to="/dashboard/getverified" className={getNavLinkClass}>
+          <MdVerifiedUser size={14} />
+          Get verified
+        </NavLink>
 
         <NavLink to="/dashboard/createpost" className={getNavLinkClass} end>
           <IoCreateOutline size={14} />
           Create a post
-        </NavLink>
-
-        <NavLink to="/dashboard/sellerprofile" className={getNavLinkClass}>
-          <MdVerifiedUser size={14} />
-          Get verified
         </NavLink>
       </div>
       <h3 className="myprofiletext">My Post</h3>
@@ -77,28 +80,30 @@ const Sidebar = () => {
           Log Out
         </button>
         <Modal
-  open={modalVisible}
-  onCancel={() => setModalVisible(false)}
-  footer={null}
-  centered
->
-  <div className="logout-container">
-    <h2 className="logout-title">
-      <IoWarningOutline className="logout-icon" />
-      Are you sure you want to Logout!
-    </h2>
+          open={modalVisible}
+          onCancel={() => setModalVisible(false)}
+          footer={null}
+          centered
+        >
+          <div className="logout-container">
+            <h2 className="logout-title">
+              <IoWarningOutline className="logout-icon" />
+              Are you sure you want to Logout!
+            </h2>
 
-    <div className="logout-buttons">
-      <button className="cancel-btn" onClick={() => setModalVisible(false)}>
-        Cancel
-      </button>
-      <button className="dash-logout" onClick={logout}>
-        Logout
-      </button>
-    </div>
-  </div>
-</Modal>
-
+            <div className="logout-buttons">
+              <button
+                className="cancel-btn"
+                onClick={() => setModalVisible(false)}
+              >
+                Cancel
+              </button>
+              <button className="dash-logout" onClick={logout}>
+                Logout
+              </button>
+            </div>
+          </div>
+        </Modal>
       </div>
     </aside>
   );

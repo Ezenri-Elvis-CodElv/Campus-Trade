@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./card.css";
 import { useNavigate } from "react-router";
 import { RiEdit2Line } from "react-icons/ri";
@@ -28,6 +28,7 @@ const Card = ({ item }) => {
       message.error("Failed to delete product.");
     }
   };
+
 
   const PayOut = async (id) => {
     setPay(true)

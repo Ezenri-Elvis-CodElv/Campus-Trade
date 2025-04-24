@@ -37,7 +37,14 @@ const DashboardHeader = () => {
           </div>
 
           <div className="dashboard-content-img">
-            <img src={profile} alt="Profile" className="dash-profile-picture" />
+            {
+              profile ?
+              <img src={profile} alt="Profile" className="dash-profile-picture" /> 
+              :
+              <img src="/images/profilIcon.jpg" alt="" className="dash-profile-picture"  style={{
+                border:"1px solid gray"
+              }}/>
+            }
           </div>
         </div>
       </div>

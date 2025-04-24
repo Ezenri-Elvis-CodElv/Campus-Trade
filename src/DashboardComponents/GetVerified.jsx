@@ -162,15 +162,18 @@ setLoading(true)
             <label htmlFor="imageUpload">
               {/* <p> Add Photo</p> */}
               <div className="circle">
-                {!imagePreview && <FaCamera className="cam" />}
-                {imagePreview ? <img src={imagePreview} alt="" /> : <img src={imagePreview} alt="" />}
+                {/* {!imagePreview &&  */}
+                <label htmlFor="imageUpload"><FaCamera className="cam" /></label>
+                 {/* } */}
+                {imagePreview ? <img src={imagePreview} alt="" /> : <img src="/images/profilIcon.jpg" alt="" />}
                 <input
                   ref={fileInputRef}
                   type="file"
-                  // id="imageUpload"
+                  id="imageUpload"
                   accept="image/*"
                   className="profilePic"
                   onChange={handleImageChange}
+                  hidden
                 />
               </div>
             </label>
