@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import Burger from "../../public/images/Burger.svg";
 import { Drawer } from "antd";
 import axios from "axios";
+import { SearchContext } from "../context/SearchProducts";
+import { useContext } from "react";
 
 const Header = () => {
   const [search, setSearch] = useState("")
@@ -17,7 +19,8 @@ const Header = () => {
   const nav = useNavigate();
   console.log(search)
 
-
+const context = useContext(SearchContext)
+const {searchQuery, setSearchQuery} = context 
   const toggleCategoryDropdown = (category) => {
     setActiveCategory((prev) => (prev === category ? null : category));
   };
@@ -116,8 +119,8 @@ const Header = () => {
             type="text"
             placeholder="Search"
             className="w-[90%] pl-[10px] font-medium focus:outline-none text-gray-500"
-            value={search}
-            onChange={(e)=>{setSearch(e.target.value)}} 
+            value={searchQuery}
+            onChange={(e)=>{setSearchQuery(e.target.value)}} 
 
           />
         </div>
