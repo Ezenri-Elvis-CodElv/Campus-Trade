@@ -5,6 +5,7 @@ import axios from "axios";
 
 const RecentPost = () => {
   const [products, setProducts] = useState([]);
+  const [loading,setLoading] = useState(true)
   const userId = JSON.parse(localStorage.getItem("userData"))?.data?.id;
 
 
@@ -21,7 +22,19 @@ const RecentPost = () => {
 
   useEffect(() => {
     getRecentProduct();
+    setTimeout(() => {
+      setLoading(false)
+    }, 3000);
   }, []);
+
+  if (loading) {
+    return (
+      <div className="status-containers loadings">
+        <div className="loaders"></div>
+        <p>Getting pending posts...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="recent-body">

@@ -3,12 +3,14 @@ import React, { useEffect, useState } from "react";
 import { FaRegUser } from "react-icons/fa";
 import { IoCreateOutline } from "react-icons/io5";
 import { useNavigate } from "react-router";
+import {BeatLoader} from "react-spinners"
 const SellerProfile = () => {
   const nav = useNavigate();
   const userId = JSON.parse(localStorage.getItem("userData"))?.data?.id;
   const fullName = JSON.parse(localStorage.getItem("user"))?.fullName;
     const [recentPost, setRecentPost] = useState([]);
     const [pendingPost, setpendingPost] = useState([]);
+    const [loading,setLoading] = useState(true)
 
   const UserProfile = async () => {
     try {
@@ -66,6 +68,9 @@ const SellerProfile = () => {
 
   useEffect(() => {
     UserProfile();
+    setTimeout(() => {
+      setLoading(false)
+    }, 3000);
   }, []);
 
   return (
@@ -78,26 +83,38 @@ const SellerProfile = () => {
           className="stat-card blue"
           onClick={() => nav("/dashboard/recentpost")}
         >
-          <h3 className="stat-card-h3">
-            {" "}
-            <IoCreateOutline style={{ color: "rgb(171, 107, 255)" }} /> { recentPost.length }
-          </h3>
+          <>
+            {
+              loading ? <BeatLoader color="#2f80ed"/> : <h3 className="stat-card-h3">
+            
+              <IoCreateOutline style={{ color: "rgb(171, 107, 255)" }} /> { recentPost.length }
+               </h3>
+            }
+          </>
           <p className="cards-p-tag">Recent Post</p>
         </div>
         <div className="stat-card red">
-          <h3 className="stat-card-h3">
-            {" "}
+          <>
+          {
+            loading ? <BeatLoader color="#eb5757"/>  : <h3 className="stat-card-h3">
+            
             <FaRegUser style={{ color: "orange" }} /> {pendingPost.length}
           </h3>
+          }
+          </>
           <p className="cards-p-tag">Pending Post</p>
         </div>
         <div className="stat-card blue">
-          <h3 className="stat-card-h3">
-            {" "}
-            <IoCreateOutline style={{ color: "rgb(171, 107, 255)" }}
-            onClick={() => nav("/dashboard/pendingpost")} />
-              {recentPost.length + pendingPost.length}
-          </h3>
+          <>
+            {
+              loading ? <BeatLoader color="#2f80ed"/> : <h3 className="stat-card-h3">
+            
+              <IoCreateOutline style={{ color: "rgb(171, 107, 255)" }}
+              onClick={() => nav("/dashboard/pendingpost")} />
+                {recentPost.length + pendingPost.length}
+            </h3>
+            }
+          </>
           <p className="cards-p-tag">Listed post</p>
         </div>
       </div>

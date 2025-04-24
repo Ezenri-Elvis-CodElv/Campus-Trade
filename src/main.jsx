@@ -7,6 +7,7 @@ import {persistStore} from "redux-persist";
 import './index.css'
 import App from './App.jsx'
 import store from '../src/global/store'
+import { SearchProvider } from './context/SearchProducts.jsx';
 
 const persistor = persistStore(store)
 
@@ -16,7 +17,9 @@ createRoot(document.getElementById('root')).render(
     <Provider store={store}>
       <ToastContainer />
       <PersistGate loading={null} persistor={persistor}>
+        <SearchProvider>
       <App />
+      </SearchProvider>
       </PersistGate>
     </Provider>
   </StrictMode>

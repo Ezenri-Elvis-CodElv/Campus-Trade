@@ -28,6 +28,7 @@
     align-items: center;
     justify-content: center;
     padding-top: 10px;
+   
   }
   .recent-card-name {
     height: 100%;
@@ -36,11 +37,11 @@
     & p {
       color: #240046;
       font-weight: bold;
-      font-size: 14px;
+      font-size: 18px;
     }
   }
   
-  .card-prices {
+  .recent-card-prices {
     height: 100%;
     width: 40%;
   
@@ -48,26 +49,25 @@
       color: #ff6d00;
       font-size: 15px;
       font-weight: bolder;
-      font-size: smaller;
     }
   }
-  .card-img-description {
+  .recent-card-img-description {
     height: 20%;
     width: 100%;
     font-size: 11px;
   }
-  .card-uni-name {
+  .recent-card-uni-name {
     height: 10%;
     width: 100%;
     font-size: 10px;
   }
-  .card-time {
+  .recent-card-time {
     height: 10%;
     width: 100%;
     font-size: 10px;
   }
   @media (max-width: 480px) {
-    .card {
+    .recent-card {
       width: 90%;
       height: max-content;
     }

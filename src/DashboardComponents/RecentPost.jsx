@@ -5,6 +5,7 @@ import RecentCard from "../components/RecentCard";
 
 const RecentPost = () => {
   const [products, setProducts] = useState([]);
+  const [loading,setLoading] = useState(true)
   const userId = JSON.parse(localStorage.getItem("userData"))?.data?.id;
 
   const getRecentProduct = async () => {
@@ -20,7 +21,19 @@ const RecentPost = () => {
 
   useEffect(() => {
     getRecentProduct();
+    setTimeout(() => {
+      setLoading(false)
+    }, 3000);
   }, []);
+
+  if (loading) {
+    return (
+      <div className="status-containers loadings">
+        <div className="loaders"></div>
+        <p>Getting recent posts...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="recent-body">
