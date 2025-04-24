@@ -29,6 +29,16 @@
   display: flex;
   flex-direction: column;
 }
+.inputError {
+  border: 1px solid red !important;
+}
+
+.errorText {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
 
 .authlogo {
   width: 100%;

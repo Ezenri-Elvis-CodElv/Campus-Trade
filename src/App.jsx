@@ -59,21 +59,25 @@ const router = createBrowserRouter([
 
       // Protected User Dashboard
       {
-        path: "dashboard",
-        element: <Dashboard />,
-        children: [
-          { index: true, element: < SellerProfile /> },
-          { path: "accountinformation", element: <AccountInformation /> },
-          { path: "changephonenumber", element: <ChangePhoneNumber /> },
-          { path: "changepassword", element: <ChangePassword /> },
-          { path: "sellerprofile", element: <GetVerified /> },
-          { path: "recentpost", element: <RecentPost /> },
-          { path: "pendingpost", element: <PendingPost /> },
-          { path: "createpost", element: <CreatePost /> },
-          { path: "posts", element: <Posts /> },
-          { path: "ads", element: <Ads /> },
-          { path: "paymentstatus/:ref", element: <PaymentStatus /> },
-        ],
+        path : "dashboard",
+        element : <PrivateRoute/>,
+        children : [
+         { path: "",
+          element:<Dashboard />,
+          children: [
+            { index: true, element: < SellerProfile /> },
+            { path: "accountinformation", element: <AccountInformation /> },
+            { path: "changephonenumber", element: <ChangePhoneNumber /> },
+            { path: "changepassword", element: <ChangePassword /> },
+            { path: "sellerprofile", element: <GetVerified /> },
+            { path: "recentpost", element: <RecentPost /> },
+            { path: "pendingpost", element: <PendingPost /> },
+            { path: "createpost", element: <CreatePost /> },
+            { path: "posts", element: <Posts /> },
+            { path: "ads", element: <Ads /> },
+            { path: "paymentstatus/:ref", element: <PaymentStatus /> },
+          ],
+      }]
       },
 
       {

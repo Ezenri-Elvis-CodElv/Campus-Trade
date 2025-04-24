@@ -1,5 +1,5 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import { IoSettingsOutline } from "react-icons/io5";
+import { IoSettingsOutline, IoWarningOutline } from "react-icons/io5";
 import { RiLogoutCircleLine } from "react-icons/ri";
 import { MdOutlinePendingActions } from "react-icons/md";
 import { SiGoogleads } from "react-icons/si";
@@ -7,9 +7,16 @@ import { MdVerifiedUser } from "react-icons/md";
 import { BsFillFilePostFill } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
 import { IoCreateOutline } from "react-icons/io5";
+import { useState } from "react";
+import { Modal } from "antd";
 
 const SidebarLinks = ({ closeMenu }) => {
   const nav = useNavigate();
+    const [modalVisible, setModalVisible] = useState(false);
+    const logout = () => {
+      localStorage.clear();
+      nav("/");
+    };
 
   return (
     <div className="sidebar-links-mobile">
@@ -50,15 +57,33 @@ const SidebarLinks = ({ closeMenu }) => {
         <IoSettingsOutline size={16} /> Settings
       </NavLink>
       <button
-        className="link"
-        onClick={() => {
-          nav("/");
-          closeMenu();
-        }}
+        className="link"onClick={() => setModalVisible(true)}
       >
         {" "}
         <RiLogoutCircleLine size={16} /> Logout
       </button>
+      <Modal
+        open={modalVisible}
+        onCancel={() => setModalVisible(false)}
+        footer={null}
+        centered
+      >
+        <div className="logout-container">
+          <h2 className="logout-title">
+            <IoWarningOutline className="logout-icon" />
+            Are you sure you want to Logout!
+          </h2>
+      
+          <div className="logout-buttons">
+            <button className="cancel-btn" onClick={() => setModalVisible(false)}>
+              Cancel
+            </button>
+            <button className="dash-logout" onClick={logout}>
+              Logout
+            </button>
+          </div>
+        </div>
+      </Modal>
     </div>
   );
 };

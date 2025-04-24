@@ -136,7 +136,7 @@ const Categories = () => {
                   className={`p-3 px-4 rounded-[20px] w-[90px] h-[35px] cursor-pointer ${
                     selectedOption === "New"
                       ? "bg-[#03045E] text-white"
-                      : "text-primary-dark"
+                      : "text-black"
                   }`}
                 >
                   New

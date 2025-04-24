@@ -1,10 +1,9 @@
-import React, { cache, useState } from "react";
+import React, { useState } from "react";
 import "./auth.css";
 import axios from "axios";
 import { FiEye } from "react-icons/fi";
 import { useNavigate } from "react-router";
 import { FaRegEyeSlash } from "react-icons/fa";
-import { FcGoogle } from "react-icons/fc";
 import { toast } from "react-toastify";
 
 const SignUp = () => {
@@ -21,19 +20,36 @@ const SignUp = () => {
   const [errors, setErrors] = useState({});
 
   const url = "https://campustrade-kku1.onrender.com/api/v1/seller/register";
-  const googleAuthUrl =
-    "https://campustrade-kku1.onrender.com/api/v1/seller/google-authenticate";
 
-  const handlesGoogleAuth = async () => {
-    try {
-      const res = await axios.get(googleAuthUrl);
-      console.log(res);
-    } catch (err) {
-      console.log(err);
+  const validateInputs = () => {
+    const newErrors = {};
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!auth.email || !emailRegex.test(auth.email)) {
+      newErrors.email = "Please enter a valid email";
     }
+
+    // Password validation
+    const passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+    if (!auth.password || !passwordRegex.test(auth.password)) {
+      newErrors.password =
+        "Password must be at least 8 characters, include a number and a special character";
+    }
+
+    // Confirm password validation
+    if (auth.confirmpassword !== auth.password) {
+      newErrors.confirmpassword = "Passwords do not match";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
   const handlesubmit = async () => {
+    const isValid = validateInputs();
+    if (!isValid) return;
+
     setLoading(true);
     try {
       const res = await axios.post(url, {
@@ -42,25 +58,27 @@ const SignUp = () => {
         confirmPassword: auth.confirmpassword,
       });
       if (res.status === 201) {
-        console.log(res);
         nav("/login");
-        toast.success("Welcome,Please check your email for verification");
+        toast.success("Welcome, please check your email for verification");
       }
     } catch (err) {
       toast.error(err?.response?.data?.message);
       setLoading(false);
     }
   };
+
   const isDisabled = !auth.email || !auth.password || !auth.confirmpassword;
-  const handleGoogleLogin = async () => {
-    window.location.href = `${url}`
-  }
+
   return (
     <div className="Overall withBackgroundImage">
       <div className="box">
         <div className="boxWrapper">
           <div className="authlogo">
-            <img src="/images/CAMPUSTRADE-02 1.png" onClick={() => nav("/")} />
+            <img
+              src="/images/CAMPUSTRADE-02 1.png"
+              onClick={() => nav("/")}
+              alt="logo"
+            />
           </div>
 
           <div className="inputHolder">
@@ -139,15 +157,9 @@ const SignUp = () => {
               >
                 {loading ? <div>Loading....</div> : <div>Sign Up</div>}
               </button>
+
               <div className="footer">
-                <p
-                  style={{
-                    display: "flex",
-                    justifyContent: "flex-start",
-                    cursor: "default",
-                    marginTop: "10px",
-                  }}
-                >
+                <p style={{ marginTop: "10px" }}>
                   Already Have An Account?
                   <span
                     style={{
@@ -161,12 +173,6 @@ const SignUp = () => {
                   </span>
                 </p>
               </div>
-
-
-              {/* <button className="googleLogin" onClick={handlesGoogleAuth}>
-                <FcGoogle className="icon" />
-                <span>Sign up with Google</span>
-              </button> */}
 
               <p className="trademark">@campustrade</p>
             </div>
