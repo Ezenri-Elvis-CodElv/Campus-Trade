@@ -40,7 +40,7 @@ const PaymentStatus = () => {
     return (
       <div className="status-container loading">
         <div className="loader"></div>
-        <p>Verifying Payment...</p>
+        <p>Verifying Payment....</p>
       </div>
     );
   }
