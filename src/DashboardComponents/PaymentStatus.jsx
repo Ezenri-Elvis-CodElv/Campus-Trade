@@ -14,8 +14,12 @@ const PaymentStatus = () => {
   useEffect(() => {
     const verifyPayment = async () => {
       try {
-        const res = await axios.post(`https://campustrade-kku1.onrender.com/api/v1/verify?reference=${reference}`);
-        setStatus(res.data.status);
+        const res = await axios.get(`https://campustrade-kku1.onrender.com/api/v1/verify?reference=${reference}`);
+        setStatus(res?.data?.data?.status);
+          setTimeout(() => {
+            navigate("/dashboard/recentpost")
+          }, 3000);
+        console.log(res)
       } catch (error) {
         console.error('Verification error:', error); 
         setStatus('failed');
@@ -48,9 +52,9 @@ const PaymentStatus = () => {
   return (
     <div className={`status-container ${status}`}>
       <img src="/images/CAMPUSTRADE-02 1.png" alt="Campus Trade Logo" className="logo" />
-      <h1 className='h1text'>{status === 'success' ? 'Payment Successful!' : 'Payment Failed'}</h1>
+      <h1 className='h1text'>{status === 'Success' ? 'Payment Successful!' : 'Payment Failed'}</h1>
       <p className='ptext'>
-        {status === 'success'
+        {status === 'Success'
           ? 'Thank you! Your payment was processed successfully.'
           : 'Oops! Something went wrong with your payment. Please try again or contact support.'}
       </p>
