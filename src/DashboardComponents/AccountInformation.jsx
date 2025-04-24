@@ -4,8 +4,10 @@ import { PiNotePencilDuotone } from 'react-icons/pi';
 import { FiLink, FiUser } from 'react-icons/fi';
 import { FaCamera, FaTransgender } from 'react-icons/fa';
 import "./accountinformation.css";
+import axios from 'axios';
 
 const AccountInformation = () => {
+  const [previewImage, setPreviewImage] = useState(null);
   const [acctInfo, setAcctinfo] = useState(() => {
     const savedData = localStorage.getItem("accountInfo");
     return savedData ? JSON.parse(savedData) : {
@@ -15,13 +17,64 @@ const AccountInformation = () => {
       jambRegNo: "",
       phoneNumber: "",
       whatsappLink: "",
-      profileImage: ""
+      profilePic: null
     };
   });
+  const [loadState, setLoadState] = useState(false)
+  const userId = JSON.parse(localStorage.getItem("userData"))?.data?.id;
+  const token = JSON.parse(localStorage.getItem("token"));
 
   useEffect(() => {
     localStorage.setItem("accountInfo", JSON.stringify(acctInfo));
-  });
+  }, [acctInfo]);
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setPreviewImage(URL.createObjectURL(file));
+      setAcctinfo(prev => ({ ...prev, profilePic: file }));
+    }
+  };
+
+
+
+  const BASE_URL = "https://campustrade-kku1.onrender.com"
+
+  const handleProfileSettings = async () => {
+    const formData = new FormData();
+
+    if (acctInfo.fullName) formData.append("fullName", acctInfo.fullName);
+    if (acctInfo.school) formData.append("school", acctInfo.school);
+    if (acctInfo.gender) formData.append("gender", acctInfo.gender);
+    if (acctInfo.jambRegNo) formData.append("jambRegNo", acctInfo.jambRegNo);
+    if (acctInfo.phoneNumber) formData.append("phoneNumber", acctInfo.phoneNumber);
+    if (acctInfo.whatsappLink) formData.append("whatsappLink", acctInfo.whatsappLink);
+    if (acctInfo.profilePic) {
+      formData.append("profilePic", acctInfo.profilePic);
+    }
+    console.log("profileImage is:", acctInfo.profileImage instanceof File); // should be true
+
+
+    console.log("FormData about to be sent:");
+    for (let pair of formData.entries()) {
+      console.log(pair[0] + ':', pair[1]);
+    }
+
+    setLoadState(true);
+    try {
+      const ress = await axios.patch(`${BASE_URL}/api/v1/kyc/profile/${userId}`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          Authorization:` Bearer ${token}`,
+        },
+      });
+      setLoadState(false);
+      console.log("Update Success:", ress.data);
+    } catch (err) {
+      console.error("Update Failed:", err.response?.data || err.message);
+      setLoadState(false);
+    }
+  };
+
 
   return (
     <div className="account-container">
@@ -35,14 +88,16 @@ const AccountInformation = () => {
 
         <div className="profile-pic-section">
           <div className="profile-image-container">
-            {acctInfo.profileImage ? (
+            {acctInfo.profilePic ? (
               <img
-                src={acctInfo.profileImage}
+                src={previewImage}
                 className="profile-image"
                 alt="Profile"
               />
             ) : (
-              <div className="profile-image-placeholder">
+              <div className="profile-image-placeholder"
+                onClick={() => document.getElementById("profilePicInput").click()}
+              >
                 <FaCamera className="camera-icon" />
               </div>
             )}
@@ -51,23 +106,9 @@ const AccountInformation = () => {
               accept="image/*"
               style={{ display: "none" }}
               id="profilePicInput"
-              onChange={(e) => {
-                const file = e.target.files[0];
-                if (file) {
-                  const reader = new FileReader();
-                  reader.onloadend = () => {
-                    setAcctinfo({ ...acctInfo, profileImage: reader.result });
-                  };
-                  reader.readAsDataURL(file);
-                }
-              }}
+              onChange={handleImageChange}
             />
-            <button
-              className="change-pic-button"
-              onClick={() => document.getElementById("profilePicInput").click()}
-            >
-              <FaCamera className="camera-icon-small" />
-            </button>
+
           </div>
         </div>
 
@@ -170,6 +211,11 @@ const AccountInformation = () => {
               Update Number
             </button>
           </div>
+        </div>
+        <div className="settingsSubmitBtnWrapper">
+          <button className='settingsSubmitBtn' onClick={handleProfileSettings}>
+            {loadState ? "Updating..." : "Update"}
+          </button>
         </div>
       </div>
     </div>

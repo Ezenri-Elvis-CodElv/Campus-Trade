@@ -14,7 +14,7 @@
     display: flex;
   }
   
-  .dashboard-content {
+  /* .dashboard-content {
     flex: 1;
     display: flex;
     justify-content: center;
@@ -24,4 +24,4 @@
     overflow-y: auto;
 
   }
-  
+   */
