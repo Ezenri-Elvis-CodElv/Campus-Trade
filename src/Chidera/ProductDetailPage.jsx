@@ -161,7 +161,7 @@ const ProductDetailPage = () => {
                         style={{ cursor: "pointer", marginRight: "8px" }}
                       />
                     )}
-                    <a href={`tel:${phoneNumber}`}>{UserProfile?.phoneNumber}</a>
+                    <a href={`tel:${UserProfile?.number}`}>{UserProfile?.phoneNumber}</a>
                     {copied && (
                       <span style={{ marginLeft: "8px", color: "green" }}>
                         Copied!

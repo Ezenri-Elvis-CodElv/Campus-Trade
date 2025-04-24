@@ -1,70 +1,102 @@
 import React, { useState } from "react";
 import "./auth.css";
 import { FiEye } from "react-icons/fi";
-import { FcGoogle } from "react-icons/fc";
-import { useNavigate } from "react-router";
 import { FaRegEyeSlash } from "react-icons/fa";
+import { useNavigate } from "react-router";
+import { FcGoogle } from "react-icons/fc";
 import axios from "axios";
 import { toast } from "react-toastify";
 
 const Login = () => {
   const nav = useNavigate();
-  const [showpassword, setShowpassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const [auth, setAuth] = useState({
     email: "",
     password: "",
   });
+
   const [errors, setErrors] = useState({});
+
   const url = "https://campustrade-kku1.onrender.com/api/v1/seller/login";
-  const url1 = "https://campustrade-kku1.onrender.com/api/v1/seller/auth/google/login"
-  const handlesubmit = async (e) => {
+  const googleLoginUrl =
+    "https://campustrade-kku1.onrender.com/api/v1/seller/auth/google/login";
+
+  const validateForm = () => {
+    const newErrors = {};
+    if (!auth.email) {
+      newErrors.email = "Email is required.";
+    } else if (!/\S+@\S+\.\S+/.test(auth.email)) {
+      newErrors.email = "Enter a valid email.";
+    }
+    if (!auth.password) {
+      newErrors.password = "Password is required.";
+    } else if (auth.password.length < 6) {
+      newErrors.password = "Password must be at least 6 characters.";
+    }
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!validateForm()) return;
+
     setLoading(true);
     try {
       const res = await axios.post(url, {
         email: auth.email,
         password: auth.password,
       });
-      console.log(res);
+
       if (res.status === 200) {
-        nav("/dashboard");
+        localStorage.setItem("userData", JSON.stringify(res.data));
+        localStorage.setItem("token", JSON.stringify(res.data.token));
         toast.success(res.data.message);
-        localStorage.setItem("userData",JSON.stringify(res.data))
-        localStorage.setItem("token",JSON.stringify(res?.data?.token))
+        nav("/dashboard");
       }
     } catch (err) {
-      console.log(err);
+      console.error(err);
       toast.error(err?.response?.data?.message || "Login failed.");
       setErrors({ message: err?.response?.data?.message });
+    } finally {
       setLoading(false);
     }
   };
+
+  const handleGoogleLogin = () => {
+    window.location.href = googleLoginUrl;
+  };
+
   const isDisabled = !auth.email || !auth.password;
-  const handleGoogleLogin = async () => {
-    window.location.href = `${url1}`
-  }
+
   return (
     <div className="Overall">
       <div className="box">
         <div className="boxWrapper">
           <div className="authlogo">
-            <img src="/images/CAMPUSTRADE-02 1.png" alt="" onClick={()=> nav("/")} />
+            <img
+              src="/images/CAMPUSTRADE-02 1.png"
+              alt="CampusTrade Logo"
+              onClick={() => nav("/")}
+              style={{ cursor: "pointer" }}
+            />
           </div>
 
           <div className="inputHolder">
-            <h2 className="welcome">
-              Welcome! We Are Glad To Have You Here
-            </h2>
+            <h2 className="welcome">Welcome! We Are Glad To Have You Here</h2>
             <p className="signupText">Login</p>
-            <div className="inputBox">
+
+            <form className="inputBox" onSubmit={handleSubmit}>
               <label>Email</label>
               <input
                 type="email"
                 placeholder="Input Your Email"
                 value={auth.email}
-                onChange={(e) => setAuth({ ...auth, email: e.target.value })}
+                onChange={(e) =>
+                  setAuth({ ...auth, email: e.target.value })
+                }
                 className={errors.email ? "inputError" : ""}
               />
               {errors.email && (
@@ -74,7 +106,7 @@ const Login = () => {
               <label>Password</label>
               <div className="passwordField">
                 <input
-                  type={showpassword ? "text" : "password"}
+                  type={showPassword ? "text" : "password"}
                   placeholder="Enter Your Password"
                   value={auth.password}
                   onChange={(e) =>
@@ -84,10 +116,10 @@ const Login = () => {
                 />
                 <span
                   className="eyeIcon"
-                  onClick={() => setShowpassword((prev) => !prev)}
+                  onClick={() => setShowPassword((prev) => !prev)}
                 >
-                  {showpassword ? <FiEye /> : <FaRegEyeSlash />}
-                  </span>
+                  {showPassword ? <FiEye /> : <FaRegEyeSlash />}
+                </span>
               </div>
               {errors.password && (
                 <span className="errorText">{errors.password}</span>
@@ -95,25 +127,27 @@ const Login = () => {
 
               <button
                 className="submitBtn"
-                onClick={handlesubmit}
-                disabled={isDisabled}
+                type="submit"
+                disabled={isDisabled || loading}
                 style={{
-                  opacity: isDisabled ? 0.6 : 1,
-                  cursor: isDisabled ? "not-allowed" : "pointer",
+                  opacity: isDisabled || loading ? 0.6 : 1,
+                  cursor:
+                    isDisabled || loading ? "not-allowed" : "pointer",
                 }}
               >
-                {loading ? <div>Loading....</div> : <div>Login</div>}
+                {loading ? "Loading..." : "Login"}
               </button>
+
               <div className="footer">
                 <p
                   style={{
                     display: "flex",
                     justifyContent: "flex-start",
                     cursor: "default",
-                    marginTop: "10px"
+                    marginTop: "10px",
                   }}
                 >
-                  Already have an account?{" "}
+                  Don't have an account?
                   <span
                     style={{
                       color: "purple",
@@ -125,22 +159,26 @@ const Login = () => {
                     Sign Up
                   </span>
                 </p>
-                <p className="forgot-password"
 
+                <p
+                  className="forgot-password"
                   onClick={() => nav("/forgetpassword")}
                 >
                   Forgot Password?
                 </p>
               </div>
-              {/* <button className="googleLogin"
-              onClick={handleGoogleLogin}>
-              {/* <button className="googleLogin">
+
+              <button
+                type="button"
+                className="googleLogin"
+                onClick={handleGoogleLogin}
+              >
                 <FcGoogle className="icon" />
                 <span>Sign in with Google</span>
-              </button> */} 
+              </button>
 
               <p className="trademark">@campustrade</p>
-            </div>
+            </form>
           </div>
         </div>
       </div>

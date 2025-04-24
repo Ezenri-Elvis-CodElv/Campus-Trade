@@ -54,9 +54,9 @@ const PaymentStatus = () => {
           ? 'Thank you! Your payment was processed successfully.'
           : 'Oops! Something went wrong with your payment. Please try again or contact support.'}
       </p>
-      <button className="action-button" onClick={handleRedirect}>
+      {/* <button className="action-button" onClick={handleRedirect}>
         {status === 'success' ? 'Create Post' : 'Go to Pending Posts'}
-      </button>
+      </button> */}
     </div>
   );
 };

@@ -4,21 +4,9 @@ import { Navigate, Outlet } from "react-router-dom";
 export const AuthContext = createContext();
 
 const PrivateRoute = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const isAuthenticated = localStorage.getItem("token")
 
-  const login = () => {
-    setIsAuthenticated(true);
-  };
-
-  const logout = () => {
-    setIsAuthenticated(false);
-  };
-
-  return (
-    <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
-      {isAuthenticated ? <Outlet /> : <Navigate to="/login" />}
-    </AuthContext.Provider>
-  );
+  return (isAuthenticated ? <Outlet /> : <Navigate to="/login" />);
 };
 
 export default PrivateRoute;

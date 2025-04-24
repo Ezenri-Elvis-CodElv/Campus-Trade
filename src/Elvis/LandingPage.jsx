@@ -23,6 +23,12 @@ const LandingPage = () => {
     // Add more categories with their respective icons
   };
   const [products, setProducts] = useState([]);
+  const [activeCategoryId, setActiveCategoryId] = useState(null);
+
+const toggleDropdown = (categoryId) => {
+  setActiveCategoryId((prev) => (prev === categoryId ? null : categoryId));
+};
+
 
   const getRecentProduct = async () => {
     try {
@@ -42,7 +48,7 @@ const LandingPage = () => {
   const [allCategories, setAllCategories] = useState([]);
   const [subCategories, setSubCategories] = useState([]);
 
-  const getAllCategories = async () => {
+ ; const getAllCategories = async () => {
     try {
       const response = await axios.get(
         "https://campustrade-kku1.onrender.com/api/v1/all-categories"
@@ -59,7 +65,7 @@ const LandingPage = () => {
   }, []);
 
   console.log(allCategories);
-  console.log(subCategories);
+  console.log(subCategories)
 
   return (
     <div className="w-full h-max flex flex-col justify-center items-center">
@@ -131,27 +137,28 @@ const LandingPage = () => {
           >
             Categories
           </h2>
-          <ul className="w-full h-[50%] flex  gap-5 max-md:gap-[2px] space-x-9 max-md:space-x-0">
-            {allCategories.map((category) => (
-              <li
-                className="relative group cursor-pointer flex"
-                key={category?.id}
-                onClick={(e) => {
-                  setSubCategories(category?.Subcategories || []);
-                }}
-              >
-                {categoryIcons[category?.name] || (
-                  <FcSmartphoneTablet className="mr-2" size={20} />
-                )}
-                {category.name}
-              </li>
-            ))}
-          </ul>
-          {subCategories.map((subCategory) => (
+          <ul className="w-full h-auto flex gap-5 flex-wrap">
+  {allCategories.map((category) => (
+    <li
+      className="relative group cursor-pointer flex flex-col items-start"
+      key={category?.id}
+    >
+      <div
+        className="flex items-center text-black text-[18px]"
+        onClick={() => toggleDropdown(category?.id)}
+      >
+        {categoryIcons[category?.name] || (
+          <FcSmartphoneTablet className="mr-2" size={20} />
+        )}
+        <span>{category.name}</span>
+      </div>
+
+      {activeCategoryId === category?.id && (
+        <ul className="ml-6 mt-2 flex flex-col gap-1 bg-white p-2 rounded shadow-md z-10">
+          {category?.Subcategories?.map((subCategory) => (
             <li
-              className="text-bklack  text-[18px]  cursor-pointer"
+              className="text-black text-[16px] cursor-pointer hover:underline"
               key={subCategory?.id}
-              // onClick={() => nav(`/categories/${subCategory?.name}`)}
               onClick={() =>
                 nav(`/categories/${subCategory?.id}?name=${subCategory?.name}`)
               }
@@ -159,6 +166,13 @@ const LandingPage = () => {
               {subCategory?.name}
             </li>
           ))}
+        </ul>
+      )}
+    </li>
+  ))}
+</ul>
+
+
         </div>
       </div>
 
