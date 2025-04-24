@@ -73,7 +73,7 @@ const VerifyUser = () => {
               <div className="checkbox-holder">
                 <span className="verified">
                   <input type="checkbox" />
-                  <p>verified</p>
+                  <p>verified.</p>
                 </span>
                 <span className="pending">
                   <input type="checkbox" />

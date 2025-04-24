@@ -52,16 +52,16 @@ const ProfilePage = () => {
         {/* Stats Row */}
         <div className="profile-stats">
           <div className="stat-item">
-            <div className="stat-number">1.2K</div>
-            <div className="stat-label">Friends</div>
+            <div className="stat-number"></div>
+            <div className="stat-label"></div>
           </div>
           <div className="stat-item">
-            <div className="stat-number">456</div>
-            <div className="stat-label">Posts</div>
+            <div className="stat-number"></div>
+            <div className="stat-label"></div>
           </div>
           <div className="stat-item">
-            <div className="stat-number">2.5K</div>
-            <div className="stat-label">Followers</div>
+            <div className="stat-number"></div>
+            <div className="stat-label"></div>
           </div>
         </div>
 
