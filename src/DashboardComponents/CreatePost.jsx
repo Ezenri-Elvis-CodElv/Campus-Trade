@@ -3,9 +3,11 @@ import { Modal, message } from "antd";
 import axios from "axios";
 import "./createpost.css";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router";
 
 const CreatePost = () => {
 
+  const navigate = useNavigate()
   const schoolOptions = [
     { name: "Lagos State University" },
 
@@ -134,6 +136,9 @@ const CreatePost = () => {
         media: [],
       });
       setMediaFiles([]);
+      setTimeout(() => {
+        navigate("/dashboard/pendingpost")
+      }, 3000);
     } catch (error) {
       setPostButton(false)
       toast.error(error.response?.data.message);

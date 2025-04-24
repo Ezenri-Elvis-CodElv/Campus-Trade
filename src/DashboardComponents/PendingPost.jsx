@@ -25,7 +25,7 @@ const RecentPost = () => {
     setTimeout(() => {
       setLoading(false)
     }, 3000);
-  }, []);
+  }, [products]);
 
   if (loading) {
     return (

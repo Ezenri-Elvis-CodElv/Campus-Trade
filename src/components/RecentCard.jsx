@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
-import "./recentcard.css"
-import { useNavigate } from 'react-router'
-
+import React, { useState } from "react";
+import "./recentcard.css";
+import { useNavigate } from "react-router";
 
 const RecentCard = ({item}) => {
    const nav = useNavigate();

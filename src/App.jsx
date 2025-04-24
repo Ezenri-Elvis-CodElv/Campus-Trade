@@ -69,7 +69,7 @@ const router = createBrowserRouter([
             { path: "accountinformation", element: <AccountInformation /> },
             { path: "changephonenumber", element: <ChangePhoneNumber /> },
             { path: "changepassword", element: <ChangePassword /> },
-            { path: "sellerprofile", element: <GetVerified /> },
+            { path: "getverified", element: <GetVerified /> },
             { path: "recentpost", element: <RecentPost /> },
             { path: "pendingpost", element: <PendingPost /> },
             { path: "createpost", element: <CreatePost /> },
