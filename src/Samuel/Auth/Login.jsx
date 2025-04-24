@@ -168,14 +168,14 @@ const Login = () => {
                 </p>
               </div>
 
-              <button
+              {/* <button
                 type="button"
                 className="googleLogin"
                 onClick={handleGoogleLogin}
               >
                 <FcGoogle className="icon" />
                 <span>Sign in with Google</span>
-              </button>
+              </button> */}
 
               <p className="trademark">@campustrade</p>
             </form>
