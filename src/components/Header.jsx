@@ -5,6 +5,10 @@ import { useNavigate } from "react-router-dom";
 import Burger from "../../public/images/Burger.svg";
 import { Drawer } from "antd";
 import axios from "axios";
+
+import { SearchContext } from "../context/SearchProducts";
+import { useContext } from "react";
+
 import { FaUserCircle } from "react-icons/fa";
 
 const Header = () => {
@@ -20,27 +24,12 @@ const Header = () => {
   const dropdownRef = useRef(null);
   const institutionButtonRef = useRef(null);
   const nav = useNavigate();
+  console.log(search)
 
-  const getAllCategories = async () => {
-    try {
-      const response = await axios.get(
-        "https://campustrade-kku1.onrender.com/api/v1/all-categories"
-      );
-      setAllCategories(response?.data?.data);
-    } catch (error) {
-      console.error("Error fetching categories:", error);
-    }
+
+  const toggleCategoryDropdown = (category) => {
+    setActiveCategory((prev) => (prev === category ? null : category));
   };
-
-  useEffect(() => {
-    getAllCategories();
-  }, []);
-
-  useEffect(() => {
-    axios.get("https://campustrade-kku1.onrender.com/api/v1/all-categories")
-      .then(res => setCategories(res.data.data))
-      .catch(err => console.error("Failed to fetch categories", err));
-  }, []);
 
   const toggleSchoolsDropdown = () => {
     setIsDropdownVisible(prev => !prev);
@@ -125,7 +114,8 @@ const Header = () => {
             placeholder="Search"
             className="w-[90%] pl-[10px] font-medium focus:outline-none text-gray-500"
             value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={(e)=>{setSearch(e.target.value)}} 
+
           />
         </div>
 

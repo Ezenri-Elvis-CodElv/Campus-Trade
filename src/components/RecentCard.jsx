@@ -5,11 +5,8 @@ import { useNavigate } from 'react-router'
 
 const RecentCard = ({item}) => {
    const nav = useNavigate();
-    const BASE_URL = "https://campustrade-kku1.onrender.com";
-    const userData = JSON.parse(localStorage.getItem("userData"));
-    const user = JSON.parse(localStorage.getItem("user"));
+    
   
-  console.log(item)
   return (
         <> 
     <div className="recent-card" onClick={() => nav(`/productdetailpage/${item.id}`)}>

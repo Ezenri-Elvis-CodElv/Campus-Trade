@@ -7,9 +7,11 @@ import { GiClothes, GiConverseShoe } from "react-icons/gi";
 import { SiBookstack } from "react-icons/si";
 import { IoIosArrowDown } from "react-icons/io";
 import { FaApple } from "react-icons/fa";
-import Card from "../components/Card";
 import axios from "axios";
 import RecentCard from "../components/RecentCard";
+// import { SearchContext } from "../context/SearchProducts";
+// import { useContext } from "react";
+
 
 const LandingPage = () => {
   const nav = useNavigate();
@@ -28,6 +30,7 @@ const LandingPage = () => {
 const toggleDropdown = (categoryId) => {
   setActiveCategoryId((prev) => (prev === categoryId ? null : categoryId));
 };
+
 
 
   const getRecentProduct = async () => {
@@ -66,6 +69,22 @@ const toggleDropdown = (categoryId) => {
 
   console.log(allCategories);
   console.log(subCategories)
+
+  // const { searchQuery } = useContext(SearchContext);
+
+  //  const filteredProducts = React.useMemo(() => {
+  //     if (!searchQuery || searchQuery.trim() === "") {
+  //       return products;
+  //     }
+      
+  //     const normalizedQuery = searchQuery.trim().toLowerCase();
+      
+  //     return products.filter(product => {
+  //       const productName = product?.productName;
+  //       return productName && productName.toLowerCase().includes(normalizedQuery);
+  //     });
+  //   }, [products, searchQuery]);
+  
 
   return (
     <div className="w-full h-max flex flex-col justify-center items-center">
@@ -245,9 +264,11 @@ const toggleDropdown = (categoryId) => {
 
       <div className="w-full min-h-[60vh] max-md:h[80vh] max-md:p-6 bg-white flex justify-center items-center">
         <div className="w-[90%] h-full flex flex-wrap justify-center items-center gap-6">
+
           {products.slice(2,6).map((item, index) => (
             <RecentCard key={index} item={item} />
           ))}
+
         </div>
       </div>
 
