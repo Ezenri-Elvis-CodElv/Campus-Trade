@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import './paymentstatus.css';
 
 const PaymentStatus = () => {
   const [status, setStatus] = useState(null);
   const [loading, setLoading] = useState(true);
   const reference = new URLSearchParams(window.location.search).get('reference');
+  console.log(reference);
+  
   const navigate = useNavigate();
 
   useEffect(() => {
     const verifyPayment = async () => {
       try {
-        const res = await axios.post(`https://campustrade-kku1.onrender.com/api/v1/payment/initialize/${id}`, {
-          reference,
-        });
+        const res = await axios.post(`https://campustrade-kku1.onrender.com/api/v1//api/v1/payment/verify?reference=${reference}`);
         setStatus(res.data.status);
       } catch (error) {
         console.error('Verification error:', error); 
